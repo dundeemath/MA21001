@@ -120,19 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
-.Definition {
-  --color1: #d999d3;
-  --color2: #a01793;
-}
-.Corollary {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Solution {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Theorem {
+.Conjecture {
   --color1: #948bde;
   --color2: #584eab;
 }
@@ -140,15 +128,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #c0c0c0;
   --color2: #808080;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
+.Solution {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Definition {
+  --color1: #d999d3;
+  --color2: #a01793;
 }
 .Lemma {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Conjecture {
   --color1: #948bde;
   --color2: #584eab;
 }
@@ -156,9 +148,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #c0c0c0;
   --color2: #808080;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Corollary {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Theorem {
+  --color1: #948bde;
+  --color2: #584eab;
 }
 </style>
 
@@ -481,12 +481,6 @@ window.Quarto = {
   <li><a href="#linear-independence" id="toc-linear-independence" class="nav-link" data-scroll-target="#linear-independence"><span class="header-section-number">2.3</span> Linear independence</a></li>
   <li><a href="#span-and-basis" id="toc-span-and-basis" class="nav-link" data-scroll-target="#span-and-basis"><span class="header-section-number">2.4</span> Span and Basis</a></li>
   <li><a href="#subspaces" id="toc-subspaces" class="nav-link" data-scroll-target="#subspaces"><span class="header-section-number">2.5</span> Subspaces</a></li>
-  <li><a href="#determinants" id="toc-determinants" class="nav-link" data-scroll-target="#determinants"><span class="header-section-number">3</span> Determinants</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">3.1</span> Introduction</a></li>
-  <li><a href="#simplification-of-determinants" id="toc-simplification-of-determinants" class="nav-link" data-scroll-target="#simplification-of-determinants"><span class="header-section-number">3.2</span> Simplification of Determinants</a></li>
-  <li><a href="#the-adjoint-matrix" id="toc-the-adjoint-matrix" class="nav-link" data-scroll-target="#the-adjoint-matrix"><span class="header-section-number">3.3</span> The Adjoint Matrix</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dundeemath/MA21001/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -542,7 +536,7 @@ window.Quarto = {
 <section id="definition-of-a-vector-space" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="definition-of-a-vector-space"><span class="header-section-number">2.2</span> Definition of a Vector Space</h2>
 <div id="vksoverr" class="Definition" title="Vector Space over R">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1: </strong>Vector Space over R</summary><div>A vector space over <span class="math inline">\mathbb{R}</span> is a set <span class="math inline">V</span>, the elements of which are called vectors <span class="math inline">\vec{v} \in V</span> along with two operations, an addition <span class="math inline">\vec{v} + \vec{w}</span> and a scalar multiplication <span class="math inline">a \vec{v}</span>, <span class="math inline">a \in \mathbb{R}</span>, subject to the following axioms for all <span class="math inline">\vec{u},\vec{v}, \vec{w}\in V</span> and <span class="math inline">a,b\in \mathbb{R}</span> : <span id="eq-cond0"><span class="math display">\vec{u} + \vec{v} \in  V \tag{2.1}</span></span> <span id="eq-cond1"><span class="math display">a \vec{u}  \in  V \tag{2.2}</span></span> <span id="eq-cond2"><span class="math display">\vec{u}+\vec{v} = \vec{v}+\vec{u} \tag{2.3}</span></span> <span id="eq-cond3"><span class="math display">(\vec{u}+\vec{v})+\vec{w}  = \vec{u}+(\vec{v}+\vec{w}) \tag{2.4}</span></span> <span id="eq-cond4"><span class="math display">\text{there exists a vector } {\vec 0}  \in V \text{such that } \vec{u}+\vec{0} = \vec{0}+\vec{u}=\vec{u} \tag{2.5}</span></span> <span id="eq-cond5"><span class="math display"> \text{given } \vec{v} \text{ there exists a vector } -\vec{v}  \in V  \text{ such that }\vec{v}+ (-\vec{v})  = \vec{0} \tag{2.6}</span></span> <span id="eq-cond6"><span class="math display">1 \vec{u}  = \vec{u} \tag{2.7}</span></span> <span id="eq-cond7"><span class="math display">a (\vec{u}+ \vec{v})  = a\vec{u} +a \vec{v} \tag{2.8}</span></span> <span id="eq-cond8"><span class="math display">(a+b) \vec{u} = a\vec{u} +b \vec{u} \tag{2.9}</span></span> <span id="eq-cond9"><span class="math display">a (b \vec{u}) =(a b) \vec{u} \tag{2.10}</span></span><p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2.1: </strong>Vector Space over R</summary><div>A vector space over <span class="math inline">\mathbb{R}</span> is a set <span class="math inline">V</span>, the elements of which are called vectors <span class="math inline">\vec{v} \in V</span> along with two operations, an addition <span class="math inline">\vec{v} + \vec{w}</span> and a scalar multiplication <span class="math inline">a \vec{v}</span>, <span class="math inline">a \in \mathbb{R}</span>, subject to the following axioms for all <span class="math inline">\vec{u},\vec{v}, \vec{w}\in V</span> and <span class="math inline">a,b\in \mathbb{R}</span> : <span id="eq-cond0"><span class="math display">\vec{u} + \vec{v} \in  V \tag{2.1}</span></span> <span id="eq-cond1"><span class="math display">a \vec{u}  \in  V \tag{2.2}</span></span> <span id="eq-cond2"><span class="math display">\vec{u}+\vec{v} = \vec{v}+\vec{u} \tag{2.3}</span></span> <span id="eq-cond3"><span class="math display">(\vec{u}+\vec{v})+\vec{w}  = \vec{u}+(\vec{v}+\vec{w}) \tag{2.4}</span></span> <span id="eq-cond4"><span class="math display">\text{there exists a vector } {\vec 0}  \in V \text{such that } \vec{u}+\vec{0} = \vec{0}+\vec{u}=\vec{u} \tag{2.5}</span></span> <span id="eq-cond5"><span class="math display"> \text{given } \vec{v} \text{ there exists a vector } -\vec{v}  \in V  \text{ such that }\vec{v}+ (-\vec{v})  = \vec{0} \tag{2.6}</span></span> <span id="eq-cond6"><span class="math display">1 \vec{u}  = \vec{u} \tag{2.7}</span></span> <span id="eq-cond7"><span class="math display">a (\vec{u}+ \vec{v})  = a\vec{u} +a \vec{v} \tag{2.8}</span></span> <span id="eq-cond8"><span class="math display">(a+b) \vec{u} = a\vec{u} +b \vec{u} \tag{2.9}</span></span> <span id="eq-cond9"><span class="math display">a (b \vec{u}) =(a b) \vec{u} \tag{2.10}</span></span><p></p>
 </div></details>
 </div>
 <p>Axiom <a href="#eq-cond0" class="quarto-xref"><span>2.1</span></a> and <a href="#eq-cond1" class="quarto-xref"><span>2.2</span></a> ensure that both operations do not lead to elements not in <span class="math inline">V</span>, <a href="#eq-cond2" class="quarto-xref"><span>2.3</span></a> to <a href="#eq-cond5" class="quarto-xref"><span>2.6</span></a> ensure that the addition is commutative and associative and that there is a neutral element <span class="math inline">\vec{0}</span> and an inverse element with respect to the addition. Axiom <a href="#eq-cond6" class="quarto-xref"><span>2.7</span></a> states that the neutral element of the multiplication in <span class="math inline">\mathbb{R}</span> is also the neutral element for the scalar multiplication, while the remaining conditions are distributive laws.</p>
@@ -622,11 +616,11 @@ p(x)+q(x) &amp;= (a_{0}+ b_{0}) + (a_{1} + b_{1}) x + ...+(a_{n}+ b_{n}) x^{n}  
 </div>
 <p>The definition of a vector space over <span class="math inline">\mathbb{R}</span> can be extended to a vector space over a more general set of numbers, a field K. To understand what a ‘field’ is, we need to take a short detour into number systems.</p>
 <div id="vksoverk" class="Definition" title="Vector Space over K">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2: </strong>Vector Space over K</summary><div>A vector space over a field <span class="math inline">K</span> is a set <span class="math inline">V</span>, the elements of which are called vectors <span class="math inline">\vec{v} \in V</span> along with two operations, an addition <span class="math inline">\vec{v} + \vec{w}</span> and a scalar multiplication <span class="math inline">a \vec{v}</span>, <span class="math inline">a \in K</span>, subject to the same 10 axioms <a href="#eq-cond0" class="quarto-xref">Equation&nbsp;<span>2.1</span></a> to <a href="#eq-cond9" class="quarto-xref">Equation&nbsp;<span>2.10</span></a> as before only that now <span class="math inline">a,b\in K</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2.2: </strong>Vector Space over K</summary><div>A vector space over a field <span class="math inline">K</span> is a set <span class="math inline">V</span>, the elements of which are called vectors <span class="math inline">\vec{v} \in V</span> along with two operations, an addition <span class="math inline">\vec{v} + \vec{w}</span> and a scalar multiplication <span class="math inline">a \vec{v}</span>, <span class="math inline">a \in K</span>, subject to the same 10 axioms <a href="#eq-cond0" class="quarto-xref">Equation&nbsp;<span>2.1</span></a> to <a href="#eq-cond9" class="quarto-xref">Equation&nbsp;<span>2.10</span></a> as before only that now <span class="math inline">a,b\in K</span>.<p></p>
 </div></details>
 </div>
 <div id="exm-vktspace9" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2.11</strong></span> The set <a href="algebra3b.html#vksoverk">2</a> <span class="math inline">\mathbb{C}^{n} =\{ (c_{1},...,c_{n})^{T}| c_{1},..,c_{n}\in \mathbb{C}\}</span> is a vector space over <span class="math inline">\mathbb{C}</span>. Addition and scalar multiplication are the usual addition and scalar multiplication of complex numbers. A basis for this space is given by the n vectors <span class="math inline">e_{1}=(1,0,...,0)</span>,..., <span class="math inline">e_{n}=(0,...,0,1)</span>. The space has <span class="math inline">n</span> dimensions. Note that we can identify <span class="math inline">\mathbb{C}</span> with <span class="math inline">\mathbb{R}^{2}</span> due to <span class="math inline">z= a + b i</span> with <span class="math inline">a,b \in \mathbb{R}</span>. Hence <span class="math inline">\mathbb{C}^{n}  \sim \mathbb{R}^{2n}</span> is also a vector space over <span class="math inline">\mathbb{R}</span>, but in this case it is 2n-dimensional with two basis vectors for the real and imaginary part of each complex dimension.</p>
+<p><span class="theorem-title"><strong>Example 2.11</strong></span> The set <a href="algebra3b.html#vksoverk">2.2</a> <span class="math inline">\mathbb{C}^{n} =\{ (c_{1},...,c_{n})^{T}| c_{1},..,c_{n}\in \mathbb{C}\}</span> is a vector space over <span class="math inline">\mathbb{C}</span>. Addition and scalar multiplication are the usual addition and scalar multiplication of complex numbers. A basis for this space is given by the n vectors <span class="math inline">e_{1}=(1,0,...,0)</span>,..., <span class="math inline">e_{n}=(0,...,0,1)</span>. The space has <span class="math inline">n</span> dimensions. Note that we can identify <span class="math inline">\mathbb{C}</span> with <span class="math inline">\mathbb{R}^{2}</span> due to <span class="math inline">z= a + b i</span> with <span class="math inline">a,b \in \mathbb{R}</span>. Hence <span class="math inline">\mathbb{C}^{n}  \sim \mathbb{R}^{2n}</span> is also a vector space over <span class="math inline">\mathbb{R}</span>, but in this case it is 2n-dimensional with two basis vectors for the real and imaginary part of each complex dimension.</p>
 </div>
 </section>
 <section id="linear-independence" class="level2" data-number="2.3">
@@ -643,13 +637,13 @@ p(x)+q(x) &amp;= (a_{0}+ b_{0}) + (a_{1} + b_{1}) x + ...+(a_{n}+ b_{n}) x^{n}  
    \Rightarrow   \vec{0} &amp; =   a_1  \vec{e}_1 + a_2  \vec{e}_2 + a_3 \vec{e}_3, \quad (a_1,a_2,a_3) \neq (0,0,0)
   \end{aligned}</span> where at least one of the three brackets is non-zero since we assumed that <span class="math inline">(v_1,v_2,v_3) \neq (v_1',v_2',v_3')</span>. This is called a non-trivial linear combination.</p>
 <div id="linear-combination" class="Definition" title="Linear Combination">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3: </strong>Linear Combination</summary><div>An expression of the form <span class="math inline">a_{1}{\vec v}
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2.3: </strong>Linear Combination</summary><div>An expression of the form <span class="math inline">a_{1}{\vec v}
 _{1}+a_{2}{\vec v}_{2}+\cdots +a_{n}{\vec v}_{n}</span> is known as a <em>linear combination of the <span class="math inline">n</span> vectors <span class="math inline">{\vec v}
 _{1},{\vec v}_{2},\cdots ,{\vec v}_{n}</span>. The numbers <span class="math inline">a_{1}, a_{2},..., a_{n}</span> are known as the coefficients of the linear combination.</em><p></p>
 </div></details>
 </div>
 <div id="linear-independence-1" class="Definition" title="Linear Independence">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 4: </strong>Linear Independence</summary><div>A set of vectors <span class="math inline">\vec{v_{1}}, \vec{v_{2}},..., \vec{v_{n}}</span> is called <em>linearly independent</em> if none of its elements is a linear combination of the others. That is the equation <span class="math display">a_{1}\vec{v_{1}} + a_{2} \vec{v_{2}}+  ... + a_{n}\vec{v_{n}} = 0</span> has no solution (<span class="math inline">a_{1},a_{2},..,a_{n})</span> other than the trivial solution <span class="math inline">(0,0,...,0)</span>. Otherwise, the set is called <em>linearly dependent</em>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2.4: </strong>Linear Independence</summary><div>A set of vectors <span class="math inline">\vec{v_{1}}, \vec{v_{2}},..., \vec{v_{n}}</span> is called <em>linearly independent</em> if none of its elements is a linear combination of the others. That is the equation <span class="math display">a_{1}\vec{v_{1}} + a_{2} \vec{v_{2}}+  ... + a_{n}\vec{v_{n}} = 0</span> has no solution (<span class="math inline">a_{1},a_{2},..,a_{n})</span> other than the trivial solution <span class="math inline">(0,0,...,0)</span>. Otherwise, the set is called <em>linearly dependent</em>.<p></p>
 </div></details>
 </div>
 <p>I.e., a set of vectors is linearly dependent if we can find a non-trivial linear combination that yields the zero vector. Note that a simple relation between just two of the vectors, e.g. <span class="math inline">\mathbf{v}_{1}=3\mathbf{v}_{2},</span> is enough to make the complete set <span class="math inline">\mathit{
@@ -685,7 +679,7 @@ _{1},{\vec v}_{2},\cdots ,{\vec v}_{n}</span>. The numbers <span class="math inl
 <section id="span-and-basis" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="span-and-basis"><span class="header-section-number">2.4</span> Span and Basis</h2>
 <div id="span" class="Definition" title="Span">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5: </strong>Span</summary><div>The set of vectors <span class="math inline">\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}\}</span> in <span class="math inline">V</span> <strong>span</strong> <span class="math inline">V</span> if every vector <span class="math inline">\vec{v}\in V</span> is a linear combination of <span class="math inline">\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}\}</span>. The set of all vectors of the form <span class="math inline">{\vec v=}a_{1}{\vec v}_{1}+a_{2}{\vec v}_{2}+\cdots +a_{n}{\vec v}_{n}</span> is called the span of <span class="math inline">\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}\}</span> , and denoted by span(<span class="math inline">{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}</span>).<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2.5: </strong>Span</summary><div>The set of vectors <span class="math inline">\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}\}</span> in <span class="math inline">V</span> <strong>span</strong> <span class="math inline">V</span> if every vector <span class="math inline">\vec{v}\in V</span> is a linear combination of <span class="math inline">\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}\}</span>. The set of all vectors of the form <span class="math inline">{\vec v=}a_{1}{\vec v}_{1}+a_{2}{\vec v}_{2}+\cdots +a_{n}{\vec v}_{n}</span> is called the span of <span class="math inline">\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}\}</span> , and denoted by span(<span class="math inline">{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}</span>).<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
@@ -705,7 +699,7 @@ _{1},{\vec v}_{2},\cdots ,{\vec v}_{n}</span>. The numbers <span class="math inl
 </div>
 <p>If we add another vector, e.g. <span class="math display">{\rm span}\left(\scriptscriptstyle \begin{pmatrix}   1\\0  \end{pmatrix} \textstyle,\scriptscriptstyle \begin{pmatrix}   0\\1  \end{pmatrix} \textstyle, \scriptscriptstyle \begin{pmatrix}   1\\1  \end{pmatrix} \textstyle \right) =\mathbb{R}^{2},</span> then the space may or may not become any bigger. In this case, the space remains the same since the third vector is a linear combination of the first two vectors, that is, the set is linearly dependent. The smallest linearly independent set which spans a given vector space is called a basis.</p>
 <div id="basis" class="Definition" title="Basis">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 6: </strong>Basis</summary><div>A basis of a vector space is a linearly independent set of vectors which span the vector space.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2.6: </strong>Basis</summary><div>A basis of a vector space is a linearly independent set of vectors which span the vector space.<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
@@ -732,11 +726,11 @@ c &amp; d
 \end{array}\right),\quad\textrm{i.e.   }\alpha _{1}=\alpha _{2}=\alpha _{3}=\alpha _{4}=0.</span> Since the four matrices span the space and are linearly independent, they form a basis for <span class="math inline">\mathbb{R}^{(n\times n)}</span>.</p>
 </div>
 <div id="uniqueness-w.r.t.-a-basis" class="Theorem" title="Uniqueness w.r.t. a basis">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 7: </strong>Uniqueness w.r.t. a basis</summary><div>Let <span class="math inline">\left\{ {\vec v}_{1},{\vec v}_{2},\dots ,{\vec v}
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 2.7: </strong>Uniqueness w.r.t. a basis</summary><div>Let <span class="math inline">\left\{ {\vec v}_{1},{\vec v}_{2},\dots ,{\vec v}
 _{n}\right\}</span> be a basis for a vector space <span class="math inline">V.</span> Each vector from <span class="math inline">V</span> can be uniquely expressed as a linear combination of these vectors.<p></p>
 </div></details>
 </div>
-<div id="Proof*-1" class="Proof">
+<div id="Proof*-2.1" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>If there were two different representations of a vector <span class="math inline">{\vec v}</span> with respect to this basis: Eg. <span class="math inline">{\vec v} =a_{1}{\vec v}_{1} + \dots + a_{n }{\vec v}_{n}</span> and <span class="math inline">{\vec v} =b_{1}  {\vec v}_{1} + \dots + b_{n }{\vec v}_{n}</span>, then the difference <span class="math inline">{\bf 0} =(a_{1} - b_{1}){\vec v}_{1} + \dots + (a_{n }-b_{n}){\vec v}_{n}</span> would be a non-trivial linear combination representing the zero vector, which is impossible since the vectors <span class="math inline">{\vec v}_{1},\dots ,{\vec v}_{n}</span> were linearly independent.&nbsp;◻<p></p>
 </div></details>
 </div>
@@ -766,10 +760,10 @@ _{2},{\vec e}_{3}</span> and the expression is unique.</p>
 </div>
 <p>We note that there are different bases, but they all have the same number of elements.</p>
 <div id="number-of-elements-of-a-basis" class="Theorem" title="Number of elements of a basis">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 8: </strong>Number of elements of a basis</summary><div>Every basis of a vector space contains the same number of vectors, this number being the largest set of linearly independent vectors in the set.<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 2.8: </strong>Number of elements of a basis</summary><div>Every basis of a vector space contains the same number of vectors, this number being the largest set of linearly independent vectors in the set.<p></p>
 </div></details>
 </div>
-<div id="Proof*-2" class="Proof">
+<div id="Proof*-2.2" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Suppose that a vector space <span class="math inline">V</span> has two bases, one of which is <span class="math inline">\left\{ {\vec w}_{1},...,{\vec w}_{p}\right\}</span> that contains <span class="math inline">p</span> vectors and the other <span class="math inline">\left\{ {\vec z}_{1},...,{\vec z}_{q}\right\}</span> that contains <span class="math inline">q</span> vectors. We can assume that <span class="math inline">p&gt;q.</span> We shall show that the vectors <span class="math inline">\left\{ {\vec w}_{1},...,{\vec w}_{p}\right\}</span> are linearly dependent, contradicting the fact that they form a basis.<p></p>
 <p>To begin, since <span class="math inline">V={\rm span}\left( {\vec z}_{1},...,{\vec z}_{q}\right)</span> and each of the <span class="math inline">{\vec w}</span>’s lies in <span class="math inline">V,</span> they must be linear combinations of the <span class="math inline">{\vec z}</span>’s. i.e., <span class="math display">\begin{aligned}
 {\vec w}_{1} &amp;=c_{11}{\vec z}_{1}+c_{21}{\vec z}_{2}+\cdots +c_{q1}
@@ -799,7 +793,7 @@ c_{q1}a_{1}+\cdots +c_{qp}a_{p} &amp;=0
 </div></details>
 </div>
 <div id="dimension" class="Definition" title="Dimension">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 9: </strong>Dimension</summary><div>The number of elements of a basis is called the dimension of the space.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2.9: </strong>Dimension</summary><div>The number of elements of a basis is called the dimension of the space.<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
@@ -822,18 +816,18 @@ c_{q1}a_{1}+\cdots +c_{qp}a_{p} &amp;=0
 </div>
 </div>
 <div id="smaller-spanning-set" class="Theorem" title="Smaller spanning set">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 10: </strong>Smaller spanning set</summary><div>Any linearly dependent vectors of a spanning set can be omitted without making the span smaller. <span class="math display">{\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}) = {\rm span}( \text{largest  l.i. subset of }  {\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})</span><p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 2.10: </strong>Smaller spanning set</summary><div>Any linearly dependent vectors of a spanning set can be omitted without making the span smaller. <span class="math display">{\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}) = {\rm span}( \text{largest  l.i. subset of }  {\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})</span><p></p>
 </div></details>
 </div>
-<div id="Proof*-3" class="Proof">
+<div id="Proof*-2.3" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Without loss of generality (w.l.o.g.) we can assume that <span class="math inline">\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{r} \}</span> is the largest linearly independent subset (<span class="math inline">r\le n</span>). Then any remaining vectors <span class="math inline">{\vec v}_{r+1}, ... , {\vec v}_{n}</span> can be expressed as a linear combination of <span class="math inline">\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{r} \}</span> hence <span class="math inline">{\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{r}) = {\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})</span>&nbsp;◻<p></p>
 </div></details>
 </div>
-<div id="Corollary-11" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 11</strong></summary><div>Every set of m+1 vectors in <span class="math inline">\mathbb{R}^{m}</span> is linearly dependent.<p></p>
+<div id="Corollary-2.11" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 2.11</strong></summary><div>Every set of m+1 vectors in <span class="math inline">\mathbb{R}^{m}</span> is linearly dependent.<p></p>
 </div></details>
 </div>
-<div id="Proof*-4" class="Proof">
+<div id="Proof*-2.4" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>We know that the standard basis of <span class="math inline">\mathbb{R}^{m}</span> consists of m elements, hence the dimension is m. Suppose there were <span class="math inline">m+1</span> linearly independent vectors in <span class="math inline">\mathbb{R}^{m}</span>, then they could be used to form a basis. But then the dimension of <span class="math inline">\mathbb{R}^{m}</span> would be <span class="math inline">m+1</span>, in contradiction to the previous result that the dimension is a unique number.&nbsp;◻<p></p>
 </div></details>
 </div>
@@ -842,7 +836,7 @@ c_{q1}a_{1}+\cdots +c_{qp}a_{p} &amp;=0
 <h2 data-number="2.5" class="anchored" data-anchor-id="subspaces"><span class="header-section-number">2.5</span> Subspaces</h2>
 <p>Suppose that <span class="math inline">W</span> is a nonempty subset of the vector space <span class="math inline">V</span>, which also satisfies all the vector space axioms itself, then <span class="math inline">W</span> is called a subspace of <span class="math inline">V</span>. It is important to realise that for <span class="math inline">W</span> to be subspace of <span class="math inline">V</span>, then <span class="math inline">W</span> must satisfy the following conditions:</p>
 <div id="subspace" class="Definition" title="Subspace">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 12: </strong>Subspace</summary><div>A subset <span class="math inline">W \subseteq V</span> of vectors in a vector space <span class="math inline">V</span> is called a subspace of <span class="math inline">V</span> if the following conditions hold:<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2.12: </strong>Subspace</summary><div>A subset <span class="math inline">W \subseteq V</span> of vectors in a vector space <span class="math inline">V</span> is called a subspace of <span class="math inline">V</span> if the following conditions hold:<p></p>
 <p>(i) <span class="math inline">{\vec 0}\in W,</span></p>
 <p>(ii) if <span class="math inline">{\vec u} \in W</span> and <span class="math inline">{\vec v} \in W</span> then <span class="math inline">{\vec u}+{\vec
 v\in }W</span> ;</p>
@@ -873,10 +867,10 @@ W</span> then show that <span class="math inline">a{\vec u\not\in }W</span> for 
 <p><span class="theorem-title"><strong>Example 2.33</strong></span> Consider the subset <span class="math inline">S</span> of <span class="math inline">P_{2}</span> defined so as to contain all polynomial <span class="math inline">{\rm p}\left( x\right) =a+bx+cx^{2}</span> for which <span class="math inline">a+b-2c=0</span>. Show that <span class="math inline">S</span> is a subspace of <span class="math inline">P_{2}</span> and obtain a basis for <span class="math inline">S</span>.</p>
 </div>
 <div id="intersection-of-subspaces" class="Theorem" title="Intersection of subspaces">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 13: </strong>Intersection of subspaces</summary><div>If <span class="math inline">W_{1}</span> and <span class="math inline">W_{2}</span> are subspaces of <span class="math inline">V</span> then so is <span class="math inline">W_{1}\cap W_{2}</span>.<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 2.13: </strong>Intersection of subspaces</summary><div>If <span class="math inline">W_{1}</span> and <span class="math inline">W_{2}</span> are subspaces of <span class="math inline">V</span> then so is <span class="math inline">W_{1}\cap W_{2}</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-5" class="Proof">
+<div id="Proof*-2.5" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\vec{u},\vec{v}\in W_{1}\cap W_{2}</span> and <span class="math inline">a\in K</span>. Then <span class="math inline">\vec{u}+\vec{v}\in W_{1}</span> (because <span class="math inline">W_{1}</span> is a subspace) and <span class="math inline">\vec{u}+\vec{v}\in W_{2}</span> (because <span class="math inline">W_{2}</span> is a subspace). Hence <span class="math inline">\vec{u}+\vec{v}\in W_{1}\cap W_{2}</span>. Similarly, we get <span class="math inline">a\vec{v}\in W_{1}\cap W_{2}</span> so <span class="math inline">W_{1}\cap W_{2}</span> is a subspace of <span class="math inline">V</span>.&nbsp;◻<p></p>
 </div></details>
 </div>
@@ -921,15 +915,15 @@ b &amp; b
 </div>
 <p>The three conditions in the definition of a subspace state that every linear combination of vectors of the subspace has to be an element of the subspace. This proves the following theorem:</p>
 <div id="span-is-a-subspace" class="Lemma" title="Span is a subspace">
-<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 14: </strong>Span is a subspace</summary><div><span class="math inline">{\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})</span> is a subspace of <span class="math inline">V</span> for <span class="math inline">{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n} \in V</span>.<p></p>
+<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 2.14: </strong>Span is a subspace</summary><div><span class="math inline">{\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})</span> is a subspace of <span class="math inline">V</span> for <span class="math inline">{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n} \in V</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-6" class="Proof">
+<div id="Proof*-2.6" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div><span class="math inline">W={\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})</span> is by definition a subset of <span class="math inline">V</span>. The <span class="math inline">\vec{0}</span> is in <span class="math inline">W</span>, which is property (i) in the definition of a subspace, and (ii) and (iii) are also satisfied due to the span including all linear combinations.&nbsp;◻<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2.37</strong></span> The set <span class="math inline">W=\{(x,y,z,w)^{T}:x+y+z=w\}</span> is a subspace of <span class="math inline">\mathbb{R}^{4}</span>. We can show this in two ways: (a) by using the definition of a subspace (<a href="algebra3b.html#subspace">12</a>) or (b) by finding a spanning set and using the above theorem. Method (a) requires checking the three conditions for a subspace:</p>
+<p><span class="theorem-title"><strong>Example 2.37</strong></span> The set <span class="math inline">W=\{(x,y,z,w)^{T}:x+y+z=w\}</span> is a subspace of <span class="math inline">\mathbb{R}^{4}</span>. We can show this in two ways: (a) by using the definition of a subspace (<a href="algebra3b.html#subspace">2.12</a>) or (b) by finding a spanning set and using the above theorem. Method (a) requires checking the three conditions for a subspace:</p>
 <ol type="1">
 <li><p><span class="math inline">{\bf 0} = (0,0,0,0)^{T} \in W</span> for <span class="math inline">x=y=z=0</span>.</p></li>
 <li><p>With <span class="math inline">{\bf u} =  (x,y,z,x+y+z)^{T} \in W</span> and <span class="math inline">{\bf v} = (x',y',z',x'+y'+z')^{T} \in W</span> also <span class="math inline">{\bf u} + {\bf v}=  (x+x',y+y',z+z',(x+x')+(y+y')+(z+z'))^{T} \in W</span></p></li>
@@ -938,658 +932,10 @@ b &amp; b
 <p>For method (b), we have to find vectors which span <span class="math inline">W</span>. Note that the set <span class="math inline">W</span> has three free parameters, which can be used to represent an arbitrary element of <span class="math inline">W</span>: <span class="math display">\scriptscriptstyle \begin{pmatrix}   x\\y\\z\\x+y+z  \end{pmatrix} \textstyle = x \scriptscriptstyle \begin{pmatrix}   1\\0\\0\\1  \end{pmatrix} \textstyle +y \scriptscriptstyle \begin{pmatrix}   0\\1\\0\\1  \end{pmatrix} \textstyle + z \scriptscriptstyle \begin{pmatrix}   0\\0\\1\\1  \end{pmatrix} \textstyle</span> Hence <span class="math inline">W = {\rm span}((1,0,0,1)^{T}, (0,1,0,1)^{T}, (0,0,1,1)^{T})</span>. This second approach has the advantage that the spanning set can also be used to find a basis for the subspace. Indeed, the three vectors are also linearly independent (prove!), and we obtain the basis <span class="math inline">{\vec v}_{1}=(1,0,0,1)^{T},{\vec v}_{2}=(0,1,0,1)^{T},{\vec v}
 _{3}=(0,0,1,1)^{T}</span>.</p>
 </div>
-</section>
-<section id="determinants" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Determinants</h1>
-<section id="introduction" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">3.1</span> Introduction</h2>
-<!--See Poole: Linear Algebra, *A Modern Introduction*, pages 256--285.-->
-<p>Determinants occur in many situations, geometrically they can beinterpreted as the volume of the parallelepiped spanned by a set of <span class="math inline">n</span> vectors. This is easily visualised in two dimensions (x-y-plane). The area (2-dimensional volume) of a parallelepiped spanned by the two vectors <span class="math inline">{\bf b}=(b_{1},b_{2})^{T}</span> and <span class="math inline">{\bf c}=(c_{1},c_{2})^{t}</span> is up to a sign given by <span class="math display">area = \pm(b_{1}c_{2}- b_{2} c_{1} )</span> We call this the determinant of the matrix <span class="math inline">{\rm A} = [{\bf b},{\bf c}]</span> and write <span class="math display">{\rm det(A)}= |{\rm A}|=\left|
-\begin{array}{cc}
-b_{1} &amp; c_{1} \\
-b_{2} &amp; c_{2}
-\end{array}
-\right| = b_{1}c_{2}- b_{2} c_{1} .</span> The determinant of a square matrix <span class="math inline">A</span>, denoted by <span class="math inline">\det</span>(<span class="math inline">A</span>), or <span class="math inline">\left|
-A\right|</span>, is a number (scalar). The now-standard notation was first introduced by Cayley in 1841.</p>
-<p>In three dimensions, the volume of the cell spanned by the vectors <span class="math inline">{\bf a}</span>, <span class="math inline">{\bf b}</span>, and <span class="math inline">{\bf c}</span> is given by <span class="math display">{\bf a}\cdot ( {\bf b} \times {\bf c} )= a_{1}(b_{2}c_{3}- b_{3}c_{2}) + a_{2} (b_{3}c_{1}-b_{1}c_{3}) + a_{3} (b_{1}c_{2}-b_{2}c_{1}).</span> Note that we can write this in terms of the determinants of 2x2 matrices: <span class="math display">{\bf a}\cdot ({\bf b} \times {\bf c}) = \left|
-\begin{array}{ccc}
-a_{1} &amp; b_{1} &amp; c_{1} \\
-a_{2} &amp; b_{2} &amp; c_{2} \\
-a_{3} &amp; b_{3} &amp; c_{3}
-\end{array}
-\right|  = a_{1} \left|
-\begin{array}{cc}
-b_{2} &amp; c_{2} \\
-b_{3} &amp; c_{3}
-\end{array}
-\right|  - a_{2} \left|
-\begin{array}{cc}
-b_{1} &amp; c_{1} \\
-b_{3} &amp; c_{3}
-\end{array}
-\right| + a_{3} \left|
-\begin{array}{cc}
-b_{1} &amp; c_{1} \\
-b_{2} &amp; c_{2}
-\end{array}
-\right| ,</span> where each of the <span class="math inline">2 \times 2</span> matrices is obtained by deleting the first column and the corresponding row of the coefficient <span class="math inline">a_{j}</span> from the matrix <span class="math inline">{\rm A} = [{\bf a},{\bf b}, {\bf c}]</span>. This suggests a recursive scheme where determinants of arbitrary <span class="math inline">n \times n</span> matrices are defined in terms of determinants of <span class="math inline">(n-1)\times(n-1)</span> matrices, which again are expanded in determinants of <span class="math inline">(n-2)\times(n-2)</span> and so on.</p>
-<div id="exm-det1" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.1</strong></span> Evaluate <span class="math display">\left|
-\begin{array}{ccc}
-1 &amp; 2 &amp; 3 \\
-2 &amp; 3 &amp; 2 \\
-3 &amp; 3 &amp; 4
-\end{array}
-\right| .</span></p>
-</div>
-<div id="minor-and-cofactor" class="Definition" title="Minor and Cofactor">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 15: </strong>Minor and Cofactor</summary><div>Corresponding to each entry <span class="math inline">a_{i,j}</span> in an <span class="math inline">n\times n</span> matrix <span class="math inline">A,</span> we define a number <span class="math inline">M_{ij},</span> called the <em>minor</em> of <span class="math inline">a_{ij},</span> which is the <span class="math inline">\left( n-1\right)</span>th order determinant obtained by deleting the <span class="math inline">i</span>-th row and <span class="math inline">j</span>-th column from <span class="math inline">A.</span><p></p>
-<p>The cofactor <span class="math inline">C_{ij}</span> corresponding to an entry <span class="math inline">a_{ij}</span> in an <span class="math inline">n\times n</span> matrix <span class="math inline">A</span> is the product of its minor and the sign <span class="math inline">\left( -1\right) ^{i+j}:</span> <span class="math inline">C_{ij}=\left( -1\right) ^{i+j}M_{ij}.</span> The <span class="math inline">n^{2}</span> cofactors form a matrix of cofactors.</p>
-</div></details>
-</div>
-<div id="determinants-1" class="Definition" title="Determinants">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 16: </strong>Determinants</summary><div>A determinant of an <span class="math inline">n \times n</span> matrix can be expanded in terms of <span class="math inline">(n-1)\times(n-1)</span> determinants using either a column or a row. Expansion along the i-th column: <span class="math display">\left| A\right| =a_{1,i}C_{1,i}+a_{2,i}C_{2,i}+a_{3,i}C_{3,i}+\cdots
-+a_{n,i}C_{n,i}.</span> Expansion along the i-th row: <span class="math display">\left| A\right| =a_{i,1}C_{i,1}+a_{i,2}C_{i,2}+a_{i,3}C_{i,3}+\cdots
-+a_{i,n}C_{i,n}.</span> The <span class="math inline">(n-1)\times(n-1)</span> determinants can then be recursively further reduced down to <span class="math inline">2\times2</span> matrices.<p></p>
-</div></details>
-</div>
-<div id="exm-det3" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.2</strong></span> Find the expansion for the matrix <span class="math inline">A</span> of the previous Example. Expansion along the first row: <span class="math display">\left|
-\begin{array}{ccc}
-1 &amp; 2 &amp; 3 \\
-2 &amp; 3 &amp; 2 \\
-3 &amp; 3 &amp; 4
-\end{array}
-\right| =  1  \left| \begin{array}{cc}
-3 &amp; 2 \\
-3 &amp; 4
-\end{array} \right| - 2  \left| \begin{array}{cc}
-2 &amp; 2 \\
-3 &amp; 4
-\end{array}  \right| +3 \left| \begin{array}{cc}
-2 &amp; 3 \\
-3 &amp; 3
-\end{array}  \right| =  6-4 -9 =-7</span> Expansion along the first column: <span class="math display">\left|
-\begin{array}{ccc}
-1 &amp; 2 &amp; 3 \\
-2 &amp; 3 &amp; 2 \\
-3 &amp; 3 &amp; 4
-\end{array}
-\right| =  1  \left| \begin{array}{cc}
-3 &amp; 2 \\
-3 &amp; 4
-\end{array} \right| - 2  \left| \begin{array}{cc}
-2 &amp; 3 \\
-3 &amp; 4
-\end{array}  \right| + 3\left| \begin{array}{cc}
-2 &amp; 3 \\
-3 &amp; 2
-\end{array}  \right| =6+2-15=-7</span> Expansion along the second column: <span class="math display">\left|
-\begin{array}{ccc}
-1 &amp; 2 &amp; 3 \\
-2 &amp; 3 &amp; 2 \\
-3 &amp; 3 &amp; 4
-\end{array}
-\right| =  - 2  \left| \begin{array}{cc}
-2 &amp; 2 \\
-3 &amp; 4
-\end{array}  \right| +3 \left| \begin{array}{cc}
-1 &amp; 3 \\
-3 &amp; 4
-\end{array}  \right| -3 \left| \begin{array}{cc}
-1 &amp; 3 \\
-2 &amp; 2
-\end{array}  \right| =  -4 -15 +12=-7</span></p>
-</div>
-<div id="exm-det4" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.3</strong></span> Evaluate <span class="math display">\begin{aligned}
-\left|
-\begin{array}{cccc}
-1 &amp; 2 &amp; 1 &amp; 3 \\
-1 &amp; 1 &amp; 2 &amp; 1 \\
-3 &amp; 2 &amp; 0 &amp; 2 \\
-2 &amp; 2 &amp; 1 &amp; 0
-\end{array}
-\right| &amp; = 1\left|
-\begin{array}{ccc}
-1 &amp; 2 &amp; 1 \\
-2 &amp; 0 &amp; 2 \\
-2 &amp; 1 &amp; 0
-\end{array}
-\right| - 1 \left|
-\begin{array}{ccc}
-2 &amp; 1 &amp; 3 \\
-2 &amp; 0 &amp; 2 \\
-2 &amp; 1 &amp; 0
-\end{array}
-\right|  + 3 \left|
-\begin{array}{ccc}
-2 &amp; 1 &amp; 3 \\
-1 &amp; 2 &amp; 1 \\
-2 &amp; 1 &amp; 0
-\end{array}
-\right| - 2 \left|
-\begin{array}{ccc}
-2 &amp; 1 &amp; 3 \\
-1 &amp; 2 &amp; 1 \\
-2 &amp; 0 &amp; 2 \end{array}
-\right| \\
-&amp; = 1\left|
-\begin{array}{cc}
-0 &amp; 2 \\
-1 &amp; 0
-\end{array}
-\right| -2  \left|\begin{array}{cc}
-2&amp; 2 \\
-2 &amp; 0
-\end{array}
-\right|  - ... \text{10 more terms}
-\end{aligned}</span></p>
-</div>
-<p>The previous example should illustrate the large amount of computation needed by using a “brute force” approach to evaluating determinants. We will now look at smarter ways, using two fundamental theorems to develop a simple numerical procedure closely related to Gaussian elimination. The following example shows that it is much more efficient to calculate determinants with many zeros in columns or rows:</p>
-<div id="exm-det5" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.4</strong></span> Evaluate <span class="math display">\left|
-\begin{array}{cccc}
-1 &amp; 2 &amp; 1 &amp; 3 \\
-0 &amp; 1 &amp; 1 &amp; -2 \\
-0 &amp; 0 &amp; 7 &amp; -1 \\
-0 &amp; 0 &amp; 3 &amp; 2
-\end{array}
-\right| </span></p>
-</div>
-<div id="Solution*-7" class="Solution">
-<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>Expanding along the first column, twice: <span class="math display"> \left|
-\begin{array}{cccc}
-1 &amp; 2 &amp; 1 &amp; 3 \\
-0 &amp; 1 &amp; 1 &amp; -2 \\
-0 &amp; 0 &amp; 7 &amp; -1 \\
-0 &amp; 0 &amp; 3 &amp; 2
-\end{array}
-\right| =\left|
-\begin{array}{ccc}
-1 &amp; 1 &amp; -2 \\
-0 &amp; 7 &amp; -1 \\
-0 &amp; 3 &amp; 2
-\end{array}
-\right| =\left|
-\begin{array}{cc}
-7 &amp; -1 \\
-3 &amp; 2
-\end{array}
-\right| =\allowbreak 17.</span><p></p>
-</div></details>
-</div>
-</section>
-<section id="simplification-of-determinants" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="simplification-of-determinants"><span class="header-section-number">3.2</span> Simplification of Determinants</h2>
-<p>The following rules help to simplify determinants efficiently:</p>
-<div id="calcdet" class="Corollary" title="Calculation of Determinants">
-<details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 17: </strong>Calculation of Determinants</summary><div>
-<ol type="1">
-<li><p>If two rows (columns) of <span class="math inline">A</span> are interchanged to give a matrix <span class="math inline">B</span> then <span class="math inline">\left| B\right| =-\left| A\right|</span>.</p></li>
-<li><p>If two rows (columns) of <span class="math inline">A</span> are equal then <span class="math inline">\left| A\right| =0</span></p></li>
-<li><p>If all the entries in any row (column) of <span class="math inline">A</span> are multiplied by a scalar <span class="math inline">k,</span> the determinant is also multiplied by <span class="math inline">k</span></p></li>
-<li><p>If one row (column) of <span class="math inline">A</span> is a multiple of another row (column), then <span class="math inline">\left|
-A\right| =0</span></p></li>
-<li><p>If the matrix <span class="math inline">B</span> is obtained from <span class="math inline">A</span> by taking multiple of one row (column) and adding it to another row (column), then <span class="math inline">\left| B\right|
-=\left| A\right| .</span></p></li>
-<li><p><span class="math inline">\left| A\right| =\left| A^{T}\right| .</span></p></li>
-</ol>
-</div></details>
-</div>
-<div id="Proof*-8" class="Proof">
-<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>The proof of (1) and (6) is omitted.<br>
-(2) is proved by using (1): If we interchange the two equal columns of <span class="math inline">{\rm A}</span>, then we obtain <span class="math inline">{\rm A}</span> again, hence <span class="math inline">|{\rm A}|</span> remains the same, but according to (1) it should change its sign. This is only possible if <span class="math inline">|{\rm A}|=0.</span><p></p>
-<p>(3) If <span class="math inline">B</span> is obtained by multiplying the <span class="math inline">i</span>th column of <span class="math inline">A</span> by <span class="math inline">k:</span> <span class="math display">\left| A\right| =\left|
-\begin{array}{cccc}
-a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots \\
-a_{2} &amp; b_{2} &amp; c_{2} &amp;  \\
-\vdots &amp;  &amp;  &amp;  \\
-a_{i} &amp; b_{i} &amp; c_{i} &amp;  \\
-\vdots &amp;  &amp;  &amp;
-\end{array}
-\right| ,\quad \left| B\right| =\left|
-\begin{array}{cccc}
-a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots \\
-a_{2} &amp; b_{2} &amp; c_{2} &amp;  \\
-\vdots &amp;  &amp;  &amp;  \\
-ka_{i} &amp; kb_{i} &amp; kc_{i} &amp;  \\
-\vdots &amp;  &amp;  &amp;
-\end{array}
-\right|</span> and expand both determinants about their <span class="math inline">i</span>th rows: <span class="math display">\begin{aligned}
-\left| A\right| &amp;=a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots \\
-\left| B\right| &amp;=\left( ka_{i}\right) C_{i,1}+\left( kb_{i}\right)
-C_{i,2}+\cdots \\
-&amp;=k\left( a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots \right) =k\left| A\right| .
-\end{aligned}</span> (4) We use (3) and (2).</p>
-<p>(5) Suppose we add <span class="math inline">k\times</span> row <span class="math inline">j</span> to row <span class="math inline">i</span> of <span class="math inline">\left|
-A\right|</span> to give <span class="math inline">\left| B\right| :</span> <span class="math display">\left| A\right| =\left|
-\begin{array}{cccc}
-a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots \\
-a_{2} &amp; b_{2} &amp; c_{2} &amp;  \\
-\vdots &amp;  &amp;  &amp;  \\
-a_{i} &amp; b_{i} &amp; c_{i} &amp;  \\
-\vdots &amp;  &amp;  &amp;
-\end{array}
-\right| ,\quad \left| B\right| =\left|
-\begin{array}{cccc}
-a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots \\
-a_{2} &amp; b_{2} &amp; c_{2} &amp;  \\
-\vdots &amp;  &amp;  &amp;  \\
-a_{i}+ka_{j} &amp; b_{i}+kb_{j} &amp; c_{i}+kc_{j} &amp;  \\
-\vdots &amp;  &amp;  &amp;
-\end{array}
-\right|</span> and we now expand <span class="math inline">\left| B\right|</span> by its <span class="math inline">i</span>th row <span class="math display">\begin{aligned}
-\left| A\right| &amp;=a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots \\
-\left| B\right| &amp;=\left( a_{i}+ka_{j}\right) C_{i,1}+\left(
-b_{i}+kb_{j}\right) C_{i,2}+\cdots \\
-&amp;=\left( a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots \right) +k\left(
-a_{j}C_{i,1}+b_{i}C_{j,2}+\cdots \right)
-\end{aligned}</span> <span class="math display">=\left|
-\begin{array}{cccc}
-a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots \\
-a_{2} &amp; b_{2} &amp; c_{2} &amp;  \\
-\vdots &amp;  &amp;  &amp;  \\
-a_{i} &amp; b_{i} &amp; c_{i} &amp;  \\
-\vdots &amp;  &amp;  &amp;
-\end{array}
-\right| +k\left|
-\begin{array}{cccc}
-a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots \\
-a_{2} &amp; b_{2} &amp; c_{2} &amp;  \\
-\vdots &amp;  &amp;  &amp;  \\
-a_{j} &amp; b_{j} &amp; c_{j} &amp;  \\
-\vdots &amp;  &amp;  &amp;
-\end{array}
-\right| =\left| A\right|</span> since rows <span class="math inline">i</span> and <span class="math inline">j</span> in the determinant <span class="math inline">\left|
-\begin{array}{cccc}
-a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots \\
-a_{2} &amp; b_{2} &amp; c_{2} &amp;  \\
-\vdots &amp;  &amp;  &amp;  \\
-a_{j} &amp; b_{j} &amp; c_{j} &amp;  \\
-\vdots &amp;  &amp;  &amp;
-\end{array}
-\right|</span> are identical, so it is zero (<a href="determinants.html#calcdet">3</a> 4).&nbsp;◻</p>
-</div></details>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Remember
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The rules are similar to, <strong>but not the same as,</strong> Gaussian elimination; adding <span class="math inline">k</span> times row 2 to row 1 is OK if the result goes in row 1, and row 2 is left unchanged, but if you replace row 2 by <span class="math inline">k</span> times row 2 plus row 1, you will change the value of the determinant by a factor of <span class="math inline">k</span> (Corollary 2 tells us this). A further difference is that a multiple of a column can be added to another column (not allowed in GE).</p>
-</div>
-</div>
-<div id="exm-det6" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.5</strong></span> Evaluate the determinant <span class="math inline">\left|
-\begin{array}{cccc}
-1 &amp; 2 &amp; -1 &amp; 3 \\
-2 &amp; 0 &amp; 1 &amp; 1 \\
-1 &amp; 3 &amp; 2 &amp; 1 \\
-2 &amp; 0 &amp; 0 &amp; 1
-\end{array}
-\right| .</span></p>
-</div>
-<div id="Solution*-9" class="Solution">
-<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>First expand by the 4th row: <span class="math display">= -2\times \left|
-\begin{array}{ccc}
-2 &amp; -1 &amp; 3 \\
-0 &amp; 1 &amp; 1 \\
-3 &amp; 2 &amp; 1
-\end{array}
-\right| +1\times \left|
-\begin{array}{ccc}
-1 &amp; 2 &amp; -1 \\
-2 &amp; 0 &amp; 1 \\
-1 &amp; 3 &amp; 2
-\end{array}
-\right| ,</span><p></p>
-<p>now subtract <span class="math inline">c_{3}</span> from <span class="math inline">c_{2}</span> in the 1st , subtract <span class="math inline">2\times
-c_{3}</span> from <span class="math inline">c_{1}</span> in the 2nd and expand both by their 2nd rows. <span class="math display">\begin{aligned}
-&amp;=-2\times \left|
-\begin{array}{ccc}
-2 &amp; -4 &amp; 3 \\
-0 &amp; 0 &amp; 1 \\
-3 &amp; 1 &amp; 1
-\end{array}
-\right| +1\times \left|
-\begin{array}{ccc}
-3 &amp; 2 &amp; -1 \\
-0 &amp; 0 &amp; 1 \\
--3 &amp; 3 &amp; 2
-\end{array}
-\right| \\
-&amp;=-2\times \left( -1\right) \left|
-\begin{array}{cc}
-2 &amp; -4 \\
-3 &amp; 1
-\end{array}
-\right| +1\times \left( -1\right) \left|
-\begin{array}{cc}
-3 &amp; 2 \\
--3 &amp; 3
-\end{array}
-\right| \\
-&amp;=-2\times \left( -1\right) \times 14+1\times \left( -1\right) \times 15=13.
-\end{aligned}</span></p>
-</div></details>
-</div>
-<div id="exm-det7" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.6</strong></span> Evaluate the determinant <span class="math display">\left|
-\begin{array}{rrrr}
-4 &amp; 1 &amp; 3 &amp; -1 \\
-2 &amp; 0 &amp; 1 &amp; 2 \\
-1 &amp; -1 &amp; 2 &amp; 5 \\
-2 &amp; 1 &amp; 3 &amp; 1
-\end{array}
-\right|</span>.</p>
-</div>
-<div id="Solution*-10" class="Solution">
-<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>Subtract <span class="math inline">r_{4}</span> from <span class="math inline">r_{1}</span>; then add <span class="math inline">c_{1}</span> to <span class="math inline">c_{4},</span> then expand about the 1st row: <span class="math display"> r_{1}-r_{4}\rightarrow r_{1}: \quad \left|
-\begin{array}{rrrr}
-2 &amp; 0 &amp; 0 &amp; -2 \\
-2 &amp; 0 &amp; 1 &amp; 2 \\
-1 &amp; -1 &amp; 2 &amp; 5 \\
-2 &amp; 1 &amp; 3 &amp; 1
-\end{array}
-\right| ,</span> <span class="math display">c_{4}+c_{1}\rightarrow c_{4}: \quad \left|
-\begin{array}{rrrr}
-2 &amp; 0 &amp; 0 &amp; 0 \\
-2 &amp; 0 &amp; 1 &amp; 4 \\
-1 &amp; -1 &amp; 2 &amp; 6 \\
-2 &amp; 1 &amp; 3 &amp; 3
-\end{array}
-\right| =2\times \left|
-\begin{array}{rrr}
-0 &amp; 1 &amp; 4 \\
--1 &amp; 2 &amp; 6 \\
-1 &amp; 3 &amp; 3
-\end{array}
-\right| </span> add <span class="math inline">r_{3}</span> to <span class="math inline">r_{2}:</span> <span class="math display">r_{2}+r_{3}\rightarrow r_{2}: \quad 2\times \left|
-\begin{array}{rrr}
-0 &amp; 1 &amp; 4 \\
-0 &amp; 5 &amp; 9 \\
-1 &amp; 3 &amp; 3
-\end{array}
-\right| =2\times 1\times \left|
-\begin{array}{rr}
-1 &amp; 4 \\
-5 &amp; 9
-\end{array}
-\right| =2\times 1\times \left( -11\right) =-22.</span><p></p>
-</div></details>
-</div>
-<div class="exm-det8">
-<p>Show that <span class="math display">D=\left|
-\begin{array}{cccc}
-1 &amp; a &amp; a^{2} &amp; b+c+d \\
-1 &amp; b &amp; b^{2} &amp; c+d+a \\
-1 &amp; c &amp; c^{2} &amp; d+a+b \\
-1 &amp; d &amp; d^{2} &amp; a+b+c
-\end{array}
-\right| =0</span> for all values of <span class="math inline">a,b,c,d.</span></p>
-</div>
-<div class="exm-det9">
-<p>Solve for <span class="math inline">x</span> <span class="math display">\left|
-\begin{array}{ccc}
-1 &amp; 2 &amp; x \\
-x &amp; 0 &amp; 3 \\
-1 &amp; x &amp; 2
-\end{array}
-\right| =0</span></p>
-</div>
-<div id="Lemma-18" class="Lemma">
-<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 18</strong></summary><div>If <span class="math inline">A</span> is either lower or upper triangular, then <span class="math inline">\det(A) =a_{1,1}a_{2,2}\cdots a_{n,n}</span>, the product of its diagonal entries.<p></p>
-</div></details>
-</div>
-<div id="exm-det10" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.7</strong></span> <span class="math display">\left|\begin{array}{rrr}
-1 &amp; 7 &amp; -2 \\
-0 &amp; 14 &amp; 32 \\
-0 &amp; 0 &amp; -2
-\end{array}\right| = 1\times 14\times (-2)=-28</span>.</p>
-<p>We can see this by expanding down the first column:</p>
-<p><span class="math display">1\left|\begin{array}{rr} 14 &amp; 32 \\
-0 &amp; -2
-\end{array}\right|=1(14\times (-2))=-28.</span></p>
-</div>
-<div id="product-rule" class="Theorem" title="Product Rule">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 19: </strong>Product Rule</summary><div>For any two matrices <span class="math inline">A</span> and <span class="math inline">B,</span> <span class="math inline">\det (AB)</span> = <span class="math inline">\det (A) \det (B)</span>.<p></p>
-</div></details>
-</div>
-<p>The general proof of this result uses elementary matrices. Although it is a key result, a proof will not be given (See Poole, p.&nbsp;268).</p>
-<p>Note that <span class="math inline">\textrm{det}(A+B)\neq \textrm{det}(A)+\textrm{det}(B)</span>.</p>
-<div id="Lemma-20" class="Lemma">
-<p></p><details class="Lemma fbx-simplebox fbx-default" open=""><summary><strong>Lemma 20</strong></summary><div>If <span class="math inline">A</span> is <span class="math inline">n\times n</span>, we have<span class="math inline">,</span> by Corollary <span class="math display">\begin{aligned}
-\det \left( kA\right) &amp;= \det \left( kI \  A\right) \\
-&amp;=
-\det \left( kI\right)  \det \left( A\right) \\
-&amp;= k^{n}
-\det \left( A\right) .
-\end{aligned}</span><p></p>
-</div></details>
-</div>
-<div id="Corollary-21" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 21</strong></summary><div>When <span class="math inline">A</span> is non-singular (i.e., invertible) <span class="math display">\det \left(A^{-1}\right) =\dfrac{1}{\det \left( A\right) }.</span><p></p>
-</div></details>
-</div>
-<div id="Proof*-11" class="Proof">
-<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div><span class="math inline">1=\textrm{det(I)}=\textrm{det}(AA^{-1})=\textrm{det}(A)\textrm{det}(A^{-1})</span>.&nbsp;◻<p></p>
-</div></details>
-</div>
-<div id="exm-det11" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.8</strong></span> Let <span class="math inline">A</span> be an <span class="math inline">n\times n</span> matrix with <span class="math inline">\textrm{det}(A)=5</span>. Then <span class="math display">\det \left( A^{4}\right)
-=5^{4}</span> <span class="math display">\det \left( A^{-1}\right) =\frac{1}{5},</span> <span class="math display">\det \left( 3A^{2}\right) =3^{n}\times 25</span> .</p>
-</div>
-<div id="Corollary-22" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 22</strong></summary><div>The matrix <span class="math inline">A</span> has an inverse if, and only if, <span class="math inline">\left| A\right| \neq 0.</span><p></p>
-</div></details>
-</div>
-<div id="Proof*-12" class="Proof">
-<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>First, we show that if the matrix <span class="math inline">A</span> has an inverse, then <span class="math inline">|A|\neq 0</span>. If <span class="math inline">{\rm A}</span> has an inverse then <span class="math inline">|{\rm A}{\rm A^{-1}}| = |{\rm A}||{\rm A^{-1}}| =| I | = 1</span> and hence <span class="math inline">|{\rm A}| \neq 0</span>.<p></p>
-<p>Next, we show the reverse. Assume that <span class="math inline">|A|\neq 0</span>. We want to show that <span class="math inline">A</span> has an inverse.</p>
-<p>By using elementary row operations, that is by either (i) adding a multiple of one row to another or (ii) interchanging rows we can reduce <span class="math inline">A</span> to upper triangular form—call this <span class="math inline">U.</span> Operations of type i) do not affect the value of <span class="math inline">\left| A\right|</span> while operations of type (ii) may cause a change of sign. Hence, <span class="math display">\left| A\right| =\pm \left| U\right|,</span> and so, in particular <span class="math inline">|A|\neq0</span>.</p>
-<p><span class="math display">\begin{aligned}
-U&amp;=\left[
-\begin{array}{cccc}
-u_{11} &amp; u_{12} &amp; \cdots &amp; u_{1n} \\
-0 &amp; u_{22} &amp;  &amp; u_{2n} \\
-0 &amp; 0 &amp; \ddots &amp;  \\
-0 &amp; 0 &amp;  &amp; u_{nn}
-\end{array}
-\right],\\
-\left| U\right| &amp;= u_{11}u_{22}\cdots u_{nn}\neq 0,
-\end{aligned}</span> so <span class="math inline">u_{ij}\neq 0</span> for all <span class="math inline">i,j=1,2,\dots,n</span>. Hence <span class="math inline">A</span> has <span class="math inline">n</span> pivots and is invertible.&nbsp;◻</p>
-</div></details>
-</div>
-<div id="Corollary-23" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 23</strong></summary><div>If <span class="math inline">A</span> is a square matrix, the system <span class="math inline">A\mathbf{x=0}</span> has non-trivial solutions if, and only if, <span class="math inline">\left| A\right| =0</span> (so <span class="math inline">A</span> is a singular matrix).<p></p>
-</div></details>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Note:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Various authors define non-singular matrices to be - invertible matrices</p>
-<ul>
-<li><p>matrices <span class="math inline">A</span> for which <span class="math inline">\det(A)\neq 0</span>.</p></li>
-<li><p>matrices for which <span class="math inline">A\mathbf{x}=\mathbf{0}</span> has only the trivial (zero) solution. The above theorem shows that they are all equivalent definitions.</p></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="the-adjoint-matrix" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="the-adjoint-matrix"><span class="header-section-number">3.3</span> The Adjoint Matrix</h2>
-<div id="Definition-24" class="Definition">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 24</strong></summary><div>The transpose of the matrix of cofactors of <span class="math inline">{\rm A}</span> is called the <em>adjugate</em> or <em>adjoint</em> of <span class="math inline">{\rm A}</span> and denoted by <span class="math inline">\rm{adj}({\rm A}) =(\text{Cofactors})^{T}</span>.<p></p>
-</div></details>
-</div>
-<div id="inverse-and-adjoint" class="Theorem" title="Inverse and Adjoint">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 25: </strong>Inverse and Adjoint</summary><div>If <span class="math inline">\det({\rm A}) \neq 0</span> then <span class="math display">{\rm A}^{-1} =\frac{1}{\det({\rm A})} \rm{adj}({\rm A}).</span><p></p>
-</div></details>
-</div>
-<div id="Proof*-13" class="Proof">
-<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">{\rm C}</span> be the matrix of cofactors of <span class="math inline">{\rm A}</span>. <span class="math display">\begin{aligned}
-({\rm A} \  \rm{adj}({\rm A}))_{ij} &amp;= \sum_{k=1}^{n} a_{ik} ({\rm C}^{T})_{kj} =  \sum_{k=1}^{n} a_{ik} {\rm C}_{jk} \\
-&amp;= \left\{
-\begin{array}{cc}
-0 &amp; i \neq j \\
-\det(\rm{A}) &amp; i=j
-\end{array}
-\right. \\
-\Rightarrow {\rm A} \  \rm{adj}({\rm A}) &amp;= \det(\rm{A}) {\rm I}
-\end{aligned}</span> Here, the result for <span class="math inline">i\neq j</span> is obtained from the fact that <span class="math inline">\sum_{k=1}^{n} a_{ik} {\rm C}_{jk}</span> is the expansion of the determinant of a matrix with two identical rows. For the case <span class="math inline">i=j</span>, however, this is exactly the definition of the expansion of a determinant along row <span class="math inline">i</span> of <span class="math inline">{\rm A}</span>. So <span class="math display">\begin{aligned}
-&amp;&amp; A\textrm{adj}(A)=\det(A)I \\
-&amp;\Leftrightarrow&amp; \frac{A \textrm{adj}(A)}{\det(A)}=I.
-\end{aligned}</span> Multiplying <span class="math inline">A^{-1}</span> from the left gives <span class="math display">\frac{1}{\det(A)} \textrm{adj}(A)=A^{-1}.</span>&nbsp;◻<p></p>
-</div></details>
-</div>
-<div id="exm-adj1" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.9</strong></span> Find the adjoint of the matrix <span class="math display">{\rm A}=\left[
-\begin{array}{ccc}
-1 &amp; -1 &amp; 2\\
-3 &amp; 2 &amp; -1\\
-2 &amp; -1 &amp; 2\\
-\end{array}
-\right]</span></p>
-</div>
-<div id="Solution*-14" class="Solution">
-<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>(i) Matrix of minors is <span class="math display">\left[
-\begin{array}{rrr}
-3 &amp; 8 &amp; -7\\
-0 &amp; -2 &amp; 1\\
--3 &amp; -7 &amp; 5
-\end{array}
-\right].</span> (ii) The matrix of cofactors is <span class="math display">\left[
-\begin{array}{rrr}
-3 &amp; -8 &amp; -7\\
-0 &amp; -2 &amp; -1\\
--3 &amp; 7 &amp; 5
-\end{array}
-\right].</span> (iii) Adjoint is <span class="math display">{\rm adj}({\rm A}) = \left[
-\begin{array}{rrr}
-3 &amp; 0 &amp; -3\\
--8 &amp; -2 &amp; 7\\
--7 &amp; -1 &amp; 5
-\end{array}
-\right].</span><p></p>
-<p>Notice that <span class="math display">{\rm A} \,  {\rm adj}({\rm A}) = \left[
-\begin{array}{rrr}
-1 &amp; -1 &amp; 2\\
-3 &amp; 2 &amp; -1\\
-2 &amp; -1 &amp; 2\\
-\end{array}
-\right]
-\left[
-\begin{array}{rrr}
-3 &amp; 0 &amp; -3\\
--8 &amp; -2 &amp; 7\\
--7 &amp; -1 &amp; 5
-\end{array}
-\right]</span> <span class="math display">= \left[
-\begin{array}{rrr}
--3 &amp; 0 &amp; 0\\
-0  &amp; -3 &amp; 0\\
-0 &amp; 0 &amp; -3
-\end{array}
-\right] = -3 I = det(A) I.</span></p>
-</div></details>
-</div>
-<div id="exm-adj2" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.10</strong></span> Use the adjoint matrix to find the inverse of the matrix <span class="math inline">A=\left(\begin{array}{rrr}1 &amp; -1 &amp; 2 \\ 3 &amp; 2 &amp; -1 \\ 2 &amp; -1 &amp; 2\end{array}\right)</span> in the previous example.</p>
-</div>
-<div id="Solution*-15" class="Solution">
-<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>The determinant of the matrix <span class="math inline">A</span> is <span class="math display">\begin{aligned}
-&amp;&amp;1\left|\begin{array}{rr}2 &amp; -1 \\ -1 &amp; 2\end{array}\right|+
-1\left|\begin{array}{rr}3 &amp; -1 \\ 2 &amp; 2\end{array}\right|
--2\left|\begin{array}{rr}3 &amp; 2 \\ 2 &amp; -1\end{array}\right| \\
-&amp;= (4-1)+(6+2)+2(-3-4)\\
-&amp;= 3+8 -14\\
-&amp;=-3.
-\end{aligned}</span> Thus, the inverse is <span class="math display">A^{-1}=\frac{-1}{3}\left(\begin{array}{rrr}
-3 &amp; 0 &amp; -3 \\
--8 &amp; -2 &amp; 7 \\
--7 &amp; -1 &amp; 5
-\end{array}\right).</span><p></p>
-</div></details>
-</div>
-<div id="exm-adj3" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.11</strong></span> Find the inverse of <span class="math display">A=\left(\begin{array}{rrr}
-2 &amp; 3 &amp; 4 \\
-5 &amp; 6 &amp; 7 \\
-8 &amp; 9 &amp; 1
-\end{array}\right).</span></p>
-</div>
-<div id="Solution*-16" class="Solution">
-<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div><span class="math display">\begin{aligned}
-\det(A) &amp;= 2\left|\begin{array}{rr}
-6 &amp; 7 \\
-9 &amp; 1
-\end{array}\right|
--3\left|\begin{array}{rr}
-5 &amp; 7 \\
-8 &amp; 1
-\end{array}\right|
-+4\left|\begin{array}{rr}
-5 &amp; 6 \\
-8 &amp; 9
-\end{array}\right| \\
-&amp;= 2(6-63)-3(5-56)+4(45-48) \\
-&amp;= 2(-57)-3(-51)+4(-3) \\
-&amp;= -114+153-12 \\
-&amp;= 27.
-\end{aligned}</span><p></p>
-<p><span class="math display">\begin{aligned}
-A^{-1} &amp;= \frac{1}{27}
-\left(\begin{array}{rrr}
--57 &amp; 33 &amp; -3 \\
-51 &amp; -30 &amp; 6 \\
--3 &amp; 6 &amp; -3
-\end{array}\right) \\
-&amp;= \frac{1}{9}\left(\begin{array}{rrr}
--19 &amp; 11 &amp; -1 \\
-17 &amp; -10 &amp; 2 \\
--1 &amp; 2 &amp; -1
-\end{array}\right).
-\end{aligned}</span></p>
-</div></details>
-</div>
-<div id="exm-adj4" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.12</strong></span> In the <span class="math inline">2\times 2</span> case, if <span class="math display">\begin{aligned}
-A&amp;=\left[
-\begin{array}{cc}
-a &amp; b \\
-c &amp; d
-\end{array}
-\right] \ \Rightarrow  \  {\rm adj}({\rm A}) = \left[\begin{array}{rr}
-d &amp; -b \\
--c &amp; a
-\end{array}
-\right]  \\
-\Rightarrow A^{-1} &amp;= \frac{1}{ad-bc}\left[
-\begin{array}{rr}
-d &amp; -b \\
--c &amp; a
-\end{array}
-\right].  
-\end{aligned}</span></p>
-</div>
 
 
 <!-- -->
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -2924,792 +2270,7 @@ d &amp; -b \\
 <span id="cb1-854"><a href="#cb1-854" aria-hidden="true" tabindex="-1"></a>${\vec v}_{1}=(1,0,0,1)^{T},{\vec v}_{2}=(0,1,0,1)^{T},{\vec v}</span>
 <span id="cb1-855"><a href="#cb1-855" aria-hidden="true" tabindex="-1"></a>_{3}=(0,0,1,1)^{T}$.</span>
 <span id="cb1-856"><a href="#cb1-856" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-857"><a href="#cb1-857" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-858"><a href="#cb1-858" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-859"><a href="#cb1-859" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-860"><a href="#cb1-860" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-861"><a href="#cb1-861" aria-hidden="true" tabindex="-1"></a><span class="fu"># Determinants</span></span>
-<span id="cb1-862"><a href="#cb1-862" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-863"><a href="#cb1-863" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
-<span id="cb1-864"><a href="#cb1-864" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-865"><a href="#cb1-865" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!--See Poole: Linear Algebra, *A Modern Introduction*, pages 256--285.--&gt;</span></span>
-<span id="cb1-866"><a href="#cb1-866" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-867"><a href="#cb1-867" aria-hidden="true" tabindex="-1"></a>Determinants occur in many situations, geometrically they can beinterpreted as the volume of the parallelepiped spanned by a set of $n$ vectors. This is easily visualised in two dimensions (x-y-plane). The area (2-dimensional volume) of a parallelepiped spanned by the two vectors</span>
-<span id="cb1-868"><a href="#cb1-868" aria-hidden="true" tabindex="-1"></a>${\bf b}=(b_{1},b_{2})^{T}$ and ${\bf c}=(c_{1},c_{2})^{t}$ is up to a</span>
-<span id="cb1-869"><a href="#cb1-869" aria-hidden="true" tabindex="-1"></a>sign given by </span>
-<span id="cb1-870"><a href="#cb1-870" aria-hidden="true" tabindex="-1"></a>$$area = \pm(b_{1}c_{2}- b_{2} c_{1} )$$ </span>
-<span id="cb1-871"><a href="#cb1-871" aria-hidden="true" tabindex="-1"></a>We call this the determinant of the matrix ${\rm A} = <span class="co">[</span><span class="ot">{\bf b},{\bf c}</span><span class="co">]</span>$ and write</span>
-<span id="cb1-872"><a href="#cb1-872" aria-hidden="true" tabindex="-1"></a>$${\rm det(A)}= |{\rm A}|=\left| </span>
-<span id="cb1-873"><a href="#cb1-873" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-874"><a href="#cb1-874" aria-hidden="true" tabindex="-1"></a>b_{1} &amp; c_{1} <span class="sc">\\</span> </span>
-<span id="cb1-875"><a href="#cb1-875" aria-hidden="true" tabindex="-1"></a>b_{2} &amp; c_{2}</span>
-<span id="cb1-876"><a href="#cb1-876" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-877"><a href="#cb1-877" aria-hidden="true" tabindex="-1"></a>\right| = b_{1}c_{2}- b_{2} c_{1} .$$ </span>
-<span id="cb1-878"><a href="#cb1-878" aria-hidden="true" tabindex="-1"></a>The determinant of a square matrix</span>
-<span id="cb1-879"><a href="#cb1-879" aria-hidden="true" tabindex="-1"></a>$A$, denoted by $\det$($A$), or $\left|</span>
-<span id="cb1-880"><a href="#cb1-880" aria-hidden="true" tabindex="-1"></a>A\right|$, is a number (scalar). The now-standard notation was first</span>
-<span id="cb1-881"><a href="#cb1-881" aria-hidden="true" tabindex="-1"></a>introduced by Cayley in 1841.</span>
-<span id="cb1-882"><a href="#cb1-882" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-883"><a href="#cb1-883" aria-hidden="true" tabindex="-1"></a>In three dimensions, the volume of the cell spanned by the vectors</span>
-<span id="cb1-884"><a href="#cb1-884" aria-hidden="true" tabindex="-1"></a>${\bf a}$, ${\bf b}$, and ${\bf c}$ is given by</span>
-<span id="cb1-885"><a href="#cb1-885" aria-hidden="true" tabindex="-1"></a>$${\bf a}\cdot ( {\bf b} \times {\bf c} )= a_{1}(b_{2}c_{3}- b_{3}c_{2}) + a_{2} (b_{3}c_{1}-b_{1}c_{3}) + a_{3} (b_{1}c_{2}-b_{2}c_{1}).$$</span>
-<span id="cb1-886"><a href="#cb1-886" aria-hidden="true" tabindex="-1"></a>Note that we can write this in terms of the determinants of 2x2</span>
-<span id="cb1-887"><a href="#cb1-887" aria-hidden="true" tabindex="-1"></a>matrices: $${\bf a}\cdot ({\bf b} \times {\bf c}) = \left| </span>
-<span id="cb1-888"><a href="#cb1-888" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-889"><a href="#cb1-889" aria-hidden="true" tabindex="-1"></a>a_{1} &amp; b_{1} &amp; c_{1} <span class="sc">\\</span> </span>
-<span id="cb1-890"><a href="#cb1-890" aria-hidden="true" tabindex="-1"></a>a_{2} &amp; b_{2} &amp; c_{2} <span class="sc">\\</span> </span>
-<span id="cb1-891"><a href="#cb1-891" aria-hidden="true" tabindex="-1"></a>a_{3} &amp; b_{3} &amp; c_{3}</span>
-<span id="cb1-892"><a href="#cb1-892" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-893"><a href="#cb1-893" aria-hidden="true" tabindex="-1"></a>\right|  = a_{1} \left| </span>
-<span id="cb1-894"><a href="#cb1-894" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-895"><a href="#cb1-895" aria-hidden="true" tabindex="-1"></a>b_{2} &amp; c_{2} <span class="sc">\\</span> </span>
-<span id="cb1-896"><a href="#cb1-896" aria-hidden="true" tabindex="-1"></a>b_{3} &amp; c_{3}</span>
-<span id="cb1-897"><a href="#cb1-897" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-898"><a href="#cb1-898" aria-hidden="true" tabindex="-1"></a>\right|  - a_{2} \left| </span>
-<span id="cb1-899"><a href="#cb1-899" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-900"><a href="#cb1-900" aria-hidden="true" tabindex="-1"></a>b_{1} &amp; c_{1} <span class="sc">\\</span> </span>
-<span id="cb1-901"><a href="#cb1-901" aria-hidden="true" tabindex="-1"></a>b_{3} &amp; c_{3}</span>
-<span id="cb1-902"><a href="#cb1-902" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-903"><a href="#cb1-903" aria-hidden="true" tabindex="-1"></a>\right| + a_{3} \left| </span>
-<span id="cb1-904"><a href="#cb1-904" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-905"><a href="#cb1-905" aria-hidden="true" tabindex="-1"></a>b_{1} &amp; c_{1} <span class="sc">\\</span> </span>
-<span id="cb1-906"><a href="#cb1-906" aria-hidden="true" tabindex="-1"></a>b_{2} &amp; c_{2}</span>
-<span id="cb1-907"><a href="#cb1-907" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-908"><a href="#cb1-908" aria-hidden="true" tabindex="-1"></a>\right| ,$$ where each of the $2 \times 2$ matrices is obtained by</span>
-<span id="cb1-909"><a href="#cb1-909" aria-hidden="true" tabindex="-1"></a>deleting the first column and the corresponding row of the coefficient</span>
-<span id="cb1-910"><a href="#cb1-910" aria-hidden="true" tabindex="-1"></a>$a_{j}$ from the matrix ${\rm A} = <span class="co">[</span><span class="ot">{\bf a},{\bf b}, {\bf c}</span><span class="co">]</span>$. This</span>
-<span id="cb1-911"><a href="#cb1-911" aria-hidden="true" tabindex="-1"></a>suggests a recursive scheme where determinants of arbitrary $n \times n$</span>
-<span id="cb1-912"><a href="#cb1-912" aria-hidden="true" tabindex="-1"></a>matrices are defined in terms of determinants of $(n-1)\times(n-1)$</span>
-<span id="cb1-913"><a href="#cb1-913" aria-hidden="true" tabindex="-1"></a>matrices, which again are expanded in determinants of $(n-2)\times(n-2)$</span>
-<span id="cb1-914"><a href="#cb1-914" aria-hidden="true" tabindex="-1"></a>and so on.</span>
-<span id="cb1-915"><a href="#cb1-915" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-916"><a href="#cb1-916" aria-hidden="true" tabindex="-1"></a>::: {#exm-det1}</span>
-<span id="cb1-917"><a href="#cb1-917" aria-hidden="true" tabindex="-1"></a>Evaluate </span>
-<span id="cb1-918"><a href="#cb1-918" aria-hidden="true" tabindex="-1"></a>$$\left| </span>
-<span id="cb1-919"><a href="#cb1-919" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-920"><a href="#cb1-920" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-921"><a href="#cb1-921" aria-hidden="true" tabindex="-1"></a>2 &amp; 3 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-922"><a href="#cb1-922" aria-hidden="true" tabindex="-1"></a>3 &amp; 3 &amp; 4</span>
-<span id="cb1-923"><a href="#cb1-923" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-924"><a href="#cb1-924" aria-hidden="true" tabindex="-1"></a>\right| .$$</span>
-<span id="cb1-925"><a href="#cb1-925" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-926"><a href="#cb1-926" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-927"><a href="#cb1-927" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
-<span id="cb1-928"><a href="#cb1-928" aria-hidden="true" tabindex="-1"></a><span class="fu"># Minor and Cofactor</span></span>
-<span id="cb1-929"><a href="#cb1-929" aria-hidden="true" tabindex="-1"></a>Corresponding to each entry $a_{i,j}$ in an $n\times n$ matrix $A,$ we define a number $M_{ij},$</span>
-<span id="cb1-930"><a href="#cb1-930" aria-hidden="true" tabindex="-1"></a>called the *minor* of $a_{ij},$ which is the $\left( n-1\right)$th order</span>
-<span id="cb1-931"><a href="#cb1-931" aria-hidden="true" tabindex="-1"></a>determinant obtained by deleting the $i$-th row and $j$-th column from</span>
-<span id="cb1-932"><a href="#cb1-932" aria-hidden="true" tabindex="-1"></a>$A.$</span>
-<span id="cb1-933"><a href="#cb1-933" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-934"><a href="#cb1-934" aria-hidden="true" tabindex="-1"></a>The cofactor $C_{ij}$ corresponding to an entry $a_{ij}$ in an</span>
-<span id="cb1-935"><a href="#cb1-935" aria-hidden="true" tabindex="-1"></a>$n\times n$ matrix $A$ is the product of its minor and the sign</span>
-<span id="cb1-936"><a href="#cb1-936" aria-hidden="true" tabindex="-1"></a>$\left( -1\right) ^{i+j}:$ $C_{ij}=\left( -1\right) ^{i+j}M_{ij}.$ The</span>
-<span id="cb1-937"><a href="#cb1-937" aria-hidden="true" tabindex="-1"></a>$n^{2}$ cofactors form a matrix of cofactors.</span>
-<span id="cb1-938"><a href="#cb1-938" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-939"><a href="#cb1-939" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-940"><a href="#cb1-940" aria-hidden="true" tabindex="-1"></a>::: {.Definition} </span>
-<span id="cb1-941"><a href="#cb1-941" aria-hidden="true" tabindex="-1"></a><span class="fu">## Determinants </span></span>
-<span id="cb1-942"><a href="#cb1-942" aria-hidden="true" tabindex="-1"></a>A determinant of an $n \times n$ matrix can be expanded in terms of $(n-1)\times(n-1)$ determinants using</span>
-<span id="cb1-943"><a href="#cb1-943" aria-hidden="true" tabindex="-1"></a>either a column or a row. Expansion along the i-th column:</span>
-<span id="cb1-944"><a href="#cb1-944" aria-hidden="true" tabindex="-1"></a>$$\left| A\right| =a_{1,i}C_{1,i}+a_{2,i}C_{2,i}+a_{3,i}C_{3,i}+\cdots</span>
-<span id="cb1-945"><a href="#cb1-945" aria-hidden="true" tabindex="-1"></a>+a_{n,i}C_{n,i}.$$ Expansion along the i-th row:</span>
-<span id="cb1-946"><a href="#cb1-946" aria-hidden="true" tabindex="-1"></a>$$\left| A\right| =a_{i,1}C_{i,1}+a_{i,2}C_{i,2}+a_{i,3}C_{i,3}+\cdots</span>
-<span id="cb1-947"><a href="#cb1-947" aria-hidden="true" tabindex="-1"></a>+a_{i,n}C_{i,n}.$$ The $(n-1)\times(n-1)$ determinants can then be</span>
-<span id="cb1-948"><a href="#cb1-948" aria-hidden="true" tabindex="-1"></a>recursively further reduced down to $2\times2$ matrices.</span>
-<span id="cb1-949"><a href="#cb1-949" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-950"><a href="#cb1-950" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-951"><a href="#cb1-951" aria-hidden="true" tabindex="-1"></a>::: {#exm-det3}</span>
-<span id="cb1-952"><a href="#cb1-952" aria-hidden="true" tabindex="-1"></a>Find the expansion for the matrix $A$ of the previous Example. Expansion along the first</span>
-<span id="cb1-953"><a href="#cb1-953" aria-hidden="true" tabindex="-1"></a>row: $$\left| </span>
-<span id="cb1-954"><a href="#cb1-954" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-955"><a href="#cb1-955" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-956"><a href="#cb1-956" aria-hidden="true" tabindex="-1"></a>2 &amp; 3 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-957"><a href="#cb1-957" aria-hidden="true" tabindex="-1"></a>3 &amp; 3 &amp; 4</span>
-<span id="cb1-958"><a href="#cb1-958" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-959"><a href="#cb1-959" aria-hidden="true" tabindex="-1"></a>\right| =  1  \left| \begin{array}{cc}</span>
-<span id="cb1-960"><a href="#cb1-960" aria-hidden="true" tabindex="-1"></a>3 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-961"><a href="#cb1-961" aria-hidden="true" tabindex="-1"></a> 3 &amp; 4</span>
-<span id="cb1-962"><a href="#cb1-962" aria-hidden="true" tabindex="-1"></a>\end{array} \right| - 2  \left| \begin{array}{cc}</span>
-<span id="cb1-963"><a href="#cb1-963" aria-hidden="true" tabindex="-1"></a>2 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-964"><a href="#cb1-964" aria-hidden="true" tabindex="-1"></a>3 &amp; 4</span>
-<span id="cb1-965"><a href="#cb1-965" aria-hidden="true" tabindex="-1"></a>\end{array}  \right| +3 \left| \begin{array}{cc}</span>
-<span id="cb1-966"><a href="#cb1-966" aria-hidden="true" tabindex="-1"></a>2 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-967"><a href="#cb1-967" aria-hidden="true" tabindex="-1"></a>3 &amp; 3</span>
-<span id="cb1-968"><a href="#cb1-968" aria-hidden="true" tabindex="-1"></a>\end{array}  \right| =  6-4 -9 =-7$$ Expansion along the first column:</span>
-<span id="cb1-969"><a href="#cb1-969" aria-hidden="true" tabindex="-1"></a>$$\left| </span>
-<span id="cb1-970"><a href="#cb1-970" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-971"><a href="#cb1-971" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-972"><a href="#cb1-972" aria-hidden="true" tabindex="-1"></a>2 &amp; 3 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-973"><a href="#cb1-973" aria-hidden="true" tabindex="-1"></a>3 &amp; 3 &amp; 4</span>
-<span id="cb1-974"><a href="#cb1-974" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-975"><a href="#cb1-975" aria-hidden="true" tabindex="-1"></a>\right| =  1  \left| \begin{array}{cc}</span>
-<span id="cb1-976"><a href="#cb1-976" aria-hidden="true" tabindex="-1"></a>3 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-977"><a href="#cb1-977" aria-hidden="true" tabindex="-1"></a> 3 &amp; 4</span>
-<span id="cb1-978"><a href="#cb1-978" aria-hidden="true" tabindex="-1"></a>\end{array} \right| - 2  \left| \begin{array}{cc}</span>
-<span id="cb1-979"><a href="#cb1-979" aria-hidden="true" tabindex="-1"></a>2 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-980"><a href="#cb1-980" aria-hidden="true" tabindex="-1"></a>3 &amp; 4</span>
-<span id="cb1-981"><a href="#cb1-981" aria-hidden="true" tabindex="-1"></a>\end{array}  \right| + 3\left| \begin{array}{cc}</span>
-<span id="cb1-982"><a href="#cb1-982" aria-hidden="true" tabindex="-1"></a>2 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-983"><a href="#cb1-983" aria-hidden="true" tabindex="-1"></a>3 &amp; 2</span>
-<span id="cb1-984"><a href="#cb1-984" aria-hidden="true" tabindex="-1"></a>\end{array}  \right| =6+2-15=-7$$ Expansion along the second column:</span>
-<span id="cb1-985"><a href="#cb1-985" aria-hidden="true" tabindex="-1"></a>$$\left| </span>
-<span id="cb1-986"><a href="#cb1-986" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-987"><a href="#cb1-987" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-988"><a href="#cb1-988" aria-hidden="true" tabindex="-1"></a>2 &amp; 3 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-989"><a href="#cb1-989" aria-hidden="true" tabindex="-1"></a>3 &amp; 3 &amp; 4</span>
-<span id="cb1-990"><a href="#cb1-990" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-991"><a href="#cb1-991" aria-hidden="true" tabindex="-1"></a>\right| =  - 2  \left| \begin{array}{cc}</span>
-<span id="cb1-992"><a href="#cb1-992" aria-hidden="true" tabindex="-1"></a>2 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-993"><a href="#cb1-993" aria-hidden="true" tabindex="-1"></a>3 &amp; 4</span>
-<span id="cb1-994"><a href="#cb1-994" aria-hidden="true" tabindex="-1"></a>\end{array}  \right| +3 \left| \begin{array}{cc}</span>
-<span id="cb1-995"><a href="#cb1-995" aria-hidden="true" tabindex="-1"></a>1 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-996"><a href="#cb1-996" aria-hidden="true" tabindex="-1"></a>3 &amp; 4</span>
-<span id="cb1-997"><a href="#cb1-997" aria-hidden="true" tabindex="-1"></a>\end{array}  \right| -3 \left| \begin{array}{cc}</span>
-<span id="cb1-998"><a href="#cb1-998" aria-hidden="true" tabindex="-1"></a>1 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-999"><a href="#cb1-999" aria-hidden="true" tabindex="-1"></a>2 &amp; 2</span>
-<span id="cb1-1000"><a href="#cb1-1000" aria-hidden="true" tabindex="-1"></a>\end{array}  \right| =  -4 -15 +12=-7$$</span>
-<span id="cb1-1001"><a href="#cb1-1001" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1002"><a href="#cb1-1002" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1003"><a href="#cb1-1003" aria-hidden="true" tabindex="-1"></a>::: {#exm-det4}</span>
-<span id="cb1-1004"><a href="#cb1-1004" aria-hidden="true" tabindex="-1"></a>Evaluate </span>
-<span id="cb1-1005"><a href="#cb1-1005" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1006"><a href="#cb1-1006" aria-hidden="true" tabindex="-1"></a>\left| </span>
-<span id="cb1-1007"><a href="#cb1-1007" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1008"><a href="#cb1-1008" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 1 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-1009"><a href="#cb1-1009" aria-hidden="true" tabindex="-1"></a>1 &amp; 1 &amp; 2 &amp; 1 <span class="sc">\\</span> </span>
-<span id="cb1-1010"><a href="#cb1-1010" aria-hidden="true" tabindex="-1"></a>3 &amp; 2 &amp; 0 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-1011"><a href="#cb1-1011" aria-hidden="true" tabindex="-1"></a>2 &amp; 2 &amp; 1 &amp; 0</span>
-<span id="cb1-1012"><a href="#cb1-1012" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1013"><a href="#cb1-1013" aria-hidden="true" tabindex="-1"></a>\right| &amp; = 1\left| </span>
-<span id="cb1-1014"><a href="#cb1-1014" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc} </span>
-<span id="cb1-1015"><a href="#cb1-1015" aria-hidden="true" tabindex="-1"></a> 1 &amp; 2 &amp; 1 <span class="sc">\\</span> </span>
-<span id="cb1-1016"><a href="#cb1-1016" aria-hidden="true" tabindex="-1"></a> 2 &amp; 0 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-1017"><a href="#cb1-1017" aria-hidden="true" tabindex="-1"></a> 2 &amp; 1 &amp; 0</span>
-<span id="cb1-1018"><a href="#cb1-1018" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1019"><a href="#cb1-1019" aria-hidden="true" tabindex="-1"></a>\right| - 1 \left| </span>
-<span id="cb1-1020"><a href="#cb1-1020" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-1021"><a href="#cb1-1021" aria-hidden="true" tabindex="-1"></a> 2 &amp; 1 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-1022"><a href="#cb1-1022" aria-hidden="true" tabindex="-1"></a> 2 &amp; 0 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-1023"><a href="#cb1-1023" aria-hidden="true" tabindex="-1"></a> 2 &amp; 1 &amp; 0</span>
-<span id="cb1-1024"><a href="#cb1-1024" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1025"><a href="#cb1-1025" aria-hidden="true" tabindex="-1"></a>\right|  + 3 \left| </span>
-<span id="cb1-1026"><a href="#cb1-1026" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-1027"><a href="#cb1-1027" aria-hidden="true" tabindex="-1"></a> 2 &amp; 1 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-1028"><a href="#cb1-1028" aria-hidden="true" tabindex="-1"></a> 1 &amp; 2 &amp; 1 <span class="sc">\\</span> </span>
-<span id="cb1-1029"><a href="#cb1-1029" aria-hidden="true" tabindex="-1"></a> 2 &amp; 1 &amp; 0</span>
-<span id="cb1-1030"><a href="#cb1-1030" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1031"><a href="#cb1-1031" aria-hidden="true" tabindex="-1"></a>\right| - 2 \left| </span>
-<span id="cb1-1032"><a href="#cb1-1032" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-1033"><a href="#cb1-1033" aria-hidden="true" tabindex="-1"></a> 2 &amp; 1 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-1034"><a href="#cb1-1034" aria-hidden="true" tabindex="-1"></a> 1 &amp; 2 &amp; 1 <span class="sc">\\</span> </span>
-<span id="cb1-1035"><a href="#cb1-1035" aria-hidden="true" tabindex="-1"></a> 2 &amp; 0 &amp; 2 \end{array}</span>
-<span id="cb1-1036"><a href="#cb1-1036" aria-hidden="true" tabindex="-1"></a>\right| <span class="sc">\\</span></span>
-<span id="cb1-1037"><a href="#cb1-1037" aria-hidden="true" tabindex="-1"></a>&amp; = 1\left| </span>
-<span id="cb1-1038"><a href="#cb1-1038" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc} </span>
-<span id="cb1-1039"><a href="#cb1-1039" aria-hidden="true" tabindex="-1"></a> 0 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-1040"><a href="#cb1-1040" aria-hidden="true" tabindex="-1"></a> 1 &amp; 0</span>
-<span id="cb1-1041"><a href="#cb1-1041" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1042"><a href="#cb1-1042" aria-hidden="true" tabindex="-1"></a>\right| -2  \left|\begin{array}{cc} </span>
-<span id="cb1-1043"><a href="#cb1-1043" aria-hidden="true" tabindex="-1"></a> 2&amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-1044"><a href="#cb1-1044" aria-hidden="true" tabindex="-1"></a> 2 &amp; 0</span>
-<span id="cb1-1045"><a href="#cb1-1045" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1046"><a href="#cb1-1046" aria-hidden="true" tabindex="-1"></a>\right|  - ... \text{10 more terms} </span>
-<span id="cb1-1047"><a href="#cb1-1047" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
-<span id="cb1-1048"><a href="#cb1-1048" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1049"><a href="#cb1-1049" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1050"><a href="#cb1-1050" aria-hidden="true" tabindex="-1"></a>The previous example should illustrate the large amount of computation</span>
-<span id="cb1-1051"><a href="#cb1-1051" aria-hidden="true" tabindex="-1"></a>needed by using a "brute force" approach to evaluating determinants. We</span>
-<span id="cb1-1052"><a href="#cb1-1052" aria-hidden="true" tabindex="-1"></a>will now look at smarter ways, using two fundamental theorems to develop</span>
-<span id="cb1-1053"><a href="#cb1-1053" aria-hidden="true" tabindex="-1"></a>a simple numerical procedure closely related to Gaussian elimination.</span>
-<span id="cb1-1054"><a href="#cb1-1054" aria-hidden="true" tabindex="-1"></a>The following example shows that it is much more efficient to calculate</span>
-<span id="cb1-1055"><a href="#cb1-1055" aria-hidden="true" tabindex="-1"></a>determinants with many zeros in columns or rows:</span>
-<span id="cb1-1056"><a href="#cb1-1056" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1057"><a href="#cb1-1057" aria-hidden="true" tabindex="-1"></a>::: {#exm-det5}</span>
-<span id="cb1-1058"><a href="#cb1-1058" aria-hidden="true" tabindex="-1"></a>Evaluate </span>
-<span id="cb1-1059"><a href="#cb1-1059" aria-hidden="true" tabindex="-1"></a>$$\left| </span>
-<span id="cb1-1060"><a href="#cb1-1060" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1061"><a href="#cb1-1061" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 1 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-1062"><a href="#cb1-1062" aria-hidden="true" tabindex="-1"></a>0 &amp; 1 &amp; 1 &amp; -2 <span class="sc">\\</span> </span>
-<span id="cb1-1063"><a href="#cb1-1063" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 &amp; 7 &amp; -1 <span class="sc">\\</span> </span>
-<span id="cb1-1064"><a href="#cb1-1064" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 &amp; 3 &amp; 2</span>
-<span id="cb1-1065"><a href="#cb1-1065" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1066"><a href="#cb1-1066" aria-hidden="true" tabindex="-1"></a>\right| $$</span>
-<span id="cb1-1067"><a href="#cb1-1067" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1068"><a href="#cb1-1068" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-1069"><a href="#cb1-1069" aria-hidden="true" tabindex="-1"></a>Expanding along the first column, twice:</span>
-<span id="cb1-1070"><a href="#cb1-1070" aria-hidden="true" tabindex="-1"></a>$$ \left| </span>
-<span id="cb1-1071"><a href="#cb1-1071" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1072"><a href="#cb1-1072" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 1 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-1073"><a href="#cb1-1073" aria-hidden="true" tabindex="-1"></a>0 &amp; 1 &amp; 1 &amp; -2 <span class="sc">\\</span> </span>
-<span id="cb1-1074"><a href="#cb1-1074" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 &amp; 7 &amp; -1 <span class="sc">\\</span> </span>
-<span id="cb1-1075"><a href="#cb1-1075" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 &amp; 3 &amp; 2</span>
-<span id="cb1-1076"><a href="#cb1-1076" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1077"><a href="#cb1-1077" aria-hidden="true" tabindex="-1"></a>\right| =\left| </span>
-<span id="cb1-1078"><a href="#cb1-1078" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-1079"><a href="#cb1-1079" aria-hidden="true" tabindex="-1"></a>1 &amp; 1 &amp; -2 <span class="sc">\\</span> </span>
-<span id="cb1-1080"><a href="#cb1-1080" aria-hidden="true" tabindex="-1"></a>0 &amp; 7 &amp; -1 <span class="sc">\\</span> </span>
-<span id="cb1-1081"><a href="#cb1-1081" aria-hidden="true" tabindex="-1"></a>0 &amp; 3 &amp; 2</span>
-<span id="cb1-1082"><a href="#cb1-1082" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1083"><a href="#cb1-1083" aria-hidden="true" tabindex="-1"></a>\right| =\left| </span>
-<span id="cb1-1084"><a href="#cb1-1084" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-1085"><a href="#cb1-1085" aria-hidden="true" tabindex="-1"></a>7 &amp; -1 <span class="sc">\\</span> </span>
-<span id="cb1-1086"><a href="#cb1-1086" aria-hidden="true" tabindex="-1"></a>3 &amp; 2</span>
-<span id="cb1-1087"><a href="#cb1-1087" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1088"><a href="#cb1-1088" aria-hidden="true" tabindex="-1"></a>\right| =\allowbreak 17.$$</span>
-<span id="cb1-1089"><a href="#cb1-1089" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1090"><a href="#cb1-1090" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1091"><a href="#cb1-1091" aria-hidden="true" tabindex="-1"></a><span class="fu">## Simplification of Determinants</span></span>
-<span id="cb1-1092"><a href="#cb1-1092" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1093"><a href="#cb1-1093" aria-hidden="true" tabindex="-1"></a>The following rules help to simplify determinants efficiently:</span>
-<span id="cb1-1094"><a href="#cb1-1094" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1095"><a href="#cb1-1095" aria-hidden="true" tabindex="-1"></a>::: {.Corollary #calcdet}</span>
-<span id="cb1-1096"><a href="#cb1-1096" aria-hidden="true" tabindex="-1"></a><span class="fu">## Calculation of Determinants </span></span>
-<span id="cb1-1097"><a href="#cb1-1097" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1098"><a href="#cb1-1098" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>If two rows (columns) of $A$ are interchanged to give a matrix $B$</span>
-<span id="cb1-1099"><a href="#cb1-1099" aria-hidden="true" tabindex="-1"></a>    then $\left| B\right| =-\left| A\right|$.</span>
-<span id="cb1-1100"><a href="#cb1-1100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1101"><a href="#cb1-1101" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>If two rows (columns) of $A$ are equal then $\left| A\right| =0$</span>
-<span id="cb1-1102"><a href="#cb1-1102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1103"><a href="#cb1-1103" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>If all the entries in any row (column) of $A$ are multiplied by a</span>
-<span id="cb1-1104"><a href="#cb1-1104" aria-hidden="true" tabindex="-1"></a>    scalar $k,$ the determinant is also multiplied by $k$</span>
-<span id="cb1-1105"><a href="#cb1-1105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1106"><a href="#cb1-1106" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>If one row (column) of $A$ is a multiple of another row (column),</span>
-<span id="cb1-1107"><a href="#cb1-1107" aria-hidden="true" tabindex="-1"></a>    then $\left|</span>
-<span id="cb1-1108"><a href="#cb1-1108" aria-hidden="true" tabindex="-1"></a>    A\right| =0$</span>
-<span id="cb1-1109"><a href="#cb1-1109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1110"><a href="#cb1-1110" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>If the matrix $B$ is obtained from $A$ by taking multiple of one</span>
-<span id="cb1-1111"><a href="#cb1-1111" aria-hidden="true" tabindex="-1"></a>    row (column) and adding it to another row (column), then</span>
-<span id="cb1-1112"><a href="#cb1-1112" aria-hidden="true" tabindex="-1"></a>    $\left| B\right|</span>
-<span id="cb1-1113"><a href="#cb1-1113" aria-hidden="true" tabindex="-1"></a>    =\left| A\right| .$</span>
-<span id="cb1-1114"><a href="#cb1-1114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1115"><a href="#cb1-1115" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>$\left| A\right| =\left| A^{T}\right| .$</span>
-<span id="cb1-1116"><a href="#cb1-1116" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1117"><a href="#cb1-1117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1118"><a href="#cb1-1118" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-1119"><a href="#cb1-1119" aria-hidden="true" tabindex="-1"></a>The proof of (1) and (6) is omitted.\</span>
-<span id="cb1-1120"><a href="#cb1-1120" aria-hidden="true" tabindex="-1"></a>(2) is proved by using (1): If we interchange the two equal columns of</span>
-<span id="cb1-1121"><a href="#cb1-1121" aria-hidden="true" tabindex="-1"></a>${\rm A}$, then we obtain ${\rm A}$ again, hence $|{\rm A}|$ remains the</span>
-<span id="cb1-1122"><a href="#cb1-1122" aria-hidden="true" tabindex="-1"></a>same, but according to (1) it should change its sign. This is only</span>
-<span id="cb1-1123"><a href="#cb1-1123" aria-hidden="true" tabindex="-1"></a>possible if $|{\rm A}|=0.$</span>
-<span id="cb1-1124"><a href="#cb1-1124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1125"><a href="#cb1-1125" aria-hidden="true" tabindex="-1"></a><span class="sc">\(</span>3<span class="sc">\)</span> If $B$ is obtained by multiplying the $i$th column of $A$ by $k:$</span>
-<span id="cb1-1126"><a href="#cb1-1126" aria-hidden="true" tabindex="-1"></a>$$\left| A\right| =\left| </span>
-<span id="cb1-1127"><a href="#cb1-1127" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1128"><a href="#cb1-1128" aria-hidden="true" tabindex="-1"></a>a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots <span class="sc">\\</span> </span>
-<span id="cb1-1129"><a href="#cb1-1129" aria-hidden="true" tabindex="-1"></a>a_{2} &amp; b_{2} &amp; c_{2} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1130"><a href="#cb1-1130" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1131"><a href="#cb1-1131" aria-hidden="true" tabindex="-1"></a>a_{i} &amp; b_{i} &amp; c_{i} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1132"><a href="#cb1-1132" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp; </span>
-<span id="cb1-1133"><a href="#cb1-1133" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1134"><a href="#cb1-1134" aria-hidden="true" tabindex="-1"></a>\right| ,\quad \left| B\right| =\left| </span>
-<span id="cb1-1135"><a href="#cb1-1135" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1136"><a href="#cb1-1136" aria-hidden="true" tabindex="-1"></a>a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots <span class="sc">\\</span> </span>
-<span id="cb1-1137"><a href="#cb1-1137" aria-hidden="true" tabindex="-1"></a>a_{2} &amp; b_{2} &amp; c_{2} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1138"><a href="#cb1-1138" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1139"><a href="#cb1-1139" aria-hidden="true" tabindex="-1"></a>ka_{i} &amp; kb_{i} &amp; kc_{i} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1140"><a href="#cb1-1140" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp; </span>
-<span id="cb1-1141"><a href="#cb1-1141" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1142"><a href="#cb1-1142" aria-hidden="true" tabindex="-1"></a>\right|$$ and expand both determinants about their $i$th rows:</span>
-<span id="cb1-1143"><a href="#cb1-1143" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1144"><a href="#cb1-1144" aria-hidden="true" tabindex="-1"></a>\left| A\right| &amp;=a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots <span class="sc">\\</span></span>
-<span id="cb1-1145"><a href="#cb1-1145" aria-hidden="true" tabindex="-1"></a>\left| B\right| &amp;=\left( ka_{i}\right) C_{i,1}+\left( kb_{i}\right)</span>
-<span id="cb1-1146"><a href="#cb1-1146" aria-hidden="true" tabindex="-1"></a>C_{i,2}+\cdots <span class="sc">\\</span></span>
-<span id="cb1-1147"><a href="#cb1-1147" aria-hidden="true" tabindex="-1"></a>&amp;=k\left( a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots \right) =k\left| A\right| .</span>
-<span id="cb1-1148"><a href="#cb1-1148" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$ (4) We use (3) and (2).</span>
-<span id="cb1-1149"><a href="#cb1-1149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1150"><a href="#cb1-1150" aria-hidden="true" tabindex="-1"></a><span class="sc">\(</span>5<span class="sc">\)</span> Suppose we add $k\times$ row $j$ to row $i$ of $\left|</span>
-<span id="cb1-1151"><a href="#cb1-1151" aria-hidden="true" tabindex="-1"></a>A\right|$ to give $\left| B\right| :$ $$\left| A\right| =\left| </span>
-<span id="cb1-1152"><a href="#cb1-1152" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1153"><a href="#cb1-1153" aria-hidden="true" tabindex="-1"></a>a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots <span class="sc">\\</span> </span>
-<span id="cb1-1154"><a href="#cb1-1154" aria-hidden="true" tabindex="-1"></a>a_{2} &amp; b_{2} &amp; c_{2} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1155"><a href="#cb1-1155" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1156"><a href="#cb1-1156" aria-hidden="true" tabindex="-1"></a>a_{i} &amp; b_{i} &amp; c_{i} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1157"><a href="#cb1-1157" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp; </span>
-<span id="cb1-1158"><a href="#cb1-1158" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1159"><a href="#cb1-1159" aria-hidden="true" tabindex="-1"></a>\right| ,\quad \left| B\right| =\left| </span>
-<span id="cb1-1160"><a href="#cb1-1160" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1161"><a href="#cb1-1161" aria-hidden="true" tabindex="-1"></a>a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots <span class="sc">\\</span> </span>
-<span id="cb1-1162"><a href="#cb1-1162" aria-hidden="true" tabindex="-1"></a>a_{2} &amp; b_{2} &amp; c_{2} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1163"><a href="#cb1-1163" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1164"><a href="#cb1-1164" aria-hidden="true" tabindex="-1"></a>a_{i}+ka_{j} &amp; b_{i}+kb_{j} &amp; c_{i}+kc_{j} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1165"><a href="#cb1-1165" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp; </span>
-<span id="cb1-1166"><a href="#cb1-1166" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1167"><a href="#cb1-1167" aria-hidden="true" tabindex="-1"></a>\right|$$ and we now expand $\left| B\right|$ by its $i$th row</span>
-<span id="cb1-1168"><a href="#cb1-1168" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1169"><a href="#cb1-1169" aria-hidden="true" tabindex="-1"></a>\left| A\right| &amp;=a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots <span class="sc">\\</span></span>
-<span id="cb1-1170"><a href="#cb1-1170" aria-hidden="true" tabindex="-1"></a>\left| B\right| &amp;=\left( a_{i}+ka_{j}\right) C_{i,1}+\left(</span>
-<span id="cb1-1171"><a href="#cb1-1171" aria-hidden="true" tabindex="-1"></a>b_{i}+kb_{j}\right) C_{i,2}+\cdots <span class="sc">\\</span></span>
-<span id="cb1-1172"><a href="#cb1-1172" aria-hidden="true" tabindex="-1"></a>&amp;=\left( a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots \right) +k\left(</span>
-<span id="cb1-1173"><a href="#cb1-1173" aria-hidden="true" tabindex="-1"></a>a_{j}C_{i,1}+b_{i}C_{j,2}+\cdots \right)</span>
-<span id="cb1-1174"><a href="#cb1-1174" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$ $$=\left| </span>
-<span id="cb1-1175"><a href="#cb1-1175" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1176"><a href="#cb1-1176" aria-hidden="true" tabindex="-1"></a>a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots <span class="sc">\\</span> </span>
-<span id="cb1-1177"><a href="#cb1-1177" aria-hidden="true" tabindex="-1"></a>a_{2} &amp; b_{2} &amp; c_{2} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1178"><a href="#cb1-1178" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1179"><a href="#cb1-1179" aria-hidden="true" tabindex="-1"></a>a_{i} &amp; b_{i} &amp; c_{i} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1180"><a href="#cb1-1180" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp; </span>
-<span id="cb1-1181"><a href="#cb1-1181" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1182"><a href="#cb1-1182" aria-hidden="true" tabindex="-1"></a>\right| +k\left| </span>
-<span id="cb1-1183"><a href="#cb1-1183" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1184"><a href="#cb1-1184" aria-hidden="true" tabindex="-1"></a>a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots <span class="sc">\\</span> </span>
-<span id="cb1-1185"><a href="#cb1-1185" aria-hidden="true" tabindex="-1"></a>a_{2} &amp; b_{2} &amp; c_{2} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1186"><a href="#cb1-1186" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1187"><a href="#cb1-1187" aria-hidden="true" tabindex="-1"></a>a_{j} &amp; b_{j} &amp; c_{j} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1188"><a href="#cb1-1188" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp; </span>
-<span id="cb1-1189"><a href="#cb1-1189" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1190"><a href="#cb1-1190" aria-hidden="true" tabindex="-1"></a>\right| =\left| A\right|$$ since rows $i$ and $j$ in the determinant</span>
-<span id="cb1-1191"><a href="#cb1-1191" aria-hidden="true" tabindex="-1"></a>$\left| </span>
-<span id="cb1-1192"><a href="#cb1-1192" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1193"><a href="#cb1-1193" aria-hidden="true" tabindex="-1"></a>a_{1} &amp; b_{1} &amp; c_{1} &amp; \cdots <span class="sc">\\</span> </span>
-<span id="cb1-1194"><a href="#cb1-1194" aria-hidden="true" tabindex="-1"></a>a_{2} &amp; b_{2} &amp; c_{2} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1195"><a href="#cb1-1195" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1196"><a href="#cb1-1196" aria-hidden="true" tabindex="-1"></a>a_{j} &amp; b_{j} &amp; c_{j} &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1197"><a href="#cb1-1197" aria-hidden="true" tabindex="-1"></a>\vdots &amp;  &amp;  &amp; </span>
-<span id="cb1-1198"><a href="#cb1-1198" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1199"><a href="#cb1-1199" aria-hidden="true" tabindex="-1"></a>\right|$ are identical, so it is zero (\ref{calcdet} 4).&nbsp;◻</span>
-<span id="cb1-1200"><a href="#cb1-1200" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1201"><a href="#cb1-1201" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1202"><a href="#cb1-1202" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-1203"><a href="#cb1-1203" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remember</span></span>
-<span id="cb1-1204"><a href="#cb1-1204" aria-hidden="true" tabindex="-1"></a>The rules are similar to, **but not the same as,**</span>
-<span id="cb1-1205"><a href="#cb1-1205" aria-hidden="true" tabindex="-1"></a>Gaussian elimination; adding $k$ times row 2 to row 1 is OK if the</span>
-<span id="cb1-1206"><a href="#cb1-1206" aria-hidden="true" tabindex="-1"></a>result goes in row 1, and row 2 is left unchanged, but if you replace</span>
-<span id="cb1-1207"><a href="#cb1-1207" aria-hidden="true" tabindex="-1"></a>row 2 by $k$ times row 2 plus row 1, you will change the value of the</span>
-<span id="cb1-1208"><a href="#cb1-1208" aria-hidden="true" tabindex="-1"></a>determinant by a factor of $k$ (Corollary 2 tells us this). A further</span>
-<span id="cb1-1209"><a href="#cb1-1209" aria-hidden="true" tabindex="-1"></a>difference is that a multiple of a column can be added to another column</span>
-<span id="cb1-1210"><a href="#cb1-1210" aria-hidden="true" tabindex="-1"></a>(not allowed in GE).</span>
-<span id="cb1-1211"><a href="#cb1-1211" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1212"><a href="#cb1-1212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1213"><a href="#cb1-1213" aria-hidden="true" tabindex="-1"></a>::: {#exm-det6}</span>
-<span id="cb1-1214"><a href="#cb1-1214" aria-hidden="true" tabindex="-1"></a>Evaluate the determinant $\left| </span>
-<span id="cb1-1215"><a href="#cb1-1215" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1216"><a href="#cb1-1216" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; -1 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-1217"><a href="#cb1-1217" aria-hidden="true" tabindex="-1"></a>2 &amp; 0 &amp; 1 &amp; 1 <span class="sc">\\</span> </span>
-<span id="cb1-1218"><a href="#cb1-1218" aria-hidden="true" tabindex="-1"></a>1 &amp; 3 &amp; 2 &amp; 1 <span class="sc">\\</span> </span>
-<span id="cb1-1219"><a href="#cb1-1219" aria-hidden="true" tabindex="-1"></a>2 &amp; 0 &amp; 0 &amp; 1</span>
-<span id="cb1-1220"><a href="#cb1-1220" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1221"><a href="#cb1-1221" aria-hidden="true" tabindex="-1"></a>\right| .$</span>
-<span id="cb1-1222"><a href="#cb1-1222" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1223"><a href="#cb1-1223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1224"><a href="#cb1-1224" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-1225"><a href="#cb1-1225" aria-hidden="true" tabindex="-1"></a>First expand by the 4th row: $$= -2\times \left| </span>
-<span id="cb1-1226"><a href="#cb1-1226" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-1227"><a href="#cb1-1227" aria-hidden="true" tabindex="-1"></a>2 &amp; -1 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-1228"><a href="#cb1-1228" aria-hidden="true" tabindex="-1"></a>0 &amp; 1 &amp; 1 <span class="sc">\\</span> </span>
-<span id="cb1-1229"><a href="#cb1-1229" aria-hidden="true" tabindex="-1"></a>3 &amp; 2 &amp; 1</span>
-<span id="cb1-1230"><a href="#cb1-1230" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1231"><a href="#cb1-1231" aria-hidden="true" tabindex="-1"></a>\right| +1\times \left| </span>
-<span id="cb1-1232"><a href="#cb1-1232" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-1233"><a href="#cb1-1233" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; -1 <span class="sc">\\</span> </span>
-<span id="cb1-1234"><a href="#cb1-1234" aria-hidden="true" tabindex="-1"></a>2 &amp; 0 &amp; 1 <span class="sc">\\</span> </span>
-<span id="cb1-1235"><a href="#cb1-1235" aria-hidden="true" tabindex="-1"></a>1 &amp; 3 &amp; 2</span>
-<span id="cb1-1236"><a href="#cb1-1236" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1237"><a href="#cb1-1237" aria-hidden="true" tabindex="-1"></a>\right| ,$$</span>
-<span id="cb1-1238"><a href="#cb1-1238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1239"><a href="#cb1-1239" aria-hidden="true" tabindex="-1"></a>now subtract $c_{3}$ from $c_{2}$ in the 1st , subtract $2\times</span>
-<span id="cb1-1240"><a href="#cb1-1240" aria-hidden="true" tabindex="-1"></a>c_{3}$ from $c_{1}$ in the 2nd and expand both by their 2nd rows.</span>
-<span id="cb1-1241"><a href="#cb1-1241" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1242"><a href="#cb1-1242" aria-hidden="true" tabindex="-1"></a>&amp;=-2\times \left| </span>
-<span id="cb1-1243"><a href="#cb1-1243" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-1244"><a href="#cb1-1244" aria-hidden="true" tabindex="-1"></a>2 &amp; -4 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-1245"><a href="#cb1-1245" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 &amp; 1 <span class="sc">\\</span> </span>
-<span id="cb1-1246"><a href="#cb1-1246" aria-hidden="true" tabindex="-1"></a>3 &amp; 1 &amp; 1</span>
-<span id="cb1-1247"><a href="#cb1-1247" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1248"><a href="#cb1-1248" aria-hidden="true" tabindex="-1"></a>\right| +1\times \left| </span>
-<span id="cb1-1249"><a href="#cb1-1249" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-1250"><a href="#cb1-1250" aria-hidden="true" tabindex="-1"></a>3 &amp; 2 &amp; -1 <span class="sc">\\</span> </span>
-<span id="cb1-1251"><a href="#cb1-1251" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 &amp; 1 <span class="sc">\\</span> </span>
-<span id="cb1-1252"><a href="#cb1-1252" aria-hidden="true" tabindex="-1"></a>-3 &amp; 3 &amp; 2</span>
-<span id="cb1-1253"><a href="#cb1-1253" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1254"><a href="#cb1-1254" aria-hidden="true" tabindex="-1"></a>\right| <span class="sc">\\</span></span>
-<span id="cb1-1255"><a href="#cb1-1255" aria-hidden="true" tabindex="-1"></a>&amp;=-2\times \left( -1\right) \left| </span>
-<span id="cb1-1256"><a href="#cb1-1256" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-1257"><a href="#cb1-1257" aria-hidden="true" tabindex="-1"></a>2 &amp; -4 <span class="sc">\\</span> </span>
-<span id="cb1-1258"><a href="#cb1-1258" aria-hidden="true" tabindex="-1"></a>3 &amp; 1</span>
-<span id="cb1-1259"><a href="#cb1-1259" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1260"><a href="#cb1-1260" aria-hidden="true" tabindex="-1"></a>\right| +1\times \left( -1\right) \left| </span>
-<span id="cb1-1261"><a href="#cb1-1261" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-1262"><a href="#cb1-1262" aria-hidden="true" tabindex="-1"></a>3 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-1263"><a href="#cb1-1263" aria-hidden="true" tabindex="-1"></a>-3 &amp; 3</span>
-<span id="cb1-1264"><a href="#cb1-1264" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1265"><a href="#cb1-1265" aria-hidden="true" tabindex="-1"></a>\right| <span class="sc">\\</span></span>
-<span id="cb1-1266"><a href="#cb1-1266" aria-hidden="true" tabindex="-1"></a>&amp;=-2\times \left( -1\right) \times 14+1\times \left( -1\right) \times 15=13.</span>
-<span id="cb1-1267"><a href="#cb1-1267" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
-<span id="cb1-1268"><a href="#cb1-1268" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1269"><a href="#cb1-1269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1270"><a href="#cb1-1270" aria-hidden="true" tabindex="-1"></a>::: {#exm-det7}</span>
-<span id="cb1-1271"><a href="#cb1-1271" aria-hidden="true" tabindex="-1"></a>Evaluate the determinant </span>
-<span id="cb1-1272"><a href="#cb1-1272" aria-hidden="true" tabindex="-1"></a>$$\left| </span>
-<span id="cb1-1273"><a href="#cb1-1273" aria-hidden="true" tabindex="-1"></a>\begin{array}{rrrr}</span>
-<span id="cb1-1274"><a href="#cb1-1274" aria-hidden="true" tabindex="-1"></a>4 &amp; 1 &amp; 3 &amp; -1 <span class="sc">\\</span> </span>
-<span id="cb1-1275"><a href="#cb1-1275" aria-hidden="true" tabindex="-1"></a>2 &amp; 0 &amp; 1 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-1276"><a href="#cb1-1276" aria-hidden="true" tabindex="-1"></a>1 &amp; -1 &amp; 2 &amp; 5 <span class="sc">\\</span> </span>
-<span id="cb1-1277"><a href="#cb1-1277" aria-hidden="true" tabindex="-1"></a>2 &amp; 1 &amp; 3 &amp; 1</span>
-<span id="cb1-1278"><a href="#cb1-1278" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1279"><a href="#cb1-1279" aria-hidden="true" tabindex="-1"></a>\right|$$.</span>
-<span id="cb1-1280"><a href="#cb1-1280" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1281"><a href="#cb1-1281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1282"><a href="#cb1-1282" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-1283"><a href="#cb1-1283" aria-hidden="true" tabindex="-1"></a>Subtract $r_{4}$ from $r_{1}$; then add $c_{1}$ to $c_{4},$ then expand</span>
-<span id="cb1-1284"><a href="#cb1-1284" aria-hidden="true" tabindex="-1"></a>about the 1st row:</span>
-<span id="cb1-1285"><a href="#cb1-1285" aria-hidden="true" tabindex="-1"></a>$$ r_{1}-r_{4}\rightarrow r_{1}: \quad \left| </span>
-<span id="cb1-1286"><a href="#cb1-1286" aria-hidden="true" tabindex="-1"></a>\begin{array}{rrrr}</span>
-<span id="cb1-1287"><a href="#cb1-1287" aria-hidden="true" tabindex="-1"></a>2 &amp; 0 &amp; 0 &amp; -2 <span class="sc">\\</span> </span>
-<span id="cb1-1288"><a href="#cb1-1288" aria-hidden="true" tabindex="-1"></a>2 &amp; 0 &amp; 1 &amp; 2 <span class="sc">\\</span> </span>
-<span id="cb1-1289"><a href="#cb1-1289" aria-hidden="true" tabindex="-1"></a>1 &amp; -1 &amp; 2 &amp; 5 <span class="sc">\\</span> </span>
-<span id="cb1-1290"><a href="#cb1-1290" aria-hidden="true" tabindex="-1"></a>2 &amp; 1 &amp; 3 &amp; 1</span>
-<span id="cb1-1291"><a href="#cb1-1291" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1292"><a href="#cb1-1292" aria-hidden="true" tabindex="-1"></a>\right| ,$$ </span>
-<span id="cb1-1293"><a href="#cb1-1293" aria-hidden="true" tabindex="-1"></a>$$c_{4}+c_{1}\rightarrow c_{4}: \quad \left| </span>
-<span id="cb1-1294"><a href="#cb1-1294" aria-hidden="true" tabindex="-1"></a>\begin{array}{rrrr}</span>
-<span id="cb1-1295"><a href="#cb1-1295" aria-hidden="true" tabindex="-1"></a>2 &amp; 0 &amp; 0 &amp; 0 <span class="sc">\\</span> </span>
-<span id="cb1-1296"><a href="#cb1-1296" aria-hidden="true" tabindex="-1"></a>2 &amp; 0 &amp; 1 &amp; 4 <span class="sc">\\</span> </span>
-<span id="cb1-1297"><a href="#cb1-1297" aria-hidden="true" tabindex="-1"></a>1 &amp; -1 &amp; 2 &amp; 6 <span class="sc">\\</span> </span>
-<span id="cb1-1298"><a href="#cb1-1298" aria-hidden="true" tabindex="-1"></a>2 &amp; 1 &amp; 3 &amp; 3</span>
-<span id="cb1-1299"><a href="#cb1-1299" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1300"><a href="#cb1-1300" aria-hidden="true" tabindex="-1"></a>\right| =2\times \left| </span>
-<span id="cb1-1301"><a href="#cb1-1301" aria-hidden="true" tabindex="-1"></a>\begin{array}{rrr}</span>
-<span id="cb1-1302"><a href="#cb1-1302" aria-hidden="true" tabindex="-1"></a>0 &amp; 1 &amp; 4 <span class="sc">\\</span> </span>
-<span id="cb1-1303"><a href="#cb1-1303" aria-hidden="true" tabindex="-1"></a>-1 &amp; 2 &amp; 6 <span class="sc">\\</span> </span>
-<span id="cb1-1304"><a href="#cb1-1304" aria-hidden="true" tabindex="-1"></a>1 &amp; 3 &amp; 3</span>
-<span id="cb1-1305"><a href="#cb1-1305" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1306"><a href="#cb1-1306" aria-hidden="true" tabindex="-1"></a>\right| $$</span>
-<span id="cb1-1307"><a href="#cb1-1307" aria-hidden="true" tabindex="-1"></a>add $r_{3}$ to $r_{2}:$ </span>
-<span id="cb1-1308"><a href="#cb1-1308" aria-hidden="true" tabindex="-1"></a>$$r_{2}+r_{3}\rightarrow r_{2}: \quad 2\times \left| </span>
-<span id="cb1-1309"><a href="#cb1-1309" aria-hidden="true" tabindex="-1"></a>\begin{array}{rrr}</span>
-<span id="cb1-1310"><a href="#cb1-1310" aria-hidden="true" tabindex="-1"></a>0 &amp; 1 &amp; 4 <span class="sc">\\</span> </span>
-<span id="cb1-1311"><a href="#cb1-1311" aria-hidden="true" tabindex="-1"></a>0 &amp; 5 &amp; 9 <span class="sc">\\</span> </span>
-<span id="cb1-1312"><a href="#cb1-1312" aria-hidden="true" tabindex="-1"></a>1 &amp; 3 &amp; 3</span>
-<span id="cb1-1313"><a href="#cb1-1313" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1314"><a href="#cb1-1314" aria-hidden="true" tabindex="-1"></a>\right| =2\times 1\times \left| </span>
-<span id="cb1-1315"><a href="#cb1-1315" aria-hidden="true" tabindex="-1"></a>\begin{array}{rr}</span>
-<span id="cb1-1316"><a href="#cb1-1316" aria-hidden="true" tabindex="-1"></a>1 &amp; 4 <span class="sc">\\</span> </span>
-<span id="cb1-1317"><a href="#cb1-1317" aria-hidden="true" tabindex="-1"></a>5 &amp; 9</span>
-<span id="cb1-1318"><a href="#cb1-1318" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1319"><a href="#cb1-1319" aria-hidden="true" tabindex="-1"></a>\right| =2\times 1\times \left( -11\right) =-22.$$</span>
-<span id="cb1-1320"><a href="#cb1-1320" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1321"><a href="#cb1-1321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1322"><a href="#cb1-1322" aria-hidden="true" tabindex="-1"></a>::: {.exm-det8}</span>
-<span id="cb1-1323"><a href="#cb1-1323" aria-hidden="true" tabindex="-1"></a>Show that </span>
-<span id="cb1-1324"><a href="#cb1-1324" aria-hidden="true" tabindex="-1"></a>$$D=\left| </span>
-<span id="cb1-1325"><a href="#cb1-1325" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1326"><a href="#cb1-1326" aria-hidden="true" tabindex="-1"></a>1 &amp; a &amp; a^{2} &amp; b+c+d <span class="sc">\\</span> </span>
-<span id="cb1-1327"><a href="#cb1-1327" aria-hidden="true" tabindex="-1"></a>1 &amp; b &amp; b^{2} &amp; c+d+a <span class="sc">\\</span> </span>
-<span id="cb1-1328"><a href="#cb1-1328" aria-hidden="true" tabindex="-1"></a>1 &amp; c &amp; c^{2} &amp; d+a+b <span class="sc">\\</span> </span>
-<span id="cb1-1329"><a href="#cb1-1329" aria-hidden="true" tabindex="-1"></a>1 &amp; d &amp; d^{2} &amp; a+b+c</span>
-<span id="cb1-1330"><a href="#cb1-1330" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1331"><a href="#cb1-1331" aria-hidden="true" tabindex="-1"></a>\right| =0$$ for all values of $a,b,c,d.$</span>
-<span id="cb1-1332"><a href="#cb1-1332" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1333"><a href="#cb1-1333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1334"><a href="#cb1-1334" aria-hidden="true" tabindex="-1"></a>::: {.exm-det9}</span>
-<span id="cb1-1335"><a href="#cb1-1335" aria-hidden="true" tabindex="-1"></a>Solve for $x$</span>
-<span id="cb1-1336"><a href="#cb1-1336" aria-hidden="true" tabindex="-1"></a>$$\left| </span>
-<span id="cb1-1337"><a href="#cb1-1337" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-1338"><a href="#cb1-1338" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; x <span class="sc">\\</span> </span>
-<span id="cb1-1339"><a href="#cb1-1339" aria-hidden="true" tabindex="-1"></a>x &amp; 0 &amp; 3 <span class="sc">\\</span> </span>
-<span id="cb1-1340"><a href="#cb1-1340" aria-hidden="true" tabindex="-1"></a>1 &amp; x &amp; 2</span>
-<span id="cb1-1341"><a href="#cb1-1341" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1342"><a href="#cb1-1342" aria-hidden="true" tabindex="-1"></a>\right| =0$$ </span>
-<span id="cb1-1343"><a href="#cb1-1343" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1344"><a href="#cb1-1344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1345"><a href="#cb1-1345" aria-hidden="true" tabindex="-1"></a>::: {.Lemma}</span>
-<span id="cb1-1346"><a href="#cb1-1346" aria-hidden="true" tabindex="-1"></a>If $A$ is either lower or upper triangular, then</span>
-<span id="cb1-1347"><a href="#cb1-1347" aria-hidden="true" tabindex="-1"></a>$\det(A) =a_{1,1}a_{2,2}\cdots a_{n,n}$, the product of its diagonal</span>
-<span id="cb1-1348"><a href="#cb1-1348" aria-hidden="true" tabindex="-1"></a>entries.</span>
-<span id="cb1-1349"><a href="#cb1-1349" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1350"><a href="#cb1-1350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1351"><a href="#cb1-1351" aria-hidden="true" tabindex="-1"></a>::: {#exm-det10}</span>
-<span id="cb1-1352"><a href="#cb1-1352" aria-hidden="true" tabindex="-1"></a>$$\left|\begin{array}{rrr}</span>
-<span id="cb1-1353"><a href="#cb1-1353" aria-hidden="true" tabindex="-1"></a>1 &amp; 7 &amp; -2 <span class="sc">\\</span></span>
-<span id="cb1-1354"><a href="#cb1-1354" aria-hidden="true" tabindex="-1"></a>0 &amp; 14 &amp; 32 <span class="sc">\\</span></span>
-<span id="cb1-1355"><a href="#cb1-1355" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 &amp; -2</span>
-<span id="cb1-1356"><a href="#cb1-1356" aria-hidden="true" tabindex="-1"></a>\end{array}\right| = 1\times 14\times (-2)=-28$$.</span>
-<span id="cb1-1357"><a href="#cb1-1357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1358"><a href="#cb1-1358" aria-hidden="true" tabindex="-1"></a>We can see this by expanding down the first column:</span>
-<span id="cb1-1359"><a href="#cb1-1359" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1360"><a href="#cb1-1360" aria-hidden="true" tabindex="-1"></a>$$1\left|\begin{array}{rr} 14 &amp; 32 <span class="sc">\\</span></span>
-<span id="cb1-1361"><a href="#cb1-1361" aria-hidden="true" tabindex="-1"></a>0 &amp; -2</span>
-<span id="cb1-1362"><a href="#cb1-1362" aria-hidden="true" tabindex="-1"></a>\end{array}\right|=1(14\times (-2))=-28.$$</span>
-<span id="cb1-1363"><a href="#cb1-1363" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1364"><a href="#cb1-1364" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1365"><a href="#cb1-1365" aria-hidden="true" tabindex="-1"></a>::: {.Theorem}</span>
-<span id="cb1-1366"><a href="#cb1-1366" aria-hidden="true" tabindex="-1"></a><span class="fu">## Product Rule </span></span>
-<span id="cb1-1367"><a href="#cb1-1367" aria-hidden="true" tabindex="-1"></a>For any two matrices $A$ and $B,$</span>
-<span id="cb1-1368"><a href="#cb1-1368" aria-hidden="true" tabindex="-1"></a>$\det (AB)$ = $\det (A) \det (B)$.</span>
-<span id="cb1-1369"><a href="#cb1-1369" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1370"><a href="#cb1-1370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1371"><a href="#cb1-1371" aria-hidden="true" tabindex="-1"></a>The general proof of this result uses elementary matrices. Although it</span>
-<span id="cb1-1372"><a href="#cb1-1372" aria-hidden="true" tabindex="-1"></a>is a key result, a proof will not be given (See Poole, p. 268).</span>
-<span id="cb1-1373"><a href="#cb1-1373" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1374"><a href="#cb1-1374" aria-hidden="true" tabindex="-1"></a>Note that $\textrm{det}(A+B)\neq \textrm{det}(A)+\textrm{det}(B)$.</span>
-<span id="cb1-1375"><a href="#cb1-1375" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1376"><a href="#cb1-1376" aria-hidden="true" tabindex="-1"></a>::: {.Lemma}</span>
-<span id="cb1-1377"><a href="#cb1-1377" aria-hidden="true" tabindex="-1"></a>If $A$ is $n\times n$, we have$,$ by Corollary \ref{caldet}</span>
-<span id="cb1-1378"><a href="#cb1-1378" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1379"><a href="#cb1-1379" aria-hidden="true" tabindex="-1"></a>\det \left( kA\right) &amp;= \det \left( kI \  A\right) <span class="sc">\\</span></span>
-<span id="cb1-1380"><a href="#cb1-1380" aria-hidden="true" tabindex="-1"></a>&amp;=</span>
-<span id="cb1-1381"><a href="#cb1-1381" aria-hidden="true" tabindex="-1"></a>\det \left( kI\right)  \det \left( A\right) <span class="sc">\\</span></span>
-<span id="cb1-1382"><a href="#cb1-1382" aria-hidden="true" tabindex="-1"></a>&amp;= k^{n}</span>
-<span id="cb1-1383"><a href="#cb1-1383" aria-hidden="true" tabindex="-1"></a>\det \left( A\right) .</span>
-<span id="cb1-1384"><a href="#cb1-1384" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
-<span id="cb1-1385"><a href="#cb1-1385" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1386"><a href="#cb1-1386" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1387"><a href="#cb1-1387" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
-<span id="cb1-1388"><a href="#cb1-1388" aria-hidden="true" tabindex="-1"></a>When $A$ is non-singular (i.e., invertible)</span>
-<span id="cb1-1389"><a href="#cb1-1389" aria-hidden="true" tabindex="-1"></a>$$\det \left(A^{-1}\right) =\dfrac{1}{\det \left( A\right) }.$$</span>
-<span id="cb1-1390"><a href="#cb1-1390" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1391"><a href="#cb1-1391" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1392"><a href="#cb1-1392" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-1393"><a href="#cb1-1393" aria-hidden="true" tabindex="-1"></a>$1=\textrm{det(I)}=\textrm{det}(AA^{-1})=\textrm{det}(A)\textrm{det}(A^{-1})$.&nbsp;◻</span>
-<span id="cb1-1394"><a href="#cb1-1394" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1395"><a href="#cb1-1395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1396"><a href="#cb1-1396" aria-hidden="true" tabindex="-1"></a>::: {#exm-det11}</span>
-<span id="cb1-1397"><a href="#cb1-1397" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $n\times n$ matrix with</span>
-<span id="cb1-1398"><a href="#cb1-1398" aria-hidden="true" tabindex="-1"></a>$\textrm{det}(A)=5$. Then </span>
-<span id="cb1-1399"><a href="#cb1-1399" aria-hidden="true" tabindex="-1"></a>$$\det \left( A^{4}\right)</span>
-<span id="cb1-1400"><a href="#cb1-1400" aria-hidden="true" tabindex="-1"></a>=5^{4}$$</span>
-<span id="cb1-1401"><a href="#cb1-1401" aria-hidden="true" tabindex="-1"></a>$$\det \left( A^{-1}\right) =\frac{1}{5},$$ </span>
-<span id="cb1-1402"><a href="#cb1-1402" aria-hidden="true" tabindex="-1"></a>$$\det \left( 3A^{2}\right) =3^{n}\times 25$$ .</span>
-<span id="cb1-1403"><a href="#cb1-1403" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1404"><a href="#cb1-1404" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1405"><a href="#cb1-1405" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
-<span id="cb1-1406"><a href="#cb1-1406" aria-hidden="true" tabindex="-1"></a>The matrix $A$ has an inverse if, and only if,</span>
-<span id="cb1-1407"><a href="#cb1-1407" aria-hidden="true" tabindex="-1"></a>$\left| A\right| \neq 0.$</span>
-<span id="cb1-1408"><a href="#cb1-1408" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1409"><a href="#cb1-1409" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1410"><a href="#cb1-1410" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-1411"><a href="#cb1-1411" aria-hidden="true" tabindex="-1"></a>First, we show that if the matrix $A$ has an inverse, then</span>
-<span id="cb1-1412"><a href="#cb1-1412" aria-hidden="true" tabindex="-1"></a>$|A|\neq 0$. If ${\rm A}$ has an inverse then</span>
-<span id="cb1-1413"><a href="#cb1-1413" aria-hidden="true" tabindex="-1"></a>$|{\rm A}{\rm A^{-1}}| = |{\rm A}||{\rm A^{-1}}| =| I | = 1$ and hence</span>
-<span id="cb1-1414"><a href="#cb1-1414" aria-hidden="true" tabindex="-1"></a>$|{\rm A}| \neq 0$.</span>
-<span id="cb1-1415"><a href="#cb1-1415" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1416"><a href="#cb1-1416" aria-hidden="true" tabindex="-1"></a>Next, we show the reverse. Assume that $|A|\neq 0$. We want to show that</span>
-<span id="cb1-1417"><a href="#cb1-1417" aria-hidden="true" tabindex="-1"></a>$A$ has an inverse.</span>
-<span id="cb1-1418"><a href="#cb1-1418" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1419"><a href="#cb1-1419" aria-hidden="true" tabindex="-1"></a>By using elementary row operations, that is by either (i) adding a</span>
-<span id="cb1-1420"><a href="#cb1-1420" aria-hidden="true" tabindex="-1"></a>multiple of one row to another or (ii) interchanging rows we can reduce</span>
-<span id="cb1-1421"><a href="#cb1-1421" aria-hidden="true" tabindex="-1"></a>$A$ to upper triangular form---call this $U.$ Operations of type i) do</span>
-<span id="cb1-1422"><a href="#cb1-1422" aria-hidden="true" tabindex="-1"></a>not affect the value of $\left| A\right|$ while operations of type (ii)</span>
-<span id="cb1-1423"><a href="#cb1-1423" aria-hidden="true" tabindex="-1"></a>may cause a change of sign. Hence,</span>
-<span id="cb1-1424"><a href="#cb1-1424" aria-hidden="true" tabindex="-1"></a>$$\left| A\right| =\pm \left| U\right|,$$ and so, in particular</span>
-<span id="cb1-1425"><a href="#cb1-1425" aria-hidden="true" tabindex="-1"></a>$|A|\neq0$.</span>
-<span id="cb1-1426"><a href="#cb1-1426" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1427"><a href="#cb1-1427" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1428"><a href="#cb1-1428" aria-hidden="true" tabindex="-1"></a>U&amp;=\left[ </span>
-<span id="cb1-1429"><a href="#cb1-1429" aria-hidden="true" tabindex="-1"></a>\begin{array}{cccc}</span>
-<span id="cb1-1430"><a href="#cb1-1430" aria-hidden="true" tabindex="-1"></a>u_{11} &amp; u_{12} &amp; \cdots &amp; u_{1n} <span class="sc">\\</span> </span>
-<span id="cb1-1431"><a href="#cb1-1431" aria-hidden="true" tabindex="-1"></a>0 &amp; u_{22} &amp;  &amp; u_{2n} <span class="sc">\\</span> </span>
-<span id="cb1-1432"><a href="#cb1-1432" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 &amp; \ddots &amp;  <span class="sc">\\</span> </span>
-<span id="cb1-1433"><a href="#cb1-1433" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 &amp;  &amp; u_{nn}</span>
-<span id="cb1-1434"><a href="#cb1-1434" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1435"><a href="#cb1-1435" aria-hidden="true" tabindex="-1"></a>\right],<span class="sc">\\</span></span>
-<span id="cb1-1436"><a href="#cb1-1436" aria-hidden="true" tabindex="-1"></a>\left| U\right| &amp;= u_{11}u_{22}\cdots u_{nn}\neq 0,</span>
-<span id="cb1-1437"><a href="#cb1-1437" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$ so $u_{ij}\neq 0$ for all $i,j=1,2,\dots,n$. Hence $A$</span>
-<span id="cb1-1438"><a href="#cb1-1438" aria-hidden="true" tabindex="-1"></a>has $n$ pivots and is invertible.&nbsp;◻</span>
-<span id="cb1-1439"><a href="#cb1-1439" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1440"><a href="#cb1-1440" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1441"><a href="#cb1-1441" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
-<span id="cb1-1442"><a href="#cb1-1442" aria-hidden="true" tabindex="-1"></a>If $A$ is a square matrix, the system</span>
-<span id="cb1-1443"><a href="#cb1-1443" aria-hidden="true" tabindex="-1"></a>$A\mathbf{x=0}$ has non-trivial solutions if, and only if,</span>
-<span id="cb1-1444"><a href="#cb1-1444" aria-hidden="true" tabindex="-1"></a>$\left| A\right| =0$ (so $A$ is a singular matrix).</span>
-<span id="cb1-1445"><a href="#cb1-1445" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1446"><a href="#cb1-1446" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1447"><a href="#cb1-1447" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-1448"><a href="#cb1-1448" aria-hidden="true" tabindex="-1"></a><span class="fu">## Note: </span></span>
-<span id="cb1-1449"><a href="#cb1-1449" aria-hidden="true" tabindex="-1"></a>Various authors define non-singular matrices to be</span>
-<span id="cb1-1450"><a href="#cb1-1450" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>invertible matrices</span>
-<span id="cb1-1451"><a href="#cb1-1451" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1452"><a href="#cb1-1452" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>matrices $A$ for which $\det(A)\neq 0$.</span>
-<span id="cb1-1453"><a href="#cb1-1453" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1454"><a href="#cb1-1454" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>matrices for which $A\mathbf{x}=\mathbf{0}$ has only the trivial</span>
-<span id="cb1-1455"><a href="#cb1-1455" aria-hidden="true" tabindex="-1"></a>  (zero) solution.</span>
-<span id="cb1-1456"><a href="#cb1-1456" aria-hidden="true" tabindex="-1"></a>The above theorem shows that they are all equivalent definitions.</span>
-<span id="cb1-1457"><a href="#cb1-1457" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1458"><a href="#cb1-1458" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1459"><a href="#cb1-1459" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1460"><a href="#cb1-1460" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Adjoint Matrix</span></span>
-<span id="cb1-1461"><a href="#cb1-1461" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1462"><a href="#cb1-1462" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
-<span id="cb1-1463"><a href="#cb1-1463" aria-hidden="true" tabindex="-1"></a>The transpose of the matrix of cofactors of ${\rm A}$ is</span>
-<span id="cb1-1464"><a href="#cb1-1464" aria-hidden="true" tabindex="-1"></a>called the *adjugate* or *adjoint* of ${\rm A}$ and denoted by</span>
-<span id="cb1-1465"><a href="#cb1-1465" aria-hidden="true" tabindex="-1"></a>$\rm{adj}({\rm A}) =(\text{Cofactors})^{T}$.</span>
-<span id="cb1-1466"><a href="#cb1-1466" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1467"><a href="#cb1-1467" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1468"><a href="#cb1-1468" aria-hidden="true" tabindex="-1"></a>::: {.Theorem}</span>
-<span id="cb1-1469"><a href="#cb1-1469" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inverse and Adjoint</span></span>
-<span id="cb1-1470"><a href="#cb1-1470" aria-hidden="true" tabindex="-1"></a>If $\det({\rm A}) \neq 0$ then</span>
-<span id="cb1-1471"><a href="#cb1-1471" aria-hidden="true" tabindex="-1"></a>$${\rm A}^{-1} =\frac{1}{\det({\rm A})} \rm{adj}({\rm A}).$$</span>
-<span id="cb1-1472"><a href="#cb1-1472" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1473"><a href="#cb1-1473" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1474"><a href="#cb1-1474" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-1475"><a href="#cb1-1475" aria-hidden="true" tabindex="-1"></a>Let ${\rm C}$ be the matrix of cofactors of ${\rm A}$.</span>
-<span id="cb1-1476"><a href="#cb1-1476" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1477"><a href="#cb1-1477" aria-hidden="true" tabindex="-1"></a> ({\rm A} \  \rm{adj}({\rm A}))_{ij} &amp;= \sum_{k=1}^{n} a_{ik} ({\rm C}^{T})_{kj} =  \sum_{k=1}^{n} a_{ik} {\rm C}_{jk} <span class="sc">\\</span></span>
-<span id="cb1-1478"><a href="#cb1-1478" aria-hidden="true" tabindex="-1"></a> &amp;= \left<span class="sc">\{</span> </span>
-<span id="cb1-1479"><a href="#cb1-1479" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-1480"><a href="#cb1-1480" aria-hidden="true" tabindex="-1"></a>0 &amp; i \neq j <span class="sc">\\</span> </span>
-<span id="cb1-1481"><a href="#cb1-1481" aria-hidden="true" tabindex="-1"></a>\det(\rm{A}) &amp; i=j</span>
-<span id="cb1-1482"><a href="#cb1-1482" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1483"><a href="#cb1-1483" aria-hidden="true" tabindex="-1"></a>\right. <span class="sc">\\</span></span>
-<span id="cb1-1484"><a href="#cb1-1484" aria-hidden="true" tabindex="-1"></a>\Rightarrow {\rm A} \  \rm{adj}({\rm A}) &amp;= \det(\rm{A}) {\rm I} </span>
-<span id="cb1-1485"><a href="#cb1-1485" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$ Here, the result for $i\neq j$ is obtained from the fact</span>
-<span id="cb1-1486"><a href="#cb1-1486" aria-hidden="true" tabindex="-1"></a>that $\sum_{k=1}^{n} a_{ik} {\rm C}_{jk}$ is the expansion of the</span>
-<span id="cb1-1487"><a href="#cb1-1487" aria-hidden="true" tabindex="-1"></a>determinant of a matrix with two identical rows. For the case $i=j$,</span>
-<span id="cb1-1488"><a href="#cb1-1488" aria-hidden="true" tabindex="-1"></a>however, this is exactly the definition of the expansion of a</span>
-<span id="cb1-1489"><a href="#cb1-1489" aria-hidden="true" tabindex="-1"></a>determinant along row $i$ of ${\rm A}$. So $$\begin{aligned}</span>
-<span id="cb1-1490"><a href="#cb1-1490" aria-hidden="true" tabindex="-1"></a>&amp;&amp; A\textrm{adj}(A)=\det(A)I <span class="sc">\\</span></span>
-<span id="cb1-1491"><a href="#cb1-1491" aria-hidden="true" tabindex="-1"></a>&amp;\Leftrightarrow&amp; \frac{A \textrm{adj}(A)}{\det(A)}=I.</span>
-<span id="cb1-1492"><a href="#cb1-1492" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$ Multiplying $A^{-1}$ from the left gives</span>
-<span id="cb1-1493"><a href="#cb1-1493" aria-hidden="true" tabindex="-1"></a>$$\frac{1}{\det(A)} \textrm{adj}(A)=A^{-1}.$$&nbsp;◻</span>
-<span id="cb1-1494"><a href="#cb1-1494" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1495"><a href="#cb1-1495" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1496"><a href="#cb1-1496" aria-hidden="true" tabindex="-1"></a>::: {#exm-adj1}</span>
-<span id="cb1-1497"><a href="#cb1-1497" aria-hidden="true" tabindex="-1"></a>Find the adjoint of the matrix</span>
-<span id="cb1-1498"><a href="#cb1-1498" aria-hidden="true" tabindex="-1"></a>$${\rm A}=\left[</span>
-<span id="cb1-1499"><a href="#cb1-1499" aria-hidden="true" tabindex="-1"></a>\begin{array}{ccc}</span>
-<span id="cb1-1500"><a href="#cb1-1500" aria-hidden="true" tabindex="-1"></a>1 &amp; -1 &amp; 2<span class="sc">\\</span></span>
-<span id="cb1-1501"><a href="#cb1-1501" aria-hidden="true" tabindex="-1"></a>3 &amp; 2 &amp; -1<span class="sc">\\</span></span>
-<span id="cb1-1502"><a href="#cb1-1502" aria-hidden="true" tabindex="-1"></a>2 &amp; -1 &amp; 2<span class="sc">\\</span></span>
-<span id="cb1-1503"><a href="#cb1-1503" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1504"><a href="#cb1-1504" aria-hidden="true" tabindex="-1"></a>\right]$$</span>
-<span id="cb1-1505"><a href="#cb1-1505" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1506"><a href="#cb1-1506" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1507"><a href="#cb1-1507" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-1508"><a href="#cb1-1508" aria-hidden="true" tabindex="-1"></a><span class="sc">\(</span>i<span class="sc">\)</span> Matrix of minors is </span>
-<span id="cb1-1509"><a href="#cb1-1509" aria-hidden="true" tabindex="-1"></a>$$\left[</span>
-<span id="cb1-1510"><a href="#cb1-1510" aria-hidden="true" tabindex="-1"></a>\begin{array}{rrr}</span>
-<span id="cb1-1511"><a href="#cb1-1511" aria-hidden="true" tabindex="-1"></a>3 &amp; 8 &amp; -7<span class="sc">\\</span></span>
-<span id="cb1-1512"><a href="#cb1-1512" aria-hidden="true" tabindex="-1"></a>0 &amp; -2 &amp; 1<span class="sc">\\</span></span>
-<span id="cb1-1513"><a href="#cb1-1513" aria-hidden="true" tabindex="-1"></a>-3 &amp; -7 &amp; 5</span>
-<span id="cb1-1514"><a href="#cb1-1514" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1515"><a href="#cb1-1515" aria-hidden="true" tabindex="-1"></a>\right].$$ </span>
-<span id="cb1-1516"><a href="#cb1-1516" aria-hidden="true" tabindex="-1"></a>(ii) The matrix of cofactors is </span>
-<span id="cb1-1517"><a href="#cb1-1517" aria-hidden="true" tabindex="-1"></a>$$\left[</span>
-<span id="cb1-1518"><a href="#cb1-1518" aria-hidden="true" tabindex="-1"></a>\begin{array}{rrr}</span>
-<span id="cb1-1519"><a href="#cb1-1519" aria-hidden="true" tabindex="-1"></a>3 &amp; -8 &amp; -7<span class="sc">\\</span></span>
-<span id="cb1-1520"><a href="#cb1-1520" aria-hidden="true" tabindex="-1"></a>0 &amp; -2 &amp; -1<span class="sc">\\</span></span>
-<span id="cb1-1521"><a href="#cb1-1521" aria-hidden="true" tabindex="-1"></a>-3 &amp; 7 &amp; 5</span>
-<span id="cb1-1522"><a href="#cb1-1522" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1523"><a href="#cb1-1523" aria-hidden="true" tabindex="-1"></a>\right].$$ </span>
-<span id="cb1-1524"><a href="#cb1-1524" aria-hidden="true" tabindex="-1"></a>(iii) Adjoint is </span>
-<span id="cb1-1525"><a href="#cb1-1525" aria-hidden="true" tabindex="-1"></a>$${\rm adj}({\rm A}) = \left[</span>
-<span id="cb1-1526"><a href="#cb1-1526" aria-hidden="true" tabindex="-1"></a>\begin{array}{rrr}</span>
-<span id="cb1-1527"><a href="#cb1-1527" aria-hidden="true" tabindex="-1"></a>3 &amp; 0 &amp; -3<span class="sc">\\</span></span>
-<span id="cb1-1528"><a href="#cb1-1528" aria-hidden="true" tabindex="-1"></a>-8 &amp; -2 &amp; 7<span class="sc">\\</span></span>
-<span id="cb1-1529"><a href="#cb1-1529" aria-hidden="true" tabindex="-1"></a>-7 &amp; -1 &amp; 5</span>
-<span id="cb1-1530"><a href="#cb1-1530" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1531"><a href="#cb1-1531" aria-hidden="true" tabindex="-1"></a>\right].$$</span>
-<span id="cb1-1532"><a href="#cb1-1532" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1533"><a href="#cb1-1533" aria-hidden="true" tabindex="-1"></a>Notice that</span>
-<span id="cb1-1534"><a href="#cb1-1534" aria-hidden="true" tabindex="-1"></a>$${\rm A} \,  {\rm adj}({\rm A}) = \left[</span>
-<span id="cb1-1535"><a href="#cb1-1535" aria-hidden="true" tabindex="-1"></a>\begin{array}{rrr}</span>
-<span id="cb1-1536"><a href="#cb1-1536" aria-hidden="true" tabindex="-1"></a>1 &amp; -1 &amp; 2<span class="sc">\\</span></span>
-<span id="cb1-1537"><a href="#cb1-1537" aria-hidden="true" tabindex="-1"></a>3 &amp; 2 &amp; -1<span class="sc">\\</span></span>
-<span id="cb1-1538"><a href="#cb1-1538" aria-hidden="true" tabindex="-1"></a>2 &amp; -1 &amp; 2<span class="sc">\\</span></span>
-<span id="cb1-1539"><a href="#cb1-1539" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1540"><a href="#cb1-1540" aria-hidden="true" tabindex="-1"></a>\right]</span>
-<span id="cb1-1541"><a href="#cb1-1541" aria-hidden="true" tabindex="-1"></a>\left[</span>
-<span id="cb1-1542"><a href="#cb1-1542" aria-hidden="true" tabindex="-1"></a>\begin{array}{rrr}</span>
-<span id="cb1-1543"><a href="#cb1-1543" aria-hidden="true" tabindex="-1"></a>3 &amp; 0 &amp; -3<span class="sc">\\</span></span>
-<span id="cb1-1544"><a href="#cb1-1544" aria-hidden="true" tabindex="-1"></a>-8 &amp; -2 &amp; 7<span class="sc">\\</span></span>
-<span id="cb1-1545"><a href="#cb1-1545" aria-hidden="true" tabindex="-1"></a>-7 &amp; -1 &amp; 5</span>
-<span id="cb1-1546"><a href="#cb1-1546" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1547"><a href="#cb1-1547" aria-hidden="true" tabindex="-1"></a>\right]$$ $$= \left[</span>
-<span id="cb1-1548"><a href="#cb1-1548" aria-hidden="true" tabindex="-1"></a>\begin{array}{rrr}</span>
-<span id="cb1-1549"><a href="#cb1-1549" aria-hidden="true" tabindex="-1"></a>-3 &amp; 0 &amp; 0<span class="sc">\\</span></span>
-<span id="cb1-1550"><a href="#cb1-1550" aria-hidden="true" tabindex="-1"></a>0  &amp; -3 &amp; 0<span class="sc">\\</span></span>
-<span id="cb1-1551"><a href="#cb1-1551" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 &amp; -3</span>
-<span id="cb1-1552"><a href="#cb1-1552" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1553"><a href="#cb1-1553" aria-hidden="true" tabindex="-1"></a>\right] = -3 I = det(A) I.$$</span>
-<span id="cb1-1554"><a href="#cb1-1554" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1555"><a href="#cb1-1555" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1556"><a href="#cb1-1556" aria-hidden="true" tabindex="-1"></a>::: {#exm-adj2}</span>
-<span id="cb1-1557"><a href="#cb1-1557" aria-hidden="true" tabindex="-1"></a>Use the adjoint matrix to find the inverse of the matrix</span>
-<span id="cb1-1558"><a href="#cb1-1558" aria-hidden="true" tabindex="-1"></a>$A=\left(\begin{array}{rrr}1 &amp; -1 &amp; 2 <span class="sc">\\</span> 3 &amp; 2 &amp; -1 <span class="sc">\\</span> 2 &amp; -1 &amp; 2\end{array}\right)$</span>
-<span id="cb1-1559"><a href="#cb1-1559" aria-hidden="true" tabindex="-1"></a>in the previous example.</span>
-<span id="cb1-1560"><a href="#cb1-1560" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1561"><a href="#cb1-1561" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1562"><a href="#cb1-1562" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-1563"><a href="#cb1-1563" aria-hidden="true" tabindex="-1"></a>The determinant of the matrix $A$ is </span>
-<span id="cb1-1564"><a href="#cb1-1564" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1565"><a href="#cb1-1565" aria-hidden="true" tabindex="-1"></a>&amp;&amp;1\left|\begin{array}{rr}2 &amp; -1 <span class="sc">\\</span> -1 &amp; 2\end{array}\right|+</span>
-<span id="cb1-1566"><a href="#cb1-1566" aria-hidden="true" tabindex="-1"></a>1\left|\begin{array}{rr}3 &amp; -1 <span class="sc">\\</span> 2 &amp; 2\end{array}\right|</span>
-<span id="cb1-1567"><a href="#cb1-1567" aria-hidden="true" tabindex="-1"></a>-2\left|\begin{array}{rr}3 &amp; 2 <span class="sc">\\</span> 2 &amp; -1\end{array}\right| <span class="sc">\\</span></span>
-<span id="cb1-1568"><a href="#cb1-1568" aria-hidden="true" tabindex="-1"></a>&amp;= (4-1)+(6+2)+2(-3-4)<span class="sc">\\</span></span>
-<span id="cb1-1569"><a href="#cb1-1569" aria-hidden="true" tabindex="-1"></a>&amp;= 3+8 -14<span class="sc">\\</span></span>
-<span id="cb1-1570"><a href="#cb1-1570" aria-hidden="true" tabindex="-1"></a>&amp;=-3.</span>
-<span id="cb1-1571"><a href="#cb1-1571" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$ Thus, the inverse is</span>
-<span id="cb1-1572"><a href="#cb1-1572" aria-hidden="true" tabindex="-1"></a>$$A^{-1}=\frac{-1}{3}\left(\begin{array}{rrr}</span>
-<span id="cb1-1573"><a href="#cb1-1573" aria-hidden="true" tabindex="-1"></a>3 &amp; 0 &amp; -3 <span class="sc">\\</span></span>
-<span id="cb1-1574"><a href="#cb1-1574" aria-hidden="true" tabindex="-1"></a>-8 &amp; -2 &amp; 7 <span class="sc">\\</span></span>
-<span id="cb1-1575"><a href="#cb1-1575" aria-hidden="true" tabindex="-1"></a>-7 &amp; -1 &amp; 5</span>
-<span id="cb1-1576"><a href="#cb1-1576" aria-hidden="true" tabindex="-1"></a>\end{array}\right).$$</span>
-<span id="cb1-1577"><a href="#cb1-1577" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1578"><a href="#cb1-1578" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1579"><a href="#cb1-1579" aria-hidden="true" tabindex="-1"></a>::: {#exm-adj3}</span>
-<span id="cb1-1580"><a href="#cb1-1580" aria-hidden="true" tabindex="-1"></a>Find the inverse of $$A=\left(\begin{array}{rrr}</span>
-<span id="cb1-1581"><a href="#cb1-1581" aria-hidden="true" tabindex="-1"></a>2 &amp; 3 &amp; 4 <span class="sc">\\</span></span>
-<span id="cb1-1582"><a href="#cb1-1582" aria-hidden="true" tabindex="-1"></a>5 &amp; 6 &amp; 7 <span class="sc">\\</span></span>
-<span id="cb1-1583"><a href="#cb1-1583" aria-hidden="true" tabindex="-1"></a>8 &amp; 9 &amp; 1</span>
-<span id="cb1-1584"><a href="#cb1-1584" aria-hidden="true" tabindex="-1"></a>\end{array}\right).$$</span>
-<span id="cb1-1585"><a href="#cb1-1585" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1586"><a href="#cb1-1586" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1587"><a href="#cb1-1587" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-1588"><a href="#cb1-1588" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1589"><a href="#cb1-1589" aria-hidden="true" tabindex="-1"></a>\det(A) &amp;= 2\left|\begin{array}{rr}</span>
-<span id="cb1-1590"><a href="#cb1-1590" aria-hidden="true" tabindex="-1"></a>6 &amp; 7 <span class="sc">\\</span></span>
-<span id="cb1-1591"><a href="#cb1-1591" aria-hidden="true" tabindex="-1"></a>9 &amp; 1</span>
-<span id="cb1-1592"><a href="#cb1-1592" aria-hidden="true" tabindex="-1"></a>\end{array}\right|</span>
-<span id="cb1-1593"><a href="#cb1-1593" aria-hidden="true" tabindex="-1"></a>-3\left|\begin{array}{rr}</span>
-<span id="cb1-1594"><a href="#cb1-1594" aria-hidden="true" tabindex="-1"></a>5 &amp; 7 <span class="sc">\\</span></span>
-<span id="cb1-1595"><a href="#cb1-1595" aria-hidden="true" tabindex="-1"></a>8 &amp; 1</span>
-<span id="cb1-1596"><a href="#cb1-1596" aria-hidden="true" tabindex="-1"></a>\end{array}\right|</span>
-<span id="cb1-1597"><a href="#cb1-1597" aria-hidden="true" tabindex="-1"></a>+4\left|\begin{array}{rr}</span>
-<span id="cb1-1598"><a href="#cb1-1598" aria-hidden="true" tabindex="-1"></a>5 &amp; 6 <span class="sc">\\</span></span>
-<span id="cb1-1599"><a href="#cb1-1599" aria-hidden="true" tabindex="-1"></a>8 &amp; 9</span>
-<span id="cb1-1600"><a href="#cb1-1600" aria-hidden="true" tabindex="-1"></a>\end{array}\right| <span class="sc">\\</span></span>
-<span id="cb1-1601"><a href="#cb1-1601" aria-hidden="true" tabindex="-1"></a>&amp;= 2(6-63)-3(5-56)+4(45-48) <span class="sc">\\</span></span>
-<span id="cb1-1602"><a href="#cb1-1602" aria-hidden="true" tabindex="-1"></a>&amp;= 2(-57)-3(-51)+4(-3) <span class="sc">\\</span></span>
-<span id="cb1-1603"><a href="#cb1-1603" aria-hidden="true" tabindex="-1"></a>&amp;= -114+153-12 <span class="sc">\\</span></span>
-<span id="cb1-1604"><a href="#cb1-1604" aria-hidden="true" tabindex="-1"></a>&amp;= 27.</span>
-<span id="cb1-1605"><a href="#cb1-1605" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
-<span id="cb1-1606"><a href="#cb1-1606" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1607"><a href="#cb1-1607" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1608"><a href="#cb1-1608" aria-hidden="true" tabindex="-1"></a>A^{-1} &amp;= \frac{1}{27}</span>
-<span id="cb1-1609"><a href="#cb1-1609" aria-hidden="true" tabindex="-1"></a>\left(\begin{array}{rrr}</span>
-<span id="cb1-1610"><a href="#cb1-1610" aria-hidden="true" tabindex="-1"></a>-57 &amp; 33 &amp; -3 <span class="sc">\\</span></span>
-<span id="cb1-1611"><a href="#cb1-1611" aria-hidden="true" tabindex="-1"></a>51 &amp; -30 &amp; 6 <span class="sc">\\</span></span>
-<span id="cb1-1612"><a href="#cb1-1612" aria-hidden="true" tabindex="-1"></a>-3 &amp; 6 &amp; -3</span>
-<span id="cb1-1613"><a href="#cb1-1613" aria-hidden="true" tabindex="-1"></a>\end{array}\right) <span class="sc">\\</span></span>
-<span id="cb1-1614"><a href="#cb1-1614" aria-hidden="true" tabindex="-1"></a>&amp;= \frac{1}{9}\left(\begin{array}{rrr}</span>
-<span id="cb1-1615"><a href="#cb1-1615" aria-hidden="true" tabindex="-1"></a>-19 &amp; 11 &amp; -1 <span class="sc">\\</span></span>
-<span id="cb1-1616"><a href="#cb1-1616" aria-hidden="true" tabindex="-1"></a>17 &amp; -10 &amp; 2 <span class="sc">\\</span></span>
-<span id="cb1-1617"><a href="#cb1-1617" aria-hidden="true" tabindex="-1"></a>-1 &amp; 2 &amp; -1</span>
-<span id="cb1-1618"><a href="#cb1-1618" aria-hidden="true" tabindex="-1"></a>\end{array}\right).</span>
-<span id="cb1-1619"><a href="#cb1-1619" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
-<span id="cb1-1620"><a href="#cb1-1620" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1621"><a href="#cb1-1621" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1622"><a href="#cb1-1622" aria-hidden="true" tabindex="-1"></a>::: {#exm-adj4}</span>
-<span id="cb1-1623"><a href="#cb1-1623" aria-hidden="true" tabindex="-1"></a>In the $2\times 2$ case, if </span>
-<span id="cb1-1624"><a href="#cb1-1624" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1625"><a href="#cb1-1625" aria-hidden="true" tabindex="-1"></a>A&amp;=\left[ </span>
-<span id="cb1-1626"><a href="#cb1-1626" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-1627"><a href="#cb1-1627" aria-hidden="true" tabindex="-1"></a>a &amp; b <span class="sc">\\</span> </span>
-<span id="cb1-1628"><a href="#cb1-1628" aria-hidden="true" tabindex="-1"></a>c &amp; d</span>
-<span id="cb1-1629"><a href="#cb1-1629" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1630"><a href="#cb1-1630" aria-hidden="true" tabindex="-1"></a>\right] \ \Rightarrow  \  {\rm adj}({\rm A}) = \left[\begin{array}{rr}</span>
-<span id="cb1-1631"><a href="#cb1-1631" aria-hidden="true" tabindex="-1"></a>d &amp; -b <span class="sc">\\</span> </span>
-<span id="cb1-1632"><a href="#cb1-1632" aria-hidden="true" tabindex="-1"></a>-c &amp; a</span>
-<span id="cb1-1633"><a href="#cb1-1633" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1634"><a href="#cb1-1634" aria-hidden="true" tabindex="-1"></a>\right]  <span class="sc">\\</span></span>
-<span id="cb1-1635"><a href="#cb1-1635" aria-hidden="true" tabindex="-1"></a> \Rightarrow A^{-1} &amp;= \frac{1}{ad-bc}\left[ </span>
-<span id="cb1-1636"><a href="#cb1-1636" aria-hidden="true" tabindex="-1"></a>\begin{array}{rr}</span>
-<span id="cb1-1637"><a href="#cb1-1637" aria-hidden="true" tabindex="-1"></a>d &amp; -b <span class="sc">\\</span> </span>
-<span id="cb1-1638"><a href="#cb1-1638" aria-hidden="true" tabindex="-1"></a>-c &amp; a</span>
-<span id="cb1-1639"><a href="#cb1-1639" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-1640"><a href="#cb1-1640" aria-hidden="true" tabindex="-1"></a>\right].  </span>
-<span id="cb1-1641"><a href="#cb1-1641" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
-<span id="cb1-1642"><a href="#cb1-1642" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-857"><a href="#cb1-857" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

@@ -1,142 +1,120 @@
 \providecommand{\Pageref}[1]{\hfill p.\pageref{#1}}
- [**Definition 1**](#vksoverr): Vector Space over R\Pageref{vksoverr}
+ [**Definition 2.1**](#vksoverr): Vector Space over R\Pageref{vksoverr}
 
- [**Definition 2**](#vksoverk): Vector Space over K\Pageref{vksoverk}
+ [**Definition 2.2**](#vksoverk): Vector Space over K\Pageref{vksoverk}
 
- [**Definition 3**](#linear-combination): Linear Combination\Pageref{linear-combination}
+ [**Definition 2.3**](#linear-combination): Linear Combination\Pageref{linear-combination}
 
- [**Definition 4**](#linear-independence-1): Linear Independence\Pageref{linear-independence-1}
+ [**Definition 2.4**](#linear-independence-1): Linear Independence\Pageref{linear-independence-1}
 
- [**Definition 5**](#span): Span\Pageref{span}
+ [**Definition 2.5**](#span): Span\Pageref{span}
 
- [**Definition 6**](#basis): Basis\Pageref{basis}
+ [**Definition 2.6**](#basis): Basis\Pageref{basis}
 
- [**Theorem 7**](#uniqueness-w.r.t.-a-basis): Uniqueness w.r.t. a basis\Pageref{uniqueness-w.r.t.-a-basis}
+ [**Theorem 2.7**](#uniqueness-w.r.t.-a-basis): Uniqueness w.r.t. a basis\Pageref{uniqueness-w.r.t.-a-basis}
 
- [**Theorem 8**](#number-of-elements-of-a-basis): Number of elements of a basis\Pageref{number-of-elements-of-a-basis}
+ [**Theorem 2.8**](#number-of-elements-of-a-basis): Number of elements of a basis\Pageref{number-of-elements-of-a-basis}
 
- [**Definition 9**](#dimension): Dimension\Pageref{dimension}
+ [**Definition 2.9**](#dimension): Dimension\Pageref{dimension}
 
- [**Theorem 10**](#smaller-spanning-set): Smaller spanning set\Pageref{smaller-spanning-set}
+ [**Theorem 2.10**](#smaller-spanning-set): Smaller spanning set\Pageref{smaller-spanning-set}
 
- [**Corollary 11**](#Corollary-11)\Pageref{Corollary-11}
+ [**Corollary 2.11**](#Corollary-2.11)\Pageref{Corollary-2.11}
 
- [**Definition 12**](#subspace): Subspace\Pageref{subspace}
+ [**Definition 2.12**](#subspace): Subspace\Pageref{subspace}
 
- [**Theorem 13**](#intersection-of-subspaces): Intersection of subspaces\Pageref{intersection-of-subspaces}
+ [**Theorem 2.13**](#intersection-of-subspaces): Intersection of subspaces\Pageref{intersection-of-subspaces}
 
- [**Lemma 14**](#span-is-a-subspace): Span is a subspace\Pageref{span-is-a-subspace}
+ [**Lemma 2.14**](#span-is-a-subspace): Span is a subspace\Pageref{span-is-a-subspace}
 
- [**Definition 1**](#minor-and-cofactor): Minor and Cofactor\Pageref{minor-and-cofactor}
+ [**Definition 3.1**](#matrix): Matrix\Pageref{matrix}
 
- [**Definition 2**](#determinants-1): Determinants\Pageref{determinants-1}
+ [**Definition 3.2**](#matrix-sum-and-scalar-multiplication): Matrix sum and scalar multiplication\Pageref{matrix-sum-and-scalar-multiplication}
 
- [**Corollary 3**](#calcdet): Calculation of Determinants\Pageref{calcdet}
+ [**Corollary 3.3**](#basic-matrix-operations): Basic Matrix Operations\Pageref{basic-matrix-operations}
 
- [**Lemma 4**](#Lemma-4)\Pageref{Lemma-4}
+ [**Definition 3.4**](#matrix-product): Matrix product\Pageref{matrix-product}
 
- [**Theorem 5**](#product-rule): Product Rule\Pageref{product-rule}
+ [**Corollary 3.5**](#matrix-product-rules): Matrix product rules\Pageref{matrix-product-rules}
 
- [**Lemma 6**](#Lemma-6)\Pageref{Lemma-6}
+ [**Definition 3.6**](#transpose-of-a-matrix): Transpose of a Matrix\Pageref{transpose-of-a-matrix}
 
- [**Corollary 7**](#Corollary-7)\Pageref{Corollary-7}
+ [**Corollary 3.7**](#properties-of-the-transpose): Properties of the Transpose\Pageref{properties-of-the-transpose}
 
- [**Corollary 8**](#Corollary-8)\Pageref{Corollary-8}
+ [**Definition 3.8**](#symmetric-and-skew-symmetric-matrices): Symmetric and skew-symmetric matrices\Pageref{symmetric-and-skew-symmetric-matrices}
 
- [**Corollary 9**](#Corollary-9)\Pageref{Corollary-9}
+ [**Definition 3.9**](#inverse-of-a-matrix): Inverse of a matrix\Pageref{inverse-of-a-matrix}
 
- [**Definition 10**](#Definition-10)\Pageref{Definition-10}
+ [**Corollary 3.10**](#inverse-of-tranpose-and-product): Inverse of Tranpose and Product\Pageref{inverse-of-tranpose-and-product}
 
- [**Theorem 11**](#inverse-and-adjoint): Inverse and Adjoint\Pageref{inverse-and-adjoint}
+ [**Definition 3.11**](#Definition-3.11)\Pageref{Definition-3.11}
 
- [**Definition 1**](#matrix): Matrix\Pageref{matrix}
+ [**Corollary 3.12**](#inverse-of-elementary-matrices): Inverse of elementary matrices\Pageref{inverse-of-elementary-matrices}
 
- [**Definition 2**](#matrix-sum-and-scalar-multiplication): Matrix sum and scalar multiplication\Pageref{matrix-sum-and-scalar-multiplication}
+ [**Definition 3.13**](#upperlower-triangular-matrix): Upper/Lower Triangular Matrix\Pageref{upperlower-triangular-matrix}
 
- [**Corollary 3**](#basic-matrix-operations): Basic Matrix Operations\Pageref{basic-matrix-operations}
+ [**Corollary 3.14**](#range): Range\Pageref{range}
 
- [**Definition 4**](#matrix-product): Matrix product\Pageref{matrix-product}
+ [**Definition 3.15**](#nullspace): Nullspace\Pageref{nullspace}
 
- [**Corollary 5**](#matrix-product-rules): Matrix product rules\Pageref{matrix-product-rules}
+ [**Corollary 3.16**](#nullspace-is-a-subspace): Nullspace is a subspace\Pageref{nullspace-is-a-subspace}
 
- [**Definition 6**](#transpose-of-a-matrix): Transpose of a Matrix\Pageref{transpose-of-a-matrix}
+ [**Definition 3.17**](#row-and-column-space): Row and column space\Pageref{row-and-column-space}
 
- [**Corollary 7**](#properties-of-the-transpose): Properties of the Transpose\Pageref{properties-of-the-transpose}
+ [**Theorem 3.18**](#rowcolumnspace): Dimension of row and column spaces\Pageref{rowcolumnspace}
 
- [**Definition 8**](#symmetric-and-skew-symmetric-matrices): Symmetric and skew-symmetric matrices\Pageref{symmetric-and-skew-symmetric-matrices}
+ [**Definition 3.19**](#rank-and-nullity): Rank and nullity\Pageref{rank-and-nullity}
 
- [**Definition 9**](#inverse-of-a-matrix): Inverse of a matrix\Pageref{inverse-of-a-matrix}
+ [**Theorem 3.20**](#rank-theorem): Rank Theorem\Pageref{rank-theorem}
 
- [**Corollary 10**](#inverse-of-tranpose-and-product): Inverse of Tranpose and Product\Pageref{inverse-of-tranpose-and-product}
+ [**Definition 4.1**](#minor-and-cofactor): Minor and Cofactor\Pageref{minor-and-cofactor}
 
- [**Definition 11**](#Definition-11)\Pageref{Definition-11}
+ [**Definition 4.2**](#determinants-1): Determinants\Pageref{determinants-1}
 
- [**Corollary 12**](#inverse-of-elementary-matrices): Inverse of elementary matrices\Pageref{inverse-of-elementary-matrices}
+ [**Corollary 4.3**](#calcdet): Calculation of Determinants\Pageref{calcdet}
 
- [**Definition 13**](#upperlower-triangular-matrix): Upper/Lower Triangular Matrix\Pageref{upperlower-triangular-matrix}
+ [**Corollary 4.4**](#Corollary-4.4)\Pageref{Corollary-4.4}
 
- [**Corollary 14**](#range): Range\Pageref{range}
+ [**Theorem 4.5**](#product-rule): Product Rule\Pageref{product-rule}
 
- [**Definition 15**](#nullspace): Nullspace\Pageref{nullspace}
+ [**Corollary 4.6**](#Corollary-4.6)\Pageref{Corollary-4.6}
 
- [**Corollary 16**](#nullspace-is-a-subspace): Nullspace is a subspace\Pageref{nullspace-is-a-subspace}
+ [**Corollary 4.7**](#Corollary-4.7)\Pageref{Corollary-4.7}
 
- [**Definition 17**](#row-and-column-space): Row and column space\Pageref{row-and-column-space}
+ [**Corollary 4.8**](#Corollary-4.8)\Pageref{Corollary-4.8}
 
- [**Theorem 18**](#rowcolumnspace): Dimension of row and column spaces\Pageref{rowcolumnspace}
+ [**Corollary 4.9**](#Corollary-4.9)\Pageref{Corollary-4.9}
 
- [**Definition 19**](#rank-and-nullity): Rank and nullity\Pageref{rank-and-nullity}
+ [**Definition 4.10**](#Definition-4.10)\Pageref{Definition-4.10}
 
- [**Theorem 20**](#rank-theorem): Rank Theorem\Pageref{rank-theorem}
+ [**Theorem 4.11**](#inverse-and-adjoint): Inverse and Adjoint\Pageref{inverse-and-adjoint}
 
- [**Definition 1**](#minor-and-cofactor-1): Minor and Cofactor\Pageref{minor-and-cofactor-1}
+ [**Definition 5.1**](#eigenvalue-and-eigenvector): Eigenvalue and Eigenvector\Pageref{eigenvalue-and-eigenvector}
 
- [**Definition 2**](#determinants-3): Determinants\Pageref{determinants-3}
+ [**Definition 5.2**](#eigenspace): Eigenspace\Pageref{eigenspace}
 
- [**Corollary 3**](#calcdet): Calculation of Determinants\Pageref{calcdet}
+ [**Theorem 5.3**](#characteristic-equation): Characteristic Equation\Pageref{characteristic-equation}
 
- [**Corollary 4**](#Corollary-4)\Pageref{Corollary-4}
+ [**Definition 5.4**](#characteristic-equationpolynomial): Characteristic Equation/Polynomial\Pageref{characteristic-equationpolynomial}
 
- [**Theorem 5**](#product-rule-1): Product Rule\Pageref{product-rule-1}
+ [**Definition 5.5**](#algebraic-and-geometric-multiplicity): Algebraic and Geometric Multiplicity\Pageref{algebraic-and-geometric-multiplicity}
 
- [**Corollary 6**](#Corollary-6)\Pageref{Corollary-6}
+ [**Corollary 5.6**](#eigenvaluestriangular)\Pageref{eigenvaluestriangular}
 
- [**Corollary 7**](#Corollary-7)\Pageref{Corollary-7}
+ [**Theorem 5.7**](#eigenlinind)\Pageref{eigenlinind}
 
- [**Corollary 8**](#Corollary-8)\Pageref{Corollary-8}
+ [**Definition 5.8**](#similar-matrices-1): Similar Matrices\Pageref{similar-matrices-1}
 
- [**Corollary 9**](#Corollary-9)\Pageref{Corollary-9}
+ [**Theorem 5.9**](#simmatrices): Properties of Similar Matrices\Pageref{simmatrices}
 
- [**Definition 10**](#Definition-10)\Pageref{Definition-10}
+ [**Definition 5.10**](#diagonalisable-matrices): Diagonalisable Matrices\Pageref{diagonalisable-matrices}
 
- [**Theorem 11**](#inverse-and-adjoint-1): Inverse and Adjoint\Pageref{inverse-and-adjoint-1}
+ [**Theorem 5.11**](#diagifind): Condition for Diagonalisability\Pageref{diagifind}
 
- [**Definition 1**](#eigenvalue-and-eigenvector): Eigenvalue and Eigenvector\Pageref{eigenvalue-and-eigenvector}
+ [**Theorem 5.12**](#section)\Pageref{section}
 
- [**Definition 2**](#eigenspace): Eigenspace\Pageref{eigenspace}
+ [**Theorem 5.13**](#eigendiag)\Pageref{eigendiag}
 
- [**Theorem 3**](#characteristic-equation): Characteristic Equation\Pageref{characteristic-equation}
+ [**Corollary 5.14**](#Corollary-5.14)\Pageref{Corollary-5.14}
 
- [**Definition 4**](#characteristic-equationpolynomial): Characteristic Equation/Polynomial\Pageref{characteristic-equationpolynomial}
-
- [**Definition 5**](#algebraic-and-geometric-multiplicity): Algebraic and Geometric Multiplicity\Pageref{algebraic-and-geometric-multiplicity}
-
- [**Corollary 6**](#eigentriangular)\Pageref{eigentriangular}
-
- [**Theorem 7**](#eigenlinind)\Pageref{eigenlinind}
-
- [**Definition 8**](#similar-matrices-1): Similar Matrices\Pageref{similar-matrices-1}
-
- [**Theorem 9**](#simmatrices): Properties of Similar Matrices\Pageref{simmatrices}
-
- [**Definition 10**](#diagonalisable-matrices): Diagonalisable Matrices\Pageref{diagonalisable-matrices}
-
- [**Theorem 11**](#diagifind): Condition for Diagonalisability\Pageref{diagifind}
-
- [**Theorem 12**](#section)\Pageref{section}
-
- [**Theorem 13**](#eigendiag)\Pageref{eigendiag}
-
- [**Corollary 14**](#Corollary-14)\Pageref{Corollary-14}
-
- [**Theorem 15**](#diagonalisation-theorem): Diagonalisation Theorem\Pageref{diagonalisation-theorem}
+ [**Theorem 5.15**](#diagonalisation-theorem): Diagonalisation Theorem\Pageref{diagonalisation-theorem}

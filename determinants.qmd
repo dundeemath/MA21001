@@ -339,6 +339,7 @@ a_{j} & b_{j} & c_{j} &  \\
 \right|$ are identical, so it is zero (Corollary \ref{calcdet}, item 4). ◻
 :::
 
+
 ::: {.callout-note}
 ## Remember
 The rules are similar to, **but not the same as,**

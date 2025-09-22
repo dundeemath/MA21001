@@ -280,7 +280,7 @@ In the above Example, $\lambda = 1$ has algebraic multiplicity $2$ and geometric
 $1$. $\lambda = 2$ has algebraic multiplicity $1$ and geometric multiplicity
 $1$.
 
-::: {.Corollary #eigenvaluestriangular #eigentriangular}
+::: {.Corollary #eigenvaluestriangular}
 The eigenvalues of a triangular matrix are the entries on its main diagonal.
 :::
 
@@ -569,7 +569,7 @@ $$A = \left[\begin{array}{cccc}
             3 & 0 & 3 & 0 \\
             5 & 7 & 4 & -2
         \end{array}\right]$$
-has eigenvalues $\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3$ and $\lambda _{4} = -2$, by Corollary \ref{eigentriangular}. Since these are four distinct
+has eigenvalues $\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3$ and $\lambda _{4} = -2$, by Corollary \ref{eigenvaluestriangular}. Since these are four distinct
 eigenvalues for a $4 \times 4$ matrix, $A$ is diagonalisable, by Theorem \ref{eigendiag}.
 :::
 

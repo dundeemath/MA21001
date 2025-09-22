@@ -33,6 +33,7 @@ book:
         - "eigenvalues.qmd"
         - "appendix.qmd"
         # - "09-references.qmd"
+  
 
   # appendices: 
   # margin-header: "Header Text"
@@ -63,6 +64,7 @@ format:
     toc: true
     html-math-method: katex
     include-in-header: header.qmd
+    number-sections: true
   pdf: 
     code-overflow: wrap
     documentclass: scrreprt
@@ -75,6 +77,7 @@ format:
     link-citations: true
     link-bibliography: true
     cover-image: assets/images/cover_small.jpg
+    number-sections: true
     mermaid:
       mermaid-format: svg
       theme: neutral
@@ -126,8 +129,11 @@ custom-numbered-blocks:
       label: "Done"
       colors: [cce7b1, 86b754]  
       group: todos
+  crossref:
+    chapters: true
 
-     # crossref:
-     #   chapters: true
+crossref:
+  chapters: true
+  eq-title: Eq.
      #  eq-title: Eq -->
     

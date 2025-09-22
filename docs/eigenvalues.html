@@ -120,34 +120,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
-.Theorem {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Corollary {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Conjecture {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Proof {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Solution {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Definition {
-  --color1: #d999d3;
-  --color2: #a01793;
-}
-.Lemma {
-  --color1: #948bde;
-  --color2: #584eab;
-}
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
@@ -156,9 +128,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
+.Corollary {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Solution {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
 .Feature {
   --color1: #c0c0c0;
   --color2: #808080;
+}
+.Lemma {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Definition {
+  --color1: #d999d3;
+  --color2: #a01793;
+}
+.Theorem {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Proof {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.Conjecture {
+  --color1: #948bde;
+  --color2: #584eab;
 }
 </style>
 
@@ -550,7 +550,7 @@ Figure&nbsp;5.2: There are directions in which the vectors only change their len
 <p>These directions are characteristic of the deformation, as is the factor of elongation/compression along these directions. These directions can be found mathematically as the eigenvectors of a matrix, the deformation matrix, which maps the original vectors to the vectors of the deformed ball. The eigenvalues are the factors of compression/elongation along these directions. The word "eigen" is German for "own" and was likely introduced by David Hilbert (also known for Hilbert spaces).</p>
 <p>Eigenvalues and eigenvectors play an essential role in mathematics, physics and engineering. The stability of an equilibrium of a dynamical system is determined by the eigenvalues of a matrix that describes the linearised system at the equilibrium point. The values of a measurement in quantum mechanics are the eigenvalues of an operator. The principal axes of a rigid body are the eigenvectors of the moment of inertia tensor.</p>
 <div id="eigenvalue-and-eigenvector" class="Definition" title="Eigenvalue and Eigenvector">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 1: </strong>Eigenvalue and Eigenvector</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix. A scalar <span class="math inline">\lambda</span> is called an eigenvalue of <span class="math inline">A</span> if there is a nonzero vector <span class="math inline">\mathbf{x}</span> such that <span class="math inline">A\mathbf{x} = \lambda \mathbf{x}</span>. Such a vector <span class="math inline">\mathbf{x}</span> is called an eigenvector of <span class="math inline">A</span> corresponding to <span class="math inline">\lambda</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.1: </strong>Eigenvalue and Eigenvector</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix. A scalar <span class="math inline">\lambda</span> is called an eigenvalue of <span class="math inline">A</span> if there is a nonzero vector <span class="math inline">\mathbf{x}</span> such that <span class="math inline">A\mathbf{x} = \lambda \mathbf{x}</span>. Such a vector <span class="math inline">\mathbf{x}</span> is called an eigenvector of <span class="math inline">A</span> corresponding to <span class="math inline">\lambda</span>.<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
@@ -561,7 +561,7 @@ In general, if <span class="math inline">\mathbf{v}</span> is an eigenvector of 
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.2</strong></span> Show that <span class="math inline">5</span> is an eigenvalue of <span class="math inline">A = \left[\begin{array}{cc} 1 &amp; 2 \\ 4 &amp; 3 \end{array}\right]</span> and determine all eigenvectors corresponding to this eigenvalue.</p>
 </div>
-<div id="Solution*-1" class="Solution">
+<div id="Solution*-5.1" class="Solution">
 <p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>We must show that there is a nonzero vector <span class="math inline">\mathbf{x}</span> such that <span class="math inline">A\mathbf{x} = 5\mathbf{x}</span>, which is equivalent to the equation <span class="math inline">(A - 5I)\mathbf{x} = \mathbf{0}</span>. We compute the nullspace by:<p></p>
 <p><span class="math display">\left[A - 5I | \mathbf{0}\right] = \left[\begin{array}{cc|c} -4 &amp; 2 &amp; 0 \\ 4 &amp; -2 &amp; 0 \end{array}\right] \xrightarrow{R_{2} + R_{1}} \left[\begin{array}{cc|c} -4 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 \end{array}\right]</span></p>
 <p>Thus <span class="math inline">\mathbf{x} = \left[\begin{array}{c} x_{1} \\ x_{2} \end{array}\right] \in {\rm Null}(A-5I)</span> satisfies <span class="math inline">-4x_{1} + 2x_{2} = 0</span>, or <span class="math inline">x_{2} = 2x_{1}</span>.<br>
@@ -569,21 +569,21 @@ Thus, <span class="math inline">A\mathbf{x} = 5\mathbf{x}</span> has a nontrivia
 </div></details>
 </div>
 <div id="eigenspace" class="Definition" title="Eigenspace">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2: </strong>Eigenspace</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix and let <span class="math inline">\lambda</span> be an eigenvalue of <span class="math inline">A</span>. The collection of all eigenvectors corresponding to <span class="math inline">\lambda</span>, together with the zero vector, is called the eigenspace of <span class="math inline">\lambda</span> and is denoted by <span class="math inline">E_{\lambda }</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.2: </strong>Eigenspace</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix and let <span class="math inline">\lambda</span> be an eigenvalue of <span class="math inline">A</span>. The collection of all eigenvectors corresponding to <span class="math inline">\lambda</span>, together with the zero vector, is called the eigenspace of <span class="math inline">\lambda</span> and is denoted by <span class="math inline">E_{\lambda }</span>.<p></p>
 </div></details>
 </div>
 <p>Therefore, in the above Example, <span class="math inline">E_{5} = \left\{t\left[\begin{array}{c} 1 \\ 2 \end{array}\right]\right\}</span>, where <span class="math inline">t \in \mathbb{R}</span>.</p>
 <div id="characteristic-equation" class="Theorem" title="Characteristic Equation">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 3: </strong>Characteristic Equation</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix. Then <span class="math inline">\lambda</span> is an eigenvalue of <span class="math inline">A</span> if and only if <span class="math inline">|A-\lambda I_{n}| = 0</span> (or <span class="math inline">det(A - \lambda I_{n}) = 0</span>).<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.3: </strong>Characteristic Equation</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix. Then <span class="math inline">\lambda</span> is an eigenvalue of <span class="math inline">A</span> if and only if <span class="math inline">|A-\lambda I_{n}| = 0</span> (or <span class="math inline">det(A - \lambda I_{n}) = 0</span>).<p></p>
 </div></details>
 </div>
-<div id="Proof*-2" class="Proof">
+<div id="Proof*-5.2" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Suppose that <span class="math inline">\lambda</span> is an eigenvalue of <span class="math inline">A</span>. Then <span class="math inline">A\mathbf{v} = \lambda \mathbf{v}</span> for some nonzero <span class="math inline">\mathbf{v} \in \mathbb{R}^{n}</span>. This is equivalent to <span class="math inline">A\mathbf{v} = \lambda I_{n} \mathbf{v}</span> or <span class="math inline">(A - \lambda I_{n})\mathbf{v} = \mathbf{0}</span>. But this means that <span class="math inline">\mathbf{v}</span> is a nonzero solution to the homogeneous system of equations defined by the matrix <span class="math inline">A - \lambda I_{n}</span>. This means <span class="math inline">A - \lambda I_{n}</span> is singular, and so <span class="math inline">|A - \lambda I_{n}| = 0</span>.<br>
 Conversely, if <span class="math inline">|A - \lambda I_{n}| = 0</span> then <span class="math inline">A - \lambda I_{n}</span> is singular, and so the system of equations defined by <span class="math inline">A - \lambda I_{n}</span> has nonzero solutions. Hence there exists a nonzero <span class="math inline">\mathbf{v} \in \mathbb{R}^{n}</span> with <span class="math inline">(A - \lambda I_{n})\mathbf{v} = \mathbf{0}</span>, which is equivalent to <span class="math inline">A \mathbf{v} = \lambda \mathbf{v}</span>, and so <span class="math inline">\lambda</span> is an eigenvalue of <span class="math inline">A</span>.&nbsp;◻<p></p>
 </div></details>
 </div>
 <div id="characteristic-equationpolynomial" class="Definition" title="Characteristic Equation/Polynomial">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 4: </strong>Characteristic Equation/Polynomial</summary><div>For an <span class="math inline">n \times n</span> matrix <span class="math inline">A</span>, the equation <span class="math inline">|A - \lambda I_{n}| = 0</span> is called the characteristic equation of <span class="math inline">A</span>, and <span class="math inline">|A - \lambda I_{n}|</span> is called the characteristic polynomial of <span class="math inline">A</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.4: </strong>Characteristic Equation/Polynomial</summary><div>For an <span class="math inline">n \times n</span> matrix <span class="math inline">A</span>, the equation <span class="math inline">|A - \lambda I_{n}| = 0</span> is called the characteristic equation of <span class="math inline">A</span>, and <span class="math inline">|A - \lambda I_{n}|</span> is called the characteristic polynomial of <span class="math inline">A</span>.<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
@@ -618,7 +618,7 @@ To find the eigenvectors corresponding to <span class="math inline">\lambda _{2}
             -2 &amp; -4 &amp; -1
         \end{array}\right]</span>.</p>
 </div>
-<div id="Solution*-3" class="Solution">
+<div id="Solution*-5.3" class="Solution">
 <p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>The characteristic equation is <span class="math display">\begin{alignedat}{2}
         0 = |A - \lambda I| &amp;= \left|\begin{array}{ccc}
             3-\lambda &amp; 2 &amp; 2 \\
@@ -645,7 +645,7 @@ For <span class="math inline">\lambda _{1}=1</span>, we compute <span class="mat
         2 &amp; -5 &amp; 4
     \end{array}\right]</span></p>
 </div>
-<div id="Solution*-4" class="Solution">
+<div id="Solution*-5.4" class="Solution">
 <p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>The characteristic equations is<p></p>
 <p><span class="math display">\begin{alignedat}{2}
         0 = |A - \lambda I| &amp;= \left|\begin{array}{ccc}
@@ -667,13 +667,13 @@ To find the eigenvectors corresponding to <span class="math inline">\lambda _{1}
 </div></details>
 </div>
 <div id="algebraic-and-geometric-multiplicity" class="Definition" title="Algebraic and Geometric Multiplicity">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5: </strong>Algebraic and Geometric Multiplicity</summary><div>The algebraic multiplicity of an eigenvalue is its multiplicity as a root of the characteristic equation.<br>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.5: </strong>Algebraic and Geometric Multiplicity</summary><div>The algebraic multiplicity of an eigenvalue is its multiplicity as a root of the characteristic equation.<br>
 The geometric multiplicity of an eigenvalue <span class="math inline">\lambda</span> is <span class="math inline">{\rm dim} (E_{\lambda })</span>, the dimension of its corresponding eigenspace.<p></p>
 </div></details>
 </div>
 <p>In the above Example, <span class="math inline">\lambda = 1</span> has algebraic multiplicity <span class="math inline">2</span> and geometric multiplicity <span class="math inline">1</span>. <span class="math inline">\lambda = 2</span> has algebraic multiplicity <span class="math inline">1</span> and geometric multiplicity <span class="math inline">1</span>.</p>
-<div id="eigentriangular" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 6</strong></summary><div>The eigenvalues of a triangular matrix are the entries on its main diagonal.<p></p>
+<div id="eigenvaluestriangular" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 5.6</strong></summary><div>The eigenvalues of a triangular matrix are the entries on its main diagonal.<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
@@ -685,12 +685,12 @@ The geometric multiplicity of an eigenvalue <span class="math inline">\lambda</s
     \end{alignedat}</span></p>
 <p>Hence, the eigenvalues are <span class="math inline">\lambda _{1}=2, \lambda _{2}=1, \lambda _{3}=3, \lambda _{4}=-2</span>.</p>
 </div>
-<p>Note that diagonal matrices are a special case of Corollary <a href="algebra3b.html#eigenvaluestriangular">51</a>.</p>
+<p>Note that diagonal matrices are a special case of Corollary <a href="eigenvalues.html#eigenvaluestriangular">5.6</a>.</p>
 <div id="eigenlinind" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 7</strong></summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix and let <span class="math inline">\lambda _{1}, \lambda _{2}, ..., \lambda _{m}</span> be distinct eigenvalues of <span class="math inline">A</span> with corresponding eigenvectors <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}</span>. Then <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}</span> are linearly independent.<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.7</strong></summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix and let <span class="math inline">\lambda _{1}, \lambda _{2}, ..., \lambda _{m}</span> be distinct eigenvalues of <span class="math inline">A</span> with corresponding eigenvectors <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}</span>. Then <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}</span> are linearly independent.<p></p>
 </div></details>
 </div>
-<div id="Proof*-5" class="Proof">
+<div id="Proof*-5.5" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>We prove this by contradiction.<p></p>
 <p>Suppose <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}</span> are linearly dependent. Let <span class="math inline">\mathbf{v_{k+1}}</span> be the first of the vectors <span class="math inline">\mathbf{v_{i}}</span> that can be expressed as a linear combination of the previous ones. In other words, <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{k}}</span> are linearly independent, but there are <span class="math inline">c_{1}, c_{2}, ..., c_{k}</span> such that <span class="math display">\mathbf{v_{k+1}} = c_{1}\mathbf{v_{1}} + c_{2}\mathbf{v_{2}} + ... + c_{k}\mathbf{v_{k}} \qquad (1)</span></p>
 <p>Multiplying both sides of Equation (1) by <span class="math inline">A</span> from left and using the fact that <span class="math inline">A\mathbf{v_{i}} = \lambda _{i}\mathbf{v_{i}}</span> for each <span class="math inline">i</span>, we have <span class="math display">\begin{alignedat}{2}
@@ -716,7 +716,7 @@ The geometric multiplicity of an eigenvalue <span class="math inline">\lambda</s
 <section id="similar-matrices" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="similar-matrices"><span class="header-section-number">5.2.2</span> Similar Matrices</h3>
 <div id="similar-matrices-1" class="Definition" title="Similar Matrices">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 8: </strong>Similar Matrices</summary><div>Let <span class="math inline">A</span> and <span class="math inline">B</span> be <span class="math inline">n \times n</span> matrices. We say that <span class="math inline">A</span> is similar to <span class="math inline">B</span> if there is an invertible <span class="math inline">n \times n</span> matrix <span class="math inline">P</span> such that <span class="math inline">P^{-1}AP = B</span>. If <span class="math inline">A</span> is similar to <span class="math inline">B</span>, we write <span class="math inline">A \sim B</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.8: </strong>Similar Matrices</summary><div>Let <span class="math inline">A</span> and <span class="math inline">B</span> be <span class="math inline">n \times n</span> matrices. We say that <span class="math inline">A</span> is similar to <span class="math inline">B</span> if there is an invertible <span class="math inline">n \times n</span> matrix <span class="math inline">P</span> such that <span class="math inline">P^{-1}AP = B</span>. If <span class="math inline">A</span> is similar to <span class="math inline">B</span>, we write <span class="math inline">A \sim B</span>.<p></p>
 </div></details>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -733,14 +733,14 @@ The geometric multiplicity of an eigenvalue <span class="math inline">\lambda</s
 </div>
 </div>
 <div id="simmatrices" class="Theorem" title="Properties of Similar Matrices">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 9: </strong>Properties of Similar Matrices</summary><div>Let <span class="math inline">A</span> and <span class="math inline">B</span> be <span class="math inline">n \times n</span> matrices with <span class="math inline">A \sim B</span>. Then<br>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.9: </strong>Properties of Similar Matrices</summary><div>Let <span class="math inline">A</span> and <span class="math inline">B</span> be <span class="math inline">n \times n</span> matrices with <span class="math inline">A \sim B</span>. Then<br>
 (a) <span class="math inline">det(A) = det(B)</span><br>
 (b) <span class="math inline">A</span> and <span class="math inline">B</span> have the same rank.<br>
 (c) <span class="math inline">A</span> and <span class="math inline">B</span> have the same characteristic polynomial.<br>
 (d) <span class="math inline">A</span> and <span class="math inline">B</span> have the same eigenvalues.<p></p>
 </div></details>
 </div>
-<div id="Proof*-6" class="Proof">
+<div id="Proof*-5.6" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>If <span class="math inline">A \sim B</span>, then <span class="math inline">P^{-1}AP = B</span> for some invertible matrix <span class="math inline">P</span>.<br>
 (a)<br>
 <span class="math display">\begin{alignedat}{2}
@@ -760,7 +760,7 @@ The geometric multiplicity of an eigenvalue <span class="math inline">\lambda</s
         \end{alignedat}</span> &nbsp;◻</p>
 </div></details>
 </div>
-<p>Theorem <a href="eigenvalues.html#simmatrices">9</a> is helpful in showing that two matrices are not similar, since <span class="math inline">A</span> and <span class="math inline">B</span> cannot be similar if any of the properties fail.</p>
+<p>Theorem <a href="eigenvalues.html#simmatrices">5.9</a> is helpful in showing that two matrices are not similar, since <span class="math inline">A</span> and <span class="math inline">B</span> cannot be similar if any of the properties fail.</p>
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.7</strong></span> &nbsp;</p>
 <ol type="a">
@@ -773,15 +773,15 @@ The geometric multiplicity of an eigenvalue <span class="math inline">\lambda</s
 <section id="diagonalisation" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="diagonalisation"><span class="header-section-number">5.2.3</span> Diagonalisation</h3>
 <div id="diagonalisable-matrices" class="Definition" title="Diagonalisable Matrices">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 10: </strong>Diagonalisable Matrices</summary><div>An <span class="math inline">n \times n</span> matrix <span class="math inline">A</span> is diagonalisable if there is a diagonal matrix <span class="math inline">D</span> such that <span class="math inline">A</span> is similar to <span class="math inline">D</span> - that is, if there is an invertible <span class="math inline">n \times n</span> matrix <span class="math inline">P</span> such that <span class="math inline">P^{-1}AP = D</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.10: </strong>Diagonalisable Matrices</summary><div>An <span class="math inline">n \times n</span> matrix <span class="math inline">A</span> is diagonalisable if there is a diagonal matrix <span class="math inline">D</span> such that <span class="math inline">A</span> is similar to <span class="math inline">D</span> - that is, if there is an invertible <span class="math inline">n \times n</span> matrix <span class="math inline">P</span> such that <span class="math inline">P^{-1}AP = D</span>.<p></p>
 </div></details>
 </div>
 <div id="diagifind" class="Theorem" title="Condition for Diagonalisability">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 11: </strong>Condition for Diagonalisability</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix. Then <span class="math inline">A</span> is diagonalisable if and only if <span class="math inline">A</span> has <span class="math inline">n</span> linearly independent eigenvectors.<br>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.11: </strong>Condition for Diagonalisability</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix. Then <span class="math inline">A</span> is diagonalisable if and only if <span class="math inline">A</span> has <span class="math inline">n</span> linearly independent eigenvectors.<br>
 More precisely, there exists an invertible matrix <span class="math inline">P</span> and a diagonal matrix <span class="math inline">D</span> such that <span class="math inline">P^{-1}AP = D</span> if and only if the columns of <span class="math inline">P</span> are <span class="math inline">n</span> linearly independent eigenvectors of <span class="math inline">A</span> and the diagonal entries of <span class="math inline">D</span> are the eigenvalues of <span class="math inline">A</span> corresponding to the eigenvectors in <span class="math inline">P</span> in the same order.*<p></p>
 </div></details>
 </div>
-<div id="Proof*-7" class="Proof">
+<div id="Proof*-5.7" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Suppose first that <span class="math inline">A</span> is similar to the diagonal matrix <span class="math inline">D</span> by <span class="math inline">P^{-1}AP = D</span> or, equivalently, <span class="math inline">AP = PD</span>. Let the columns of <span class="math inline">P</span> be <span class="math inline">\mathbf{p_{1}}, \mathbf{p_{2}}, ..., \mathbf{p_{n}}</span> and let the diagonal entries of <span class="math inline">D</span> be <span class="math inline">\lambda _{1}, \lambda _{2}, ..., \lambda _{n}</span>. Then <span class="math display">A\left[\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots, \mathbf{p_{n}}\right] = \left[\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots, \mathbf{p_{n}}\right] \left[\begin{array}{cccc} \lambda _{1} &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; \lambda _{2} &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \cdots &amp; \lambda _{n} \end{array}\right] \qquad (1)</span> or <span class="math display">\qquad \left[A\mathbf{p_{1}}, A\mathbf{p_{2}}, \cdots, A\mathbf{p_{n}}\right] = \left[\lambda _{1}\mathbf{p_{1}}, \lambda _{2}\mathbf{p_{2}}, \cdots, \lambda _{n}\mathbf{p_{n}}\right] \qquad (2)</span><p></p>
 <p>Equating columns, we have <span class="math display">A\mathbf{p_{1}} = \lambda _{1}\mathbf{p_{1}}, A\mathbf{p_{2}} = \lambda _{2}\mathbf{p_{2}}, \cdots , A\mathbf{p_{n}} = \lambda _{n}\mathbf{p_{n}}</span> which proves that the column vectors of <span class="math inline">P</span> are eigenvectors of <span class="math inline">A</span> whose corresponding eigenvalues are the diagonal entries of <span class="math inline">D</span> in the same order. Since <span class="math inline">P</span> is invertible, its columns are linearly independent.</p>
 <p>Conversely, if <span class="math inline">A</span> has <span class="math inline">n</span> linearly independent eigenvectors <span class="math inline">\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots , \mathbf{p_{n}}</span> with corresponding eigenvalues <span class="math inline">\lambda _{1}, \lambda _{2}, \cdots , \lambda _{n}</span>, respectively, then <span class="math display">A\mathbf{p_{1}} = \lambda _{1}\mathbf{p_{1}}, A\mathbf{p_{2}} = \lambda _{2}\mathbf{p_{2}}, \cdots , A\mathbf{p_{n}} = \lambda _{n}\mathbf{p_{n}}</span></p>
@@ -795,7 +795,7 @@ More precisely, there exists an invertible matrix <span class="math inline">P</s
             2 &amp; -5 &amp; 4
         \end{array}\right]</span></p>
 </div>
-<div id="Solution*-8" class="Solution">
+<div id="Solution*-5.8" class="Solution">
 <p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>We studied this matrix previously and found that it has eigenvalues <span class="math inline">\lambda _{1} = \lambda _{2} = 1</span> and <span class="math inline">\lambda _{3} = 2</span>. The eigenspaces have the following bases:<br>
 For <span class="math inline">\lambda _{1} = \lambda _{2} = 1</span>, <span class="math inline">E_{1}</span> has basis <span class="math inline">\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]</span>.<br>
 For <span class="math inline">\lambda _{3} = 2</span>, <span class="math inline">E_{2}</span> has basis <span class="math inline">\left[\begin{array}{c} 1 \\ 2 \\ 4 \end{array}\right]</span>.<br>
@@ -809,7 +809,7 @@ Since all other eigenvectors are just multiples of one of these two basis vector
             -4 &amp; -8 &amp; 1
         \end{array}\right]</span></p>
 </div>
-<div id="Solution*-9" class="Solution">
+<div id="Solution*-5.9" class="Solution">
 <p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>This is the matrix of Question 3, Worksheet 6. There we found that the eigenvalues of <span class="math inline">A</span> are <span class="math inline">\lambda _{1} = 2</span> and <span class="math inline">\lambda _{2} = \lambda _{3} = 1</span>, with the following bases for the eigenspaces:<br>
 For <span class="math inline">\lambda _{1} = 2</span>, <span class="math inline">E_{2}</span> has basis <span class="math inline">\mathbf{p_{1}} = \left[\begin{array}{c} 1 \\ 0 \\ -4 \end{array}\right]</span>.<br>
 For <span class="math inline">\lambda _{2} = \lambda _{3} = 1</span>, <span class="math inline">E_{1}</span> has basis <span class="math inline">\mathbf{p_{2}} = \left[\begin{array}{c} -2 \\ 1 \\ 0 \end{array}\right]</span> and <span class="math inline">\mathbf{p_{3}} = \left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right]</span>.<br>
@@ -833,15 +833,15 @@ Now we check whether <span class="math inline">\left\{\mathbf{p_{1}}, \mathbf{p_
 </div>
 </div>
 <div id="section" class="Theorem" title="">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 12</strong></summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix and let <span class="math inline">\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}</span> be distinct eigenvalues of <span class="math inline">A</span>. If <span class="math inline">B_{i}</span> is a basis for the eigenspace <span class="math inline">E_{i}</span>, then <span class="math inline">B = B_{1} \cup B_{2} \cup \cdots \cup B_{k}</span> (i.e.&nbsp;the total collection of basis vectors for all of the eigenspaces) is linearly independent.<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.12</strong></summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix and let <span class="math inline">\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}</span> be distinct eigenvalues of <span class="math inline">A</span>. If <span class="math inline">B_{i}</span> is a basis for the eigenspace <span class="math inline">E_{i}</span>, then <span class="math inline">B = B_{1} \cup B_{2} \cup \cdots \cup B_{k}</span> (i.e.&nbsp;the total collection of basis vectors for all of the eigenspaces) is linearly independent.<p></p>
 </div></details>
 </div>
 <div id="eigendiag" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 13</strong></summary><div>If <span class="math inline">A</span> is an <span class="math inline">n \times n</span> matrix with <span class="math inline">n</span> distinct eigenvalues, then <span class="math inline">A</span> is diagonalisable.<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.13</strong></summary><div>If <span class="math inline">A</span> is an <span class="math inline">n \times n</span> matrix with <span class="math inline">n</span> distinct eigenvalues, then <span class="math inline">A</span> is diagonalisable.<p></p>
 </div></details>
 </div>
-<div id="Proof*-10" class="Proof">
-<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}</span> be eigenvectors corresponding to the <span class="math inline">n</span> distinct eigenvalues of <span class="math inline">A</span>. By theorem <a href="eigenvalues.html#eigenlinind">7</a>, <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}</span> are linearly independent, so, by Theorem <a href="eigenvalues.html#diagifind">11</a>, <span class="math inline">A</span> is diagonalisable.&nbsp;◻<p></p>
+<div id="Proof*-5.10" class="Proof">
+<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}</span> be eigenvectors corresponding to the <span class="math inline">n</span> distinct eigenvalues of <span class="math inline">A</span>. By theorem <a href="eigenvalues.html#eigenlinind">5.7</a>, <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}</span> are linearly independent, so, by Theorem <a href="eigenvalues.html#diagifind">5.11</a>, <span class="math inline">A</span> is diagonalisable.&nbsp;◻<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
@@ -850,14 +850,14 @@ Now we check whether <span class="math inline">\left\{\mathbf{p_{1}}, \mathbf{p_
             -1 &amp; 1 &amp; 0 &amp; 0 \\
             3 &amp; 0 &amp; 3 &amp; 0 \\
             5 &amp; 7 &amp; 4 &amp; -2
-        \end{array}\right]</span> has eigenvalues <span class="math inline">\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3</span> and <span class="math inline">\lambda _{4} = -2</span>, by Corollary <a href="eigenvalues.html#eigentriangular">6</a>. Since these are four distinct eigenvalues for a <span class="math inline">4 \times 4</span> matrix, <span class="math inline">A</span> is diagonalisable, by Theorem <a href="eigenvalues.html#eigendiag">13</a>.</p>
+        \end{array}\right]</span> has eigenvalues <span class="math inline">\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3</span> and <span class="math inline">\lambda _{4} = -2</span>, by Corollary <a href="eigenvalues.html#eigenvaluestriangular">5.6</a>. Since these are four distinct eigenvalues for a <span class="math inline">4 \times 4</span> matrix, <span class="math inline">A</span> is diagonalisable, by Theorem <a href="eigenvalues.html#eigendiag">5.13</a>.</p>
 </div>
-<div id="Corollary-14" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 14</strong></summary><div>If <span class="math inline">A</span> is an <span class="math inline">n \times n</span> matrix, then the geometric multiplicity of each eigenvalue is less than or equal to its algebraic multiplicity.<p></p>
+<div id="Corollary-5.14" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 5.14</strong></summary><div>If <span class="math inline">A</span> is an <span class="math inline">n \times n</span> matrix, then the geometric multiplicity of each eigenvalue is less than or equal to its algebraic multiplicity.<p></p>
 </div></details>
 </div>
 <div id="diagonalisation-theorem" class="Theorem" title="Diagonalisation Theorem">
-<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 15: </strong>Diagonalisation Theorem</summary><div>
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.15: </strong>Diagonalisation Theorem</summary><div>
 <p>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix whose distinct eigenvalues are <span class="math inline">\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}</span>, where <span class="math inline">1\leq k\leq n</span>. The following statements are equivalent:</p>
 <ol type="a">
 <li><p><span class="math inline">A</span> is diagonalisable.</p></li>
@@ -1640,7 +1640,7 @@ Now we check whether <span class="math inline">\left\{\mathbf{p_{1}}, \mathbf{p_
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>$1$. $\lambda = 2$ has algebraic multiplicity $1$ and geometric multiplicity</span>
 <span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>$1$.</span>
 <span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>::: {.Corollary #eigenvaluestriangular #eigentriangular}</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>::: {.Corollary #eigenvaluestriangular}</span>
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>The eigenvalues of a triangular matrix are the entries on its main diagonal.</span>
 <span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a></span>
@@ -1929,7 +1929,7 @@ Now we check whether <span class="math inline">\left\{\mathbf{p_{1}}, \mathbf{p_
 <span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>            3 &amp; 0 &amp; 3 &amp; 0 <span class="sc">\\</span></span>
 <span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>            5 &amp; 7 &amp; 4 &amp; -2</span>
 <span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
-<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>has eigenvalues $\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3$ and $\lambda _{4} = -2$, by Corollary \ref{eigentriangular}. Since these are four distinct</span>
+<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>has eigenvalues $\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3$ and $\lambda _{4} = -2$, by Corollary \ref{eigenvaluestriangular}. Since these are four distinct</span>
 <span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>eigenvalues for a $4 \times 4$ matrix, $A$ is diagonalisable, by Theorem \ref{eigendiag}.</span>
 <span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a></span>
