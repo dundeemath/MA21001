@@ -1,0 +1,185 @@
+# Before we start ...
+
+
+
+
+
+## Linear Algebra
+
+*Algebra: The department of mathematics which investigates the relations
+and properties of numbers by means of general symbols; and, in a more
+abstract sense, a calculus of symbols combining according to certain
+defined laws (Oxford English Dictionary)*
+
+
+Linear algebra is the branch of mathematics concerned with the study of
+vectors, vector spaces (also called linear spaces), linear
+transformations, and systems of linear equations. Vector spaces are a
+central theme in modern mathematics; thus, linear algebra is widely used
+in both abstract algebra and functional analysis. Linear algebra also
+has a concrete representation in analytic geometry and is generalised in
+operator theory. It has extensive applications in the natural sciences
+and the social sciences since a linear model can often approximate
+nonlinear models.
+
+The name Algebra (from Arabic: al-jabr) is derived from the treatise
+written by the Persian mathematician Muhammad ibn Musa al-Kwarizmi
+titled *Al-Kitab al-Jabr wa-l-Muqabala*, meaning "The Compendious Book
+on Calculation by Completion and Balancing\", which provided symbolic
+operations for the systematic solution of linear and quadratic equations
+[^1].
+
+[^1]: From Wikipedia, the free encyclopaedia
+
+## The Language of Mathematics
+
+To formulate mathematics, we first have to define the notions we are
+using before we make any statement. This allows us to prove general
+statements, which is the essence of mathematics. Mathematical notions
+are defined in Axioms and Definitions, while statements are called
+Theorems or Corollaries:
+
+### Axioms
+
+a fundamental definition or statement which can't be derived from any
+simpler statement. Axioms are the starting points of a mathematical
+theory. Often, axioms are so \"self-evident\" that they are not
+explicitly mentioned.
+
+Example: \"Peano Axioms\" for the natural numbers.
+
+1.  0 is a natural number.
+
+2.  For every natural number n, the successor, S(n), is a natural
+    number.
+
+3.  For every natural number n, $S(n) \neq 0$. That is, there is no
+    natural number whose successor is 0.
+
+4.  For all natural numbers m and n, if S(m) = S(n), then m = n. That
+    is, S is an injection.
+
+The original Peano axioms (published in 1889 by the Italian
+mathematician Giuseppe Peano) also included a set of axioms for the
+notion of equality and one further "axiom of induction\".
+
+1.  For every natural number x, x = x. That is, equality is reflexive.
+
+2.  For all natural numbers x and y, if x = y, then y = x. That is,
+    equality is symmetric.
+
+3.  For all natural numbers x, y and z, if x = y and y = z, then x = z.
+    That is, equality is transitive.
+
+4.  For all a and b, if a is a natural number and a = b, then b is also
+    a natural number. That is, the natural numbers are closed under
+    equality.
+
+5.  If K is a set such that 0 is in K, and for every natural number n,
+    if n is in K, then S(n) is in K, then K contains every natural
+    number. (axiom of induction)
+
+### Definition
+
+A new mathematical notion is given (defined) in terms of existing
+notions.
+
+Example: *A rational number is any number that can be expressed as the
+quotient a/b of two integers, with the denominator b not equal to zero.*
+Note that this definition requires to know what integers are and the
+notion of division (quotient).
+
+### Theorem
+
+A statement which relates specific (perviously defined) mathematical
+properties. It usually requires proof using definitions and mathematical
+logic to show the statement is true.
+
+### Corollary, Lemma
+
+An immediate consequence of a theorem (Corollary) or a minor theorem
+(Lemma). Sometimes, it comes with a proof; sometimes, it is omitted
+because it is considered trivial.
+
+::: example
+*Example 1.1*. As an example let's define something new :
+
+::: defn
+**Definition 1.1**. An umpf is a natural number, which is a multiple of
+3. A gumpf is a natural number which is a multiple of 6. (These are made-up notions, just for demonstration)
+:::
+
+::: lem
+**Lemma 1.1**. *Every gumpf is an umpf.*
+:::
+
+::: proof 
+If x is a gumpf, then $x= 6 n$, where n is a natural number.
+Hence $x=3 \cdot 2 \cdot n = 3 \cdot (2\cdot n)$. Therefore, x is an
+umpf. ◻
+:::
+
+The end of a proof is often indicated by a square or the abbreviation
+q.e.d. (Latin: quod erat demonstrandum) "that which was to be shown".
+:::
+
+## Mathematical notation
+
+
+### Symbols {#symbols .unnumbered}
+
+$$\begin{aligned}
+\mathbb{N}: \quad &  \text{natural numbers, e.g.} 1,2,...\\
+\mathbb{Z}: \quad &  \text{integers: } .., -2,-1,0,1,2,...\\
+\mathbb{Q}: \quad &  \text{rational numbers: } 0, 1/3, -5/11,...\\
+\mathbb{R}: \quad &  \text{real numbers: } 0, \pi, \sqrt{2}, 2/3, -2, ...\\
+\mathbb{C}: \quad &  \text{complex numbers: } 0, i, \pi +i, \sqrt{2}-4i , -2/3,  ...\\
+\Rightarrow \quad &  \text{logical implication, } A \Rightarrow B: \ \text{if A then B} \\
+\Leftrightarrow \quad &  \text{logical equivalence, }  A \Leftrightarrow B: \ \text{if A then B and if B then A} \\
+\vee \quad & \text{logical {\it or}, }  A \vee B: \ \text{either A or B or both} \\
+\land \quad & \text{logical {\it and},  }  A \land B: \ \text{A and B} \\
+\in \quad &  \text{\it is an element of,} \ x \in \mathbb{R} : \ \text{x is an element of } \mathbb{R} \\
+\forall \quad &  \text{{\it for all}, e.g.: }  x^{n} \in \mathbb{R} \  \forall \ n: \  \  \ x^{n}\text{ is real for all n} \\
+\exists \quad &  \text{{\it there  exist(s)}, e.g.: }  \forall x\in \mathbb{Q} \ \exists \ p,q \in \mathbb{Z} \text{ with } x=p/q
+\end{aligned}$$
+
+See also the list of Greek letters in the Appendix @sec-greekletters.
+
+## Mathematical proofs
+
+A sequence of logical arguments which shows that a statement is true in
+all cases, without a single exception. Types of proofs are:
+
+- direct proof.\
+  Example: The product of two even numbers is even. Proof: Let a,b two
+  even numbers, that is $a=2 n$ and $b= 2 m$, where
+  $m,n \in \mathbb{Z}$. $\Rightarrow$ $ab= 2n 2m = 2 (2nm)$ is an even
+  number.
+
+- proof by induction.\
+  This type of proof is often used to prove an infinite series of
+  statements $A_n$, $n=1,2,3 \ldots$. If we can prove that a) $A_1$ is
+  true and b) if $A_n$ is true then $A_{n+1}$ is true, then $A_n$ is
+  true for all $n \in \mathbb{N}$.
+  
+  Example:  $\sum_{n=1}^N n = \frac{1}{2} N (N+1)$
+
+  ::: proof
+  a) The statement is true for $n=1$: $1=\frac{2}{2}$. b) If
+  the formula is true for N=k then it is also true for N=k+1:
+  $\sum_{n=1}^N n = \frac{1}{2} N (N+1)$ $\Rightarrow$
+  $\sum_{n=1}^{N+1} n = \frac{1}{2} N (N+1) + (N+1) = (N+2)(N+1)/2$. ◻
+  :::
+
+- proof by contradiction. The type of proof uses $\neg (\neg A) = A$;
+  that is, it is shown that the opposite statement $\neg A$ is false (or
+  $\neg (\neg A)$ is true) and hence A is true.\
+  A famous example is the proof that $\sqrt{2}$ is not a rational
+  number: A: "$\sqrt{2}$ is not a rational number". Let us assume
+  $\neg A$ is true, that is, $\sqrt{2}$ is a rational number. Then
+  $\sqrt{2} = p/q$ with $p,q \in \mathbb{Z}$ with no common divisior.
+  $\Rightarrow  2q^2=p^2$ $\Rightarrow$ $p^2$ is even and therefore $p$
+  is even. Then $p=2n \Rightarrow p^2=2^2 n^2$ and hence
+  $q^2= p^2/2=2 n^2$ is even. Therefore, $q$ must be even in
+  contradiction to the assumption that $p,q$ had no common divisor.
+

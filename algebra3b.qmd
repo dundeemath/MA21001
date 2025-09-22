@@ -1,0 +1,1643 @@
+{{< include preamble.qmd >}}
+
+<!--{{< include notation.qmd >}} -->
+
+# Vector spaces
+
+## Motivation
+You have used vectors in previous modules to do elementary geometry.
+These vectors were introduced as lines connecting two points with a
+direction: $${\vec a} = \overrightarrow{PQ},$$ where $P$ is the starting
+point of the vector and $Q$ is the endpoint. The space of all these
+vectors is called the Euclidean space. It is usually introduced as a
+two- or three-dimensional space, but it is possible to generalise this
+to more dimensions. The Euclidean space was introduced as a simple model
+for the physical space around us. One can furthermore introduce
+orthogonal coordinates for the points in this space, e.g.
+$$P =  (P_x,P_y,P_z) = (3,2,1).$$ and this then allows us to define the
+components of a vector:
+$${\vec a} = \overrightarrow{PQ} =  \begin{pmatrix}    Q_x- P_x \\ Q_y- P_y \\ Q_z -P_z  \end{pmatrix} $$
+The identification between points and vectors in an Euclidean space
+becomes particularly simple if we can choose $P$ to be the origin of the
+coordinate system, $P=(0,0,0)$,
+$${\vec a} = \overrightarrow{OQ} =   \begin{pmatrix}    Q_x \\ Q_y \\ Q_z  \end{pmatrix} .$$
+Note that while the coordinates of points are usually denoted by a row
+of numbers (tuplet), the components of vectors are written as a column.
+An alternative way to write a vector is to write it as a sum of
+multiples of unit vectors,
+$${\vec v} =   v_x {\bf e}_x + v_y {\bf e}_y + v_z {\bf e}_z  =  \begin{pmatrix}    v_x \\ v_y \\ v_z  \end{pmatrix}.$$
+An addition as well as a scalar multiplication was defined for these
+vectors. Later, the scalar product between two vectors and the
+cross-product (vector product) were also defined.
+
+The operations on vectors of this Euclidean space $E$, the addition and
+scalar multiplication, had certain properties, for instance
+
+ 
+  + $\vec{u} + \vec{v}  \in  E$, closure condition for addition 
+  + $\vec{u}+\vec{v}  =  \vec{v}+\vec{u}$, the addition is commutative
+  + $\lambda (\vec{u}+ \vec{v})  =  \lambda \vec{u} + \lambda \vec{v}$, distributive law 
+  + $\ldots$ 
+
+In the following, we will generalise this space and define an abstract
+notion of a vector space, which has a much wider range of applications.
+To understand the crucial properties of such a definition, consider two
+examples.
+
+::: {#exm-    }
+The captain of a sailing boat can calculate the velocity
+of his ship (speed and direction over ground) as the sum of two
+velocities: the velocity of his boat relative to the water (speed
+through water) and the velocity of the water (drift due to tides or
+ocean currents). The sum of the two velocities is found in the same way
+as above, as the addition of two vectors; however, the coordinate system
+used is usually a polar one (the angle as determined by a compass and
+speed in knots) rather than a Cartesian one (x, y-components). The
+velocities obtained this way are part of a *velocity space*. The
+elements of this space, the velocities, follow the same rules of
+addition and scalar multiplication as the vectors in our Euclidean
+space. Remark: In this example, the velocity space is a tangent space to
+a manifold (the surface of the ocean), a concept explained in more
+detail in Differential Geometry.
+:::
+
+::: {#exm-    }
+The set of all polynomials with degree $\leq n$ is
+denoted by $\mathcal{P}_{n}$. We can add polynomials in
+$\mathcal{P}_{n}$ to obtain a polynomial in $\mathcal{P}_{n}$ again.
+Polynomials $p(x)= a_{0} + a_{1}x + ...+a_{n} x^{n}$ and
+$q(x)= b_{0} + b_{1}x + ...+b_{n} x^{n}$$\in \mathcal{P}_{n}$ add up to
+$$p(x)+q(x)  =  (a_{0}+ b_{0}) + (a_{1} + b_{1}) x + ...+(a_{n}+ b_{n}) x^{n}   \in \mathcal{P}_{n} .$$
+Similarly, we can multiply polynomials by a scalar $$\lambda p(x)  =   \lambda a_{0} +  \lambda a_{1}x + ...+ \lambda a_{n} x^{n}  \in \mathcal{P}_{n}$$ Note that we can identify a
+polynomial of degree $\leq n$ with the vector of coefficients
+$$p(x) \sim  \scriptstyle \begin{pmatrix}    a_{0} \\ a_{1} \\ \vdots \\ a_{n}   \end{pmatrix} \textstyle.$$ 
+:::
+
+The two examples above illustrate that numerous diverse examples exist
+where we find a structure similar to the Euclidean space. The elements
+in these spaces often don't look like "vectors\"; they can be
+polynomials, velocities, matrices, etc.~, but addition and scalar
+multiplication work in the same way, so they follow the same rules as
+vectors. This is the motivation to define an abstract notion of a vector
+space and define it based on how its elements behave under addition and
+scalar multiplication, rather than what they represent.
+
+## Definition of a Vector Space
+
+::: {.Definition #vksoverr}
+## Vector Space over R
+A vector space over $\mathbb{R}$ is a set $V$, the
+elements of which are called vectors $\vec{v} \in V$ along with two
+operations, an addition $\vec{v} + \vec{w}$ and a scalar multiplication
+$a \vec{v}$, $a \in \mathbb{R}$, subject to the following axioms for all $\vec{u},\vec{v}, \vec{w}\in V$
+and $a,b\in \mathbb{R}$ : 
+ $$\vec{u} + \vec{v} \in  V$$ {#eq-cond0} 
+ $$a \vec{u}  \in  V$$  {#eq-cond1} 
+ $$\vec{u}+\vec{v} = \vec{v}+\vec{u}$$ {#eq-cond2} 
+ $$(\vec{u}+\vec{v})+\vec{w}  = \vec{u}+(\vec{v}+\vec{w})$$ {#eq-cond3} 
+ $$\text{there exists a vector } {\vec 0}  \in V \text{such that } \vec{u}+\vec{0} = \vec{0}+\vec{u}=\vec{u}$${#eq-cond4}
+ $$ \text{given } \vec{v} \text{ there exists a vector } -\vec{v}  \in V  \text{ such that }\vec{v}+ (-\vec{v})  = \vec{0}$$ {#eq-cond5} 
+ $$1 \vec{u}  = \vec{u}$$  {#eq-cond6} 
+ $$a (\vec{u}+ \vec{v})  = a\vec{u} +a \vec{v}$$ {#eq-cond7}
+ $$(a+b) \vec{u} = a\vec{u} +b \vec{u}$$  {#eq-cond8} 
+ $$a (b \vec{u}) =(a b) \vec{u}$$ {#eq-cond9} 
+:::
+
+Axiom [-@eq-cond0] and [-@eq-cond1] ensure that both operations do not lead to elements
+not in $V$,  [-@eq-cond2] to [-@eq-cond5] ensure that the addition is commutative and associative and that there is a neutral element $\vec{0}$ and an inverse
+element with respect to the addition.
+Axiom [-@eq-cond6] states that the neutral element of the multiplication in $\mathbb{R}$ is also
+the neutral element for the scalar multiplication, while the remaining
+conditions are distributive laws.
+
+
+::: {.callout-note} 
+## Remark on Notation
+Alternative notations for vectors encountered in the
+literature are bold face symbols ${\bf v}$ or $\bar v$ (not to be
+confused with complex conjugation) or $\underline v$. The zero vector
+$\vec{0}$ is often written just as $0$. Note that there are two kinds of
+additions in this definition, both denoted by the same symbol $+$. The
+addition of two real numbers ($a+b$) and the addition of two vectors
+$\vec{v}+\vec{w}$. Also, for the multiplication, we have
+$ab \in \mathbb{R}$ as well as $a \vec{v} \in V$. No symbol is used for
+multiplication, since the dot as well as the cross will be later used to
+define two different types of multiplication between two vectors.
+
+If we want to avoid writing a vector as a column, as this always takes up a lot of space, we can use the transpose (denoted by a superscript T):
+$$ (1,2)^T = \begin{pmatrix}  1 \\ 2 \end{pmatrix} $$.
+:::
+
+::: {#exm-vktspace1}
+The set
+$\mathbb{R}^2 = \{(x_{1},x_{2})^T \vert x_{1} \in \mathbb{R}, x_{2} \in \mathbb{R}\}$
+is a vector space, the elements of which are written as columns
+$\vec{x}=\scriptstyle \begin{pmatrix}   x_{1}\\x_{2}  \end{pmatrix} \textstyle$,
+if addition and multiplication are defined as
+$$ \begin{pmatrix}   x_1 \\ x_2  \end{pmatrix} 
+  +
+   \begin{pmatrix}   y_1 \\ y_2  \end{pmatrix} 
+  =
+   \begin{pmatrix}   x_1+y_1 \\ x_2+y_2  \end{pmatrix} ;
+  \qquad
+  a 
+   \begin{pmatrix}   x_1 \\ x_2  \end{pmatrix} 
+  =
+   \begin{pmatrix}   a x_1 \\  a x_2  \end{pmatrix}  \ .$$
+We have to check that all the axioms
+[-@eq-cond0] to [-@eq-cond9] are
+satisfied. 
+
+
+ - axioms [-@eq-cond0] and [-@eq-cond1] are satisfied because the elements are again element in $V$.
+  - axioms [-@eq-cond2] to [-@eq-cond3] are satisfied because the addition of real numbers in each entry of the vector is associative and commutative,
+  - [-@eq-cond4] and [-@eq-cond5] are correct if we use the following zero vector and negative element:
+  $$\vec{0}=\scriptstyle \begin{pmatrix}   0\\0  \end{pmatrix} \textstyle \qquad   -\vec{x} = \scriptstyle \begin{pmatrix}   -x_{1}\\-x_{2}  \end{pmatrix} \textstyle \ .$$
+  - axiom [-@eq-cond6] is obvious from the definition of the scalar multiplication, 
+  - axiom [-@eq-cond7]
+  $$(r+s) \begin{pmatrix}   v_1 \\ v_2  \end{pmatrix} 
+  =\begin{pmatrix}   (r+s)v_1 \\ (r+s)v_2  \end{pmatrix} 
+  = \begin{pmatrix}   rv_1+sv_1 \\ rv_2+sv_2  \end{pmatrix} 
+  =r \begin{pmatrix}   v_1 \\ v_2  \end{pmatrix} +s \begin{pmatrix}   v_1 \\ v_2  \end{pmatrix}; $$ 
+  - axiom [-@eq-cond8]
+  $$r \left( \begin{pmatrix}   v_1 \\ v_2  \end{pmatrix} + \begin{pmatrix}   w_1 \\ w_2  \end{pmatrix} \right)
+  =\begin{pmatrix}   r(v_1+w_1) \\ r(v_2+w_2)  \end{pmatrix} 
+  =\begin{pmatrix}   rv_1+rw_1 \\ rv_2+rw_2  \end{pmatrix} 
+  =r \begin{pmatrix}   v_1 \\ v_2  \end{pmatrix} +r \begin{pmatrix}   w_1 \\ w_2  \end{pmatrix}; $$ 
+  - axiom [-@eq-cond9]
+  $$(rs) \begin{pmatrix}   v_1 \\ v_2  \end{pmatrix} 
+  = \begin{pmatrix}   (rs)v_1 \\ (rs)v_2  \end{pmatrix} 
+  =\begin{pmatrix}   r(sv_1) \\ r(sv_2)  \end{pmatrix} 
+  =r \left(s \begin{pmatrix}   v_1 \\ v_2  \end{pmatrix} \right).$$
+
+:::
+
+::: {#exm-vktspace2}
+The set
+$$V= \left\{ \left.  \begin{pmatrix}   v_{1}\\ v_{2}  \end{pmatrix}  \in \mathbb{R}^2 \right|  v_1^2+v_2^2 \le 1\right\}$$
+with the addition and scalar multiplication as in the previous example
+is **not** a vector space. The first two axioms (closure conditions) are
+not satisfied. For example
+$${\bf u}=  \begin{pmatrix}   1/2\\ 1/2  \end{pmatrix}  \in V, \ \text{since} \    \left(\frac{1}{2}\right)^2+\left(\frac{1}{2}\right)^2 = \frac{1}{2} \le 1, \  \text{but} \quad  2{\bf u}= 2  \begin{pmatrix}   1/2\\ 1/2  \end{pmatrix}  = \begin{pmatrix}   1\\ 1  \end{pmatrix}   \notin V.$$
+:::
+
+::: {#exm-vktspace3}
+The set
+$$V= \left\{ \left.  \begin{pmatrix}   v_{1}\\ v_{2}  \end{pmatrix}  \right| v_1 \in   \mathbb{R}, v_2 \in  \mathbb{R}\right\}$$
+with the same scalar multiplication as before
+$$a   \begin{pmatrix}   x_1 \\ x_2  \end{pmatrix}  =   \begin{pmatrix}   a x_1 \\  a x_2  \end{pmatrix}  \ ,$$
+but the addition
+$$ \begin{pmatrix}   x_1 \\ x_2  \end{pmatrix} 
+  +
+  \begin{pmatrix}   y_1 \\ y_2  \end{pmatrix} \
+  =\begin{pmatrix}   x_1+y_1+1 \\ x_2+y_2+1  \end{pmatrix}$$
+is **not** a vector space. Axioms 8 and 9 are not satisfied.
+:::
+
+::: {#exm-vktspace4}
+What we have shown for a vector space consisting of two
+vectors with two real components can be easily extended to n components.
+The vector space
+$$I\!\!R^{n} = \left\{ \left. \scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle \right| v_{i} \in \mathbb{R}, i=1,2, .. ,n \right\}$$
+together with the operation of addition
+$$\scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle +  \scriptscriptstyle \begin{pmatrix}   w_{1}\\ w_{2} \\ \vdots \\ w_{n}  \end{pmatrix} \textstyle =  \scriptscriptstyle \begin{pmatrix}   v_{1}+w_{1}\\ v_{2} +w_{2}\\ \vdots \\ v_{n}+w_{n}  \end{pmatrix} \textstyle$$
+and the scalar multiplication $$ \alpha \scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle =  \scriptscriptstyle \begin{pmatrix}    \alpha v_{1}\\  \alpha v_{2} \\ \vdots \\  \alpha v_{n}  \end{pmatrix} \textstyle \quad \alpha \in \mathbb{R}$$ is called the vector space $\mathbb{R}^{n}$.
+
+Although we haven't defined yet what a basis is, we mention here for
+future reference that the vectors,
+$$\vec{e}_{1} =  \scriptscriptstyle \begin{pmatrix}   1\\ 0 \\ \vdots \\ 0   \end{pmatrix} \textstyle, \quad  \vec{e}_{2} =  \scriptscriptstyle \begin{pmatrix}   0\\ 1 \\ 0 \\ \vdots  \end{pmatrix} \textstyle, ...    ,\vec{e}_{n} =  \scriptscriptstyle \begin{pmatrix}   0\\ 0 \\ \vdots \\ 1   \end{pmatrix} \textstyle$$
+form a basis of $\mathbb{R}^{n}$, the so called the standard basis. That
+is, every vector in $\mathbb{R}^{n}$ can be expressed as a linear
+combination of the basis vectors,
+$$\vec{r} = r_{1} \vec{e}_{1} + r_{2} \vec{e}_{2} + ... + r_{n} \vec{e}_{n} ,$$
+Or, in other words, the vector space is spanned by the basis vectors.
+:::
+
+::: {#exm-vktspace5}
+The set of all $m\times n$ matrices where the entries are
+real numbers forms a vector space. We denote this space by
+$M^{(m \times n)}$. Addition and scalar multiplication are the usual
+addition and scalar multiplication of matrices. A basis of the space
+consists of the matrices ${\rm E}^{(i,j)}$ which have a 1 at entry (i,j)
+and zeros everywhere else. The space is of dimension $m n$.
+:::
+
+::: {#exm-vktspace6}
+Let $\mathcal{P}_{n}$ denote the set of all polynomials
+with degree $\leq n$. $\mathcal{P}_{n}$ is a vector space if we declare
+an addition and scalar multiplication of polynomials
+$p(x)= a_{0} + a_{1}x + ...+a_{n} x^{n}$ and
+$q(x)= b_{0} + b_{1}x + ...+b_{n} x^{n}$$\in \mathcal{P}_{n}$ by
+$$\begin{aligned}
+p(x)+q(x) &= (a_{0}+ b_{0}) + (a_{1} + b_{1}) x + ...+(a_{n}+ b_{n}) x^{n}   \in \mathcal{P}_{n} ,  \\
+\lambda p(x) &=  \lambda a_{0} +  \lambda a_{1}x + ...+ \lambda a_{n} x^{n}  \in \mathcal{P}_{n} . 
+\end{aligned}$$ Note that we can identify a polynomial of degree
+$\leq n$ with the vector of coefficients
+$$p(x) \sim  (a_{0}, a_{1},.., a_{n})^{T} .$$ Hence, a basis for the
+space consists of the *monomials* $x^{r}, r=0,1, ..,n$ and is $n+1$
+dimensional.
+:::
+
+::: {#exm-vktspace7}
+The solutions of a homogeneous linear differential
+equation of order $n$, e.g.
+$$\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}-3\frac{\mathrm{d}y}{\mathrm{d}x}
++2y=0.\qquad$$ form a vector space. Addition and scalar multiplication
+in this vector space are the usual addition and scalar multiplication of
+functions. The space is spanned by $n$ linearly independent solutions.
+This is an example of a so-called *function space*.
+:::
+
+::: {#exm-vktspace8}
+The set $\mathcal{F}$ of all infinitely differentiable
+functions, $\mathbb{R} \rightarrow \mathbb{R}$, i.e., those that have
+derivatives of all orders. Note that (among others) the following
+functions belong to $\mathcal{F}$: $$e^{nx},\,\cos \left( 2\pi nx\right)
+,\,\,x^{n}\quad \,(\text{for all }n=0,1,2,...).$$ $\mathcal{F}$ is an
+example of an infinite-dimensional space because it contains an
+unlimited number of linearly independent elements.
+:::
+
+The definition of a vector space over $\mathbb{R}$ can be extended to a
+vector space over a more general set of numbers, a field K. To
+understand what a 'field' is, we need to take a short detour into number
+systems.
+
+
+::: {.Definition #vksoverk}
+## Vector Space over K
+A vector space over a field $K$ is a set $V$, the
+elements of which are called vectors $\vec{v} \in V$ along with two
+operations, an addition $\vec{v} + \vec{w}$ and a scalar multiplication
+$a \vec{v}$, $a \in K$, subject to the same 10 axioms
+@eq-cond0 to @eq-cond9 as before only that now $a,b\in K$.
+:::
+
+::: {#exm-vktspace9}
+The set \ref{vksoverk} $\mathbb{C}^{n} =\{ (c_{1},...,c_{n})^{T}| c_{1},..,c_{n}\in \mathbb{C}\}$
+is a vector space over $\mathbb{C}$. Addition and scalar multiplication
+are the usual addition and scalar multiplication of complex numbers. A
+basis for this space is given by the n vectors $e_{1}=(1,0,...,0)$,\...,
+$e_{n}=(0,...,0,1)$. The space has $n$ dimensions. Note that we can
+identify $\mathbb{C}$ with $\mathbb{R}^{2}$ due to $z= a + b i$ with
+$a,b \in \mathbb{R}$. Hence $\mathbb{C}^{n}  \sim \mathbb{R}^{2n}$ is
+also a vector space over $\mathbb{R}$, but in this case it is
+2n-dimensional with two basis vectors for the real and imaginary part of
+each complex dimension.
+:::
+
+## Linear independence
+
+In the same way as a coordinate system is introduced on a plane to
+allocate a unique pair of coordinates to any point in the plane, we
+would like to have a coordinate system for a vector space, which
+uniquely assigns to any vector of this space a coordinate tuple (set).
+To generate such a coordinate system, we need a set of 'basis' vectors
+which are, in a sense, independent. Consider the following example in
+the x-y plane.
+
+Given the two unit vectors in $\mathbb{R}^2$,
+$$\vec{e}_1 = \scriptstyle \begin{pmatrix}   1 \\ 0  \end{pmatrix} \textstyle, \ \vec{e}_2= \scriptstyle \begin{pmatrix}   0 \\ 1  \end{pmatrix} \textstyle$$
+Any point in the plane, that is, any vector in $\mathbb{R}^2$, can be
+represented by a linear combination
+$$\vec{v } = v_1  \vec{e}_1  + v_2  \vec{e}_2,  v_1,v_2 \in \mathbb{R}$$
+where $(v_1,v_2)$ play the role of coordinates. These coordinates are
+unique; that is, there are no two different vectors with the same
+coordinate pair, nor are two different coordinate pairs assigned to the
+same vector.
+
+The same is true if we replace our basis vectors by (check!)
+$$\vec{e}_1 = \scriptstyle \begin{pmatrix}   1 \\ 0  \end{pmatrix} \textstyle, \ \vec{e}_2= \scriptstyle \begin{pmatrix}   1 \\ 1  \end{pmatrix} \textstyle .$$
+
+However, if we use a triplet of vectors:
+$$\vec{e}_1 = \scriptstyle \begin{pmatrix}   1 \\ 0  \end{pmatrix} \textstyle, \ \vec{e}_2= \scriptstyle \begin{pmatrix}   0 \\ 1  \end{pmatrix} \textstyle,  \ \vec{e}_3= \scriptstyle \begin{pmatrix}   1 \\ 1  \end{pmatrix} \textstyle ,$$
+$$\vec{v } = v_1  \vec{e}_1  + v_2  \vec{e}_2 + v_3  \vec{e}_3 ,  v_1,v_2,v_3 \in \mathbb{R}$$
+
+Then there are vectors with non-unique coordinates:
+$$\vec{v}   = 2  \vec{e}_1 + 3  \vec{e}_2 -1 \vec{e}_3  =   1  \vec{e}_1 + 2  \vec{e}_2 + 0 \vec{e}_3$$
+
+More generally, if such a non-unique case occurs, one can write
+$$\begin{aligned}
+ {\bf v} & =   v_1  \vec{e}_1 +  v_2 \vec{e}_2 + v_3 \vec{e}_3 \\
+  {\bf v} & =   v_1'  \vec{e}_1 + v_2'  \vec{e}_2 + v_3' \vec{e}_3 \\
+  \Rightarrow \vec{0} & =   (v_1-v_1')  \vec{e}_1 + (v_2-v_2')  \vec{e}_2 + (v_3-v_3') \vec{e}_3, \\
+   \Rightarrow   \vec{0} & =   a_1  \vec{e}_1 + a_2  \vec{e}_2 + a_3 \vec{e}_3, \quad (a_1,a_2,a_3) \neq (0,0,0) 
+  \end{aligned}$$ 
+where at least one of the three brackets is non-zero
+since we assumed that $(v_1,v_2,v_3) \neq (v_1',v_2',v_3')$. This is
+called a non-trivial linear combination.
+
+::: {.Definition}
+##  Linear Combination
+An expression of the form $a_{1}{\vec v}
+_{1}+a_{2}{\vec v}_{2}+\cdots +a_{n}{\vec v}_{n}$ is known as a *linear
+combination of the $n$ vectors ${\vec v}
+_{1},{\vec v}_{2},\cdots ,{\vec v}_{n}$. The numbers
+$a_{1}, a_{2},..., a_{n}$ are known as the coefficients of the linear
+combination.*
+:::
+
+::: {.Definition}
+## Linear Independence
+A set of vectors $\vec{v_{1}}, \vec{v_{2}},..., \vec{v_{n}}$ is called *linearly
+independent* if none of its elements is a linear combination of the
+others. That is the equation
+$$a_{1}\vec{v_{1}} + a_{2} \vec{v_{2}}+  ... + a_{n}\vec{v_{n}} = 0$$
+has no solution ($a_{1},a_{2},..,a_{n})$ other than the trivial solution
+$(0,0,...,0)$. Otherwise, the set is called *linearly dependent*.
+:::
+
+I.e., a set of vectors is linearly dependent if we can find a
+non-trivial linear combination that yields the zero vector. Note that a
+simple relation between just two of the vectors, e.g.
+$\mathbf{v}_{1}=3\mathbf{v}_{2},$ is enough to make the complete set
+$\mathit{
+\{}\mathbf{v}_{1},\mathbf{v}_{2},...,\mathbf{v}_{n}\mathit{\}}$ linearly
+dependent.
+
+::: {#exm-li1}
+Are the vectors $(1,-1,0)^{T},(2,1,1)^{T}$ and
+$(-1,2,1)^{T}$ linearly independent?
+
+We solve 
+$$a_{1} \begin{pmatrix}   
+1 \\ 
+-1 \\ 
+0  \end{pmatrix} +a_{2}  \begin{pmatrix}   
+2 \\ 
+1 \\ 
+1  \end{pmatrix} +a_{3}  \begin{pmatrix}   
+-1 \\ 
+2 \\ 
+1  \end{pmatrix} = \begin{pmatrix}   
+0 \\ 
+0 \\ 
+0  \end{pmatrix}.$$
+ for $(a_{1}, a_{2}, a_{3})$. We find that
+$a_{1}=a_{2}=a_{3}=0$; so the 3 given vectors are linearly independent.
+If we replace the first entry in the first vector by 3, the set becomes
+linearly dependent. A solution is $a_1=1$, $a_2=-1$, $a_3=1$.
+:::
+
+::: {#exm-    }
+Are the vectors $(1,0,0)^{T}$, $(1,1,0)^{T}$ and
+$(1,0,1)^{T}$ linearly independent?
+
+We solve
+$$a_{1} \scriptstyle \begin{pmatrix}   1 \\ 0 \\ 0  \end{pmatrix} \textstyle + a_{2} \scriptstyle \begin{pmatrix}   1 \\ 1 \\ 0  \end{pmatrix} \textstyle + a_{3} \scriptstyle \begin{pmatrix}   1 \\ 0 \\ 1  \end{pmatrix} \textstyle = \scriptstyle \begin{pmatrix}   0\\0\\0  \end{pmatrix} \textstyle,$$
+for $(a_{1},a_{2},a_{3})$. The third component of this equation implies
+$a_{3}=0$. From the second and first component follow $a_{2}=0$ and
+$a_{1} =0$. Hence, the vectors are linearly independent.
+
+On the other hand, the vectors
+$$\scriptstyle \begin{pmatrix}   1 \\ 0 \\ 0  \end{pmatrix} \textstyle, \quad \scriptstyle \begin{pmatrix}   1 \\ 1 \\ 0  \end{pmatrix} \textstyle,  \quad \scriptstyle \begin{pmatrix}   0 \\ 1 \\ 0  \end{pmatrix} \textstyle,$$
+are linearly dependent, since the third component reads $a_{3} 0 = 0$
+which is satisfied for any $a_{3}=\lambda$. The second component requires $a_{2} = - a_{3}$ and the first
+$a_{1} = a_{3}$. So there are non-trivial solutions $(\lambda , -\lambda , \lambda )$, e.g. $(1,-1,1)$.
+:::
+
+::: {#exm-    }
+A set of two vectors is linearly independent if they are
+not parallel: $a_{1} \vec{v}_{1} \neq a_{2} \vec{v_{2}}$ for
+$a_{1}, a_{2}$ non-zero. A set of three vectors in $\mathbb{R}^{2}$ is
+always linearly dependent. A set of three vectors in $\mathbb{R}^{3}$ is
+linearly independent if they do not all lie in the same plane.
+:::
+
+::: {#exm-    }
+Show that the vectors
+$(1,0,2,1)^{T},(0,1,-1,2)^{T},(2,1,3,4)^{T}$ are linearly dependent in
+$\mathbb{R}^{4}.$
+:::
+
+## Span and Basis
+
+::: {.Definition}
+## Span
+The set of vectors $\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}\}$ in $V$ **span** $V$ if
+every vector $\vec{v}\in V$ is a linear combination of
+$\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}\}$. The set of all vectors
+of the form
+${\vec v=}a_{1}{\vec v}_{1}+a_{2}{\vec v}_{2}+\cdots +a_{n}{\vec v}_{n}$
+is called the span of $\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}\}$ ,
+and denoted by span(${\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}$).
+:::
+
+::: {#exm-    }
+$$\begin{aligned}
+{\rm span}\left(\scriptscriptstyle \begin{pmatrix}   1\\0  \end{pmatrix} \textstyle,\scriptscriptstyle \begin{pmatrix}   2\\0  \end{pmatrix} \textstyle\right) & = \left\{ \left. {\bf v}  =a_1 \scriptscriptstyle \begin{pmatrix}   1\\0  \end{pmatrix} \textstyle + a_2 \scriptscriptstyle \begin{pmatrix}   2\\0  \end{pmatrix} \textstyle\right| a_1,a_2 \in \mathbb{R} \right\} \\
+&=  \left\{ \left.{\bf v} =  \scriptscriptstyle \begin{pmatrix}   a_1+2a_2 \\ 0  \end{pmatrix} \textstyle \right| a_1,a_2 \in \mathbb{R} \right\}  =  \mathbb{R}^{1},
+\end{aligned}$$ spans the whole of $\mathbb{R}$. This space contains
+only the vectors with 0 in the second component.
+:::
+
+::: {#exm-    }
+The span of two linearly independent vectors in
+$\mathbb{R}^{3}$ is a plane. The span of three linearly independent
+vectors in $\mathbb{R}^{3}$ is the whole of $\mathbb{R}^{3}$.
+:::
+
+::: {#exm-    }
+The set $\{(1,0)^{T},(0,1)^{T}\}$ spans
+$\mathbb{R}^{2}$. 
+$$\begin{aligned}
+{\rm span}\left(\scriptscriptstyle \begin{pmatrix}   1\\0  \end{pmatrix} \textstyle,\scriptscriptstyle \begin{pmatrix}   0\\1  \end{pmatrix} \textstyle\right) & = \left\{ \left. \vec{v} = a_1 \scriptscriptstyle \begin{pmatrix}   1\\0  \end{pmatrix} \textstyle + a_2 \scriptscriptstyle \begin{pmatrix}   0\\1  \end{pmatrix} \textstyle\right| a_1,a_2 \in \mathbb{R} \right\} \\
+& = \left\{ \left. \vec{v} = \scriptscriptstyle \begin{pmatrix}   a_1\\a_2  \end{pmatrix} \textstyle \right| a_1,a_2 \in \mathbb{R} \right\} =    \mathbb{R}^{2}. 
+\end{aligned}$$ Thus, any vector $(a_{1},a_{2})^{T}\in\mathbb{R}^{2}$
+can be expressed as a linear combination of $(1,0)^{T}$ and $(0,1)^{T}$.
+:::
+
+If we add another vector, e.g.
+$${\rm span}\left(\scriptscriptstyle \begin{pmatrix}   1\\0  \end{pmatrix} \textstyle,\scriptscriptstyle \begin{pmatrix}   0\\1  \end{pmatrix} \textstyle, \scriptscriptstyle \begin{pmatrix}   1\\1  \end{pmatrix} \textstyle \right) =\mathbb{R}^{2},$$
+then the space may or may not become any bigger. In this case, the space
+remains the same since the third vector is a linear combination of the
+first two vectors, that is, the set is linearly dependent. The smallest
+linearly independent set which spans a given vector space is called a
+basis.
+
+::: {.Definition}
+## Basis
+A basis of a vector space is a linearly
+independent set of vectors which span the vector space.
+:::
+
+::: {#exm-    }
+The set of vectors
+$\left\{(1,0,0)^{T}, (0,1,0)^{T}, (0,0,1)^{T}\right\}$ forms a basis of
+$\mathbb{R}^{3}$ (more generally $K^{3}$ for a field $K$), the set of
+vectors $\left\{(1,0,0,0)^{T}, (0,1,0,0)^{T},\right\}$\
+$\left (0,0,1,0)^{T},(0,0,0,1)^{T}\right\}$ forms a basis of
+$\mathbb{R}^{4}$ (more generally $K^{4}$) and so on. This is called the
+**standard basis** of $\mathbb{R}^{n}$ ($K^{n}$ in more general sense)
+for $n\in\mathbb{N}$.
+:::
+
+::: {#exm-    }
+The vectors
+$$\vec{f}_{1} =  \scriptscriptstyle \begin{pmatrix}   0\\ 1 \\ 1   \end{pmatrix} \textstyle, \quad \vec{f}_{2} =  \scriptscriptstyle \begin{pmatrix}   0\\ 1 \\ 0   \end{pmatrix} \textstyle, \quad \vec{f}_{3} =  \scriptscriptstyle \begin{pmatrix}   0\\ 0 \\ 1  \end{pmatrix} \textstyle,$$
+do not form a basis for $\mathbb{R}^{3}$ since they do not span the
+whole $\mathbb{R}^{3}$. The vector $\vec{e}_{1}$, for instance, has no
+representation in this set.
+:::
+
+::: {#exm-    }
+The vectors
+$$\vec{f}_{1} =  \scriptscriptstyle \begin{pmatrix}   1\\ 0 \\ 0   \end{pmatrix} \textstyle, \quad \vec{f}_{2} =  \scriptscriptstyle \begin{pmatrix}   0\\ 1 \\ 0   \end{pmatrix} \textstyle, \quad \vec{f}_{3} =  \scriptscriptstyle \begin{pmatrix}   0\\ 0 \\ 1  \end{pmatrix} \textstyle, \quad  \vec{f}_{4} =  \scriptscriptstyle \begin{pmatrix}   1\\ 1 \\ 1   \end{pmatrix} \textstyle ,$$
+are also not a basis. Although they span the whole $\mathbb{R}^{3}$,
+they are not linearly independent.
+:::
+
+::: {#exm-    }
+Consider the set of all $n\times n$ matrices with real
+entries $\mathbb{R}^{(n\times n)}$. Let $E_{ij}$ be the $n\times n$
+matrix with a '1' in position $(i,j)$ and '0' elsewhere. Then the
+collection of all such matrices (for all $i,j=1,2,\ldots,n$) is a basis
+for $\mathbb{R}^{(n\times n)}$.
+
+Consider the case $n=2$, then the basis matrices are
+$$\left(\begin{array}{cc}
+ a & b\\
+ c & d
+ \end{array}\right)=aE_{11}+bE_{12}+cE_{21}+dE_{22},\quad\textrm{(spanning)}.$$
+Also, we can show that the four $E$ matrices are linearly independent.
+$$\alpha _{1}E_{11}+\alpha _{2}E_{12}+\alpha _{3}E_{21}+\alpha _{4}E_{22}=\mathbf{0}$$ means that 
+$$\left(\begin{array}{cc}
+ \alpha _{1} & \alpha _{2}\\
+ \alpha _{3} & \alpha _{4}
+ \end{array}\right) = \left(\begin{array}{cc}
+ 0 & 0\\
+ 0 & 0
+ \end{array}\right),\quad\textrm{i.e.   }\alpha _{1}=\alpha _{2}=\alpha _{3}=\alpha _{4}=0.$$ Since the four matrices span the space and are linearly
+independent, they form a basis for $\mathbb{R}^{(n\times n)}$.
+:::
+
+::: {.Theorem}
+## Uniqueness w.r.t. a basis
+Let $\left\{ {\vec v}_{1},{\vec v}_{2},\dots ,{\vec v}
+_{n}\right\}$ be a basis for a vector space $V.$ Each vector from $V$
+can be uniquely expressed as a linear combination of these vectors.
+:::
+
+::: {.Proof}
+If there were two different representations of a vector
+${\vec v}$ with respect to this basis: Eg.
+${\vec v} =a_{1}{\vec v}_{1} + \dots + a_{n }{\vec v}_{n}$ and
+${\vec v} =b_{1}  {\vec v}_{1} + \dots + b_{n }{\vec v}_{n}$, then the
+difference
+${\bf 0} =(a_{1} - b_{1}){\vec v}_{1} + \dots + (a_{n }-b_{n}){\vec v}_{n}$
+would be a non-trivial linear combination representing the zero vector,
+which is impossible since the vectors ${\vec v}_{1},\dots ,{\vec v}_{n}$
+were linearly independent. ◻
+:::
+
+::: {#exm-    }
+In $\mathbb{R}^{3},$
+$$\begin{pmatrix}   2 \\ 
+-3 \\ 
+4  \end{pmatrix} =2 \begin{pmatrix}   
+1 \\ 
+0 \\ 
+0  \end{pmatrix} -3 \begin{pmatrix}   
+0 \\ 
+1 \\ 
+0  \end{pmatrix} +4 \begin{pmatrix}   
+0 \\ 
+0 \\ 
+1  \end{pmatrix} =2{\vec e}_{1}-3{\vec e}_{2}+4{\vec e}_{3}.$$
+
+So, any linear combination of the vectors ${\vec e}_{1},
+{\vec e}_{2},{\vec e}_{3}$ is a vector in $\mathbb{R}^{3}$ and any
+vector in $\mathbb{R}^{3}$ can be written as a linear combination of
+${\vec e}_{1},{\vec e}
+_{2},{\vec e}_{3}$ and the expression is unique.
+:::
+
+::: {#exm-    }
+A different basis, other than the standard
+basis, for the $\mathbb{R}^{3}$ is, for instance
+$$\vec{f}_{1} =  \scriptscriptstyle \begin{pmatrix}   1\\ 1 \\ 0   \end{pmatrix} \textstyle, \quad \vec{f}_{2} =  \scriptscriptstyle \begin{pmatrix}   0\\ 1 \\ 0   \end{pmatrix} \textstyle, \quad \vec{f}_{3} =  \scriptscriptstyle \begin{pmatrix}   0\\ 0 \\ 1  \end{pmatrix} \textstyle,$$
+We can check that we still can express any vector with respect to
+(w.r.t.) this basis. We express the arbitrary vector $\vec{r}$ first
+w.r.t. the standard basis and show that we can translate this into a
+representation w.r.t. the new basis: 
+$$\begin{aligned}
+ \vec{r} & = r_{1} \vec{e}_{1} + r_{2} \vec{e}_{2} +r_{3} \vec{e}_{3}  \\
+  & = r_{1} (\vec{e}_{1} + \vec{e}_{2})  + (r_{2}-r_{1}) \vec{e}_{2} +r_{3} \vec{e}_{3}  \\
+  & = r_{1} \vec{f}_{1} + (r_{2}-r_{1}) \vec{f}_{2} +r_{3} \vec{f}_{3}  .
+\end{aligned}$$
+ And this expression is unique. In addition, the
+definition of a basis requires that the new basis vectors are linearly
+independent, which they are; otherwise, they could not span the whole
+three-dimensional space.
+:::
+
+We note that there are different bases, but they all have the same
+number of elements.
+
+::: {.Theorem}
+## Number of elements of a basis
+Every basis of a vector space contains the same number
+of vectors, this number being the largest set of linearly independent
+vectors in the set.
+:::
+
+::: {.Proof}
+Suppose that a vector space $V$ has two bases, one of which is
+$\left\{ {\vec w}_{1},...,{\vec w}_{p}\right\}$ that contains $p$
+vectors and the other $\left\{ {\vec z}_{1},...,{\vec z}_{q}\right\}$
+that contains $q$ vectors. We can assume that $p>q.$ We shall show that
+the vectors $\left\{ {\vec w}_{1},...,{\vec w}_{p}\right\}$ are linearly dependent,
+contradicting the fact that they form a basis.
+
+To begin, since
+$V={\rm span}\left( {\vec z}_{1},...,{\vec z}_{q}\right)$ and each of
+the ${\vec w}$'s lies in $V,$ they must be linear combinations of the
+${\vec z}$'s. i.e., 
+$$\begin{aligned}
+{\vec w}_{1} &=c_{11}{\vec z}_{1}+c_{21}{\vec z}_{2}+\cdots +c_{q1}
+{\vec z}_{q} \\
+&\vdots \\
+{\vec w}_{p} &=c_{1p}{\vec z}_{1}+c_{2p}{\vec z}_{2}+\cdots +c_{qp}
+{\vec z}_{q}.
+\end{aligned}$$ Now consider a linear combination of the ${\vec w}$'s:
+$$\begin{aligned}
+\sum_{j=1}^{p}a_{j}{\vec w}_{j}  = & a_{1}{\vec w}_{1}+\cdots +a_{p}
+{\vec w}_{p} \\
+= & a_{1}\left( c_{11}{\vec z}_{1}+c_{21}{\vec z}_{2}+\cdots +c_{q1}
+{\vec z}_{q}\right) \\
+&+ a_{2} \left( c_{12}{\vec z}_{1}+c_{22}{\vec z}_{2}+\cdots +c_{q2}
+{\vec z}_{q}\right) \\
+& \vdots \\
+& + a_{p}\left( c_{1p}{\vec z}_{1}+c_{2p}{\vec z}_{2}+\cdots +c_{qp}
+{\vec z}_{q}\right) \\
+= & 
+\left( c_{11}a_{1}+\cdots +c_{1p}a_{p}\right) {\vec z}_{1}+\cdots
++\left( c_{q1}a_{1}+\cdots +c_{qp}a_{p}\right) {\vec z}_{q}.
+\end{aligned}$$ Can we choose the $a$'s so that the right-hand side is
+zero? Since the ${\vec z}$'s are l.i., this will require that each of
+the coefficients be zero: 
+$$\begin{aligned}
+c_{11}a_{1}+\cdots +c_{1p}a_{p} &=0 \\
+&\vdots \\
+c_{q1}a_{1}+\cdots +c_{qp}a_{p} &=0
+\end{aligned}$$ but this is a system of $q$ equations in $p$ unknowns
+with $p>q.$ Such a system always has non-zero solutions. Hence, there
+will be a choice if the coefficients $a_{1},\ldots ,a_{p}$ (not all of
+which are zero) so that $a_{1}
+{\vec w}_{1}+\cdots +a_{p}{\vec w}_{p}=0.$ But this means that the
+${\vec w}$'s are l.d.. We have a contradiction, since we assumed the
+${\vec w}$'s form a basis. A similar argument can be applied if we
+assume that $q>p.$ Thus, a contradiction can be avoided only when
+$p=q.$ ◻
+:::
+
+::: {.Definition}
+## Dimension
+The number of elements of a basis is
+called the dimension of the space.
+:::
+
+::: {#exm-    }
+$\mathbb{R}^{n}$ has dimension $n$.
+:::
+
+::: {#exm-    }
+The space of polynomials of degree $\leq n$ has basis
+$\{1, x, x^{2},\ldots,x^{n}\}$, so its dimension is $n+1$ (not $n$).
+:::
+
+::: {.callout-note} 
+## Remark on dimension 
+Note that the dimension of $V$ depends on the field $K$. Thus the
+complex numbers $\mathbb{C}$ can be considered as a space of dimension $1$ over $\mathbb{C}$, or as a space of dimension $2$ over $\mathbb{R}$, where $\{1, i\}$ is a basis for $\mathbb{C}$ over $\mathbb{R}$.
+:::
+
+::: {.Theorem}
+## Smaller spanning set
+Any linearly dependent vectors of a spanning set can be omitted without making the span smaller. 
+$${\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}) = {\rm span}( \text{largest  l.i. subset of }  {\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})$$
+:::
+
+::: {.Proof}
+ Without loss of generality (w.l.o.g.) we can assume that
+$\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{r} \}$ is the largest
+linearly independent subset ($r\le n$). Then any remaining vectors
+${\vec v}_{r+1}, ... , {\vec v}_{n}$ can be expressed as a linear
+combination of $\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{r} \}$ hence
+${\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{r}) = {\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})$ ◻
+:::
+
+::: {.Corollary}
+Every set of m+1 vectors in $\mathbb{R}^{m}$ is
+linearly dependent.
+:::
+
+::: {.Proof}
+We know that the standard basis of $\mathbb{R}^{m}$ consists of
+m elements, hence the dimension is m. Suppose there were $m+1$ linearly
+independent vectors in $\mathbb{R}^{m}$, then they could be used to form
+a basis. But then the dimension of $\mathbb{R}^{m}$ would be $m+1$, in
+contradiction to the previous result that the dimension is a unique
+number. ◻
+:::
+
+## Subspaces
+
+Suppose that $W$ is a nonempty subset of the vector space $V$, which
+also satisfies all the vector space axioms itself, then $W$ is called a
+subspace of $V$. It is important to realise that for $W$ to be subspace
+of $V$, then $W$ must satisfy the following conditions:
+
+::: {.Definition #subspace}
+## Subspace 
+A subset $W \subseteq V$ of vectors in a vector
+space $V$ is called a subspace of $V$ if the following conditions hold:
+
+\(i\) ${\vec 0}\in W,$
+
+\(ii\) if ${\vec u} \in W$ and ${\vec v} \in W$ then ${\vec u}+{\vec 
+v\in }W$ ;
+
+\(iii\) if ${\vec u\in }W$ then $a{\vec u\in }W$ for all $a\in K$.
+:::
+
+All other axioms are automatically satisfied because each element in $W$
+is already in $V$.
+
+::: {#exm-    }
+For any vector space $V$, $V$ is always a subspace of
+itself.
+:::
+
+::: {#exm-    }
+We also always have a subspace $\{\vec{0}\}$ consisting
+of the zero vector alone. This is called the trivial subspace, and its
+dimension is $0$, because it has no linearly independent sets of vectors
+at all.
+:::
+
+::: {#exm-    }
+The subspaces of $\mathbb{R}^{2}$ are $\{\vec{0}\}$,
+lines through the origin, and $\mathbb{R}^{2}$ itself.
+:::
+
+::: {#exm-    }
+The subspaces of $\mathbb{R}^{3}$ are $\{\vec{0}\}$,
+lines through the origin, planes through the origin, and
+$\mathbb{R}^{3}$ itself.
+:::
+
+::: {#exm-    }
+Let $W=\{(x,y,z)^{T}:y=2x, z=0,x,y,z\in\mathbb{R}\}$.
+This is the set of points lying on the line $y=2x$ in the plane $z=0$.
+$W$ is a subspace of $\mathbb{R}^{3}$.
+:::
+
+::: {#exm-    }
+The set $W=\{(x,y,z,w)^{T}:x+y+z=1\}$ is not a subspace
+of $\mathbb{R}^{4}$. The simplest way to see this is that
+${\vec 0\not\in }W$. Another way is to choose suitable vectors
+$\vec{u},\vec{v}\in W$ then show that $\vec{u}+\vec{v}\not\in W$. A
+third way is to choose a suitable ${\vec u} \in 
+W$ then show that $a{\vec u\not\in }W$ for any $a\neq 1$. Any one of the
+reasons suffices.
+:::
+
+::: {#exm-    }
+Consider the subset $S$ of $P_{2}$ defined so as to
+contain all polynomial ${\rm p}\left( x\right) =a+bx+cx^{2}$ for which
+$a+b-2c=0$. Show that $S$ is a subspace of $P_{2}$ and obtain a basis
+for $S$.
+:::
+
+::: {.Theorem} 
+## Intersection of subspaces
+ If $W_{1}$ and $W_{2}$ are subspaces of $V$ then so is $W_{1}\cap W_{2}$.
+:::
+
+::: {.Proof}
+Let $\vec{u},\vec{v}\in W_{1}\cap W_{2}$ and $a\in K$. Then
+$\vec{u}+\vec{v}\in W_{1}$ (because $W_{1}$ is a subspace) and
+$\vec{u}+\vec{v}\in W_{2}$ (because $W_{2}$ is a subspace). Hence
+$\vec{u}+\vec{v}\in W_{1}\cap W_{2}$. Similarly, we get
+$a\vec{v}\in W_{1}\cap W_{2}$ so $W_{1}\cap W_{2}$ is a subspace of
+$V$. ◻
+:::
+
+::: {#exm-    }
+Let $V= \mathbb{R}^{2\times 2}$ and define $W_{1}$ to be
+the subspace of matrices of the form 
+$$\left[ 
+\begin{array}{cc}
+a & 0 \\ 
+b & c
+\end{array}
+\right]$$
+($a,b,c$ real) while $W_{2}$ is the subspace of matrices of
+the form $\left[ 
+\begin{array}{cc}
+a & a \\ 
+b & b
+\end{array}
+\right]$. Then $W_{1}\cap W_{2}$ consists of all matrices of the form
+$\left[ 
+\begin{array}{cc}
+0 & 0 \\ 
+b & b
+\end{array}
+\right]$ , which is a subspace of $V$.
+:::
+
+::: {.callout-note} 
+## Remark
+While $W_{1}\cap W_{2}$ is a subpace, $W_{1}\cup W_{2}$ is in general not a
+subspace. For exampe if $W_1$ and $W_2$ are the x- and y-axis of $\mathbb{R}^2$, the union is not a subspace.  
+:::
+
+::: {#exm-    }
+Let $V=\mathbb{R}^{2}$, let
+$W=\{(a,0)^{T}:a\in\mathbb{R}\}$ and
+$W_{2}=\{(0,b)^{T}:b\in\mathbb{R}\}$. Then $W_{1}$, $W_{2}$ are
+subspaces of $V$, but $W_{1}\cup W_{2}$ is not a subspace, because
+$(1,0)^{T}\in W_{1}\cup W_{2}$ and $(0,1)^{T}\in W_{1}\cup W_{2}$, but
+$(1,0)^{T}+(0,1)^{T}=(1,1)^{T}\notin W_{1}\cup W_{2}$.
+:::
+
+::: {#exm-    }
+The set $W=\{(x,y,z)^{T}:x^{2}+y^{2}=z\}$ is not a
+subspace of $\mathbb{R}^{3}$.
+
+The vectors ${\vec u=}\left( 0,1,1\right) ^{T}$ and ${\vec v}=\left(
+1,2,5\right) ^{T}$ are both in $W$ but ${\vec u}+{\vec v}$ is not.
+:::
+
+The three conditions in the definition of a subspace state that every
+linear combination of vectors of the subspace has to be an element of
+the subspace. This proves the following theorem:
+
+::: {.Lemma}
+## Span is a subspace
+${\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})$ is a subspace of
+$V$ for ${\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n} \in V$.
+:::
+
+::: {.Proof}
+$W={\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})$ is
+by definition a subset of $V$. The $\vec{0}$ is in $W$, which is
+property (i) in the definition of a subspace, and (ii) and (iii) are
+also satisfied due to the span including all linear combinations. ◻
+:::
+
+::: {#exm-    }
+The set $W=\{(x,y,z,w)^{T}:x+y+z=w\}$ is a subspace of
+$\mathbb{R}^{4}$. We can show this in two ways: (a) by using the
+definition of a subspace (\ref{subspace}) or (b) by finding a spanning set and using the
+above theorem. Method (a) requires checking the three conditions for a
+subspace:
+
+1.  ${\bf 0} = (0,0,0,0)^{T} \in W$ for $x=y=z=0$.
+
+2.  With ${\bf u} =  (x,y,z,x+y+z)^{T} \in W$ and
+    ${\bf v} = (x',y',z',x'+y'+z')^{T} \in W$ also
+    ${\bf u} + {\bf v}=  (x+x',y+y',z+z',(x+x')+(y+y')+(z+z'))^{T} \in W$
+
+3.  With ${\bf u} =  (x,y,z,x+y+z)^{T} \in W$ and $\lambda {\bf u} =  (\lambda x,\lambda y,\lambda z, \lambda (x+y+z))^{T} \in W$
+
+For method (b), we have to find vectors which span $W$. Note that the
+set $W$ has three free parameters, which can be used to represent an
+arbitrary element of $W$:
+$$\scriptscriptstyle \begin{pmatrix}   x\\y\\z\\x+y+z  \end{pmatrix} \textstyle = x \scriptscriptstyle \begin{pmatrix}   1\\0\\0\\1  \end{pmatrix} \textstyle +y \scriptscriptstyle \begin{pmatrix}   0\\1\\0\\1  \end{pmatrix} \textstyle + z \scriptscriptstyle \begin{pmatrix}   0\\0\\1\\1  \end{pmatrix} \textstyle$$
+Hence $W = {\rm span}((1,0,0,1)^{T}, (0,1,0,1)^{T}, (0,0,1,1)^{T})$.
+This second approach has the advantage that the spanning set can also be
+used to find a basis for the subspace. Indeed, the three vectors are
+also linearly independent (prove!), and we obtain the basis
+${\vec v}_{1}=(1,0,0,1)^{T},{\vec v}_{2}=(0,1,0,1)^{T},{\vec v}
+_{3}=(0,0,1,1)^{T}$.
+:::
+
+
+
+
+# Determinants
+
+## Introduction
+
+<!--See Poole: Linear Algebra, *A Modern Introduction*, pages 256--285.-->
+
+Determinants occur in many situations, geometrically they can beinterpreted as the volume of the parallelepiped spanned by a set of $n$ vectors. This is easily visualised in two dimensions (x-y-plane). The area (2-dimensional volume) of a parallelepiped spanned by the two vectors
+${\bf b}=(b_{1},b_{2})^{T}$ and ${\bf c}=(c_{1},c_{2})^{t}$ is up to a
+sign given by 
+$$area = \pm(b_{1}c_{2}- b_{2} c_{1} )$$ 
+We call this the determinant of the matrix ${\rm A} = [{\bf b},{\bf c}]$ and write
+$${\rm det(A)}= |{\rm A}|=\left| 
+\begin{array}{cc}
+b_{1} & c_{1} \\ 
+b_{2} & c_{2}
+\end{array}
+\right| = b_{1}c_{2}- b_{2} c_{1} .$$ 
+The determinant of a square matrix
+$A$, denoted by $\det$($A$), or $\left|
+A\right|$, is a number (scalar). The now-standard notation was first
+introduced by Cayley in 1841.
+
+In three dimensions, the volume of the cell spanned by the vectors
+${\bf a}$, ${\bf b}$, and ${\bf c}$ is given by
+$${\bf a}\cdot ( {\bf b} \times {\bf c} )= a_{1}(b_{2}c_{3}- b_{3}c_{2}) + a_{2} (b_{3}c_{1}-b_{1}c_{3}) + a_{3} (b_{1}c_{2}-b_{2}c_{1}).$$
+Note that we can write this in terms of the determinants of 2x2
+matrices: $${\bf a}\cdot ({\bf b} \times {\bf c}) = \left| 
+\begin{array}{ccc}
+a_{1} & b_{1} & c_{1} \\ 
+a_{2} & b_{2} & c_{2} \\ 
+a_{3} & b_{3} & c_{3}
+\end{array}
+\right|  = a_{1} \left| 
+\begin{array}{cc}
+b_{2} & c_{2} \\ 
+b_{3} & c_{3}
+\end{array}
+\right|  - a_{2} \left| 
+\begin{array}{cc}
+b_{1} & c_{1} \\ 
+b_{3} & c_{3}
+\end{array}
+\right| + a_{3} \left| 
+\begin{array}{cc}
+b_{1} & c_{1} \\ 
+b_{2} & c_{2}
+\end{array}
+\right| ,$$ where each of the $2 \times 2$ matrices is obtained by
+deleting the first column and the corresponding row of the coefficient
+$a_{j}$ from the matrix ${\rm A} = [{\bf a},{\bf b}, {\bf c}]$. This
+suggests a recursive scheme where determinants of arbitrary $n \times n$
+matrices are defined in terms of determinants of $(n-1)\times(n-1)$
+matrices, which again are expanded in determinants of $(n-2)\times(n-2)$
+and so on.
+
+::: {#exm-det1}
+Evaluate 
+$$\left| 
+\begin{array}{ccc}
+1 & 2 & 3 \\ 
+2 & 3 & 2 \\ 
+3 & 3 & 4
+\end{array}
+\right| .$$
+:::
+
+::: {.Definition}
+# Minor and Cofactor
+Corresponding to each entry $a_{i,j}$ in an $n\times n$ matrix $A,$ we define a number $M_{ij},$
+called the *minor* of $a_{ij},$ which is the $\left( n-1\right)$th order
+determinant obtained by deleting the $i$-th row and $j$-th column from
+$A.$
+
+The cofactor $C_{ij}$ corresponding to an entry $a_{ij}$ in an
+$n\times n$ matrix $A$ is the product of its minor and the sign
+$\left( -1\right) ^{i+j}:$ $C_{ij}=\left( -1\right) ^{i+j}M_{ij}.$ The
+$n^{2}$ cofactors form a matrix of cofactors.
+:::
+
+::: {.Definition} 
+## Determinants 
+A determinant of an $n \times n$ matrix can be expanded in terms of $(n-1)\times(n-1)$ determinants using
+either a column or a row. Expansion along the i-th column:
+$$\left| A\right| =a_{1,i}C_{1,i}+a_{2,i}C_{2,i}+a_{3,i}C_{3,i}+\cdots
++a_{n,i}C_{n,i}.$$ Expansion along the i-th row:
+$$\left| A\right| =a_{i,1}C_{i,1}+a_{i,2}C_{i,2}+a_{i,3}C_{i,3}+\cdots
++a_{i,n}C_{i,n}.$$ The $(n-1)\times(n-1)$ determinants can then be
+recursively further reduced down to $2\times2$ matrices.
+:::
+
+::: {#exm-det3}
+Find the expansion for the matrix $A$ of the previous Example. Expansion along the first
+row: $$\left| 
+\begin{array}{ccc}
+1 & 2 & 3 \\ 
+2 & 3 & 2 \\ 
+3 & 3 & 4
+\end{array}
+\right| =  1  \left| \begin{array}{cc}
+3 & 2 \\ 
+ 3 & 4
+\end{array} \right| - 2  \left| \begin{array}{cc}
+2 & 2 \\ 
+3 & 4
+\end{array}  \right| +3 \left| \begin{array}{cc}
+2 & 3 \\ 
+3 & 3
+\end{array}  \right| =  6-4 -9 =-7$$ Expansion along the first column:
+$$\left| 
+\begin{array}{ccc}
+1 & 2 & 3 \\ 
+2 & 3 & 2 \\ 
+3 & 3 & 4
+\end{array}
+\right| =  1  \left| \begin{array}{cc}
+3 & 2 \\ 
+ 3 & 4
+\end{array} \right| - 2  \left| \begin{array}{cc}
+2 & 3 \\ 
+3 & 4
+\end{array}  \right| + 3\left| \begin{array}{cc}
+2 & 3 \\ 
+3 & 2
+\end{array}  \right| =6+2-15=-7$$ Expansion along the second column:
+$$\left| 
+\begin{array}{ccc}
+1 & 2 & 3 \\ 
+2 & 3 & 2 \\ 
+3 & 3 & 4
+\end{array}
+\right| =  - 2  \left| \begin{array}{cc}
+2 & 2 \\ 
+3 & 4
+\end{array}  \right| +3 \left| \begin{array}{cc}
+1 & 3 \\ 
+3 & 4
+\end{array}  \right| -3 \left| \begin{array}{cc}
+1 & 3 \\ 
+2 & 2
+\end{array}  \right| =  -4 -15 +12=-7$$
+:::
+
+::: {#exm-det4}
+Evaluate 
+$$\begin{aligned}
+\left| 
+\begin{array}{cccc}
+1 & 2 & 1 & 3 \\ 
+1 & 1 & 2 & 1 \\ 
+3 & 2 & 0 & 2 \\ 
+2 & 2 & 1 & 0
+\end{array}
+\right| & = 1\left| 
+\begin{array}{ccc} 
+ 1 & 2 & 1 \\ 
+ 2 & 0 & 2 \\ 
+ 2 & 1 & 0
+\end{array}
+\right| - 1 \left| 
+\begin{array}{ccc}
+ 2 & 1 & 3 \\ 
+ 2 & 0 & 2 \\ 
+ 2 & 1 & 0
+\end{array}
+\right|  + 3 \left| 
+\begin{array}{ccc}
+ 2 & 1 & 3 \\ 
+ 1 & 2 & 1 \\ 
+ 2 & 1 & 0
+\end{array}
+\right| - 2 \left| 
+\begin{array}{ccc}
+ 2 & 1 & 3 \\ 
+ 1 & 2 & 1 \\ 
+ 2 & 0 & 2 \end{array}
+\right| \\
+& = 1\left| 
+\begin{array}{cc} 
+ 0 & 2 \\ 
+ 1 & 0
+\end{array}
+\right| -2  \left|\begin{array}{cc} 
+ 2& 2 \\ 
+ 2 & 0
+\end{array}
+\right|  - ... \text{10 more terms} 
+\end{aligned}$$
+:::
+
+The previous example should illustrate the large amount of computation
+needed by using a "brute force" approach to evaluating determinants. We
+will now look at smarter ways, using two fundamental theorems to develop
+a simple numerical procedure closely related to Gaussian elimination.
+The following example shows that it is much more efficient to calculate
+determinants with many zeros in columns or rows:
+
+::: {#exm-det5}
+Evaluate 
+$$\left| 
+\begin{array}{cccc}
+1 & 2 & 1 & 3 \\ 
+0 & 1 & 1 & -2 \\ 
+0 & 0 & 7 & -1 \\ 
+0 & 0 & 3 & 2
+\end{array}
+\right| $$
+:::
+::: {.Solution}
+Expanding along the first column, twice:
+$$ \left| 
+\begin{array}{cccc}
+1 & 2 & 1 & 3 \\ 
+0 & 1 & 1 & -2 \\ 
+0 & 0 & 7 & -1 \\ 
+0 & 0 & 3 & 2
+\end{array}
+\right| =\left| 
+\begin{array}{ccc}
+1 & 1 & -2 \\ 
+0 & 7 & -1 \\ 
+0 & 3 & 2
+\end{array}
+\right| =\left| 
+\begin{array}{cc}
+7 & -1 \\ 
+3 & 2
+\end{array}
+\right| =\allowbreak 17.$$
+:::
+
+## Simplification of Determinants
+
+The following rules help to simplify determinants efficiently:
+
+::: {.Corollary #calcdet}
+## Calculation of Determinants 
+
+1.  If two rows (columns) of $A$ are interchanged to give a matrix $B$
+    then $\left| B\right| =-\left| A\right|$.
+
+2.  If two rows (columns) of $A$ are equal then $\left| A\right| =0$
+
+3.  If all the entries in any row (column) of $A$ are multiplied by a
+    scalar $k,$ the determinant is also multiplied by $k$
+
+4.  If one row (column) of $A$ is a multiple of another row (column),
+    then $\left|
+    A\right| =0$
+
+5.  If the matrix $B$ is obtained from $A$ by taking multiple of one
+    row (column) and adding it to another row (column), then
+    $\left| B\right|
+    =\left| A\right| .$
+
+6.  $\left| A\right| =\left| A^{T}\right| .$
+:::
+
+::: {.Proof}
+The proof of (1) and (6) is omitted.\
+(2) is proved by using (1): If we interchange the two equal columns of
+${\rm A}$, then we obtain ${\rm A}$ again, hence $|{\rm A}|$ remains the
+same, but according to (1) it should change its sign. This is only
+possible if $|{\rm A}|=0.$
+
+\(3\) If $B$ is obtained by multiplying the $i$th column of $A$ by $k:$
+$$\left| A\right| =\left| 
+\begin{array}{cccc}
+a_{1} & b_{1} & c_{1} & \cdots \\ 
+a_{2} & b_{2} & c_{2} &  \\ 
+\vdots &  &  &  \\ 
+a_{i} & b_{i} & c_{i} &  \\ 
+\vdots &  &  & 
+\end{array}
+\right| ,\quad \left| B\right| =\left| 
+\begin{array}{cccc}
+a_{1} & b_{1} & c_{1} & \cdots \\ 
+a_{2} & b_{2} & c_{2} &  \\ 
+\vdots &  &  &  \\ 
+ka_{i} & kb_{i} & kc_{i} &  \\ 
+\vdots &  &  & 
+\end{array}
+\right|$$ and expand both determinants about their $i$th rows:
+$$\begin{aligned}
+\left| A\right| &=a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots \\
+\left| B\right| &=\left( ka_{i}\right) C_{i,1}+\left( kb_{i}\right)
+C_{i,2}+\cdots \\
+&=k\left( a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots \right) =k\left| A\right| .
+\end{aligned}$$ (4) We use (3) and (2).
+
+\(5\) Suppose we add $k\times$ row $j$ to row $i$ of $\left|
+A\right|$ to give $\left| B\right| :$ $$\left| A\right| =\left| 
+\begin{array}{cccc}
+a_{1} & b_{1} & c_{1} & \cdots \\ 
+a_{2} & b_{2} & c_{2} &  \\ 
+\vdots &  &  &  \\ 
+a_{i} & b_{i} & c_{i} &  \\ 
+\vdots &  &  & 
+\end{array}
+\right| ,\quad \left| B\right| =\left| 
+\begin{array}{cccc}
+a_{1} & b_{1} & c_{1} & \cdots \\ 
+a_{2} & b_{2} & c_{2} &  \\ 
+\vdots &  &  &  \\ 
+a_{i}+ka_{j} & b_{i}+kb_{j} & c_{i}+kc_{j} &  \\ 
+\vdots &  &  & 
+\end{array}
+\right|$$ and we now expand $\left| B\right|$ by its $i$th row
+$$\begin{aligned}
+\left| A\right| &=a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots \\
+\left| B\right| &=\left( a_{i}+ka_{j}\right) C_{i,1}+\left(
+b_{i}+kb_{j}\right) C_{i,2}+\cdots \\
+&=\left( a_{i}C_{i,1}+b_{i}C_{i,2}+\cdots \right) +k\left(
+a_{j}C_{i,1}+b_{i}C_{j,2}+\cdots \right)
+\end{aligned}$$ $$=\left| 
+\begin{array}{cccc}
+a_{1} & b_{1} & c_{1} & \cdots \\ 
+a_{2} & b_{2} & c_{2} &  \\ 
+\vdots &  &  &  \\ 
+a_{i} & b_{i} & c_{i} &  \\ 
+\vdots &  &  & 
+\end{array}
+\right| +k\left| 
+\begin{array}{cccc}
+a_{1} & b_{1} & c_{1} & \cdots \\ 
+a_{2} & b_{2} & c_{2} &  \\ 
+\vdots &  &  &  \\ 
+a_{j} & b_{j} & c_{j} &  \\ 
+\vdots &  &  & 
+\end{array}
+\right| =\left| A\right|$$ since rows $i$ and $j$ in the determinant
+$\left| 
+\begin{array}{cccc}
+a_{1} & b_{1} & c_{1} & \cdots \\ 
+a_{2} & b_{2} & c_{2} &  \\ 
+\vdots &  &  &  \\ 
+a_{j} & b_{j} & c_{j} &  \\ 
+\vdots &  &  & 
+\end{array}
+\right|$ are identical, so it is zero (\ref{calcdet} 4). ◻
+:::
+
+::: {.callout-note}
+## Remember
+The rules are similar to, **but not the same as,**
+Gaussian elimination; adding $k$ times row 2 to row 1 is OK if the
+result goes in row 1, and row 2 is left unchanged, but if you replace
+row 2 by $k$ times row 2 plus row 1, you will change the value of the
+determinant by a factor of $k$ (Corollary 2 tells us this). A further
+difference is that a multiple of a column can be added to another column
+(not allowed in GE).
+:::
+
+::: {#exm-det6}
+Evaluate the determinant $\left| 
+\begin{array}{cccc}
+1 & 2 & -1 & 3 \\ 
+2 & 0 & 1 & 1 \\ 
+1 & 3 & 2 & 1 \\ 
+2 & 0 & 0 & 1
+\end{array}
+\right| .$
+:::
+
+::: {.Solution}
+First expand by the 4th row: $$= -2\times \left| 
+\begin{array}{ccc}
+2 & -1 & 3 \\ 
+0 & 1 & 1 \\ 
+3 & 2 & 1
+\end{array}
+\right| +1\times \left| 
+\begin{array}{ccc}
+1 & 2 & -1 \\ 
+2 & 0 & 1 \\ 
+1 & 3 & 2
+\end{array}
+\right| ,$$
+
+now subtract $c_{3}$ from $c_{2}$ in the 1st , subtract $2\times
+c_{3}$ from $c_{1}$ in the 2nd and expand both by their 2nd rows.
+$$\begin{aligned}
+&=-2\times \left| 
+\begin{array}{ccc}
+2 & -4 & 3 \\ 
+0 & 0 & 1 \\ 
+3 & 1 & 1
+\end{array}
+\right| +1\times \left| 
+\begin{array}{ccc}
+3 & 2 & -1 \\ 
+0 & 0 & 1 \\ 
+-3 & 3 & 2
+\end{array}
+\right| \\
+&=-2\times \left( -1\right) \left| 
+\begin{array}{cc}
+2 & -4 \\ 
+3 & 1
+\end{array}
+\right| +1\times \left( -1\right) \left| 
+\begin{array}{cc}
+3 & 2 \\ 
+-3 & 3
+\end{array}
+\right| \\
+&=-2\times \left( -1\right) \times 14+1\times \left( -1\right) \times 15=13.
+\end{aligned}$$
+:::
+
+::: {#exm-det7}
+Evaluate the determinant 
+$$\left| 
+\begin{array}{rrrr}
+4 & 1 & 3 & -1 \\ 
+2 & 0 & 1 & 2 \\ 
+1 & -1 & 2 & 5 \\ 
+2 & 1 & 3 & 1
+\end{array}
+\right|$$.
+:::
+
+::: {.Solution}
+Subtract $r_{4}$ from $r_{1}$; then add $c_{1}$ to $c_{4},$ then expand
+about the 1st row:
+$$ r_{1}-r_{4}\rightarrow r_{1}: \quad \left| 
+\begin{array}{rrrr}
+2 & 0 & 0 & -2 \\ 
+2 & 0 & 1 & 2 \\ 
+1 & -1 & 2 & 5 \\ 
+2 & 1 & 3 & 1
+\end{array}
+\right| ,$$ 
+$$c_{4}+c_{1}\rightarrow c_{4}: \quad \left| 
+\begin{array}{rrrr}
+2 & 0 & 0 & 0 \\ 
+2 & 0 & 1 & 4 \\ 
+1 & -1 & 2 & 6 \\ 
+2 & 1 & 3 & 3
+\end{array}
+\right| =2\times \left| 
+\begin{array}{rrr}
+0 & 1 & 4 \\ 
+-1 & 2 & 6 \\ 
+1 & 3 & 3
+\end{array}
+\right| $$
+add $r_{3}$ to $r_{2}:$ 
+$$r_{2}+r_{3}\rightarrow r_{2}: \quad 2\times \left| 
+\begin{array}{rrr}
+0 & 1 & 4 \\ 
+0 & 5 & 9 \\ 
+1 & 3 & 3
+\end{array}
+\right| =2\times 1\times \left| 
+\begin{array}{rr}
+1 & 4 \\ 
+5 & 9
+\end{array}
+\right| =2\times 1\times \left( -11\right) =-22.$$
+:::
+
+::: {.exm-det8}
+Show that 
+$$D=\left| 
+\begin{array}{cccc}
+1 & a & a^{2} & b+c+d \\ 
+1 & b & b^{2} & c+d+a \\ 
+1 & c & c^{2} & d+a+b \\ 
+1 & d & d^{2} & a+b+c
+\end{array}
+\right| =0$$ for all values of $a,b,c,d.$
+:::
+
+::: {.exm-det9}
+Solve for $x$
+$$\left| 
+\begin{array}{ccc}
+1 & 2 & x \\ 
+x & 0 & 3 \\ 
+1 & x & 2
+\end{array}
+\right| =0$$ 
+:::
+
+::: {.Lemma}
+If $A$ is either lower or upper triangular, then
+$\det(A) =a_{1,1}a_{2,2}\cdots a_{n,n}$, the product of its diagonal
+entries.
+:::
+
+::: {#exm-det10}
+$$\left|\begin{array}{rrr}
+1 & 7 & -2 \\
+0 & 14 & 32 \\
+0 & 0 & -2
+\end{array}\right| = 1\times 14\times (-2)=-28$$.
+
+We can see this by expanding down the first column:
+
+$$1\left|\begin{array}{rr} 14 & 32 \\
+0 & -2
+\end{array}\right|=1(14\times (-2))=-28.$$
+:::
+
+::: {.Theorem}
+## Product Rule 
+For any two matrices $A$ and $B,$
+$\det (AB)$ = $\det (A) \det (B)$.
+:::
+
+The general proof of this result uses elementary matrices. Although it
+is a key result, a proof will not be given (See Poole, p. 268).
+
+Note that $\textrm{det}(A+B)\neq \textrm{det}(A)+\textrm{det}(B)$.
+
+::: {.Lemma}
+If $A$ is $n\times n$, we have$,$ by Corollary \ref{caldet}
+$$\begin{aligned}
+\det \left( kA\right) &= \det \left( kI \  A\right) \\
+&=
+\det \left( kI\right)  \det \left( A\right) \\
+&= k^{n}
+\det \left( A\right) .
+\end{aligned}$$
+:::
+
+::: {.Corollary}
+When $A$ is non-singular (i.e., invertible)
+$$\det \left(A^{-1}\right) =\dfrac{1}{\det \left( A\right) }.$$
+:::
+
+::: {.Proof}
+$1=\textrm{det(I)}=\textrm{det}(AA^{-1})=\textrm{det}(A)\textrm{det}(A^{-1})$. ◻
+:::
+
+::: {#exm-det11}
+Let $A$ be an $n\times n$ matrix with
+$\textrm{det}(A)=5$. Then 
+$$\det \left( A^{4}\right)
+=5^{4}$$
+$$\det \left( A^{-1}\right) =\frac{1}{5},$$ 
+$$\det \left( 3A^{2}\right) =3^{n}\times 25$$ .
+:::
+
+::: {.Corollary}
+The matrix $A$ has an inverse if, and only if,
+$\left| A\right| \neq 0.$
+:::
+
+::: {.Proof}
+First, we show that if the matrix $A$ has an inverse, then
+$|A|\neq 0$. If ${\rm A}$ has an inverse then
+$|{\rm A}{\rm A^{-1}}| = |{\rm A}||{\rm A^{-1}}| =| I | = 1$ and hence
+$|{\rm A}| \neq 0$.
+
+Next, we show the reverse. Assume that $|A|\neq 0$. We want to show that
+$A$ has an inverse.
+
+By using elementary row operations, that is by either (i) adding a
+multiple of one row to another or (ii) interchanging rows we can reduce
+$A$ to upper triangular form---call this $U.$ Operations of type i) do
+not affect the value of $\left| A\right|$ while operations of type (ii)
+may cause a change of sign. Hence,
+$$\left| A\right| =\pm \left| U\right|,$$ and so, in particular
+$|A|\neq0$.
+
+$$\begin{aligned}
+U&=\left[ 
+\begin{array}{cccc}
+u_{11} & u_{12} & \cdots & u_{1n} \\ 
+0 & u_{22} &  & u_{2n} \\ 
+0 & 0 & \ddots &  \\ 
+0 & 0 &  & u_{nn}
+\end{array}
+\right],\\
+\left| U\right| &= u_{11}u_{22}\cdots u_{nn}\neq 0,
+\end{aligned}$$ so $u_{ij}\neq 0$ for all $i,j=1,2,\dots,n$. Hence $A$
+has $n$ pivots and is invertible. ◻
+:::
+
+::: {.Corollary}
+If $A$ is a square matrix, the system
+$A\mathbf{x=0}$ has non-trivial solutions if, and only if,
+$\left| A\right| =0$ (so $A$ is a singular matrix).
+:::
+
+::: {.callout-note}
+## Note: 
+Various authors define non-singular matrices to be
+- invertible matrices
+
+- matrices $A$ for which $\det(A)\neq 0$.
+
+- matrices for which $A\mathbf{x}=\mathbf{0}$ has only the trivial
+  (zero) solution.
+The above theorem shows that they are all equivalent definitions.
+:::
+
+
+## The Adjoint Matrix
+
+::: {.Definition}
+The transpose of the matrix of cofactors of ${\rm A}$ is
+called the *adjugate* or *adjoint* of ${\rm A}$ and denoted by
+$\rm{adj}({\rm A}) =(\text{Cofactors})^{T}$.
+:::
+
+::: {.Theorem}
+## Inverse and Adjoint
+If $\det({\rm A}) \neq 0$ then
+$${\rm A}^{-1} =\frac{1}{\det({\rm A})} \rm{adj}({\rm A}).$$
+:::
+
+::: {.Proof}
+Let ${\rm C}$ be the matrix of cofactors of ${\rm A}$.
+$$\begin{aligned}
+ ({\rm A} \  \rm{adj}({\rm A}))_{ij} &= \sum_{k=1}^{n} a_{ik} ({\rm C}^{T})_{kj} =  \sum_{k=1}^{n} a_{ik} {\rm C}_{jk} \\
+ &= \left\{ 
+\begin{array}{cc}
+0 & i \neq j \\ 
+\det(\rm{A}) & i=j
+\end{array}
+\right. \\
+\Rightarrow {\rm A} \  \rm{adj}({\rm A}) &= \det(\rm{A}) {\rm I} 
+\end{aligned}$$ Here, the result for $i\neq j$ is obtained from the fact
+that $\sum_{k=1}^{n} a_{ik} {\rm C}_{jk}$ is the expansion of the
+determinant of a matrix with two identical rows. For the case $i=j$,
+however, this is exactly the definition of the expansion of a
+determinant along row $i$ of ${\rm A}$. So $$\begin{aligned}
+&& A\textrm{adj}(A)=\det(A)I \\
+&\Leftrightarrow& \frac{A \textrm{adj}(A)}{\det(A)}=I.
+\end{aligned}$$ Multiplying $A^{-1}$ from the left gives
+$$\frac{1}{\det(A)} \textrm{adj}(A)=A^{-1}.$$ ◻
+:::
+
+::: {#exm-adj1}
+Find the adjoint of the matrix
+$${\rm A}=\left[
+\begin{array}{ccc}
+1 & -1 & 2\\
+3 & 2 & -1\\
+2 & -1 & 2\\
+\end{array}
+\right]$$
+:::
+
+::: {.Solution}
+\(i\) Matrix of minors is 
+$$\left[
+\begin{array}{rrr}
+3 & 8 & -7\\
+0 & -2 & 1\\
+-3 & -7 & 5
+\end{array}
+\right].$$ 
+(ii) The matrix of cofactors is 
+$$\left[
+\begin{array}{rrr}
+3 & -8 & -7\\
+0 & -2 & -1\\
+-3 & 7 & 5
+\end{array}
+\right].$$ 
+(iii) Adjoint is 
+$${\rm adj}({\rm A}) = \left[
+\begin{array}{rrr}
+3 & 0 & -3\\
+-8 & -2 & 7\\
+-7 & -1 & 5
+\end{array}
+\right].$$
+
+Notice that
+$${\rm A} \,  {\rm adj}({\rm A}) = \left[
+\begin{array}{rrr}
+1 & -1 & 2\\
+3 & 2 & -1\\
+2 & -1 & 2\\
+\end{array}
+\right]
+\left[
+\begin{array}{rrr}
+3 & 0 & -3\\
+-8 & -2 & 7\\
+-7 & -1 & 5
+\end{array}
+\right]$$ $$= \left[
+\begin{array}{rrr}
+-3 & 0 & 0\\
+0  & -3 & 0\\
+0 & 0 & -3
+\end{array}
+\right] = -3 I = det(A) I.$$
+:::
+
+::: {#exm-adj2}
+Use the adjoint matrix to find the inverse of the matrix
+$A=\left(\begin{array}{rrr}1 & -1 & 2 \\ 3 & 2 & -1 \\ 2 & -1 & 2\end{array}\right)$
+in the previous example.
+:::
+
+::: {.Solution}
+The determinant of the matrix $A$ is 
+$$\begin{aligned}
+&&1\left|\begin{array}{rr}2 & -1 \\ -1 & 2\end{array}\right|+
+1\left|\begin{array}{rr}3 & -1 \\ 2 & 2\end{array}\right|
+-2\left|\begin{array}{rr}3 & 2 \\ 2 & -1\end{array}\right| \\
+&= (4-1)+(6+2)+2(-3-4)\\
+&= 3+8 -14\\
+&=-3.
+\end{aligned}$$ Thus, the inverse is
+$$A^{-1}=\frac{-1}{3}\left(\begin{array}{rrr}
+3 & 0 & -3 \\
+-8 & -2 & 7 \\
+-7 & -1 & 5
+\end{array}\right).$$
+:::
+
+::: {#exm-adj3}
+Find the inverse of $$A=\left(\begin{array}{rrr}
+2 & 3 & 4 \\
+5 & 6 & 7 \\
+8 & 9 & 1
+\end{array}\right).$$
+:::
+
+::: {.Solution}
+$$\begin{aligned}
+\det(A) &= 2\left|\begin{array}{rr}
+6 & 7 \\
+9 & 1
+\end{array}\right|
+-3\left|\begin{array}{rr}
+5 & 7 \\
+8 & 1
+\end{array}\right|
++4\left|\begin{array}{rr}
+5 & 6 \\
+8 & 9
+\end{array}\right| \\
+&= 2(6-63)-3(5-56)+4(45-48) \\
+&= 2(-57)-3(-51)+4(-3) \\
+&= -114+153-12 \\
+&= 27.
+\end{aligned}$$
+
+$$\begin{aligned}
+A^{-1} &= \frac{1}{27}
+\left(\begin{array}{rrr}
+-57 & 33 & -3 \\
+51 & -30 & 6 \\
+-3 & 6 & -3
+\end{array}\right) \\
+&= \frac{1}{9}\left(\begin{array}{rrr}
+-19 & 11 & -1 \\
+17 & -10 & 2 \\
+-1 & 2 & -1
+\end{array}\right).
+\end{aligned}$$
+:::
+
+::: {#exm-adj4}
+In the $2\times 2$ case, if 
+$$\begin{aligned}
+A&=\left[ 
+\begin{array}{cc}
+a & b \\ 
+c & d
+\end{array}
+\right] \ \Rightarrow  \  {\rm adj}({\rm A}) = \left[\begin{array}{rr}
+d & -b \\ 
+-c & a
+\end{array}
+\right]  \\
+ \Rightarrow A^{-1} &= \frac{1}{ad-bc}\left[ 
+\begin{array}{rr}
+d & -b \\ 
+-c & a
+\end{array}
+\right].  
+\end{aligned}$$
+:::
+

@@ -1,8 +1,8 @@
 ::: {.content-hidden when-format="pdf"}
-\newcommand{\E}{\mathbf{E}} 
+<!--\newcommand{\E}{\mathbf{E}} 
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\corr}{corr}
 \DeclareMathOperator{\sd}{sd}
-\newcommand{\se}{\mathsf{se}}
+\newcommand{\se}{\mathsf{se}}-->
 :::

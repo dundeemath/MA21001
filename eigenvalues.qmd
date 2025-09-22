@@ -1,0 +1,613 @@
+
+# Eigenvalues and Eigenvectors
+
+## Introduction to Eigenvalues and Eigenvectors
+
+Consider an elastic body, e.g., a rubber ball. If we compress the ball
+in one direction, it will be elongated in the plane perpendicular to
+that direction. The figure below shows, in a cross-section, how
+individual points on the surface move under the compression.
+
+::: {#fig-deformation layout-ncol=2}
+
+![](eigenv1.png){width=50%}
+
+![](eigenv2.png){width=50%}
+
+Effect of a deformation on the points (vectors) in an
+elastic sphere.
+:::
+
+There are some vectors in these plots that don't change direction, but
+only their length under the deformation. We can find those by
+superimposing the two plots:
+
+::: {#fig-deformation2 layout-ncol=2}
+
+![](eigenv3.png){width=50%}
+
+![](eigenv4.png){width=50%}
+
+There are directions in which the vectors only change their
+length.
+:::
+
+These directions are characteristic of the deformation, as is the factor
+of elongation/compression along these directions. These directions can
+be found mathematically as the eigenvectors of a matrix, the deformation
+matrix, which maps the original vectors to the vectors of the deformed
+ball. The eigenvalues are the factors of compression/elongation along
+these directions. The word \"eigen\" is German for \"own\" and was
+likely introduced by David Hilbert (also known for Hilbert spaces).
+
+Eigenvalues and eigenvectors play an essential role in mathematics,
+physics and engineering. The stability of an equilibrium of a dynamical
+system is determined by the eigenvalues of a matrix that describes the
+linearised system at the equilibrium point. The values of a measurement
+in quantum mechanics are the eigenvalues of an operator. The principal
+axes of a rigid body are the eigenvectors of the moment of inertia
+tensor.
+
+::: {.Definition}
+## Eigenvalue and Eigenvector
+ Let $A$ be an $n \times n$ matrix. A scalar $\lambda$ is called an eigenvalue of $A$ if there is a nonzero vector
+$\mathbf{x}$ such that $A\mathbf{x} = \lambda \mathbf{x}$. Such a vector $\mathbf{x}$ is called an
+eigenvector of $A$ corresponding to $\lambda$.
+:::
+
+::: {#exm-    }
+Suppose
+$A\left[\begin{array}{c} x \\ y \end{array}\right] = \left[\begin{array}{c} 2x \\ 0 \end{array}\right]$.
+Then
+$$A\left[\begin{array}{c} 1 \\ 0 \end{array}\right] = \left[\begin{array}{c} 2 \\ 0 \end{array}\right] = 2\left[\begin{array}{c} 1 \\ 0 \end{array}\right]$$
+so $2$ is an eigenvalue and
+$\left[\begin{array}{c} 1 \\ 0 \end{array}\right]$ a corresponding
+eigenvector. Also,
+$$A\left[\begin{array}{c} 0 \\ 1 \end{array}\right] = \left[\begin{array}{c} 0 \\ 0 \end{array}\right] = 0\left[\begin{array}{c} 0 \\ 1 \end{array}\right],$$
+so $0$ is an eigenvalue and
+$\left[\begin{array}{c} 0 \\ 1 \end{array}\right]$ a corresponding
+eigenvector.
+:::
+
+Notice that $\left[\begin{array}{c} \alpha \\ 0 \end{array}\right]$ and $\left[\begin{array}{c} 0 \\ \alpha \end{array}\right]$ are eigenvectors for any $\alpha \neq 0$.\
+In general, if $\mathbf{v}$ is an eigenvector of $A$, then so is $\alpha \mathbf{v}$ for any nonzero scalar $\alpha$.
+
+::: {#exm-    }
+Show that $5$ is an eigenvalue of
+$A = \left[\begin{array}{cc} 1 & 2 \\ 4 & 3 \end{array}\right]$ and
+determine all eigenvectors corresponding to this eigenvalue.
+:::
+
+::: {.Solution}
+We must show that there is a nonzero vector $\mathbf{x}$ such that
+$A\mathbf{x} = 5\mathbf{x}$, which is equivalent to the equation
+$(A - 5I)\mathbf{x} = \mathbf{0}$. We compute the nullspace by:
+
+$$\left[A - 5I | \mathbf{0}\right] = \left[\begin{array}{cc|c} -4 & 2 & 0 \\ 4 & -2 & 0 \end{array}\right] \xrightarrow{R_{2} + R_{1}} \left[\begin{array}{cc|c} -4 & 2 & 0 \\ 0 & 0 & 0 \end{array}\right]$$
+
+Thus
+$\mathbf{x} = \left[\begin{array}{c} x_{1} \\ x_{2} \end{array}\right] \in {\rm Null}(A-5I)$
+satisfies $-4x_{1} + 2x_{2} = 0$, or $x_{2} = 2x_{1}$.\
+Thus, $A\mathbf{x} = 5\mathbf{x}$ has a nontrivial solution of the form
+$\mathbf{x} = \left[\begin{array}{c} x_{1} \\ x_{2} \end{array}\right] = \left[\begin{array}{c} x_{1} \\ 2x_{1} \end{array}\right] = x_{1}\left[\begin{array}{c} 1 \\ 2 \end{array}\right]$,
+so $5$ is an eigenvalue of $A$ and the corresponding eigenvectors are
+the nonzero multiples of
+$\left[\begin{array}{c} 1 \\ 2 \end{array}\right]$.
+:::
+
+::: {.Definition}
+## Eigenspace
+Let $A$ be an $n \times n$ matrix and let $\lambda$ be an eigenvalue of $A$. The collection of all eigenvectors
+corresponding to $\lambda$, together with the zero vector, is called the eigenspace of
+$\lambda$ and is denoted by $E_{\lambda }$.
+:::
+
+Therefore, in the above Example,
+$E_{5} = \left\{t\left[\begin{array}{c} 1 \\ 2 \end{array}\right]\right\}$,
+where $t \in \mathbb{R}$.
+
+::: {.Theorem}
+## Characteristic Equation
+Let $A$ be an $n \times n$ matrix. Then $\lambda$ is an eigenvalue of $A$ if and only if $|A-\lambda I_{n}| = 0$ (or $det(A - \lambda I_{n}) = 0$).
+:::
+
+::: {.Proof}
+Suppose that $\lambda$ is an eigenvalue of $A$. Then $A\mathbf{v} = \lambda \mathbf{v}$ for some nonzero $\mathbf{v} \in \mathbb{R}^{n}$. This
+is equivalent to $A\mathbf{v} = \lambda I_{n} \mathbf{v}$ or $(A - \lambda I_{n})\mathbf{v} = \mathbf{0}$. But this means that $\mathbf{v}$
+is a nonzero solution to the homogeneous system of equations defined by
+the matrix $A - \lambda I_{n}$. This means $A - \lambda I_{n}$ is singular, and so $|A - \lambda I_{n}| = 0$.\
+Conversely, if $|A - \lambda I_{n}| = 0$ then $A - \lambda I_{n}$ is singular, and so the system of equations defined by
+$A - \lambda I_{n}$ has nonzero solutions. Hence there exists a nonzero
+$\mathbf{v} \in \mathbb{R}^{n}$ with $(A - \lambda I_{n})\mathbf{v} = \mathbf{0}$, which is equivalent to
+$A \mathbf{v} = \lambda \mathbf{v}$, and so $\lambda$ is an eigenvalue of $A$. ◻
+:::
+
+::: {.Definition}
+## Characteristic Equation/Polynomial
+For an $n \times n$ matrix $A$, the equation $|A - \lambda I_{n}| = 0$ is called the characteristic equation of $A$,
+and $|A - \lambda I_{n}|$ is called the characteristic polynomial of $A$.
+:::
+
+:::: {#exm-    }
+Find the eigenvalues and the corresponding eigenvectors
+of $A = \left[\begin{array}{cc}
+        1 & 2 \\
+        4 & -1
+    \end{array}\right]$.
+
+::: {.Solution}
+The characteristic polynomial is
+
+
+$$\begin{alignedat}{2}
+        |A - \lambda I_{2}| &= \left|\begin{array}{cc}
+            1 - \lambda & 2 \\
+            4 & -1-\lambda 
+        \end{array}\right| \\
+        {} &= (1-\lambda )(-1-\lambda ) - 8 \\
+        {} &= \lambda ^{2} - 9 \\
+        {} &= (\lambda + 3)(\lambda - 3). \\
+    \end{alignedat}$$
+Hence the eigenvalues of $A$ are the roots of $(\lambda + 3)(\lambda - 3) = 0$; that is $\lambda _{1} = -3$ and $\lambda _{2} = 3$.\
+To find the eigenvectors corresponding to $\lambda _{1} = -3$, we find the nullspace of
+$$A - (-3)I_{2} = \left[\begin{array}{cc} 4 & 2 \\ 4 & 2 \end{array}\right]$$
+
+Row reduction produces
+$$\left[A+3I_{2} | \mathbf{0}\right] = \left[\begin{array}{cc|c} 4 & 2 & 0 \\ 4 & 2 & 0 \end{array}\right] \xrightarrow{R_{2} - R_{1}} \left[\begin{array}{cc|c} 4 & 2 & 0 \\ 0 & 0 & 0 \end{array}\right]$$
+
+Thus $\mathbf{x} \in {\rm Null}(A+3I_{2})$ if and only if
+$4x_{1} + 2x_{2} = 0$.\
+Setting the free variable $x_{2} = t$, we see that
+$x_{1} = -\frac{1}{2}t$. We take
+$\left[\begin{array}{c} x_{1} \\ x_{2} \end{array}\right] = \left[\begin{array}{c} -1 \\ 2 \end{array}\right]$
+be our eigenvector; or indeed any nonzero multiple of
+$\left[\begin{array}{c} -1 \\ 2 \end{array}\right]$.\
+To find the eigenvectors corresponding to $\lambda _{2} = 3$, we find the nullspace of $A - 3I_{2}$ by row reduction:
+$$\left[A - 3I_{2} | \mathbf{0}\right] = \left[\begin{array}{cc|c} -2 & 2 & 0 \\ 4 & -4 & 0 \end{array}\right] \xrightarrow{R_{2} + 2R_{1}} \left[\begin{array}{cc|c} -2 & 2 & 0 \\ 0 & 0 & 0 \end{array}\right]$$
+
+So
+$\mathbf{x} = \left[\begin{array}{c} x_{1} \\ x_{2} \end{array}\right] \in {\rm Null}(A - 3I_{2})$
+if and only if $-2x_{1} + 2x_{2} = 0$. Setting the free variable
+$x_{2} = t$, we find $x_{1} = t$. We take
+$\left[\begin{array}{c} x_{1} \\ x_{2} \end{array}\right] = \left[\begin{array}{c} 1 \\ 1 \end{array}\right]$
+to be our eigenvector.
+:::
+::::
+
+::: {#exm-    } 
+Find the eigenvalues and the corresponding eigenvectors of
+$$A = \left[\begin{array}{ccc}
+            3 & 2 & 2 \\
+            1 & 4 & 1 \\
+            -2 & -4 & -1
+        \end{array}\right]$$.
+:::
+
+::: {.Solution}
+The characteristic equation is
+$$\begin{alignedat}{2}
+        0 = |A - \lambda I| &= \left|\begin{array}{ccc}
+            3-\lambda & 2 & 2 \\
+            1 & 4-\lambda & 1 \\
+            -2 & -4 & -1-\lambda 
+        \end{array}\right| \\
+        {} &= (3-\lambda ) \left|\begin{array}{cc} 4-\lambda & 1 \\ -4 & -1-\lambda \end{array}\right| - 2 \left|\begin{array}{cc} 1 & 1 \\ -2 & -1-\lambda \end{array}\right| + 2 \left|\begin{array}{cc} 1 & 4-\lambda \\ -2 & -4\end{array}\right| \\
+        {} &= (3-\lambda ) \{(4-\lambda )(-1-\lambda )+4\} - 2\{(-1-\lambda )+2\} + 2\{-4+2(4-\lambda )\} \\
+        {} &= -\lambda ^3 + 6\lambda ^2 - 11\lambda + 6 \\
+        {} &= (\lambda -1)(-\lambda ^2 + 5\lambda - 6) \\
+        {} &= (\lambda -1)\{-(\lambda ^2 - 5\lambda + 6)\} \\
+        {} &= (\lambda -1)\{-(\lambda - 2)(\lambda - 3)\} \\
+    \end{alignedat}$$
+
+Hence, the eigenvalues are $\lambda _{1} = 1, \lambda _{2} = 2$ and $\lambda _{3} = 3$.\
+For $\lambda _{1}=1$, we compute
+$$\left[A - I | \mathbf{0}\right] = \left[\begin{array}{ccc | c} \textcircled{\raisebox{-0.9pt}{2}} & 2 & 2 & 0 \\ 1 & 3 & 1 & 0 \\ -2 & -4 & -2 & 0 \end{array}\right] \xrightarrow{\begin{subarray}{c} R_{2} - \frac{1}{2}R_{1} \\ R_{3} + R_{1} \end{subarray}} \left[\begin{array}{ccc | c} 2 & 2 & 2 & 0 \\ 0 & \textcircled{\raisebox{-0.9pt}{2}} & 0 & 0 \\ 0 & -2 & 0 & 0 \end{array}\right] $$
+$$\xrightarrow{R_{3} + R_{2}} \left[\begin{array}{ccc | c} \textcircled{\raisebox{-0.9pt}{2}} & 2 & 2 & 0 \\ 0 & \textcircled{\raisebox{-0.9pt}{2}} & 0 & 0 \\ 0 & 0 & 0 & 0 \end{array}\right]$$
+from which it follows that an eigenvector
+$$\mathbf{x} = \left[\begin{array}{c} x_{1} \\ x_{2} \\ x_{3} \end{array}\right]$$
+satisfies $x_{2} = 0$ and $x_{3} = -x_{1}$. We take
+$\left[\begin{array}{c} x_{1} \\ x_{2} \\ x_{3} \end{array}\right] = \left[\begin{array}{c} 1 \\ 0 \\ -1 \end{array}\right]$
+to be our eigenvector .
+
+For $\lambda _{2} = 2$, we compute
+$$\left[A - 2I | \mathbf{0}\right] = \left[\begin{array}{ccc | c} \textcircled{\raisebox{-0.9pt}{1}} & 2 & 2 & 0 \\ 1 & 2 & 1 & 0 \\ -2 & -4 & -3 & 0 \end{array}\right] \xrightarrow{\begin{subarray}{c} R_{2} - R_{1} \\ R_{3} + 2R_{1} \end{subarray}} \left[\begin{array}{ccc | c} 1 & 2 & 2 & 0 \\ 0 & 0 & \textcircled{\raisebox{-0.9pt}{-1}} & 0 \\ 0 & 0 & 3 & 0 \end{array}\right]$$ 
+$$\xrightarrow{R_{3} + 3R_{2}} \left[\begin{array}{ccc | c} \textcircled{\raisebox{-0.9pt}{1}} & 2 & 2 & 0 \\ 0 & 0 & \textcircled{\raisebox{-0.9pt}{-1}} & 0 \\ 0 & 0 & 0 & 0 \end{array}\right]$$
+which gives an eigenvector
+$$\mathbf{x} = \left[\begin{array}{c} -2 \\ 1 \\ 0 \end{array}\right]$$.
+
+For $\lambda _{3} = 3$, we compute
+$$\left[A - 3I | \mathbf{0}\right] = \left[\begin{array}{ccc | c} 0 & 2 & 2 & 0 \\ 1 & 1 & 1 & 0 \\ -2 & -4 & -4 & 0 \end{array}\right] \xrightarrow{R_{2} \leftrightarrow R_{1}} \left[\begin{array}{ccc | c} \textcircled{\raisebox{-0.9pt}{1}} & 1 & 1 & 0 \\ 0 & 2 & 2 & 0 \\ -2 & -4 & -4 & 0 \end{array}\right] $$ 
+$$\xrightarrow{R_{3} + 2R_{1}} \left[\begin{array}{ccc | c} 1 & 1 & 1 & 0 \\ 0 & \textcircled{\raisebox{-0.9pt}{2}} & 2 & 0 \\ 0 & -2 & -2 & 0 \end{array}\right] \xrightarrow{R_{3} + R_{2}} \left[\begin{array}{ccc | c} 1 & 1 & 1 & 0 \\ 0 & 2 & 2 & 0 \\ 0 & 0 & 0 & 0 \end{array}\right]$$
+which gives an eigenvector
+$$\mathbf{x} = \left[\begin{array}{c} 0 \\ -1 \\ 1 \end{array}\right]$$.
+:::
+
+::: {#exm-    }
+Find the eigenvalues and the corresponding eigenspaces of
+$$A = \left[\begin{array}{ccc}
+        0 & 1 & 0 \\
+        0 & 0 & 1 \\
+        2 & -5 & 4
+    \end{array}\right]$$
+:::    
+
+::: {.Solution}
+The characteristic equations is
+
+$$\begin{alignedat}{2}
+        0 = |A - \lambda I| &= \left|\begin{array}{ccc}
+            -\lambda & 1 & 0 \\
+            0 & -\lambda & 1 \\
+            2 & -5 & 4-\lambda 
+        \end{array}\right| \\
+        {} &= -\lambda \left|\begin{array}{cc} -\lambda & 1 \\ -5 & 4-\lambda \end{array}\right| -  \left|\begin{array}{cc} 0 & 1 \\ 2 & 4-\lambda \end{array}\right| \\
+        {} &= -\lambda (\lambda ^2-4\lambda +5)-(-2) \\
+        {} &= -\lambda ^3 + 4\lambda ^2 - 5\lambda + 2 \\
+        {} &= (\lambda -1)(-\lambda ^2 + 3\lambda - 2) \\
+        {} &= -(\lambda -1)^2(\lambda -2) \\
+    \end{alignedat}$$
+
+Hence, the eigenvalues are $\lambda _{1} = \lambda _{2} = 1$ and $\lambda _{3} = 2$.\
+To find the eigenvectors corresponding to $\lambda _{1} = \lambda _{2} = 1$, we compute
+$$\left[A - I | \mathbf{0}\right] = \left[\begin{array}{ccc | c} \textcircled{\raisebox{-0.9pt}{-1}} & 1 & 0 & 0 \\ 0 & -1 & 1 & 0 \\ 2 & -5 & 3 & 0 \end{array}\right] \xrightarrow{R_{3} + 2R_{1}} \left[\begin{array}{ccc | c} -1 & 1 & 0 & 0 \\ 0 & \textcircled{\raisebox{-0.9pt}{-1}} & 1 & 0 \\ 0 & -3 & 3 & 0 \end{array}\right] \xrightarrow{R_{3} - 3R_{2}} \left[\begin{array}{ccc | c} -1 & 1 & 0 & 0 \\ 0 & -1 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{array}\right]$$
+
+Thus,
+$$\mathbf{x} = \left[\begin{array}{c} x_{1} \\ x_{2} \\ x_{3} \end{array}\right]$$
+is in the eigenspace $E_{1}$ if and only if $-x_{1} + x_{2} = 0$ and
+$-x_{2} + x_{3} = 0$. Setting the free variable $x_{3} = t$, we see that
+$x_{1} = t$ and $x_{2} = t$, from which it follows that
+$$E_{1} = \left\{\left[\begin{array}{c} t \\ t \\ t \end{array}\right]\right\} = \left\{t \left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\right\} = {\rm span}\left(\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]\right)$$
+
+To find the eigenvectors correspond to $\lambda _{3} = 2$, we find the nullspace of $A - 2I$ by row reduction:
+$$\left[A - 2I | \mathbf{0}\right] = \left[\begin{array}{ccc | c} \textcircled{\raisebox{-0.9pt}{-2}} & 1 & 0 & 0 \\ 0 & -2 & 1 & 0 \\ 2 & -5 & 2 & 0 \end{array}\right] \xrightarrow{R_{3} + R_{1}} \left[\begin{array}{ccc | c} -2 & 1 & 0 & 0 \\ 0 & \textcircled{\raisebox{-0.9pt}{-2}} & 1 & 0 \\ 0 & -4 & 2 & 0 \end{array}\right] $$ 
+$$\xrightarrow{R_{3} - 2R_{2}} \left[\begin{array}{ccc | c} -2 & 1 & 0 & 0 \\ 0 & -2 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{array}\right]$$
+
+So
+$$\mathbf{x} = \left[\begin{array}{c} x_{1} \\ x_{2} \\ x_{3} \end{array}\right]$$
+is in the eigenspace $E_{2}$ if and only if $-2x_{1} + x_{2} = 0$ and
+$-2x_{2} + x_{3} = 0$. Setting the free variable $x_{3} = t$, we have
+$$E_{2} = \left\{\left[\begin{array}{c} \frac{1}{4}t \\ \frac{1}{2}t \\ t \end{array}\right]\right\} = \left\{t \left[\begin{array}{c} \frac{1}{4} \\ \frac{1}{2} \\ 1 \end{array}\right]\right\} = {\rm span}\left(\left[\begin{array}{c} \frac{1}{4} \\ \frac{1}{2} \\ 1 \end{array}\right]\right) = {\rm span}\left(\left[\begin{array}{c} 1 \\ 2 \\ 4 \end{array}\right]\right)$$
+:::
+
+::: {.Definition}
+## Algebraic and Geometric Multiplicity
+The algebraic multiplicity of an eigenvalue is
+its multiplicity as a root of the characteristic equation.\
+The geometric multiplicity of an eigenvalue $\lambda$ is ${\rm dim} (E_{\lambda })$, the dimension of its corresponding eigenspace.
+:::
+
+In the above Example, $\lambda = 1$ has algebraic multiplicity $2$ and geometric multiplicity
+$1$. $\lambda = 2$ has algebraic multiplicity $1$ and geometric multiplicity
+$1$.
+
+::: {.Corollary #eigenvaluestriangular #eigentriangular}
+The eigenvalues of a triangular matrix are the entries on its main diagonal.
+:::
+
+::: {#exm-    }
+Let
+$$A = \left[\begin{array}{cccc} 2 & 0 & 0 & 0 \\ -1 & 1 & 0 & 0 \\ 3 & 0 & 3 & 0 \\ 5 & 7 & 4 & -2 \end{array}\right]$$
+The characteristic polynomial is:
+$$\begin{alignedat}{2}
+        |A - \lambda I| &= \left|\begin{array}{cccc} 2-\lambda & 0 & 0 & 0 \\ -1 & 1-\lambda & 0 & 0 \\ 3 & 0 & 3-\lambda & 0 \\ 5 & 7 & 4 & -2-\lambda \end{array}\right| \\
+        {} &= (2-\lambda )\left|\begin{array}{ccc} 1-\lambda & 0 & 0 \\ 0 & 3-\lambda & 0 \\ 7 & 4 & -2-\lambda \end{array}\right| \\
+        {} &= (2-\lambda )(1-\lambda )\left|\begin{array}{cc} 3-\lambda & 0 \\ 4 & -2-\lambda \end{array}\right| \\
+        {} &= (2-\lambda )(1-\lambda )(3-\lambda )(-2-\lambda ) 
+    \end{alignedat}$$
+
+Hence, the eigenvalues are $\lambda _{1}=2, \lambda _{2}=1, \lambda _{3}=3, \lambda _{4}=-2$.
+:::
+
+Note that diagonal matrices are a special case of Corollary \ref{eigenvaluestriangular}.
+
+::: {.Theorem #eigenlinind}
+Let $A$ be an $n \times n$ matrix and let $\lambda _{1}, \lambda _{2}, ..., \lambda _{m}$ be distinct eigenvalues of $A$ with corresponding
+eigenvectors $\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$. Then
+$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ are linearly independent.
+:::
+
+::: {.Proof}
+We prove this by contradiction.
+
+Suppose $\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ are
+linearly dependent. Let $\mathbf{v_{k+1}}$ be the first of the vectors
+$\mathbf{v_{i}}$ that can be expressed as a linear combination of the
+previous ones. In other words,
+$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{k}}$ are linearly
+independent, but there are $c_{1}, c_{2}, ..., c_{k}$ such that
+$$\mathbf{v_{k+1}} = c_{1}\mathbf{v_{1}} + c_{2}\mathbf{v_{2}} + ... + c_{k}\mathbf{v_{k}} \qquad (1)$$
+
+Multiplying both sides of Equation (1) by $A$ from left and using the
+fact that $A\mathbf{v_{i}} = \lambda _{i}\mathbf{v_{i}}$ for each $i$, we have
+$$\begin{alignedat}{2}
+        \lambda _{k+1}\mathbf{v_{k+1}} = A\mathbf{v_{k+1}} &= A(c_{1}\mathbf{v_{1}} + c_{2}\mathbf{v_{2}} + ... + c_{k}\mathbf{v_{k}}) \\
+        {} &= c_{1}A\mathbf{v_{1}} + c_{2}A\mathbf{v_{2}} + ... + c_{k}A\mathbf{v_{k}} \\
+        {} &= c_{1}\lambda _{1}\mathbf{v_{1}} + c_{2}\lambda _{2}\mathbf{v_{2}} + ... + c_{k}\lambda _{k}\mathbf{v_{k}} \qquad (2) 
+    \end{alignedat}$$
+
+Now we multiply both sides of Equation (1) by $\lambda _{k+1}$ to obtain
+$$\lambda _{k+1}\mathbf{v_{k+1}} = c_{1}\lambda _{k+1}\mathbf{v_{1}} + c_{2}\lambda _{k+1}\mathbf{v_{2}} + ... + c_{k}\lambda _{k+1}\mathbf{v_{k}} \qquad (3)$$
+
+When we subtract Equation (3) from Equation (2), we obtain
+$$\mathbf{0} = c_{1}(\lambda _{1}-\lambda _{k+1})\mathbf{v_{1}} + c_{2}(\lambda _{2}-\lambda _{k+1})\mathbf{v_{2}} + ... + c_{k}(\lambda _{k}-\lambda _{k+1})\mathbf{v_{k}}$$
+
+The linear independence of
+$$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{k}}$$ implies that
+$$c_{1}(\lambda _{1}-\lambda _{k+1}) = c_{2}(\lambda _{2}-\lambda _{k+1}) = ... = c_{k}(\lambda _{k}-\lambda _{k+1}) = 0$$
+
+Since the eigenvalues $\lambda _{i}$ are all distinct, $\lambda _{i} - \lambda _{k+1} \neq 0$ for all $i = 1, ..., k$. Hence
+$c_{1} = c_{2} = ... = c_{k} = 0$. This implies that
+$$\mathbf{v_{k+1}} = 0\mathbf{v_{1}} + 0\mathbf{v_{2}} + ... + 0\mathbf{v_{k}} = \mathbf{0}$$
+
+which is impossible since the eigenvector $\mathbf{v_{k+1}}$ cannot be
+zero.
+
+Thus, our assumption that
+$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ are linearly dependent is false. It follows that $\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ must be linearly
+independent. ◻
+:::
+
+## Similarity and Diagonalisation
+
+### Introduction
+
+In many applications, matrices represent linear mappings of vectors in a
+physical space, as in the example given at the start of the Eigenvector
+section. The choice of a coordinate system (in particular, its
+orientation) in this space is arbitrary, and this choice determines what
+the matrix looks like. In this section, we show that under certain
+conditions, there exists a choice of a coordinate system in which the
+matrix becomes a diagonal matrix. In this case, the coordinate axes have
+the direction of the eigenvectors of the matrix, and the diagonal
+elements of the matrix are the eigenvalues.
+
+### Similar Matrices
+
+::: {.Definition}
+## Similar Matrices 
+Let $A$ and $B$ be $n \times n$ matrices. We say
+that $A$ is similar to $B$ if there is an invertible $n \times n$ matrix
+$P$ such that $P^{-1}AP = B$. If $A$ is similar to $B$, we write
+$A \sim B$.
+:::
+
+::: {.callout-note}
+## Remark
+If $A \sim B$, we can write, equivalently, that $A = PBP^{-1}$ or $AP = PB$. The matrix $P$ depends on $A$ and $B$. It is not unique for a given pair of similar matrices $A$ and $B$.
+:::
+
+::: {.Theorem #simmatrices} 
+## Properties of Similar Matrices
+Let $A$ and $B$ be $n \times n$ matrices with
+$A \sim B$. Then\
+(a) $det(A) = det(B)$\
+(b) $A$ and $B$ have the same rank.\
+(c) $A$ and $B$ have the same characteristic polynomial.\
+(d) $A$ and $B$ have the same eigenvalues.
+:::
+
+::: {.Proof}
+If $A \sim B$, then $P^{-1}AP = B$ for some invertible matrix
+$P$.\
+(a)\
+$$\begin{alignedat}{2}
+            \qquad det(B) &= det(P^{-1}AP) \\
+            {} &= det(P^{-1})det(A)det(P) \\
+            {} &= \frac{1}{det(P)}det(A)det(P) \\
+            {} &= det(A). \\
+        \end{alignedat}$$
+
+\(c\) The characteristic polynomial of $B$ is
+$$\begin{alignedat}{2}
+            det(B - \lambda I) &= det(P^{-1}AP - \lambda I) \\
+            {} &= det(P^{-1}AP - \lambda P^{-1}IP) \\
+            {} &= det(P^{-1}AP - P^{-1}(\lambda I)P) \\
+            {} &= det(P^{-1}(A - \lambda I)P) \\
+            {} &= det(P^{-1})det(A - \lambda I)det(P) \\
+            {} &= \frac{1}{det(P)}det(A - \lambda I)det(P) \\
+            {} &= det(A - \lambda I)  
+        \end{alignedat}$$
+ ◻
+:::
+
+Theorem \ref{simmatrices} is helpful in showing that two matrices are not similar,
+since $A$ and $B$ cannot be similar if any of the properties fail.
+
+::: {#exm-    } 
+(a) The two matrices
+$$A = \left[\begin{array}{cc} 1 & 2 \\ 2 & 1 \end{array}\right], \quad B = \left[\begin{array}{cc} 2 & 1 \\ 1 & 2 \end{array}\right], $$
+are not similar since $det(A) = -3$ but $det(B) = 3$.\
+(b) The two matrices
+$$A = \left[\begin{array}{cc} 1 & 3 \\ 2 & 2 \end{array}\right], \quad B = \left[\begin{array}{cc} 1 & 1 \\ 3 & -1 \end{array}\right]$$ are not
+similar, since $|A - \lambda I| = \lambda ^{2} - 3\lambda - 4$ while $|B - \lambda I| = \lambda ^{2} - 4$. Note that $A$ and $B$ have the same determinant and
+rank, however.
+:::
+
+### Diagonalisation
+
+::: {.Definition}
+## Diagonalisable Matrices
+An $n \times n$ matrix $A$ is diagonalisable if there is a diagonal matrix $D$ such that $A$ is similar to $D$ - that
+is, if there is an invertible $n \times n$ matrix $P$ such that
+$P^{-1}AP = D$.
+:::
+
+::: {.Theorem #diagifind}
+## Condition for Diagonalisability
+Let $A$ be an $n \times n$ matrix. Then $A$ is
+diagonalisable if and only if $A$ has $n$ linearly independent
+eigenvectors.\
+More precisely, there exists an invertible matrix $P$ and a diagonal
+matrix $D$ such that $P^{-1}AP = D$ if and only if the columns of $P$
+are $n$ linearly independent eigenvectors of $A$ and the diagonal
+entries of $D$ are the eigenvalues of $A$ corresponding to the
+eigenvectors in $P$ in the same order.*
+:::
+
+:::{.Proof}
+Suppose first that $A$ is similar to the diagonal matrix $D$ by
+$P^{-1}AP = D$ or, equivalently, $AP = PD$. Let the columns of $P$ be
+$\mathbf{p_{1}}, \mathbf{p_{2}}, ..., \mathbf{p_{n}}$ and let the
+diagonal entries of $D$ be $\lambda _{1}, \lambda _{2}, ..., \lambda _{n}$. Then
+$$A\left[\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots, \mathbf{p_{n}}\right] = \left[\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots, \mathbf{p_{n}}\right] \left[\begin{array}{cccc} \lambda _{1} & 0 & \cdots & 0 \\ 0 & \lambda _{2} & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \lambda _{n} \end{array}\right] \qquad (1)$$
+or
+$$\qquad \left[A\mathbf{p_{1}}, A\mathbf{p_{2}}, \cdots, A\mathbf{p_{n}}\right] = \left[\lambda _{1}\mathbf{p_{1}}, \lambda _{2}\mathbf{p_{2}}, \cdots, \lambda _{n}\mathbf{p_{n}}\right] \qquad (2)$$
+
+Equating columns, we have
+$$A\mathbf{p_{1}} = \lambda _{1}\mathbf{p_{1}}, A\mathbf{p_{2}} = \lambda _{2}\mathbf{p_{2}}, \cdots , A\mathbf{p_{n}} = \lambda _{n}\mathbf{p_{n}}$$
+which proves that the column vectors of $P$ are eigenvectors of $A$
+whose corresponding eigenvalues are the diagonal entries of $D$ in the
+same order. Since $P$ is invertible, its columns are linearly
+independent.
+
+Conversely, if $A$ has $n$ linearly independent eigenvectors
+$\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots , \mathbf{p_{n}}$ with
+corresponding eigenvalues $\lambda _{1}, \lambda _{2}, \cdots , \lambda _{n}$, respectively, then
+$$A\mathbf{p_{1}} = \lambda _{1}\mathbf{p_{1}}, A\mathbf{p_{2}} = \lambda _{2}\mathbf{p_{2}}, \cdots , A\mathbf{p_{n}} = \lambda _{n}\mathbf{p_{n}}$$
+
+This implies Eq. (2), which is equivalent to Eq. (1), that is $AP = PD$.
+Since the columns
+$\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots , \mathbf{p_{n}}$ of $P$ are
+linearly independent, $P$ is invertible, so $P^{-1}AP = D$, that is, $A$
+is diagonalisable. ◻
+:::
+
+::: {#exm-    }
+If possible, find a matrix $P$ that diagonalises
+$$A = \left[\begin{array}{ccc}
+            0 & 1 & 0 \\
+            0 & 0 & 1 \\
+            2 & -5 & 4 
+        \end{array}\right]$$
+:::        
+
+::: {.Solution}
+We studied this matrix previously and found that it has eigenvalues $\lambda _{1} = \lambda _{2} = 1$ and $\lambda _{3} = 2$. The eigenspaces have the following bases:\
+For $\lambda _{1} = \lambda _{2} = 1$, $E_{1}$ has basis
+$\left[\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right]$.\
+For $\lambda _{3} = 2$, $E_{2}$ has basis
+$\left[\begin{array}{c} 1 \\ 2 \\ 4 \end{array}\right]$.\
+Since all other eigenvectors are just multiples of one of these two
+basis vectors, there cannot be three linearly independent eigenvectors.
+By Theorem 4.6, $A$ is not diagonalisable.
+:::
+
+::: {#exm-    }
+If possible, find a matrix $P$ that diagonalises
+$$A = \left[\begin{array}{ccc}
+            2 & 2 & 0 \\
+            0 & 1 & 0 \\
+            -4 & -8 & 1 
+        \end{array}\right]$$
+:::        
+
+::: {.Solution}
+This is the matrix of Question 3, Worksheet 6. There we found that the
+eigenvalues of $A$ are $\lambda _{1} = 2$ and $\lambda _{2} = \lambda _{3} = 1$, with the following bases for the eigenspaces:\
+For $\lambda _{1} = 2$, $E_{2}$ has basis
+$\mathbf{p_{1}} = \left[\begin{array}{c} 1 \\ 0 \\ -4 \end{array}\right]$.\
+For $\lambda _{2} = \lambda _{3} = 1$, $E_{1}$ has basis
+$\mathbf{p_{2}} = \left[\begin{array}{c} -2 \\ 1 \\ 0 \end{array}\right]$
+and
+$\mathbf{p_{3}} = \left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right]$.\
+Now we check whether
+$\left\{\mathbf{p_{1}}, \mathbf{p_{2}}, \mathbf{p_{3}}\right\}$ is
+linearly independent.
+$$\left[\begin{array}{ccc} \textcircled{\raisebox{-0.9pt}{1}} & -2 & 0 \\ 0 & 1 & 0 \\ -4 & 0 & 1 \end{array}\right] \xrightarrow{R_{3} + 4R_{1}} \left[\begin{array}{ccc} 1 & -2 & 0 \\ 0 & \textcircled{\raisebox{-0.9pt}{1}} & 0 \\ 0 & -8 & 1 \end{array}\right] \xrightarrow{R_{3} + 8R_{2}} \left[\begin{array}{ccc} 1 & -2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{array}\right]$$
+
+Since $rank = 3$,
+$\left\{\mathbf{p_{1}}, \mathbf{p_{2}}, \mathbf{p_{3}}\right\}$ is
+linearly independent. Thus, if we take
+$$P = \left[\mathbf{p_{1}}, \mathbf{p_{2}}, \mathbf{p_{3}}\right] = \left[\begin{array}{ccc} 1 & -2 & 0 \\ 0 & 1 & 0 \\ -4 & 0 & 1 \end{array}\right]$$
+then $P$ is invertible. Furthermore,
+$$P^{-1}AP = \left[\begin{array}{ccc} 2 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{array}\right] = D$$
+
+(Note: It is much easier to check the equivalent equation $AP = PD$).
+:::
+
+::: {.callout-note}
+## Remark
+Eigenvectors can be placed into the columns of $P$ in any
+order. However, the eigenvalues will come up on the diagonal of $D$ in
+the same order as their corresponding eigenvectors in $P$. For example,
+if we had chosen
+$$P = \left[\mathbf{p_{2}}, \mathbf{p_{3}}, \mathbf{p_{1}}\right] = \left[\begin{array}{ccc} -2 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & -4 \end{array}\right]$$
+Then we would have found
+$$P^{-1}AP = \left[\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{array}\right]$$
+
+We checked that the eigenvectors $\mathbf{p_{1}}, \mathbf{p_{2}}$ and
+$\mathbf{p_{3}}$ were linearly independent. However, the following
+Theorem guarantees that linear independence is preserved when the bases
+of different subspaces are combined.
+:::
+
+::: {.Theorem}
+##
+Let $A$ be an $n \times n$ matrix and let $\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}$ be distinct eigenvalues of $A$. If $B_{i}$ is a basis for
+the eigenspace $E_{i}$, then
+$B = B_{1} \cup B_{2} \cup \cdots \cup B_{k}$ (i.e. the total collection
+of basis vectors for all of the eigenspaces) is linearly independent.
+:::
+
+::: {.Theorem #eigendiag}
+If $A$ is an $n \times n$ matrix with $n$ distinct
+eigenvalues, then $A$ is diagonalisable.
+:::
+
+::: {.Proof}
+Let $\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}$ be
+eigenvectors corresponding to the $n$ distinct eigenvalues of $A$. By
+theorem \ref{eigenlinind}, $\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}$
+are linearly independent, so, by Theorem \ref{diagifind}, $A$ is diagonalisable. ◻
+:::
+
+::: {#exm-    }
+The matrix
+$$A = \left[\begin{array}{cccc}
+            2 & 0 & 0 & 0 \\
+            -1 & 1 & 0 & 0 \\
+            3 & 0 & 3 & 0 \\
+            5 & 7 & 4 & -2
+        \end{array}\right]$$
+has eigenvalues $\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3$ and $\lambda _{4} = -2$, by Corollary \ref{eigentriangular}. Since these are four distinct
+eigenvalues for a $4 \times 4$ matrix, $A$ is diagonalisable, by Theorem \ref{eigendiag}.
+:::
+
+::: {.Corollary}
+If $A$ is an $n \times n$ matrix, then the geometric
+multiplicity of each eigenvalue is less than or equal to its algebraic
+multiplicity.
+:::
+
+::: {.Theorem}
+## Diagonalisation Theorem
+Let $A$ be an $n \times n$ matrix whose distinct eigenvalues are $\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}$, where $1\leq k\leq n$. The following statements are
+equivalent:
+
+(a) $A$ is diagonalisable.
+
+(b) The union $B$ of the bases of the eigenspaces of $A$ contains $n$
+vectors.
+
+(c) The algebraic multiplicity of each eigenvalue equals its geometric
+multiplicity.
+:::
+
+::: {#exm-    }
+(a) The matrix 
+$$A = \left[\begin{array}{ccc}
+        0 & 1 & 0 \\ 0 & 0 & 1 \\ 2 & -5 & 4 \end{array}\right]$$
+has two distinct eigenvalues $\lambda _{1} = \lambda _{2} = 1$ and $\lambda _{3} = 2$. Since the eigenvalue $\lambda _{1} = \lambda _{2} = 1$ with
+$E_{1} = {\rm span}( (1,1,1)^T)$ has algebraic multiplicity 2 but geometric multiplicity 1, $A$ is
+not diagonalisable, by the Diagonalisation Theorem.\
+(b) The matrix 
+$$A = \left[\begin{array}{ccc}
+        2 & 2 & 0 \\ 0 & 1 & 0 \\ -4 & -8 & 1 \end{array}\right]$$
+has two distinct eigenvalues $\lambda _{1} = 2$ and $\lambda _{2} = \lambda _{3} = 1$. We found:
+for $\lambda _{1} = 2$, $E_{1}$ has basis
+$\mathbf{p_{1}} = (1, 0, -4)^T$, and for $\lambda _{2} = \lambda _{3} = 1$, $E_{2}$ has basis
+$\mathbf{p_{2}} = (-2,1, 0)^T$ and $\mathbf{p_{3}} = (0,0,1)^T$.
+Thus, the eigenvalue 2 has algebraic and geometric multiplicity 1,
+and the eigenvalue 1 has algebraic and geometric multiplicity 2.
+Thus, $A$ is diagonalisable, by the Diagonalisation Theorem.
+:::

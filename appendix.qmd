@@ -1,0 +1,43 @@
+# Appendix
+
+## Greek Letters {#sec-greekletters}
+
+::: center
+
+|         |           |       |           |       |           |
+|---------|-----------|-------|-----------|-------|-----------|
+| alpha   | $\alpha$  |iota   | $\iota$   |rho    | $\rho$    | 
+| beta    | $\beta$   |kappa  | $\kappa$  |sigma  | $\sigma$  | 
+| gamma   | $\gamma$  |lambda | $\lambda$ |tau    | $\tau$    | 
+| delta   | $\delta$  |mu     | $\mu$     |upsilon| $\upsilon$| 
+| epsilon | $\epsilon$|nu     | $\nu$     |phi    | $\phi$    | 
+| zeta    | $\zeta$   |xi     | $\xi$     |chi    | $\chi$    |  
+| eta     | $\eta$    |omicron| $\omicron$|psi    | $\psi$    | 
+| theta   | $\theta$  |pi     |$\pi$      |omega  | $\omega$  | 
+: **Lower case Greek alphabet**
+:::
+
+## Carl Friedrich Gauss 
+
+Carl Friedrich Gauss (Gauß) (30 April
+1777 - 23 February 1855) was a German mathematician and scientist of
+profound genius who contributed significantly to many fields, including
+number theory, analysis, differential geometry, geodesy, magnetism,
+astronomy and optics. Sometimes known as \"the prince of
+mathematicians\" and \"greatest mathematician since antiquity\", Gauss
+had a remarkable influence in many fields of mathematics and science and
+is ranked as one of history's most influential mathematicians.
+
+Gauss was a child prodigy, of whom there are many anecdotes pertaining
+to his astounding precocity while a mere toddler, and made his first
+ground-breaking mathematical discoveries while still a teenager. He
+completed Disquisitiones Arithmeticae, his magnum opus, at the age of
+twenty-one (1798), though it would not be published until 1801. This
+work was fundamental in consolidating number theory as a discipline and
+has shaped the field to the present day. [^2]
+
+![CF Gauss](Gauss.jpg){width="6cm"}
+
+[^2]: From Wikipedia, the free encyclopaedia
+
+

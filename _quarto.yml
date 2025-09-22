@@ -8,17 +8,17 @@ book:
   # css: "assets/style.css"
   description: |
      Notes for MA21001.
-  site-url: https://dundeemath.github.io/PH11002
-  repo-url: https://github.com/dundeemath/PH11002/
+  site-url: https://dundeemath.github.io/MA21001
+  repo-url: https://github.com/dundeemath/MA21001/
   repo-branch: master
-  cover-image: cover.png
-  cover-image-alt: "Cover for lecture note packet."
+  #cover-image: cover.png
+  #cover-image-alt: "Cover for lecture note packet."
   downloads: pdf
   repo-actions: [issue]
   # sharing: [twitter]
   date: last-modified
   date-format: iso
-  page-footer: "Copyright 2025, Eric Hall (University of Dundee)" 
+  page-footer: "Copyright 2025, Gunnar Hornig (University of Dundee)"  
   page-navigation: true
   search: true
   # collapse-level: 1
@@ -26,9 +26,14 @@ book:
     - "index.qmd"
     - part: "Algebra"
       chapters:
-        - "001-complex.qmd"
+        - "notation.qmd"
+        - "algebra3b.qmd"
+        - "linearequations.qmd"
+        - "determinants.qmd"
+        - "eigenvalues.qmd"
+        - "appendix.qmd"
         # - "09-references.qmd"
-    - part: "Calculus"
+
   # appendices: 
   # margin-header: "Header Text"
   sidebar:
@@ -39,7 +44,7 @@ book:
     #   Last modified: {{< meta date >}}
 
 # bibliography:
-#  - ph11002.bib
+#  - MA21002.bib
 
 prefer-html: true
   
@@ -78,4 +83,51 @@ format:
     
 execute: 
   freeze: auto
+
+filters:
+  - custom-numbered-blocks
+
+custom-numbered-blocks:
+  groups:
+    thmlike:
+      colors: [948bde, 584eab]
+      boxstyle: foldbox.simple
+      collapse: false
+      listin: [mathstuff]
+    todos: default  
+  classes:
+    Theorem:
+      group: thmlike
+    Corollary:
+      group: thmlike
+    Lemma:
+      group: thmlike
+    Conjecture:
+      group: thmlike
+      collapse: true  
+    Proof:
+      group: todos
+      collapse: true  
+      numbered: false
+    Solution:
+      group: todos
+      collapse: true  
+      numbered: false
+    Definition:
+      group: thmlike
+      colors: [d999d3, a01793]
+    Feature: default
+    TODO:
+      label: "To do"
+      colors: [e7b1b4, 8c3236]
+      group: todos
+      listin: [stilltodo]
+    DONE:
+      label: "Done"
+      colors: [cce7b1, 86b754]  
+      group: todos
+
+     # crossref:
+     #   chapters: true
+     #  eq-title: Eq -->
     

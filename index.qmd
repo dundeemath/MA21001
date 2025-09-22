@@ -2,9 +2,9 @@
 
 # Introduction {-}
 
-Welcome to PH11002 Problem Solving and Professional Skills at the University of Dundee.
+Welcome to MA21001 at the University of Dundee.
 
-These notes are available at [dundeemath.github.io/PH11002/](https://dundeemath.github.io/PH11002/) as HTML and also as a PDF. 
+These notes are available at [dundeemath.github.io/MA21001/](https://dundeemath.github.io/MA21001/) as HTML and also as a PDF. 
 
 ## Licence
 
