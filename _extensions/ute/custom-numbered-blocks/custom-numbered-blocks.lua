@@ -134,9 +134,12 @@ local function chapterinfo(book, fname)
   --if book.render then
     for _, v in pairs(book.render) do
       if str(v.type) == "chapter" then
-        last = pandoc.path.split_extension(str(v.file))
-        if first == "" then first = last end
-        if last == fname then chapno = v.number end
+        local vbase = pandoc.path.split_extension(str(v.file))
+        -- normalize to just the filename without any directories
+        vbase = pandoc.path.filename(vbase)
+        last = vbase
+        if first == "" then first = vbase end
+        if vbase == fname then chapno = v.number end
       end
     end
     info.islast = (fname == last)
@@ -147,7 +150,9 @@ local function chapterinfo(book, fname)
 end
 
 local function Meta_findChapterNumber(meta)
+  -- normalize processed file to basename without extension
   local processedfile = pandoc.path.split_extension(PANDOC_STATE.output_file)
+  processedfile = pandoc.path.filename(processedfile)
   fbx.isbook = meta.book ~= nil
   fbx.ishtmlbook = meta.book ~= nil and not quarto.doc.is_format("pdf")
   fbx.processedfile = processedfile
@@ -402,8 +407,12 @@ local function Pandoc_prefix_count(doc)
   local secno = 0
   local prefix = "" -- was "0" but this looks ugly. maybe give this as an option if need be, later
   local lprefix = ""
-  if fbx.prefix then prefix = fbx.prefix 
-     elseif fbx.ishtmlbook then prefix = fbx.chapno end
+  -- Use explicit non-empty check: in Lua, empty string is truthy
+  if (fbx.prefix ~= nil) and (fbx.prefix ~= "") then
+     prefix = fbx.prefix
+  elseif fbx.ishtmlbook then
+     prefix = fbx.chapno
+  end
  
 -- pout("this is a book?"..str(fbx.ishtmlbook))
 
@@ -432,9 +441,19 @@ In case of no prefix number I would still like to allow overriding.
      -- allow headers to redefine numberprefix. Maybe this should be restricted to level 1 headers? But comes in handy when numberlevel == 0
     if blk.t=="Header" 
     then 
-      if blk.attr.attributes.numberprefix 
-      then  prefix = str(blk.attr.attributes.numberprefix)
-      else prefix = fbx.prefix       
+      if blk.attr.attributes.numberprefix then
+        -- Explicit override provided on the header
+        prefix = str(blk.attr.attributes.numberprefix)
+      else
+        -- Fallback: if chapter numbering requested but no prefix set yet,
+        -- try header-provided numbers (Quarto 1.4 can provide these).
+        if (fbx.numberlevel == 1) and (prefix == nil or prefix == "") then
+          local a = blk.attr.attributes
+          local cand = a.numberprefix or a.secno or a.number or a["data-number"]
+          if cand ~= nil and tostring(cand) ~= "" then
+            prefix = tostring(cand)
+          end
+        end
       end 
        
     -- reset counter if level is 1, and it is not a html book. Here only resetting by chapter = per document
@@ -925,4 +944,3 @@ return{
   
   -- ]]
 }
-
