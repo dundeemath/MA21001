@@ -120,25 +120,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
+.Solution {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
 .Definition {
   --color1: #d999d3;
   --color2: #a01793;
 }
-.Proof {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Theorem {
+.Corollary {
   --color1: #948bde;
   --color2: #584eab;
 }
-.Feature {
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Proof {
   --color1: #c0c0c0;
   --color2: #808080;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
 }
 .Conjecture {
   --color1: #948bde;
@@ -148,17 +148,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #948bde;
   --color2: #584eab;
 }
-.Solution {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Corollary {
+.Theorem {
   --color1: #948bde;
   --color2: #584eab;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Feature {
+  --color1: #c0c0c0;
+  --color2: #808080;
 }
 </style>
 
@@ -1355,8 +1355,8 @@ x=2-2y-z=34/19,
 <section id="range-and-nullspace-of-a-matrix" class="level2" data-number="3.8">
 <h2 data-number="3.8" class="anchored" data-anchor-id="range-and-nullspace-of-a-matrix"><span class="header-section-number">3.8</span> Range and Nullspace of a Matrix</h2>
 <p>Consider a system of linear equations, <span class="math inline">A\mathbf{x} = \mathbf{y}</span> where <span class="math inline">A</span> is an <span class="math inline">m \times n</span> matrix. We can consider the matrix <span class="math inline">A</span> as a mapping from the space of all <span class="math inline">\mathbf{x}</span> vectors in <span class="math inline">\mathbb{R}^{n}</span> onto the space of all possible <span class="math inline">\mathbf{y}</span> vectors, which is a subset of <span class="math inline">\mathbb{R}^{m}</span>. <span class="math display">A: \mathbf{x} \in \mathbb{R}^{n} \longrightarrow \mathbf{y} = A \mathbf{x} \in \mathbb{R}^{m}</span>.</p>
-<div id="range-and-rank" class="Corollary" title="Range and Rank">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 3.14: </strong>Range and Rank</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">m \times n</span> matrix. The image of <span class="math inline">\mathbb{R}^{n}</span> under <span class="math inline">A</span> is a subspace of <span class="math inline">\mathbb{R}^{m}</span> called the range (or column space) of <span class="math inline">A</span>, denoted by <span class="math inline">{\rm range}(A)</span>, and <span class="math display"> {\rm range}(A) = {\rm span}({\rm columns \, of } A).</span> The dimension of the column space is called the rank and is denoted by <span class="math inline">{\rm rank}(A)</span>.<p></p>
+<div id="range-and-rank" class="Definition" title="Range and Rank">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3.14: </strong>Range and Rank</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">m \times n</span> matrix. The image of <span class="math inline">\mathbb{R}^{n}</span> under <span class="math inline">A</span> is a subspace of <span class="math inline">\mathbb{R}^{m}</span> called the range (or column space) of <span class="math inline">A</span>, denoted by <span class="math inline">{\rm range}(A)</span>, and <span class="math display"> {\rm range}(A) = {\rm span}({\rm columns \, of } A).</span> The dimension of the column space is called the rank and is denoted by <span class="math inline">{\rm rank}(A)</span>.<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
@@ -3217,7 +3217,7 @@ Note&nbsp;3.1: Remark: Nullspace of non-square matrices
 <span id="cb1-1172"><a href="#cb1-1172" aria-hidden="true" tabindex="-1"></a>of $\mathbb{R}^{m}$.</span>
 <span id="cb1-1173"><a href="#cb1-1173" aria-hidden="true" tabindex="-1"></a>$$A: \mathbf{x} \in \mathbb{R}^{n} \longrightarrow \mathbf{y} = A \mathbf{x} \in \mathbb{R}^{m}$$.</span>
 <span id="cb1-1174"><a href="#cb1-1174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1175"><a href="#cb1-1175" aria-hidden="true" tabindex="-1"></a>:::: {.Corollary}</span>
+<span id="cb1-1175"><a href="#cb1-1175" aria-hidden="true" tabindex="-1"></a>:::: {.Definition}</span>
 <span id="cb1-1176"><a href="#cb1-1176" aria-hidden="true" tabindex="-1"></a><span class="fu">## Range and Rank</span></span>
 <span id="cb1-1177"><a href="#cb1-1177" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $m \times n$ matrix. The image of</span>
 <span id="cb1-1178"><a href="#cb1-1178" aria-hidden="true" tabindex="-1"></a>$\mathbb{R}^{n}$ under $A$ is a subspace of $\mathbb{R}^{m}$ called the range (or column space) of $A$, denoted by ${\rm range}(A)$, and</span>

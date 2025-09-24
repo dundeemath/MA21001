@@ -1172,7 +1172,7 @@ onto the space of all possible $\mathbf{y}$ vectors, which is a subset
 of $\mathbb{R}^{m}$.
 $$A: \mathbf{x} \in \mathbb{R}^{n} \longrightarrow \mathbf{y} = A \mathbf{x} \in \mathbb{R}^{m}$$.
 
-:::: {.Corollary}
+:::: {.Definition}
 ## Range and Rank
 Let $A$ be an $m \times n$ matrix. The image of
 $\mathbb{R}^{n}$ under $A$ is a subspace of $\mathbb{R}^{m}$ called the range (or column space) of $A$, denoted by ${\rm range}(A)$, and
