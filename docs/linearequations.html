@@ -120,37 +120,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
-.Solution {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
 .Definition {
   --color1: #d999d3;
   --color2: #a01793;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Lemma {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Feature {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Conjecture {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Corollary {
-  --color1: #948bde;
-  --color2: #584eab;
 }
 .Proof {
   --color1: #c0c0c0;
@@ -159,6 +131,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 .Theorem {
   --color1: #948bde;
   --color2: #584eab;
+}
+.Feature {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Conjecture {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Lemma {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Solution {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.Corollary {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 </style>
 
@@ -1355,13 +1355,35 @@ x=2-2y-z=34/19,
 <section id="range-and-nullspace-of-a-matrix" class="level2" data-number="3.8">
 <h2 data-number="3.8" class="anchored" data-anchor-id="range-and-nullspace-of-a-matrix"><span class="header-section-number">3.8</span> Range and Nullspace of a Matrix</h2>
 <p>Consider a system of linear equations, <span class="math inline">A\mathbf{x} = \mathbf{y}</span> where <span class="math inline">A</span> is an <span class="math inline">m \times n</span> matrix. We can consider the matrix <span class="math inline">A</span> as a mapping from the space of all <span class="math inline">\mathbf{x}</span> vectors in <span class="math inline">\mathbb{R}^{n}</span> onto the space of all possible <span class="math inline">\mathbf{y}</span> vectors, which is a subset of <span class="math inline">\mathbb{R}^{m}</span>. <span class="math display">A: \mathbf{x} \in \mathbb{R}^{n} \longrightarrow \mathbf{y} = A \mathbf{x} \in \mathbb{R}^{m}</span>.</p>
-<div id="range" class="Corollary" title="Range">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 3.14: </strong>Range</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">m \times n</span> matrix. The image of <span class="math inline">\mathbb{R}^{n}</span> under <span class="math inline">A</span> is a subspace of <span class="math inline">\mathbb{R}^{m}</span> called the range (or column space) of <span class="math inline">A</span>, denoted by <span class="math inline">{\rm range}(A)</span>, and <span class="math display"> {\rm range}(A) = {\rm span}({\rm columns \, of } A)</span><p></p>
+<div id="range-and-rank" class="Corollary" title="Range and Rank">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 3.14: </strong>Range and Rank</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">m \times n</span> matrix. The image of <span class="math inline">\mathbb{R}^{n}</span> under <span class="math inline">A</span> is a subspace of <span class="math inline">\mathbb{R}^{m}</span> called the range (or column space) of <span class="math inline">A</span>, denoted by <span class="math inline">{\rm range}(A)</span>, and <span class="math display"> {\rm range}(A) = {\rm span}({\rm columns \, of } A).</span> The dimension of the column space is called the rank and is denoted by <span class="math inline">{\rm rank}(A)</span>.<p></p>
 </div></details>
 </div>
-<p>With this result, the question to ask whether a system of linear equations <span class="math inline">A\mathbf{x} = \mathbf{b}</span> has a solution translates to the question whether <span class="math inline">\mathbf{b} \in {\rm range}(A)</span>.</p>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.21</strong></span> Let <span class="math display">A = \left[\begin{array}{ccc}
+<p><span class="theorem-title"><strong>Example 3.21</strong></span> Calculate the range and rank of <span class="math display"> {\rm A} = \left[\begin{array}{ccc}
+            1 &amp; 2 &amp; 3 \\
+            2 &amp; 3 &amp; 4
+        \end{array}\right].</span></p>
+</div>
+<div id="Solution*-3.3" class="Solution">
+<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div><span class="math display">{\rm range(A)}= {\rm span} \left( \begin{pmatrix} 1 \\ 2  \end{pmatrix} , \begin{pmatrix} 2 \\ 3  \end{pmatrix},\begin{pmatrix} 3 \\ 4  \end{pmatrix} \right)</span> However, the set of vectors (columns of <span class="math inline">{\rm A}</span>) is not linearly independent. A test for linear independence yields: <span class="math display"> c_1   \begin{pmatrix} 1 \\ 2  \end{pmatrix}+ c_2 \begin{pmatrix} 2 \\ 3  \end{pmatrix} +c_3 \begin{pmatrix} 3 \\ 4  \end{pmatrix} = \begin{pmatrix} 0 \\ 0  \end{pmatrix} </span> leads to <span class="math display"> \left\{\begin{array}{l}
+c_1+2 c_2+3 c_3=0 \\
+2 c_1+ 3 c_2+ 4 c_3=0
+        \end{array}  \right.    \Leftrightarrow  \left\{ \begin{array}{l}
+c_1 = -2 c_2 -3c_3 \\
+2(-2 c_2 -3c_3) + 3c_2+ 4c_3=0
+        \end{array}  \right. </span> <span class="math display"> \Leftrightarrow  \left\{ \begin{array}{l}
+c_1 = -2 c_2 -3c_3 \\
+- c_2+ 2c_3=0
+        \end{array}  \right.   \Leftrightarrow  \left\{ \begin{array}{l}
+c_1 = c_3 \\
+c_2 =- 2 c_3
+        \end{array}  \right. </span> That means we have infinitely many solutions. For every choice of <span class="math inline">c_3</span> there is a <span class="math inline">c_2</span> and <span class="math inline">c_1</span>, e.g.&nbsp;<span class="math inline">(c_1,c_2,c_3)=(1,-2,1)</span> is a solution. We can express for instance the third vector as <span class="math display"> \begin{pmatrix} 3 \\ 4 \end{pmatrix} =  2 \begin{pmatrix} 2 \\ 3 \end{pmatrix} - \begin{pmatrix} 1 \\ 2 \end{pmatrix} </span> so <span class="math display"> {\rm span} \left( \begin{pmatrix} 1 \\ 2  \end{pmatrix} , \begin{pmatrix} 2 \\ 3  \end{pmatrix},\begin{pmatrix} 3 \\ 4  \end{pmatrix} \right) ={\rm span} \left( \begin{pmatrix} 1 \\ 2  \end{pmatrix} , \begin{pmatrix} 2 \\ 3  \end{pmatrix} \right). </span> This means the two vectors form a basis of the column space (range) and the rank is the dimension of the column space, i.e.&nbsp;the number of elements of the basis: 2.<p></p>
+</div></details>
+</div>
+<p>In order for <span class="math inline">A\mathbf{x} = \mathbf{b}</span> to have a solution, <span class="math inline">\mathbf{b}</span> has to be in the range of <span class="math inline">{\rm A}</span>: <span class="math inline">\mathbf{b} \in {\rm range}(A)</span>.</p>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3.22</strong></span> Let <span class="math display">A = \left[\begin{array}{ccc}
             1 &amp; 0 &amp; 1 \\
             1 &amp; 1 &amp; 3 \\
             0 &amp; 1 &amp; 2
@@ -1378,15 +1400,16 @@ x=2-2y-z=34/19,
 </div></details>
 </div>
 </div>
-<div id="nullspace" class="Definition" title="Nullspace">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3.15: </strong>Nullspace</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">m \times n</span> matrix. The nullspace of <span class="math inline">A</span>, is the set of vectors <span class="math inline">{\bf x}</span> such that <span class="math inline">A\mathbf{x} = \mathbf{0}</span>. The nullspace is also called kernel and denoted by <span class="math inline">{\rm Null}(A)</span>.<p></p>
+<div id="nullspace-and-nullity" class="Definition" title="Nullspace and Nullity">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3.15: </strong>Nullspace and Nullity</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">m \times n</span> matrix. The nullspace of <span class="math inline">A</span>, is the set of vectors <span class="math inline">{\bf x}</span> such that <span class="math inline">A\mathbf{x} = \mathbf{0}</span>. The nullspace is also called kernel and denoted by <span class="math inline">{\rm Null}(A)</span>.<p></p>
+<p>The dimension of the nullspace is called the nullity and is denoted by <span class="math inline">{\rm nullity}(A)</span>.</p>
 </div></details>
 </div>
 <div id="nullspace-is-a-subspace" class="Corollary" title="Nullspace is a subspace">
 <p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 3.16: </strong>Nullspace is a subspace</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">m \times n</span> matrix. The nullspace of <span class="math inline">A</span> is a subspace of <span class="math inline">\mathbb{R}^{n}</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-3.3" class="Proof">
+<div id="Proof*-3.4" class="Proof">
 <details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>
 <p>We have to check the three condition in the definition for a subspace (<a href="algebra3b.html#subspace">2.12</a>):</p>
 <ol type="i">
@@ -1394,6 +1417,32 @@ x=2-2y-z=34/19,
 <li><p>Let <span class="math inline">\mathbf{u}</span> and <span class="math inline">\mathbf{v}</span> be in <span class="math inline">{\rm Null}(A)</span>. Therefore <span class="math inline">A\mathbf{u} = \mathbf{0}</span> and <span class="math inline">A\mathbf{v} = \mathbf{0}</span>. It follows that <span class="math inline">A(\mathbf{u} + \mathbf{v}) = A\mathbf{u} + A\mathbf{v}  = \mathbf{0} + \mathbf{0} = \mathbf{0}</span> Hence, <span class="math inline">\mathbf{u} + \mathbf{v} \in {\rm Null}(A)</span>.</p></li>
 <li><p>Finally, for any scalar <span class="math inline">\lambda</span>, <span class="math inline">A(\lambda \mathbf{u}) = \lambda (A\mathbf{u}) = \lambda \mathbf{0} = \mathbf{0}</span> and therefore <span class="math inline">\lambda \mathbf{u} \in {\rm Null}(A)</span>. It follows that <span class="math inline">{\rm Null}(A)</span> is a subspace of <span class="math inline">\mathbb{R}^{n}</span>. &nbsp;◻</p></li>
 </ol>
+</div></details>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3.23</strong></span> Calculate the nullspace and nullity of <span class="math display"> {\rm A} = \left(\begin{array}{ccc}
+            1 &amp; 2 &amp; 3 \\
+            2 &amp; 3 &amp; 4
+        \end{array}\right).</span></p>
+</div>
+<div id="Solution*-3.5" class="Solution">
+<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div><span class="math display"> {\rm A} \mathbf{x} = \left(\begin{array}{ccc}
+            1 &amp; 2 &amp; 3 \\
+            2 &amp; 3 &amp; 4
+        \end{array}\right)\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} =\begin{pmatrix} x_1 + 2 x_2+ 3 x_3 \\ 2 x_1 + 3 x_2 +4 x_3\end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
+</span> The vector equation is equivalent to two scalar equations for the components: <span class="math display"> \left\{\begin{array}{l}
+x_1 + 2 x_2 + 3 x_3=0 \\
+2 x_1+ 3 x_2+ 4 x_3=0
+        \end{array}  \right.    \Leftrightarrow  \left\{ \begin{array}{l}
+x_1 = -2 x_2 -3 x_3 \\
+2(-2 x_2 -3 x_3) + 3 x_2+ 4 x_3=0
+        \end{array}  \right. </span> <span class="math display"> \Leftrightarrow  \left\{ \begin{array}{l}
+x_1 = -2 x_2 -3 x_3 \\
+- x_2+ 2 x_3=0
+        \end{array}  \right.   \Leftrightarrow  \left\{ \begin{array}{l}
+x_1 = x_3 \\
+x_2 =- 2 x_3
+        \end{array}  \right. </span> This indicates that there are infinitely many solutions. We can choose one of the variables, e.g.~<span class="math inline">x_3</span> as a free parameter. <span class="math display"> \mathbb{x} = \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} x_3 \\ -2 x_3 \\ x_3 \end{pmatrix} = x_3 \begin{pmatrix} 1 \\ -2 \\ 1 \end{pmatrix} = \lambda \begin{pmatrix} 1 \\ -2 \\ 1 \end{pmatrix}, \quad \lambda \in \mathbb{R} </span> In the last step we replaced <span class="math inline">x_3</span> by <span class="math inline">\lambda</span>, as it is convention to use Greek letters for parameters. Thus <span class="math display"> {\rm Null(A)} = {\rm span}\left(\begin{pmatrix} 1 \\ -2 \\ 1 \end{pmatrix} \right)</span> and the nullity of <span class="math inline">{\rm A}</span> is 1.<p></p>
 </div></details>
 </div>
 <div id="row-and-column-space" class="Definition" title="Row and column space">
@@ -1404,38 +1453,65 @@ x=2-2y-z=34/19,
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 3.18: </strong>Dimension of row and column spaces</summary><div>The row and column spaces of a matrix <span class="math inline">A</span> have the same dimension.<p></p>
 </div></details>
 </div>
-<div id="Proof*-3.4" class="Proof">
+<div id="Proof*-3.6" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">R</span> be a row echelon form of <span class="math inline">A</span>, <span class="math inline">row(A) = row(R)</span>, as we used only row operations to convert <span class="math inline">A</span> to <span class="math inline">R</span>. <span class="math display">\begin{aligned}
 {\rm dim}({\rm row}(A)) &amp;=  {\rm dim}({\rm row}(R)) \\
-             &amp; = \text{number of nonzero rows of} R \\
-             &amp; =  \text{number of pivots of} R
+             &amp; = \text{number of nonzero rows of}\ R \\
+             &amp; =  \text{number of pivots of}\  R
 \end{aligned} </span><p></p>
 <p>Let this number be called <span class="math inline">\gamma</span>.<br>
-Now <span class="math inline">col(A) \neq col(R)</span>, but the columns of <span class="math inline">A</span> and <span class="math inline">R</span> have the same dependence relationships. Therefore, <span class="math inline">dim(col(A)) = dim(col(R))</span>. Since there are <span class="math inline">\gamma</span> pivots, <span class="math inline">R</span> has <span class="math inline">\gamma</span> columns that are linearly independent, and the remaining columns of <span class="math inline">R</span> are linear combinations of them. Thus, <span class="math inline">dim(col(R)) = \gamma</span>. It follows that <span class="math inline">dim(row(A)) = \gamma = dim(col(A))</span>, as we wished to prove.&nbsp;◻</p>
-</div></details>
-</div>
-<div id="rank-and-nullity" class="Definition" title="Rank and nullity">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 3.19: </strong>Rank and nullity</summary><div>The rank of a matrix <span class="math inline">A</span> is the dimension of its row and column spaces and is denoted by <span class="math inline">{\rm rank}(A)</span>. The nullity of a matrix <span class="math inline">A</span> is the dimension of its nullspace and is denoted by <span class="math inline">{\rm nullity}(A)</span>.<p></p>
+Now <span class="math inline">{rm col(A)} \neq {\rm col(R)}</span>, but the columns of <span class="math inline">{\rm A}</span> and <span class="math inline">{\rm R}</span> have the same dependence relationships. Therefore, <span class="math inline">{\rm dim(col(A))} = {\rm dim(col(R))}</span>. Since there are <span class="math inline">\gamma</span> pivots, <span class="math inline">{\rm R}</span> has <span class="math inline">\gamma</span> columns that are linearly independent, and the remaining columns of <span class="math inline">{\rm R}</span> are linear combinations of them. Thus, <span class="math inline">{\rm dim(col(R))} = \gamma</span>. It follows that <span class="math inline">{\rm dim(row(A))} = \gamma = {\rm dim(col(A))}</span>, as we wished to prove.&nbsp;◻</p>
 </div></details>
 </div>
 <div id="rank-theorem" class="Theorem" title="Rank Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 3.20: </strong>Rank Theorem</summary><div>If <span class="math inline">A</span> is an <span class="math inline">m \times n</span> matrix, then <span class="math inline">{\rm rank}(A) + {\rm nullity}(A) = n</span>, where <span class="math inline">n</span> is the number of columns of <span class="math inline">A</span>.<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 3.19: </strong>Rank Theorem</summary><div>If <span class="math inline">A</span> is an <span class="math inline">m \times n</span> matrix, then <span class="math inline">{\rm rank}(A) + {\rm nullity}(A) = n</span>, where <span class="math inline">n</span> is the number of columns of <span class="math inline">A</span>.<p></p>
 </div></details>
 </div>
-<div id="Proof*-3.5" class="Proof">
-<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">R</span> be a row echelon form of <span class="math inline">A</span>, and suppose that <span class="math inline">rank(A) = \gamma</span>. Then <span class="math inline">R</span> has <span class="math inline">\gamma</span> pivots, so there are <span class="math inline">\gamma</span> variables corresponding to the leading entries and <span class="math inline">n-\gamma</span> free variables in the solution to <span class="math inline">A\mathbf{x} = \mathbf{0}</span>. Since <span class="math inline">dim({\rm Null}(A)) = n - \gamma</span>, we have <span class="math inline">{\rm rank}(A) + {\rm nullity}(A) = \gamma + (n- \gamma ) = n</span>.<p></p>
+<div id="Proof*-3.7" class="Proof">
+<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">R</span> be a row echelon form of <span class="math inline">A</span>, and suppose that <span class="math inline">rank(A) = \gamma</span>. Then <span class="math inline">R</span> has <span class="math inline">\gamma</span> pivots, so there are <span class="math inline">\gamma</span> variables corresponding to the leading entries and <span class="math inline">n-\gamma</span> free variables in the solution to <span class="math inline">A\mathbf{x} = \mathbf{0}</span>. Since <span class="math inline">{\rm dim}({\rm Null}(A)) = n - \gamma</span>, we have <span class="math inline">{\rm rank}(A) + {\rm nullity}(A) = \gamma + (n- \gamma ) = n</span>.<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.22</strong></span> Find the nullity of each of the following matrices:</p>
+<p><span class="theorem-title"><strong>Example 3.24</strong></span> Find the rank and nullity, and then verify the rank theorem for the matrix: <span class="math display"> {\rm A} = \left(\begin{array}{ccc}
+            1 &amp; 1 &amp; 0 \\
+            1 &amp; 0 &amp; -1 \\
+            0 &amp; 2 &amp; 2
+        \end{array}\right).</span></p>
+</div>
+<div id="Solution*-3.8" class="Solution">
+<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>In order to find the rank we have to check whether the columns are linearly independent. For this we solve <span class="math display">c_1 \begin{pmatrix} 1 \\ 1 \\ 0  \end{pmatrix}+ c_2 \begin{pmatrix} 1 \\ 0 \\ 2  \end{pmatrix} + c_3 \begin{pmatrix} 0 \\ -1 \\ 2  \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0  \end{pmatrix} </span> This is a system of three equations for the three unkowns <span class="math inline">c_1,c_2,c_3</span> and we can either try to directly solve the equations: <span class="math display"> \Leftrightarrow \left\{\begin{array}{l}
+c_1  = - c_2 \\
+c_1 - c_3=0 \\
+2 c_2 + 2 c_3 =0
+        \end{array}  \right.    \Leftrightarrow  \left\{ \begin{array}{l}
+c_1 = - c_2  \\
+c_1 = c_3
+        \end{array}  \right. </span> or use Gaussian elimination to solve this: <span class="math display">\left[\begin{array}{ccc|c} 1 &amp; 1 &amp; 0 &amp; 0\\ 1 &amp; 0 &amp; -1 &amp; 0 \\ 0 &amp; 2 &amp; 2 &amp; 0\end{array}\right] \xrightarrow{R_2 - R_1} \left[\begin{array}{ccc|c} 1 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; -1 &amp; -1 &amp; 0\\ 0 &amp; 2 &amp; 2 &amp; 0 \end{array}\right] \xrightarrow{R_3 + 2R_2} \left[\begin{array}{ccc|c} 1 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; -1 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</span> In either case we see that there are non-trivial solutions, e.g.~<span class="math inline">(c_1,c_2,c_3)=(1,-1,1)</span>. So the system is linearly dependent. We can remove , e.g.~ the third column vector to obtain a linearly independent set (the first two columns are obviously linearly independent). Hence these can form a basis of the column space and the rank is 2.<p></p>
+<p>The nullity, that is the dimension of the nullspace, is found by an almost identical calculation: <span class="math display"> {\rm A} \mathbf{x} = \left(\begin{array}{ccc}
+             1 &amp; 1 &amp; 0 \\
+            1 &amp; 0 &amp; -1 \\
+            0 &amp; 2 &amp; 2
+        \end{array}\right)\begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} =\begin{pmatrix} x_1 + x_2\\ x_1 - x_3 \\ 2 x_2 + 2 x_3\end{pmatrix} = \begin{pmatrix} 0 \\ 0 \\ 0 \end{pmatrix} </span> as this is the same system that we solved for the linear independence only the <span class="math inline">c_i</span> are now <span class="math inline">x_i</span>:<br>
+<span class="math display"> \Leftrightarrow \left\{\begin{array}{l}
+x_1  = - x_2 \\
+x_1 - x_3=0 \\
+2 x_2 + 2 x_3 =0
+        \end{array}  \right. \Rightarrow \left\{ \begin{array}{l}
+x_1 = - x_2  \\
+x_1 = x_3   \end{array} \right. </span> <span class="math display"> \Rightarrow  \mathbb{x} = \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix} = \begin{pmatrix} x_1 \\ - x_1 \\ x_1 \end{pmatrix} = x_1 \begin{pmatrix} 1 \\ -2 \\ 1 \end{pmatrix} = \lambda \begin{pmatrix} 1 \\ -2 \\ 1 \end{pmatrix}, \quad \lambda \in \mathbb{R} </span> Hence, <span class="math display"> {\rm Null(A)} = {\rm span}\left(\begin{pmatrix} 1 \\ -1 \\ 1 \end{pmatrix} \right),</span> and the nullity of <span class="math inline">{\rm A}</span> is 1.</p>
+</div></details>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 3.25</strong></span> Find the nullity of each of the following matrices:</p>
 <p><span class="math display">M = \left[\begin{array}{cc} 2 &amp; 3 \\ 1 &amp; 5 \\ 4 &amp; 7 \\ 3 &amp; 6 \end{array}\right]; \qquad N = \left[\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 4 &amp; 4 &amp; -3 &amp; 1 \\ 2 &amp; 7 &amp; 1 &amp; 8 \end{array}\right]</span></p>
 <div class="Solution">
-<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>Since the two columns of <span class="math inline">M</span> are linearly independent, <span class="math inline">{\rm rank}(M)=2</span>. Thus, by the Rank Theorem, <span class="math inline">{\rm nullity}(M) = 2 - {\rm rank}(M) = 2 - 2 = 0</span>. We now apply row operations to reduce <span class="math inline">N</span> to a row echelon form given by <span class="math display">\left[\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 4 &amp; 4 &amp; -3 &amp; 1 \\ 2 &amp; 7 &amp; 1 &amp; 8 \end{array}\right] \xrightarrow{\begin{subarray}{c} R_2 - 2R_1 \\ R_3 - R_1 \end{subarray}} \left[\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 0 &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 6 &amp; 3 &amp; 9 \end{array}\right] \xrightarrow{R_3 - 2R_2} \left[\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 0 &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</span> We see that there are only two nonzero rows, so <span class="math inline">{\rm rank}(N)=2</span>. Hence, <span class="math inline">{\rm nullity}(N) = 4 - {\rm rank}(N) = 4 - 2 = 2</span>.<p></p>
+<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>Since the two columns of <span class="math inline">M</span> are linearly independent, <span class="math inline">{\rm rank}(M)=2</span>. Thus, by the Rank Theorem, <span class="math inline">{\rm nullity}(M) = 2 - {\rm rank}(M) = 2 - 2 = 0</span>.<p></p>
+<p>To find the nullity of <span class="math inline">{\rm N}</span> we first determine the dimension of the row space and the use Theorem <a href="linearequations.html#rowcolumnspace">3.18</a> for find the rank. To find the dimension of the row space we can apply row operations to reduce <span class="math inline">{\rm N}</span> to a row echelon form, as row operations don’t change the span of the row vectors: <span class="math display">\left[\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 4 &amp; 4 &amp; -3 &amp; 1 \\ 2 &amp; 7 &amp; 1 &amp; 8 \end{array}\right] \xrightarrow{\begin{subarray}{c} R_2 - 2R_1 \\ R_3 - R_1 \end{subarray}} \left[\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 0 &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 6 &amp; 3 &amp; 9 \end{array}\right] \xrightarrow{R_3 - 2R_2} \left[\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 0 &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</span> We see that there are only two nonzero rows, so <span class="math inline">{\rm dim(row\ space)} = {\rm rank}(N)=2</span>. Hence, <span class="math inline">{\rm nullity}(N) = 4 - {\rm rank}(N) = 4 - 2 = 2</span>.</p>
 </div></details>
 </div>
 </div>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.23</strong></span> Let <span class="math display">A = \left[\begin{array}{cccc}
+<p><span class="theorem-title"><strong>Example 3.26</strong></span> Let <span class="math display">A = \left[\begin{array}{cccc}
             1 &amp; 0 &amp; 1 &amp; 2 \\
             2 &amp; 1 &amp; 2 &amp; 5 \\
             1 &amp; 1 &amp; 0 &amp; 2 \\
@@ -1450,7 +1526,7 @@ Solving the equation <span class="math inline">A\mathbf{x} = \mathbf{0}</span>, 
 </div>
 </div>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3.24</strong></span> Find the rank and nullity of <span class="math display">A = \left[\begin{array}{ccccc}
+<p><span class="theorem-title"><strong>Example 3.27</strong></span> Find the rank and nullity of <span class="math display">A = \left[\begin{array}{ccccc}
             1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\
             0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\
             1 &amp; 2 &amp; 1 &amp; 3 &amp; 1 \\
@@ -3142,205 +3218,316 @@ Note&nbsp;3.1: Remark: Nullspace of non-square matrices
 <span id="cb1-1173"><a href="#cb1-1173" aria-hidden="true" tabindex="-1"></a>$$A: \mathbf{x} \in \mathbb{R}^{n} \longrightarrow \mathbf{y} = A \mathbf{x} \in \mathbb{R}^{m}$$.</span>
 <span id="cb1-1174"><a href="#cb1-1174" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1175"><a href="#cb1-1175" aria-hidden="true" tabindex="-1"></a>:::: {.Corollary}</span>
-<span id="cb1-1176"><a href="#cb1-1176" aria-hidden="true" tabindex="-1"></a><span class="fu">## Range </span></span>
+<span id="cb1-1176"><a href="#cb1-1176" aria-hidden="true" tabindex="-1"></a><span class="fu">## Range and Rank</span></span>
 <span id="cb1-1177"><a href="#cb1-1177" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $m \times n$ matrix. The image of</span>
 <span id="cb1-1178"><a href="#cb1-1178" aria-hidden="true" tabindex="-1"></a>$\mathbb{R}^{n}$ under $A$ is a subspace of $\mathbb{R}^{m}$ called the range (or column space) of $A$, denoted by ${\rm range}(A)$, and</span>
-<span id="cb1-1179"><a href="#cb1-1179" aria-hidden="true" tabindex="-1"></a>$$ {\rm range}(A) = {\rm span}({\rm columns \, of } A)$$</span>
-<span id="cb1-1180"><a href="#cb1-1180" aria-hidden="true" tabindex="-1"></a>::::</span>
-<span id="cb1-1181"><a href="#cb1-1181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1182"><a href="#cb1-1182" aria-hidden="true" tabindex="-1"></a>With this result, the question to ask whether a system of linear</span>
-<span id="cb1-1183"><a href="#cb1-1183" aria-hidden="true" tabindex="-1"></a>equations $A\mathbf{x} = \mathbf{b}$ has a solution translates to the</span>
-<span id="cb1-1184"><a href="#cb1-1184" aria-hidden="true" tabindex="-1"></a>question whether $\mathbf{b} \in {\rm range}(A)$.</span>
-<span id="cb1-1185"><a href="#cb1-1185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1186"><a href="#cb1-1186" aria-hidden="true" tabindex="-1"></a>::::: {#exm-    }</span>
-<span id="cb1-1187"><a href="#cb1-1187" aria-hidden="true" tabindex="-1"></a>Let</span>
-<span id="cb1-1188"><a href="#cb1-1188" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{ccc}</span>
-<span id="cb1-1189"><a href="#cb1-1189" aria-hidden="true" tabindex="-1"></a>            1 &amp; 0 &amp; 1 <span class="sc">\\</span></span>
-<span id="cb1-1190"><a href="#cb1-1190" aria-hidden="true" tabindex="-1"></a>            1 &amp; 1 &amp; 3 <span class="sc">\\</span></span>
-<span id="cb1-1191"><a href="#cb1-1191" aria-hidden="true" tabindex="-1"></a>            0 &amp; 1 &amp; 2</span>
-<span id="cb1-1192"><a href="#cb1-1192" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
-<span id="cb1-1193"><a href="#cb1-1193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1194"><a href="#cb1-1194" aria-hidden="true" tabindex="-1"></a>Check whether the system $A\mathbf{x} = \mathbf{b}$ consistent when</span>
-<span id="cb1-1195"><a href="#cb1-1195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1196"><a href="#cb1-1196" aria-hidden="true" tabindex="-1"></a>(i) $\mathbf{b} = \left<span class="co">[</span><span class="ot">1,1,1\right</span><span class="co">]</span>^T$,</span>
-<span id="cb1-1197"><a href="#cb1-1197" aria-hidden="true" tabindex="-1"></a>(ii) $\mathbf{b} = \left<span class="co">[</span><span class="ot">1,2,1\right</span><span class="co">]</span>^T$.</span>
-<span id="cb1-1198"><a href="#cb1-1198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1199"><a href="#cb1-1199" aria-hidden="true" tabindex="-1"></a>Under what general conditions on</span>
-<span id="cb1-1200"><a href="#cb1-1200" aria-hidden="true" tabindex="-1"></a>$\mathbf{b} = \left<span class="co">[</span><span class="ot">\mathbf{b_1},\mathbf{b_2},\mathbf{b_3}\right</span><span class="co">]</span>^T$ is</span>
-<span id="cb1-1201"><a href="#cb1-1201" aria-hidden="true" tabindex="-1"></a>the system consistent?</span>
-<span id="cb1-1202"><a href="#cb1-1202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1203"><a href="#cb1-1203" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-1204"><a href="#cb1-1204" aria-hidden="true" tabindex="-1"></a>We reduce $A$ to a row echelon form:</span>
-<span id="cb1-1205"><a href="#cb1-1205" aria-hidden="true" tabindex="-1"></a>$$\left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 3 \\ 0 &amp; 1 &amp; 2 \end{array}\right</span><span class="co">]</span> \xrightarrow{R_2 - R_1} \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 2 \\ 0 &amp; 1 &amp; 2 \end{array}\right</span><span class="co">]</span> \xrightarrow{R_3 - R_2} \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 \end{array}\right</span><span class="co">]</span>$$</span>
-<span id="cb1-1206"><a href="#cb1-1206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1207"><a href="#cb1-1207" aria-hidden="true" tabindex="-1"></a>Hence, for example, the first two columns span ${\rm range}(A)$ and hence</span>
-<span id="cb1-1208"><a href="#cb1-1208" aria-hidden="true" tabindex="-1"></a>$\mathbf{b} = \lambda \left<span class="co">[</span><span class="ot">1,1,0\right</span><span class="co">]</span>^T + \mu \left<span class="co">[</span><span class="ot">0,1,1\right</span><span class="co">]</span>^T$ $= \left<span class="co">[</span><span class="ot">\mathbf{b_1}, \mathbf{b_1} + \mathbf{b_3}, \mathbf{b_3}\right</span><span class="co">]</span>^T$</span>
-<span id="cb1-1209"><a href="#cb1-1209" aria-hidden="true" tabindex="-1"></a>is necessary for the system to be consistent. This is satisfied for</span>
-<span id="cb1-1210"><a href="#cb1-1210" aria-hidden="true" tabindex="-1"></a>$\mathbf{b} = \left<span class="co">[</span><span class="ot">1,2,1\right</span><span class="co">]</span>^T$, but not for $\mathbf{b} = \left<span class="co">[</span><span class="ot">1,1,1\right</span><span class="co">]</span>^T$. Note that the first and the third columns of $A$ also span ${\rm range}(A)$.</span>
-<span id="cb1-1211"><a href="#cb1-1211" aria-hidden="true" tabindex="-1"></a>Even the last two columns can be used.</span>
-<span id="cb1-1212"><a href="#cb1-1212" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1213"><a href="#cb1-1213" aria-hidden="true" tabindex="-1"></a>:::::</span>
-<span id="cb1-1214"><a href="#cb1-1214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1215"><a href="#cb1-1215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1216"><a href="#cb1-1216" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
-<span id="cb1-1217"><a href="#cb1-1217" aria-hidden="true" tabindex="-1"></a><span class="fu">## Nullspace</span></span>
-<span id="cb1-1218"><a href="#cb1-1218" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $m \times n$ matrix. The nullspace  of $A$, </span>
-<span id="cb1-1219"><a href="#cb1-1219" aria-hidden="true" tabindex="-1"></a>is the set of vectors ${\bf x}$ such that $A\mathbf{x} = \mathbf{0}$. The nullspace is also called kernel and denoted by ${\rm Null}(A)$. </span>
-<span id="cb1-1220"><a href="#cb1-1220" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1221"><a href="#cb1-1221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1222"><a href="#cb1-1222" aria-hidden="true" tabindex="-1"></a>::: {.Corollary} </span>
-<span id="cb1-1223"><a href="#cb1-1223" aria-hidden="true" tabindex="-1"></a><span class="fu">## Nullspace is a subspace</span></span>
-<span id="cb1-1224"><a href="#cb1-1224" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $m \times n$ matrix. The nullspace of</span>
-<span id="cb1-1225"><a href="#cb1-1225" aria-hidden="true" tabindex="-1"></a>$A$ is a subspace of $\mathbb{R}^{n}$.</span>
-<span id="cb1-1226"><a href="#cb1-1226" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1179"><a href="#cb1-1179" aria-hidden="true" tabindex="-1"></a>$$ {\rm range}(A) = {\rm span}({\rm columns \, of } A).$$</span>
+<span id="cb1-1180"><a href="#cb1-1180" aria-hidden="true" tabindex="-1"></a>The dimension of the column space is called the rank and is denoted by ${\rm rank}(A)$.</span>
+<span id="cb1-1181"><a href="#cb1-1181" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-1182"><a href="#cb1-1182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1183"><a href="#cb1-1183" aria-hidden="true" tabindex="-1"></a>::: {#exm-  }</span>
+<span id="cb1-1184"><a href="#cb1-1184" aria-hidden="true" tabindex="-1"></a>Calculate the range and rank of </span>
+<span id="cb1-1185"><a href="#cb1-1185" aria-hidden="true" tabindex="-1"></a>$$ {\rm A} = \left[\begin{array}{ccc}</span>
+<span id="cb1-1186"><a href="#cb1-1186" aria-hidden="true" tabindex="-1"></a>            1 &amp; 2 &amp; 3 <span class="sc">\\</span></span>
+<span id="cb1-1187"><a href="#cb1-1187" aria-hidden="true" tabindex="-1"></a>            2 &amp; 3 &amp; 4 </span>
+<span id="cb1-1188"><a href="#cb1-1188" aria-hidden="true" tabindex="-1"></a>        \end{array}\right].$$ </span>
+<span id="cb1-1189"><a href="#cb1-1189" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1190"><a href="#cb1-1190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1191"><a href="#cb1-1191" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
+<span id="cb1-1192"><a href="#cb1-1192" aria-hidden="true" tabindex="-1"></a>$${\rm range(A)}= {\rm span} \left( \begin{pmatrix} 1 <span class="sc">\\</span> 2  \end{pmatrix} , \begin{pmatrix} 2 <span class="sc">\\</span> 3  \end{pmatrix},\begin{pmatrix} 3 <span class="sc">\\</span> 4  \end{pmatrix} \right)$$</span>
+<span id="cb1-1193"><a href="#cb1-1193" aria-hidden="true" tabindex="-1"></a>However, the set of vectors (columns of ${\rm A}$) is not linearly independent. A test for linear independence yields:</span>
+<span id="cb1-1194"><a href="#cb1-1194" aria-hidden="true" tabindex="-1"></a>$$ c_1   \begin{pmatrix} 1 <span class="sc">\\</span> 2  \end{pmatrix}+ c_2 \begin{pmatrix} 2 <span class="sc">\\</span> 3  \end{pmatrix} +c_3 \begin{pmatrix} 3 <span class="sc">\\</span> 4  \end{pmatrix} = \begin{pmatrix} 0 <span class="sc">\\</span> 0  \end{pmatrix} $$ </span>
+<span id="cb1-1195"><a href="#cb1-1195" aria-hidden="true" tabindex="-1"></a>leads to </span>
+<span id="cb1-1196"><a href="#cb1-1196" aria-hidden="true" tabindex="-1"></a>$$ \left<span class="sc">\{</span>\begin{array}{l}</span>
+<span id="cb1-1197"><a href="#cb1-1197" aria-hidden="true" tabindex="-1"></a> c_1+2 c_2+3 c_3=0 <span class="sc">\\</span></span>
+<span id="cb1-1198"><a href="#cb1-1198" aria-hidden="true" tabindex="-1"></a> 2 c_1+ 3 c_2+ 4 c_3=0 </span>
+<span id="cb1-1199"><a href="#cb1-1199" aria-hidden="true" tabindex="-1"></a>        \end{array}  \right.    \Leftrightarrow  \left<span class="sc">\{</span> \begin{array}{l}</span>
+<span id="cb1-1200"><a href="#cb1-1200" aria-hidden="true" tabindex="-1"></a> c_1 = -2 c_2 -3c_3 <span class="sc">\\</span></span>
+<span id="cb1-1201"><a href="#cb1-1201" aria-hidden="true" tabindex="-1"></a> 2(-2 c_2 -3c_3) + 3c_2+ 4c_3=0 </span>
+<span id="cb1-1202"><a href="#cb1-1202" aria-hidden="true" tabindex="-1"></a>        \end{array}  \right. $$</span>
+<span id="cb1-1203"><a href="#cb1-1203" aria-hidden="true" tabindex="-1"></a>$$ \Leftrightarrow  \left<span class="sc">\{</span> \begin{array}{l}</span>
+<span id="cb1-1204"><a href="#cb1-1204" aria-hidden="true" tabindex="-1"></a> c_1 = -2 c_2 -3c_3 <span class="sc">\\</span></span>
+<span id="cb1-1205"><a href="#cb1-1205" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>c_2+ 2c_3=0 </span>
+<span id="cb1-1206"><a href="#cb1-1206" aria-hidden="true" tabindex="-1"></a>        \end{array}  \right.   \Leftrightarrow  \left<span class="sc">\{</span> \begin{array}{l}</span>
+<span id="cb1-1207"><a href="#cb1-1207" aria-hidden="true" tabindex="-1"></a> c_1 = c_3 <span class="sc">\\</span></span>
+<span id="cb1-1208"><a href="#cb1-1208" aria-hidden="true" tabindex="-1"></a>c_2 =- 2 c_3 </span>
+<span id="cb1-1209"><a href="#cb1-1209" aria-hidden="true" tabindex="-1"></a>        \end{array}  \right. $$</span>
+<span id="cb1-1210"><a href="#cb1-1210" aria-hidden="true" tabindex="-1"></a>That means we have infinitely many solutions. For every choice of $c_3$ there is a $c_2$ and $c_1$, e.g. $(c_1,c_2,c_3)=(1,-2,1)$ is a solution. We can express for instance the third vector as </span>
+<span id="cb1-1211"><a href="#cb1-1211" aria-hidden="true" tabindex="-1"></a>$$ \begin{pmatrix} 3 <span class="sc">\\</span> 4 \end{pmatrix} =  2 \begin{pmatrix} 2 <span class="sc">\\</span> 3 \end{pmatrix} - \begin{pmatrix} 1 <span class="sc">\\</span> 2 \end{pmatrix} $$</span>
+<span id="cb1-1212"><a href="#cb1-1212" aria-hidden="true" tabindex="-1"></a>so </span>
+<span id="cb1-1213"><a href="#cb1-1213" aria-hidden="true" tabindex="-1"></a>$$ {\rm span} \left( \begin{pmatrix} 1 <span class="sc">\\</span> 2  \end{pmatrix} , \begin{pmatrix} 2 <span class="sc">\\</span> 3  \end{pmatrix},\begin{pmatrix} 3 <span class="sc">\\</span> 4  \end{pmatrix} \right) ={\rm span} \left( \begin{pmatrix} 1 <span class="sc">\\</span> 2  \end{pmatrix} , \begin{pmatrix} 2 <span class="sc">\\</span> 3  \end{pmatrix} \right). $$</span>
+<span id="cb1-1214"><a href="#cb1-1214" aria-hidden="true" tabindex="-1"></a>This means the two vectors form a basis of the column space (range) and the rank is the dimension of the column space, i.e. the number of elements of the basis: 2. </span>
+<span id="cb1-1215"><a href="#cb1-1215" aria-hidden="true" tabindex="-1"></a>::: </span>
+<span id="cb1-1216"><a href="#cb1-1216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1217"><a href="#cb1-1217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1218"><a href="#cb1-1218" aria-hidden="true" tabindex="-1"></a>In order for  $A\mathbf{x} = \mathbf{b}$ to have a solution, $\mathbf{b}$ has to be in the range of ${\rm A}$:   $\mathbf{b} \in {\rm range}(A)$.</span>
+<span id="cb1-1219"><a href="#cb1-1219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1220"><a href="#cb1-1220" aria-hidden="true" tabindex="-1"></a>::::: {#exm-    }</span>
+<span id="cb1-1221"><a href="#cb1-1221" aria-hidden="true" tabindex="-1"></a>Let</span>
+<span id="cb1-1222"><a href="#cb1-1222" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{ccc}</span>
+<span id="cb1-1223"><a href="#cb1-1223" aria-hidden="true" tabindex="-1"></a>            1 &amp; 0 &amp; 1 <span class="sc">\\</span></span>
+<span id="cb1-1224"><a href="#cb1-1224" aria-hidden="true" tabindex="-1"></a>            1 &amp; 1 &amp; 3 <span class="sc">\\</span></span>
+<span id="cb1-1225"><a href="#cb1-1225" aria-hidden="true" tabindex="-1"></a>            0 &amp; 1 &amp; 2</span>
+<span id="cb1-1226"><a href="#cb1-1226" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
 <span id="cb1-1227"><a href="#cb1-1227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1228"><a href="#cb1-1228" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-1229"><a href="#cb1-1229" aria-hidden="true" tabindex="-1"></a>We have to check the three condition in the definition for a subspace (\ref{subspace}):</span>
-<span id="cb1-1230"><a href="#cb1-1230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1231"><a href="#cb1-1231" aria-hidden="true" tabindex="-1"></a>(i) Since $A\mathbf{0_n} = \mathbf{0_m},  \mathbf{0_n} \in {\rm Null}(A)$.</span>
+<span id="cb1-1228"><a href="#cb1-1228" aria-hidden="true" tabindex="-1"></a>Check whether the system $A\mathbf{x} = \mathbf{b}$ consistent when</span>
+<span id="cb1-1229"><a href="#cb1-1229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1230"><a href="#cb1-1230" aria-hidden="true" tabindex="-1"></a>(i) $\mathbf{b} = \left<span class="co">[</span><span class="ot">1,1,1\right</span><span class="co">]</span>^T$,</span>
+<span id="cb1-1231"><a href="#cb1-1231" aria-hidden="true" tabindex="-1"></a>(ii) $\mathbf{b} = \left<span class="co">[</span><span class="ot">1,2,1\right</span><span class="co">]</span>^T$.</span>
 <span id="cb1-1232"><a href="#cb1-1232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1233"><a href="#cb1-1233" aria-hidden="true" tabindex="-1"></a>(ii) Let $\mathbf{u}$ and $\mathbf{v}$ be in ${\rm Null}(A)$. Therefore</span>
-<span id="cb1-1234"><a href="#cb1-1234" aria-hidden="true" tabindex="-1"></a>$A\mathbf{u} = \mathbf{0}$ and $A\mathbf{v} = \mathbf{0}$. It follows</span>
-<span id="cb1-1235"><a href="#cb1-1235" aria-hidden="true" tabindex="-1"></a>that $A(\mathbf{u} + \mathbf{v}) = A\mathbf{u} + A\mathbf{v}  = \mathbf{0} + \mathbf{0} = \mathbf{0}$ Hence, $\mathbf{u} + \mathbf{v} \in {\rm Null}(A)$.</span>
+<span id="cb1-1233"><a href="#cb1-1233" aria-hidden="true" tabindex="-1"></a>Under what general conditions on</span>
+<span id="cb1-1234"><a href="#cb1-1234" aria-hidden="true" tabindex="-1"></a>$\mathbf{b} = \left<span class="co">[</span><span class="ot">\mathbf{b_1},\mathbf{b_2},\mathbf{b_3}\right</span><span class="co">]</span>^T$ is</span>
+<span id="cb1-1235"><a href="#cb1-1235" aria-hidden="true" tabindex="-1"></a>the system consistent?</span>
 <span id="cb1-1236"><a href="#cb1-1236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1237"><a href="#cb1-1237" aria-hidden="true" tabindex="-1"></a>(iii) Finally, for any scalar $\lambda$,</span>
-<span id="cb1-1238"><a href="#cb1-1238" aria-hidden="true" tabindex="-1"></a>$A(\lambda \mathbf{u}) = \lambda (A\mathbf{u}) = \lambda \mathbf{0} = \mathbf{0}$ and therefore $\lambda \mathbf{u} \in {\rm Null}(A)$. It follows that ${\rm Null}(A)$ is</span>
-<span id="cb1-1239"><a href="#cb1-1239" aria-hidden="true" tabindex="-1"></a>a subspace of $\mathbb{R}^{n}$.</span>
-<span id="cb1-1240"><a href="#cb1-1240" aria-hidden="true" tabindex="-1"></a>&nbsp;◻</span>
-<span id="cb1-1241"><a href="#cb1-1241" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1242"><a href="#cb1-1242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1243"><a href="#cb1-1243" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
-<span id="cb1-1244"><a href="#cb1-1244" aria-hidden="true" tabindex="-1"></a><span class="fu">## Row and column space</span></span>
-<span id="cb1-1245"><a href="#cb1-1245" aria-hidden="true" tabindex="-1"></a>The span of the columns of a $m \times n$ matrix ${\rm A}$ is called the column space. It is a subspace of $\mathbb{R}^n$. The span of the rows of ${\rm A}$ is called the row space and it is a subspace of $\mathbb{R}^m$.</span>
+<span id="cb1-1237"><a href="#cb1-1237" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
+<span id="cb1-1238"><a href="#cb1-1238" aria-hidden="true" tabindex="-1"></a>We reduce $A$ to a row echelon form:</span>
+<span id="cb1-1239"><a href="#cb1-1239" aria-hidden="true" tabindex="-1"></a>$$\left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 3 \\ 0 &amp; 1 &amp; 2 \end{array}\right</span><span class="co">]</span> \xrightarrow{R_2 - R_1} \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 2 \\ 0 &amp; 1 &amp; 2 \end{array}\right</span><span class="co">]</span> \xrightarrow{R_3 - R_2} \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 0 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-1240"><a href="#cb1-1240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1241"><a href="#cb1-1241" aria-hidden="true" tabindex="-1"></a>Hence, for example, the first two columns span ${\rm range}(A)$ and hence</span>
+<span id="cb1-1242"><a href="#cb1-1242" aria-hidden="true" tabindex="-1"></a>$\mathbf{b} = \lambda \left<span class="co">[</span><span class="ot">1,1,0\right</span><span class="co">]</span>^T + \mu \left<span class="co">[</span><span class="ot">0,1,1\right</span><span class="co">]</span>^T$ $= \left<span class="co">[</span><span class="ot">\mathbf{b_1}, \mathbf{b_1} + \mathbf{b_3}, \mathbf{b_3}\right</span><span class="co">]</span>^T$</span>
+<span id="cb1-1243"><a href="#cb1-1243" aria-hidden="true" tabindex="-1"></a>is necessary for the system to be consistent. This is satisfied for</span>
+<span id="cb1-1244"><a href="#cb1-1244" aria-hidden="true" tabindex="-1"></a>$\mathbf{b} = \left<span class="co">[</span><span class="ot">1,2,1\right</span><span class="co">]</span>^T$, but not for $\mathbf{b} = \left<span class="co">[</span><span class="ot">1,1,1\right</span><span class="co">]</span>^T$. Note that the first and the third columns of $A$ also span ${\rm range}(A)$.</span>
+<span id="cb1-1245"><a href="#cb1-1245" aria-hidden="true" tabindex="-1"></a>Even the last two columns can be used.</span>
 <span id="cb1-1246"><a href="#cb1-1246" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1247"><a href="#cb1-1247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1247"><a href="#cb1-1247" aria-hidden="true" tabindex="-1"></a>:::::</span>
 <span id="cb1-1248"><a href="#cb1-1248" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1249"><a href="#cb1-1249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1250"><a href="#cb1-1250" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #rowcolumnspace} </span>
-<span id="cb1-1251"><a href="#cb1-1251" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dimension of row and column spaces</span></span>
-<span id="cb1-1252"><a href="#cb1-1252" aria-hidden="true" tabindex="-1"></a>The row and column spaces of a matrix $A$ have the</span>
-<span id="cb1-1253"><a href="#cb1-1253" aria-hidden="true" tabindex="-1"></a>same dimension.</span>
-<span id="cb1-1254"><a href="#cb1-1254" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1255"><a href="#cb1-1255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1256"><a href="#cb1-1256" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-1257"><a href="#cb1-1257" aria-hidden="true" tabindex="-1"></a>Let $R$ be a row echelon form of $A$,</span>
-<span id="cb1-1258"><a href="#cb1-1258" aria-hidden="true" tabindex="-1"></a>$row(A) = row(R)$, as we used only row operations to convert $A$ to $R$.</span>
-<span id="cb1-1259"><a href="#cb1-1259" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
-<span id="cb1-1260"><a href="#cb1-1260" aria-hidden="true" tabindex="-1"></a> {\rm dim}({\rm row}(A)) &amp;=  {\rm dim}({\rm row}(R)) <span class="sc">\\</span></span>
-<span id="cb1-1261"><a href="#cb1-1261" aria-hidden="true" tabindex="-1"></a>             &amp; = \text{number of nonzero rows of} R <span class="sc">\\</span></span>
-<span id="cb1-1262"><a href="#cb1-1262" aria-hidden="true" tabindex="-1"></a>             &amp; =  \text{number of pivots of} R </span>
-<span id="cb1-1263"><a href="#cb1-1263" aria-hidden="true" tabindex="-1"></a>\end{aligned} $$</span>
-<span id="cb1-1264"><a href="#cb1-1264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1265"><a href="#cb1-1265" aria-hidden="true" tabindex="-1"></a>Let this number be called $\gamma$.\</span>
-<span id="cb1-1266"><a href="#cb1-1266" aria-hidden="true" tabindex="-1"></a>Now $col(A) \neq col(R)$, but the columns of $A$ and $R$ have the same</span>
-<span id="cb1-1267"><a href="#cb1-1267" aria-hidden="true" tabindex="-1"></a>dependence relationships. Therefore, $dim(col(A)) = dim(col(R))$. Since</span>
-<span id="cb1-1268"><a href="#cb1-1268" aria-hidden="true" tabindex="-1"></a>there are $\gamma$ pivots, $R$ has $\gamma$ columns that are linearly independent, and the remaining columns</span>
-<span id="cb1-1269"><a href="#cb1-1269" aria-hidden="true" tabindex="-1"></a>of $R$ are linear combinations of them. Thus, $dim(col(R)) = \gamma$. It follows that $dim(row(A)) = \gamma = dim(col(A))$, as we wished to prove.&nbsp;◻</span>
-<span id="cb1-1270"><a href="#cb1-1270" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1271"><a href="#cb1-1271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1272"><a href="#cb1-1272" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
-<span id="cb1-1273"><a href="#cb1-1273" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rank and nullity</span></span>
-<span id="cb1-1274"><a href="#cb1-1274" aria-hidden="true" tabindex="-1"></a>The rank of a matrix $A$ is the dimension of</span>
-<span id="cb1-1275"><a href="#cb1-1275" aria-hidden="true" tabindex="-1"></a>its row and column spaces and is denoted by ${\rm rank}(A)$. The nullity of a matrix $A$ is the dimension</span>
-<span id="cb1-1276"><a href="#cb1-1276" aria-hidden="true" tabindex="-1"></a>of its nullspace and is denoted by ${\rm nullity}(A)$.</span>
+<span id="cb1-1250"><a href="#cb1-1250" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
+<span id="cb1-1251"><a href="#cb1-1251" aria-hidden="true" tabindex="-1"></a><span class="fu">## Nullspace and Nullity</span></span>
+<span id="cb1-1252"><a href="#cb1-1252" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $m \times n$ matrix. The nullspace  of $A$, </span>
+<span id="cb1-1253"><a href="#cb1-1253" aria-hidden="true" tabindex="-1"></a>is the set of vectors ${\bf x}$ such that $A\mathbf{x} = \mathbf{0}$. The nullspace is also called kernel and denoted by ${\rm Null}(A)$. </span>
+<span id="cb1-1254"><a href="#cb1-1254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1255"><a href="#cb1-1255" aria-hidden="true" tabindex="-1"></a>The dimension of the nullspace is called the nullity and is denoted by ${\rm nullity}(A)$.</span>
+<span id="cb1-1256"><a href="#cb1-1256" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1257"><a href="#cb1-1257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1258"><a href="#cb1-1258" aria-hidden="true" tabindex="-1"></a>::: {.Corollary} </span>
+<span id="cb1-1259"><a href="#cb1-1259" aria-hidden="true" tabindex="-1"></a><span class="fu">## Nullspace is a subspace</span></span>
+<span id="cb1-1260"><a href="#cb1-1260" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $m \times n$ matrix. The nullspace of</span>
+<span id="cb1-1261"><a href="#cb1-1261" aria-hidden="true" tabindex="-1"></a>$A$ is a subspace of $\mathbb{R}^{n}$.</span>
+<span id="cb1-1262"><a href="#cb1-1262" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1263"><a href="#cb1-1263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1264"><a href="#cb1-1264" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-1265"><a href="#cb1-1265" aria-hidden="true" tabindex="-1"></a>We have to check the three condition in the definition for a subspace (\ref{subspace}):</span>
+<span id="cb1-1266"><a href="#cb1-1266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1267"><a href="#cb1-1267" aria-hidden="true" tabindex="-1"></a>(i) Since $A\mathbf{0_n} = \mathbf{0_m},  \mathbf{0_n} \in {\rm Null}(A)$.</span>
+<span id="cb1-1268"><a href="#cb1-1268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1269"><a href="#cb1-1269" aria-hidden="true" tabindex="-1"></a>(ii) Let $\mathbf{u}$ and $\mathbf{v}$ be in ${\rm Null}(A)$. Therefore</span>
+<span id="cb1-1270"><a href="#cb1-1270" aria-hidden="true" tabindex="-1"></a>$A\mathbf{u} = \mathbf{0}$ and $A\mathbf{v} = \mathbf{0}$. It follows</span>
+<span id="cb1-1271"><a href="#cb1-1271" aria-hidden="true" tabindex="-1"></a>that $A(\mathbf{u} + \mathbf{v}) = A\mathbf{u} + A\mathbf{v}  = \mathbf{0} + \mathbf{0} = \mathbf{0}$ Hence, $\mathbf{u} + \mathbf{v} \in {\rm Null}(A)$.</span>
+<span id="cb1-1272"><a href="#cb1-1272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1273"><a href="#cb1-1273" aria-hidden="true" tabindex="-1"></a>(iii) Finally, for any scalar $\lambda$,</span>
+<span id="cb1-1274"><a href="#cb1-1274" aria-hidden="true" tabindex="-1"></a>$A(\lambda \mathbf{u}) = \lambda (A\mathbf{u}) = \lambda \mathbf{0} = \mathbf{0}$ and therefore $\lambda \mathbf{u} \in {\rm Null}(A)$. It follows that ${\rm Null}(A)$ is</span>
+<span id="cb1-1275"><a href="#cb1-1275" aria-hidden="true" tabindex="-1"></a>a subspace of $\mathbb{R}^{n}$.</span>
+<span id="cb1-1276"><a href="#cb1-1276" aria-hidden="true" tabindex="-1"></a>&nbsp;◻</span>
 <span id="cb1-1277"><a href="#cb1-1277" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-1278"><a href="#cb1-1278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1279"><a href="#cb1-1279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1280"><a href="#cb1-1280" aria-hidden="true" tabindex="-1"></a>::: {.Theorem} </span>
-<span id="cb1-1281"><a href="#cb1-1281" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rank Theorem</span></span>
-<span id="cb1-1282"><a href="#cb1-1282" aria-hidden="true" tabindex="-1"></a>If $A$ is an $m \times n$ matrix, then ${\rm rank}(A) + {\rm nullity}(A) = n$, where $n$ is the number of columns of $A$.</span>
-<span id="cb1-1283"><a href="#cb1-1283" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1284"><a href="#cb1-1284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1285"><a href="#cb1-1285" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-1286"><a href="#cb1-1286" aria-hidden="true" tabindex="-1"></a>Let $R$ be a row echelon form of $A$, and suppose that</span>
-<span id="cb1-1287"><a href="#cb1-1287" aria-hidden="true" tabindex="-1"></a>$rank(A) = \gamma$. Then $R$ has $\gamma$ pivots, so there are $\gamma$ variables corresponding to the leading entries and $n-\gamma$ free variables in the solution to $A\mathbf{x} = \mathbf{0}$.</span>
-<span id="cb1-1288"><a href="#cb1-1288" aria-hidden="true" tabindex="-1"></a>Since $dim({\rm Null}(A)) = n - \gamma$, we have ${\rm rank}(A) + {\rm nullity}(A) = \gamma + (n- \gamma ) = n$. </span>
-<span id="cb1-1289"><a href="#cb1-1289" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1290"><a href="#cb1-1290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1291"><a href="#cb1-1291" aria-hidden="true" tabindex="-1"></a>:::: {#exm-    }</span>
-<span id="cb1-1292"><a href="#cb1-1292" aria-hidden="true" tabindex="-1"></a>Find the nullity of each of the following matrices:</span>
-<span id="cb1-1293"><a href="#cb1-1293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1294"><a href="#cb1-1294" aria-hidden="true" tabindex="-1"></a>$$M = \left<span class="co">[</span><span class="ot">\begin{array}{cc} 2 &amp; 3 \\ 1 &amp; 5 \\ 4 &amp; 7 \\ 3 &amp; 6 \end{array}\right</span><span class="co">]</span>; \qquad N = \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 4 &amp; 4 &amp; -3 &amp; 1 \\ 2 &amp; 7 &amp; 1 &amp; 8 \end{array}\right</span><span class="co">]</span>$$</span>
-<span id="cb1-1295"><a href="#cb1-1295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1296"><a href="#cb1-1296" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-1297"><a href="#cb1-1297" aria-hidden="true" tabindex="-1"></a>Since the two columns of $M$ are linearly independent,</span>
-<span id="cb1-1298"><a href="#cb1-1298" aria-hidden="true" tabindex="-1"></a>${\rm rank}(M)=2$. Thus, by the Rank Theorem, ${\rm nullity}(M) = 2 - {\rm rank}(M) = 2 - 2 = 0$.</span>
-<span id="cb1-1299"><a href="#cb1-1299" aria-hidden="true" tabindex="-1"></a>We now apply row operations to reduce $N$ to a row echelon form given by</span>
-<span id="cb1-1300"><a href="#cb1-1300" aria-hidden="true" tabindex="-1"></a>$$\left<span class="co">[</span><span class="ot">\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 4 &amp; 4 &amp; -3 &amp; 1 \\ 2 &amp; 7 &amp; 1 &amp; 8 \end{array}\right</span><span class="co">]</span> \xrightarrow{\begin{subarray}{c} R_2 - 2R_1 <span class="sc">\\</span> R_3 - R_1 \end{subarray}} \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 0 &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 6 &amp; 3 &amp; 9 \end{array}\right</span><span class="co">]</span> \xrightarrow{R_3 - 2R_2} \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 0 &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right</span><span class="co">]</span>$$</span>
-<span id="cb1-1301"><a href="#cb1-1301" aria-hidden="true" tabindex="-1"></a>We see that there are only two nonzero rows, so ${\rm rank}(N)=2$. Hence,</span>
-<span id="cb1-1302"><a href="#cb1-1302" aria-hidden="true" tabindex="-1"></a>${\rm nullity}(N) = 4 - {\rm rank}(N) = 4 - 2 = 2$.</span>
-<span id="cb1-1303"><a href="#cb1-1303" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1304"><a href="#cb1-1304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1305"><a href="#cb1-1305" aria-hidden="true" tabindex="-1"></a>::::</span>
-<span id="cb1-1306"><a href="#cb1-1306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1307"><a href="#cb1-1307" aria-hidden="true" tabindex="-1"></a>:::: {#exm-    }</span>
-<span id="cb1-1308"><a href="#cb1-1308" aria-hidden="true" tabindex="-1"></a>Let</span>
-<span id="cb1-1309"><a href="#cb1-1309" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{cccc}</span>
-<span id="cb1-1310"><a href="#cb1-1310" aria-hidden="true" tabindex="-1"></a>            1 &amp; 0 &amp; 1 &amp; 2 <span class="sc">\\</span></span>
-<span id="cb1-1311"><a href="#cb1-1311" aria-hidden="true" tabindex="-1"></a>            2 &amp; 1 &amp; 2 &amp; 5 <span class="sc">\\</span></span>
-<span id="cb1-1312"><a href="#cb1-1312" aria-hidden="true" tabindex="-1"></a>            1 &amp; 1 &amp; 0 &amp; 2 <span class="sc">\\</span></span>
-<span id="cb1-1313"><a href="#cb1-1313" aria-hidden="true" tabindex="-1"></a>            0 &amp; 1 &amp; 0 &amp; 1</span>
-<span id="cb1-1314"><a href="#cb1-1314" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
-<span id="cb1-1315"><a href="#cb1-1315" aria-hidden="true" tabindex="-1"></a>Verify the Rank Theorem.</span>
-<span id="cb1-1316"><a href="#cb1-1316" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1317"><a href="#cb1-1317" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-1318"><a href="#cb1-1318" aria-hidden="true" tabindex="-1"></a>A row echelon form is given by</span>
+<span id="cb1-1279"><a href="#cb1-1279" aria-hidden="true" tabindex="-1"></a>::: {#exm-  }</span>
+<span id="cb1-1280"><a href="#cb1-1280" aria-hidden="true" tabindex="-1"></a>Calculate the nullspace and nullity of </span>
+<span id="cb1-1281"><a href="#cb1-1281" aria-hidden="true" tabindex="-1"></a>$$ {\rm A} = \left(\begin{array}{ccc}</span>
+<span id="cb1-1282"><a href="#cb1-1282" aria-hidden="true" tabindex="-1"></a>            1 &amp; 2 &amp; 3 <span class="sc">\\</span></span>
+<span id="cb1-1283"><a href="#cb1-1283" aria-hidden="true" tabindex="-1"></a>            2 &amp; 3 &amp; 4 </span>
+<span id="cb1-1284"><a href="#cb1-1284" aria-hidden="true" tabindex="-1"></a>        \end{array}\right).$$ </span>
+<span id="cb1-1285"><a href="#cb1-1285" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1286"><a href="#cb1-1286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1287"><a href="#cb1-1287" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
+<span id="cb1-1288"><a href="#cb1-1288" aria-hidden="true" tabindex="-1"></a>$$ {\rm A} \mathbf{x} = \left(\begin{array}{ccc}</span>
+<span id="cb1-1289"><a href="#cb1-1289" aria-hidden="true" tabindex="-1"></a>            1 &amp; 2 &amp; 3 <span class="sc">\\</span></span>
+<span id="cb1-1290"><a href="#cb1-1290" aria-hidden="true" tabindex="-1"></a>            2 &amp; 3 &amp; 4 </span>
+<span id="cb1-1291"><a href="#cb1-1291" aria-hidden="true" tabindex="-1"></a>        \end{array}\right)\begin{pmatrix} x_1 <span class="sc">\\</span> x_2 <span class="sc">\\</span> x_3 \end{pmatrix} =\begin{pmatrix} x_1 + 2 x_2+ 3 x_3 <span class="sc">\\</span> 2 x_1 + 3 x_2 +4 x_3\end{pmatrix} = \begin{pmatrix} 0 <span class="sc">\\</span> 0 \end{pmatrix}</span>
+<span id="cb1-1292"><a href="#cb1-1292" aria-hidden="true" tabindex="-1"></a>$$ </span>
+<span id="cb1-1293"><a href="#cb1-1293" aria-hidden="true" tabindex="-1"></a>The vector equation is equivalent to two scalar equations for the components:</span>
+<span id="cb1-1294"><a href="#cb1-1294" aria-hidden="true" tabindex="-1"></a>$$ \left<span class="sc">\{</span>\begin{array}{l}</span>
+<span id="cb1-1295"><a href="#cb1-1295" aria-hidden="true" tabindex="-1"></a> x_1 + 2 x_2 + 3 x_3=0 <span class="sc">\\</span></span>
+<span id="cb1-1296"><a href="#cb1-1296" aria-hidden="true" tabindex="-1"></a> 2 x_1+ 3 x_2+ 4 x_3=0 </span>
+<span id="cb1-1297"><a href="#cb1-1297" aria-hidden="true" tabindex="-1"></a>        \end{array}  \right.    \Leftrightarrow  \left<span class="sc">\{</span> \begin{array}{l}</span>
+<span id="cb1-1298"><a href="#cb1-1298" aria-hidden="true" tabindex="-1"></a> x_1 = -2 x_2 -3 x_3 <span class="sc">\\</span></span>
+<span id="cb1-1299"><a href="#cb1-1299" aria-hidden="true" tabindex="-1"></a> 2(-2 x_2 -3 x_3) + 3 x_2+ 4 x_3=0 </span>
+<span id="cb1-1300"><a href="#cb1-1300" aria-hidden="true" tabindex="-1"></a>        \end{array}  \right. $$</span>
+<span id="cb1-1301"><a href="#cb1-1301" aria-hidden="true" tabindex="-1"></a>$$ \Leftrightarrow  \left<span class="sc">\{</span> \begin{array}{l}</span>
+<span id="cb1-1302"><a href="#cb1-1302" aria-hidden="true" tabindex="-1"></a> x_1 = -2 x_2 -3 x_3 <span class="sc">\\</span></span>
+<span id="cb1-1303"><a href="#cb1-1303" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>x_2+ 2 x_3=0 </span>
+<span id="cb1-1304"><a href="#cb1-1304" aria-hidden="true" tabindex="-1"></a>        \end{array}  \right.   \Leftrightarrow  \left<span class="sc">\{</span> \begin{array}{l}</span>
+<span id="cb1-1305"><a href="#cb1-1305" aria-hidden="true" tabindex="-1"></a> x_1 = x_3 <span class="sc">\\</span></span>
+<span id="cb1-1306"><a href="#cb1-1306" aria-hidden="true" tabindex="-1"></a>x_2 =- 2 x_3 </span>
+<span id="cb1-1307"><a href="#cb1-1307" aria-hidden="true" tabindex="-1"></a>        \end{array}  \right. $$</span>
+<span id="cb1-1308"><a href="#cb1-1308" aria-hidden="true" tabindex="-1"></a>This indicates that there are infinitely many solutions. We can choose one of the variables, e.g.~$x_3$ as a free parameter.</span>
+<span id="cb1-1309"><a href="#cb1-1309" aria-hidden="true" tabindex="-1"></a>$$ \mathbb{x} = \begin{pmatrix} x_1 <span class="sc">\\</span> x_2 <span class="sc">\\</span> x_3 \end{pmatrix} = \begin{pmatrix} x_3 <span class="sc">\\</span> -2 x_3 <span class="sc">\\</span> x_3 \end{pmatrix} = x_3 \begin{pmatrix} 1 <span class="sc">\\</span> -2 <span class="sc">\\</span> 1 \end{pmatrix} = \lambda \begin{pmatrix} 1 <span class="sc">\\</span> -2 <span class="sc">\\</span> 1 \end{pmatrix}, \quad \lambda \in \mathbb{R} $$</span>
+<span id="cb1-1310"><a href="#cb1-1310" aria-hidden="true" tabindex="-1"></a>In the last step we replaced $x_3$ by $\lambda$, as it is convention to use Greek letters for parameters. Thus</span>
+<span id="cb1-1311"><a href="#cb1-1311" aria-hidden="true" tabindex="-1"></a>$$ {\rm Null(A)} = {\rm span}\left(\begin{pmatrix} 1 <span class="sc">\\</span> -2 <span class="sc">\\</span> 1 \end{pmatrix} \right)$$</span>
+<span id="cb1-1312"><a href="#cb1-1312" aria-hidden="true" tabindex="-1"></a>and the nullity of ${\rm A}$ is 1. </span>
+<span id="cb1-1313"><a href="#cb1-1313" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1314"><a href="#cb1-1314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1315"><a href="#cb1-1315" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
+<span id="cb1-1316"><a href="#cb1-1316" aria-hidden="true" tabindex="-1"></a><span class="fu">## Row and column space</span></span>
+<span id="cb1-1317"><a href="#cb1-1317" aria-hidden="true" tabindex="-1"></a>The span of the columns of a $m \times n$ matrix ${\rm A}$ is called the column space. It is a subspace of $\mathbb{R}^n$. The span of the rows of ${\rm A}$ is called the row space and it is a subspace of $\mathbb{R}^m$.</span>
+<span id="cb1-1318"><a href="#cb1-1318" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-1319"><a href="#cb1-1319" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1320"><a href="#cb1-1320" aria-hidden="true" tabindex="-1"></a>$$\left<span class="co">[</span><span class="ot">\begin{array}{cccc} 1 &amp; 0 &amp; 1 &amp; 2 \\ 2 &amp; 1 &amp; 2 &amp; 5 \\ 1 &amp; 1 &amp; 0 &amp; 2 \\ 0 &amp; 1 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span> \xrightarrow{\begin{subarray}{c} R_2 - 2R_1 <span class="sc">\\</span> R_3 - R_1 \end{subarray}} \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 1 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; -1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span> \xrightarrow{\begin{subarray}{c} R_3 - R_2 <span class="sc">\\</span> R_4 - R_2 \end{subarray}} \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 1 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; -1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-1320"><a href="#cb1-1320" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1321"><a href="#cb1-1321" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1322"><a href="#cb1-1322" aria-hidden="true" tabindex="-1"></a>Notice that columns $1, 2$ and $3$ have pivots, but not column $4$, so</span>
-<span id="cb1-1323"><a href="#cb1-1323" aria-hidden="true" tabindex="-1"></a>columns $1, 2$ and $3$ are linearly independent and the ${\rm rank}(A) = 3$.\</span>
-<span id="cb1-1324"><a href="#cb1-1324" aria-hidden="true" tabindex="-1"></a>Solving the equation $A\mathbf{x} = \mathbf{0}$, we see that all</span>
-<span id="cb1-1325"><a href="#cb1-1325" aria-hidden="true" tabindex="-1"></a>solutions are of the form</span>
-<span id="cb1-1326"><a href="#cb1-1326" aria-hidden="true" tabindex="-1"></a>$\mathbf{x} = c \left<span class="co">[</span><span class="ot">1, 1, 1, -1 \right</span><span class="co">]</span>^{T}$, so that the dimension of</span>
-<span id="cb1-1327"><a href="#cb1-1327" aria-hidden="true" tabindex="-1"></a>the nullspace is $1$. Thus, ${\rm rank}(A) + {\rm nullity}(A) = 3 + 1 = 4$,</span>
-<span id="cb1-1328"><a href="#cb1-1328" aria-hidden="true" tabindex="-1"></a>verifying the Rank Theorem.</span>
-<span id="cb1-1329"><a href="#cb1-1329" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1330"><a href="#cb1-1330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1331"><a href="#cb1-1331" aria-hidden="true" tabindex="-1"></a>:::::</span>
-<span id="cb1-1332"><a href="#cb1-1332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1333"><a href="#cb1-1333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1334"><a href="#cb1-1334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1335"><a href="#cb1-1335" aria-hidden="true" tabindex="-1"></a>:::: {#exm-    }</span>
-<span id="cb1-1336"><a href="#cb1-1336" aria-hidden="true" tabindex="-1"></a>Find the rank and nullity of</span>
-<span id="cb1-1337"><a href="#cb1-1337" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{ccccc}</span>
-<span id="cb1-1338"><a href="#cb1-1338" aria-hidden="true" tabindex="-1"></a>            1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 <span class="sc">\\</span></span>
-<span id="cb1-1339"><a href="#cb1-1339" aria-hidden="true" tabindex="-1"></a>            0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 <span class="sc">\\</span></span>
-<span id="cb1-1340"><a href="#cb1-1340" aria-hidden="true" tabindex="-1"></a>            1 &amp; 2 &amp; 1 &amp; 3 &amp; 1 <span class="sc">\\</span></span>
-<span id="cb1-1341"><a href="#cb1-1341" aria-hidden="true" tabindex="-1"></a>            2 &amp; 3 &amp; 1 &amp; 4 &amp; 2 </span>
-<span id="cb1-1342"><a href="#cb1-1342" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
+<span id="cb1-1322"><a href="#cb1-1322" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #rowcolumnspace} </span>
+<span id="cb1-1323"><a href="#cb1-1323" aria-hidden="true" tabindex="-1"></a><span class="fu">## Dimension of row and column spaces</span></span>
+<span id="cb1-1324"><a href="#cb1-1324" aria-hidden="true" tabindex="-1"></a>The row and column spaces of a matrix $A$ have the</span>
+<span id="cb1-1325"><a href="#cb1-1325" aria-hidden="true" tabindex="-1"></a>same dimension.</span>
+<span id="cb1-1326"><a href="#cb1-1326" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1327"><a href="#cb1-1327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1328"><a href="#cb1-1328" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-1329"><a href="#cb1-1329" aria-hidden="true" tabindex="-1"></a>Let $R$ be a row echelon form of $A$,</span>
+<span id="cb1-1330"><a href="#cb1-1330" aria-hidden="true" tabindex="-1"></a>$row(A) = row(R)$, as we used only row operations to convert $A$ to $R$.</span>
+<span id="cb1-1331"><a href="#cb1-1331" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
+<span id="cb1-1332"><a href="#cb1-1332" aria-hidden="true" tabindex="-1"></a> {\rm dim}({\rm row}(A)) &amp;=  {\rm dim}({\rm row}(R)) <span class="sc">\\</span></span>
+<span id="cb1-1333"><a href="#cb1-1333" aria-hidden="true" tabindex="-1"></a>             &amp; = \text{number of nonzero rows of}\ R <span class="sc">\\</span></span>
+<span id="cb1-1334"><a href="#cb1-1334" aria-hidden="true" tabindex="-1"></a>             &amp; =  \text{number of pivots of}\  R </span>
+<span id="cb1-1335"><a href="#cb1-1335" aria-hidden="true" tabindex="-1"></a>\end{aligned} $$</span>
+<span id="cb1-1336"><a href="#cb1-1336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1337"><a href="#cb1-1337" aria-hidden="true" tabindex="-1"></a>Let this number be called $\gamma$.\</span>
+<span id="cb1-1338"><a href="#cb1-1338" aria-hidden="true" tabindex="-1"></a>Now ${rm col(A)} \neq {\rm col(R)}$, but the columns of ${\rm A}$ and ${\rm R}$ have the same</span>
+<span id="cb1-1339"><a href="#cb1-1339" aria-hidden="true" tabindex="-1"></a>dependence relationships. Therefore, ${\rm dim(col(A))} = {\rm dim(col(R))}$. Since</span>
+<span id="cb1-1340"><a href="#cb1-1340" aria-hidden="true" tabindex="-1"></a>there are $\gamma$ pivots, ${\rm R}$ has $\gamma$ columns that are linearly independent, and the remaining columns</span>
+<span id="cb1-1341"><a href="#cb1-1341" aria-hidden="true" tabindex="-1"></a>of ${\rm R}$ are linear combinations of them. Thus, ${\rm dim(col(R))} = \gamma$. It follows that ${\rm dim(row(A))} = \gamma = {\rm dim(col(A))}$, as we wished to prove.&nbsp;◻</span>
+<span id="cb1-1342"><a href="#cb1-1342" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-1343"><a href="#cb1-1343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1344"><a href="#cb1-1344" aria-hidden="true" tabindex="-1"></a>Identify bases for both the range and nullspace of $A$.</span>
-<span id="cb1-1345"><a href="#cb1-1345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1346"><a href="#cb1-1346" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-1347"><a href="#cb1-1347" aria-hidden="true" tabindex="-1"></a>&nbsp;A row echelon form is given by</span>
-<span id="cb1-1348"><a href="#cb1-1348" aria-hidden="true" tabindex="-1"></a>$$\left<span class="co">[</span><span class="ot">\begin{array}{ccccc} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 3 &amp; 1 \\ 2 &amp; 3 &amp; 1 &amp; 4 &amp; 2 \end{array}\right</span><span class="co">]</span> \xrightarrow{\begin{subarray}{c} R_{3} - R_{1} <span class="sc">\\</span> R_{4} - 2R_{1} \end{subarray}} \left<span class="co">[</span><span class="ot">\begin{array}{ccccc} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \end{array}\right</span><span class="co">]</span> \xrightarrow{\begin{subarray}{c} R_{3} - R_{2} <span class="sc">\\</span> R_{4} - R_{2} \end{subarray}} \left<span class="co">[</span><span class="ot">\begin{array}{ccccc} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-1344"><a href="#cb1-1344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1345"><a href="#cb1-1345" aria-hidden="true" tabindex="-1"></a>::: {.Theorem} </span>
+<span id="cb1-1346"><a href="#cb1-1346" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rank Theorem</span></span>
+<span id="cb1-1347"><a href="#cb1-1347" aria-hidden="true" tabindex="-1"></a>If $A$ is an $m \times n$ matrix, then ${\rm rank}(A) + {\rm nullity}(A) = n$, where $n$ is the number of columns of $A$.</span>
+<span id="cb1-1348"><a href="#cb1-1348" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-1349"><a href="#cb1-1349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1350"><a href="#cb1-1350" aria-hidden="true" tabindex="-1"></a>Hence ${\rm rank}(A) = 2$ and ${\rm nullity}(A) = 5 - {\rm rank}(A) = 5 - 2 = 3$. Columns $1$ and $2$ have pivots, therefore a basis for ${\rm range}(A)$ is</span>
-<span id="cb1-1351"><a href="#cb1-1351" aria-hidden="true" tabindex="-1"></a>$\left<span class="sc">\{</span>\left<span class="co">[</span><span class="ot">1,0,1,2\right</span><span class="co">]</span>^T, \left<span class="co">[</span><span class="ot">1,1,2,3\right</span><span class="co">]</span>^T\right<span class="sc">\}</span>$.</span>
-<span id="cb1-1352"><a href="#cb1-1352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1353"><a href="#cb1-1353" aria-hidden="true" tabindex="-1"></a>Let $x_3 = r, x_4 = s$ and $x_5 = t$, then $x_1 = r + s - t, x_2 = -r - 2s$, so that</span>
-<span id="cb1-1354"><a href="#cb1-1354" aria-hidden="true" tabindex="-1"></a>$$\mathbf{x} = r \left<span class="co">[</span><span class="ot">\begin{array}{c} 1 \\ -1 \\ 1 \\ 0 \\ 0 \end{array}\right</span><span class="co">]</span> + s \left<span class="co">[</span><span class="ot">\begin{array}{c} 1 \\ -2 \\ 0 \\ 1 \\ 0 \end{array}\right</span><span class="co">]</span> + t \left<span class="co">[</span><span class="ot">\begin{array}{c} -1 \\ 0 \\ 0 \\ 0 \\ 1 \end{array}\right</span><span class="co">]</span>$$</span>
-<span id="cb1-1355"><a href="#cb1-1355" aria-hidden="true" tabindex="-1"></a>So a basis for the nullspace is</span>
-<span id="cb1-1356"><a href="#cb1-1356" aria-hidden="true" tabindex="-1"></a>$$\left<span class="sc">\{</span>\left<span class="co">[</span><span class="ot">1,-1,1,0,0\right</span><span class="co">]</span>^T, \left<span class="co">[</span><span class="ot">1,-2,0,1,0\right</span><span class="co">]</span>^T, \left<span class="co">[</span><span class="ot">-1,0,0,0,1\right</span><span class="co">]</span>^T\right<span class="sc">\}</span>$$</span>
-<span id="cb1-1357"><a href="#cb1-1357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1358"><a href="#cb1-1358" aria-hidden="true" tabindex="-1"></a>**Summary of the procedure to find a basis for the nullspace of $A$.**</span>
-<span id="cb1-1359"><a href="#cb1-1359" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1360"><a href="#cb1-1360" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Find a row echelon form $R$ of $A$.\</span>
-<span id="cb1-1361"><a href="#cb1-1361" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Solve for the leading variables ($x_1$ and $x_2$ above) of</span>
-<span id="cb1-1362"><a href="#cb1-1362" aria-hidden="true" tabindex="-1"></a>$R\mathbf{x} = \mathbf{0}$ in terms of the free variables ($x_3, x_4$</span>
-<span id="cb1-1363"><a href="#cb1-1363" aria-hidden="true" tabindex="-1"></a>and $x_5$ in the example).</span>
-<span id="cb1-1364"><a href="#cb1-1364" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Set the free variables equal to parameters, substitute back</span>
-<span id="cb1-1365"><a href="#cb1-1365" aria-hidden="true" tabindex="-1"></a>into $\mathbf{x}$, and write the results as a linear combination of $f$</span>
-<span id="cb1-1366"><a href="#cb1-1366" aria-hidden="true" tabindex="-1"></a>vectors (where $f$ is the number of free variables). These $f$ vectors</span>
-<span id="cb1-1367"><a href="#cb1-1367" aria-hidden="true" tabindex="-1"></a>form a basis for ${\rm Null}(A)$.</span>
-<span id="cb1-1368"><a href="#cb1-1368" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-1369"><a href="#cb1-1369" aria-hidden="true" tabindex="-1"></a>::::</span>
-<span id="cb1-1370"><a href="#cb1-1370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1371"><a href="#cb1-1371" aria-hidden="true" tabindex="-1"></a>::: {.callout-note #nte-nonsquare} </span>
-<span id="cb1-1372"><a href="#cb1-1372" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remark: Nullspace of non-square matrices</span></span>
-<span id="cb1-1373"><a href="#cb1-1373" aria-hidden="true" tabindex="-1"></a>A non-square matrix, $m \times n$, with $n&gt;m$ must always have a non-trivial nullspace, i.e. a nullity &gt; 0. The reason is that the rank can be at most $m$ as the dimension of column space and row space are the same (Theorem \ref{rowcolumnspace}). Then the rank theorem implies that the nullity is at least 1. This is the reason why a non-square matrix can't have an inverse. </span>
-<span id="cb1-1374"><a href="#cb1-1374" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-1350"><a href="#cb1-1350" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-1351"><a href="#cb1-1351" aria-hidden="true" tabindex="-1"></a>Let $R$ be a row echelon form of $A$, and suppose that</span>
+<span id="cb1-1352"><a href="#cb1-1352" aria-hidden="true" tabindex="-1"></a>$rank(A) = \gamma$. Then $R$ has $\gamma$ pivots, so there are $\gamma$ variables corresponding to the leading entries and $n-\gamma$ free variables in the solution to $A\mathbf{x} = \mathbf{0}$.</span>
+<span id="cb1-1353"><a href="#cb1-1353" aria-hidden="true" tabindex="-1"></a>Since ${\rm dim}({\rm Null}(A)) = n - \gamma$, we have ${\rm rank}(A) + {\rm nullity}(A) = \gamma + (n- \gamma ) = n$. </span>
+<span id="cb1-1354"><a href="#cb1-1354" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1355"><a href="#cb1-1355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1356"><a href="#cb1-1356" aria-hidden="true" tabindex="-1"></a>:::: {#exm-    }</span>
+<span id="cb1-1357"><a href="#cb1-1357" aria-hidden="true" tabindex="-1"></a>Find the rank and nullity, and then verify the rank theorem for the matrix:</span>
+<span id="cb1-1358"><a href="#cb1-1358" aria-hidden="true" tabindex="-1"></a>$$ {\rm A} = \left(\begin{array}{ccc}</span>
+<span id="cb1-1359"><a href="#cb1-1359" aria-hidden="true" tabindex="-1"></a>            1 &amp; 1 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb1-1360"><a href="#cb1-1360" aria-hidden="true" tabindex="-1"></a>            1 &amp; 0 &amp; -1 <span class="sc">\\</span></span>
+<span id="cb1-1361"><a href="#cb1-1361" aria-hidden="true" tabindex="-1"></a>            0 &amp; 2 &amp; 2</span>
+<span id="cb1-1362"><a href="#cb1-1362" aria-hidden="true" tabindex="-1"></a>        \end{array}\right).$$ </span>
+<span id="cb1-1363"><a href="#cb1-1363" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-1364"><a href="#cb1-1364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1365"><a href="#cb1-1365" aria-hidden="true" tabindex="-1"></a>::: {.Solution} </span>
+<span id="cb1-1366"><a href="#cb1-1366" aria-hidden="true" tabindex="-1"></a>In order to find the rank we have to check whether the columns are linearly independent. For this we solve</span>
+<span id="cb1-1367"><a href="#cb1-1367" aria-hidden="true" tabindex="-1"></a>$$c_1 \begin{pmatrix} 1 <span class="sc">\\</span> 1 <span class="sc">\\</span> 0  \end{pmatrix}+ c_2 \begin{pmatrix} 1 <span class="sc">\\</span> 0 <span class="sc">\\</span> 2  \end{pmatrix} + c_3 \begin{pmatrix} 0 <span class="sc">\\</span> -1 <span class="sc">\\</span> 2  \end{pmatrix} = \begin{pmatrix} 0 <span class="sc">\\</span> 0 <span class="sc">\\</span> 0  \end{pmatrix} $$ </span>
+<span id="cb1-1368"><a href="#cb1-1368" aria-hidden="true" tabindex="-1"></a>  This is a system of three equations for the three unkowns $c_1,c_2,c_3$ and we can either try to directly solve the equations:</span>
+<span id="cb1-1369"><a href="#cb1-1369" aria-hidden="true" tabindex="-1"></a>$$ \Leftrightarrow \left<span class="sc">\{</span>\begin{array}{l}</span>
+<span id="cb1-1370"><a href="#cb1-1370" aria-hidden="true" tabindex="-1"></a> c_1  = - c_2 <span class="sc">\\</span></span>
+<span id="cb1-1371"><a href="#cb1-1371" aria-hidden="true" tabindex="-1"></a> c_1 - c_3=0 <span class="sc">\\</span></span>
+<span id="cb1-1372"><a href="#cb1-1372" aria-hidden="true" tabindex="-1"></a> 2 c_2 + 2 c_3 =0</span>
+<span id="cb1-1373"><a href="#cb1-1373" aria-hidden="true" tabindex="-1"></a>        \end{array}  \right.    \Leftrightarrow  \left<span class="sc">\{</span> \begin{array}{l}</span>
+<span id="cb1-1374"><a href="#cb1-1374" aria-hidden="true" tabindex="-1"></a> c_1 = - c_2  <span class="sc">\\</span></span>
+<span id="cb1-1375"><a href="#cb1-1375" aria-hidden="true" tabindex="-1"></a> c_1 = c_3 </span>
+<span id="cb1-1376"><a href="#cb1-1376" aria-hidden="true" tabindex="-1"></a>        \end{array}  \right. $$</span>
+<span id="cb1-1377"><a href="#cb1-1377" aria-hidden="true" tabindex="-1"></a>or use Gaussian elimination to solve this:</span>
+<span id="cb1-1378"><a href="#cb1-1378" aria-hidden="true" tabindex="-1"></a>$$\left<span class="co">[</span><span class="ot">\begin{array}{ccc|c} 1 &amp; 1 &amp; 0 &amp; 0\\ 1 &amp; 0 &amp; -1 &amp; 0 \\ 0 &amp; 2 &amp; 2 &amp; 0\end{array}\right</span><span class="co">]</span> \xrightarrow{R_2 - R_1} \left<span class="co">[</span><span class="ot">\begin{array}{ccc|c} 1 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; -1 &amp; -1 &amp; 0\\ 0 &amp; 2 &amp; 2 &amp; 0 \end{array}\right</span><span class="co">]</span> \xrightarrow{R_3 + 2R_2} \left<span class="co">[</span><span class="ot">\begin{array}{ccc|c} 1 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; -1 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-1379"><a href="#cb1-1379" aria-hidden="true" tabindex="-1"></a>In either case we see that there are non-trivial solutions, e.g.~$(c_1,c_2,c_3)=(1,-1,1)$. So the system is linearly dependent. We can remove , e.g.~ the third column vector to obtain a linearly independent set (the first two columns are obviously linearly independent). Hence these can form a basis of the column space and the rank is 2. </span>
+<span id="cb1-1380"><a href="#cb1-1380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1381"><a href="#cb1-1381" aria-hidden="true" tabindex="-1"></a>The nullity, that is the dimension of the nullspace, is found by an almost identical calculation:</span>
+<span id="cb1-1382"><a href="#cb1-1382" aria-hidden="true" tabindex="-1"></a>$$ {\rm A} \mathbf{x} = \left(\begin{array}{ccc}</span>
+<span id="cb1-1383"><a href="#cb1-1383" aria-hidden="true" tabindex="-1"></a>             1 &amp; 1 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb1-1384"><a href="#cb1-1384" aria-hidden="true" tabindex="-1"></a>            1 &amp; 0 &amp; -1 <span class="sc">\\</span></span>
+<span id="cb1-1385"><a href="#cb1-1385" aria-hidden="true" tabindex="-1"></a>            0 &amp; 2 &amp; 2</span>
+<span id="cb1-1386"><a href="#cb1-1386" aria-hidden="true" tabindex="-1"></a>        \end{array}\right)\begin{pmatrix} x_1 <span class="sc">\\</span> x_2 <span class="sc">\\</span> x_3 \end{pmatrix} =\begin{pmatrix} x_1 + x_2<span class="sc">\\</span> x_1 - x_3 <span class="sc">\\</span> 2 x_2 + 2 x_3\end{pmatrix} = \begin{pmatrix} 0 <span class="sc">\\</span> 0 <span class="sc">\\</span> 0 \end{pmatrix} $$</span>
+<span id="cb1-1387"><a href="#cb1-1387" aria-hidden="true" tabindex="-1"></a>as this is the same system that we solved for the linear independence only the $c_i$ are now $x_i$:    </span>
+<span id="cb1-1388"><a href="#cb1-1388" aria-hidden="true" tabindex="-1"></a>$$ \Leftrightarrow \left<span class="sc">\{</span>\begin{array}{l}</span>
+<span id="cb1-1389"><a href="#cb1-1389" aria-hidden="true" tabindex="-1"></a> x_1  = - x_2 <span class="sc">\\</span></span>
+<span id="cb1-1390"><a href="#cb1-1390" aria-hidden="true" tabindex="-1"></a> x_1 - x_3=0 <span class="sc">\\</span></span>
+<span id="cb1-1391"><a href="#cb1-1391" aria-hidden="true" tabindex="-1"></a> 2 x_2 + 2 x_3 =0</span>
+<span id="cb1-1392"><a href="#cb1-1392" aria-hidden="true" tabindex="-1"></a>        \end{array}  \right. \Rightarrow \left<span class="sc">\{</span> \begin{array}{l}</span>
+<span id="cb1-1393"><a href="#cb1-1393" aria-hidden="true" tabindex="-1"></a> x_1 = - x_2  <span class="sc">\\</span></span>
+<span id="cb1-1394"><a href="#cb1-1394" aria-hidden="true" tabindex="-1"></a> x_1 = x_3   \end{array} \right. $$</span>
+<span id="cb1-1395"><a href="#cb1-1395" aria-hidden="true" tabindex="-1"></a>$$ \Rightarrow  \mathbb{x} = \begin{pmatrix} x_1 <span class="sc">\\</span> x_2 <span class="sc">\\</span> x_3 \end{pmatrix} = \begin{pmatrix} x_1 <span class="sc">\\</span> - x_1 <span class="sc">\\</span> x_1 \end{pmatrix} = x_1 \begin{pmatrix} 1 <span class="sc">\\</span> -2 <span class="sc">\\</span> 1 \end{pmatrix} = \lambda \begin{pmatrix} 1 <span class="sc">\\</span> -2 <span class="sc">\\</span> 1 \end{pmatrix}, \quad \lambda \in \mathbb{R} $$</span>
+<span id="cb1-1396"><a href="#cb1-1396" aria-hidden="true" tabindex="-1"></a>Hence,</span>
+<span id="cb1-1397"><a href="#cb1-1397" aria-hidden="true" tabindex="-1"></a>$$ {\rm Null(A)} = {\rm span}\left(\begin{pmatrix} 1 <span class="sc">\\</span> -1 <span class="sc">\\</span> 1 \end{pmatrix} \right),$$</span>
+<span id="cb1-1398"><a href="#cb1-1398" aria-hidden="true" tabindex="-1"></a>and the nullity of ${\rm A}$ is 1. </span>
+<span id="cb1-1399"><a href="#cb1-1399" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1400"><a href="#cb1-1400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1401"><a href="#cb1-1401" aria-hidden="true" tabindex="-1"></a>:::: {#exm-    }</span>
+<span id="cb1-1402"><a href="#cb1-1402" aria-hidden="true" tabindex="-1"></a>Find the nullity of each of the following matrices:</span>
+<span id="cb1-1403"><a href="#cb1-1403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1404"><a href="#cb1-1404" aria-hidden="true" tabindex="-1"></a>$$M = \left<span class="co">[</span><span class="ot">\begin{array}{cc} 2 &amp; 3 \\ 1 &amp; 5 \\ 4 &amp; 7 \\ 3 &amp; 6 \end{array}\right</span><span class="co">]</span>; \qquad N = \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 4 &amp; 4 &amp; -3 &amp; 1 \\ 2 &amp; 7 &amp; 1 &amp; 8 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-1405"><a href="#cb1-1405" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1406"><a href="#cb1-1406" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
+<span id="cb1-1407"><a href="#cb1-1407" aria-hidden="true" tabindex="-1"></a>Since the two columns of $M$ are linearly independent,</span>
+<span id="cb1-1408"><a href="#cb1-1408" aria-hidden="true" tabindex="-1"></a>${\rm rank}(M)=2$. Thus, by the Rank Theorem, ${\rm nullity}(M) = 2 - {\rm rank}(M) = 2 - 2 = 0$.</span>
+<span id="cb1-1409"><a href="#cb1-1409" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1410"><a href="#cb1-1410" aria-hidden="true" tabindex="-1"></a>To find the nullity of ${\rm N}$ we first determine the dimension of the row space and the use Theorem \ref{rowcolumnspace} for find the rank. To find the dimension of the row space we can apply row operations to reduce ${\rm N}$ to a row echelon form, as row operations don't change the span of the row vectors:</span>
+<span id="cb1-1411"><a href="#cb1-1411" aria-hidden="true" tabindex="-1"></a>$$\left<span class="co">[</span><span class="ot">\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 4 &amp; 4 &amp; -3 &amp; 1 \\ 2 &amp; 7 &amp; 1 &amp; 8 \end{array}\right</span><span class="co">]</span> \xrightarrow{\begin{subarray}{c} R_2 - 2R_1 <span class="sc">\\</span> R_3 - R_1 \end{subarray}} \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 0 &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 6 &amp; 3 &amp; 9 \end{array}\right</span><span class="co">]</span> \xrightarrow{R_3 - 2R_2} \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 2 &amp; 1 &amp; -2 &amp; -1 \\ 0 &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-1412"><a href="#cb1-1412" aria-hidden="true" tabindex="-1"></a>We see that there are only two nonzero rows, so ${\rm dim(row\ space)} = {\rm rank}(N)=2$. Hence,</span>
+<span id="cb1-1413"><a href="#cb1-1413" aria-hidden="true" tabindex="-1"></a>${\rm nullity}(N) = 4 - {\rm rank}(N) = 4 - 2 = 2$.</span>
+<span id="cb1-1414"><a href="#cb1-1414" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1415"><a href="#cb1-1415" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-1416"><a href="#cb1-1416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1417"><a href="#cb1-1417" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1418"><a href="#cb1-1418" aria-hidden="true" tabindex="-1"></a>:::: {#exm-    }</span>
+<span id="cb1-1419"><a href="#cb1-1419" aria-hidden="true" tabindex="-1"></a>Let</span>
+<span id="cb1-1420"><a href="#cb1-1420" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{cccc}</span>
+<span id="cb1-1421"><a href="#cb1-1421" aria-hidden="true" tabindex="-1"></a>            1 &amp; 0 &amp; 1 &amp; 2 <span class="sc">\\</span></span>
+<span id="cb1-1422"><a href="#cb1-1422" aria-hidden="true" tabindex="-1"></a>            2 &amp; 1 &amp; 2 &amp; 5 <span class="sc">\\</span></span>
+<span id="cb1-1423"><a href="#cb1-1423" aria-hidden="true" tabindex="-1"></a>            1 &amp; 1 &amp; 0 &amp; 2 <span class="sc">\\</span></span>
+<span id="cb1-1424"><a href="#cb1-1424" aria-hidden="true" tabindex="-1"></a>            0 &amp; 1 &amp; 0 &amp; 1</span>
+<span id="cb1-1425"><a href="#cb1-1425" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
+<span id="cb1-1426"><a href="#cb1-1426" aria-hidden="true" tabindex="-1"></a>Verify the Rank Theorem.</span>
+<span id="cb1-1427"><a href="#cb1-1427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1428"><a href="#cb1-1428" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
+<span id="cb1-1429"><a href="#cb1-1429" aria-hidden="true" tabindex="-1"></a>A row echelon form is given by</span>
+<span id="cb1-1430"><a href="#cb1-1430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1431"><a href="#cb1-1431" aria-hidden="true" tabindex="-1"></a>$$\left<span class="co">[</span><span class="ot">\begin{array}{cccc} 1 &amp; 0 &amp; 1 &amp; 2 \\ 2 &amp; 1 &amp; 2 &amp; 5 \\ 1 &amp; 1 &amp; 0 &amp; 2 \\ 0 &amp; 1 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span> \xrightarrow{\begin{subarray}{c} R_2 - 2R_1 <span class="sc">\\</span> R_3 - R_1 \end{subarray}} \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 1 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; -1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span> \xrightarrow{\begin{subarray}{c} R_3 - R_2 <span class="sc">\\</span> R_4 - R_2 \end{subarray}} \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 1 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 1 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; -1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-1432"><a href="#cb1-1432" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1433"><a href="#cb1-1433" aria-hidden="true" tabindex="-1"></a>Notice that columns $1, 2$ and $3$ have pivots, but not column $4$, so</span>
+<span id="cb1-1434"><a href="#cb1-1434" aria-hidden="true" tabindex="-1"></a>columns $1, 2$ and $3$ are linearly independent and the ${\rm rank}(A) = 3$.\</span>
+<span id="cb1-1435"><a href="#cb1-1435" aria-hidden="true" tabindex="-1"></a>Solving the equation $A\mathbf{x} = \mathbf{0}$, we see that all</span>
+<span id="cb1-1436"><a href="#cb1-1436" aria-hidden="true" tabindex="-1"></a>solutions are of the form</span>
+<span id="cb1-1437"><a href="#cb1-1437" aria-hidden="true" tabindex="-1"></a>$\mathbf{x} = c \left<span class="co">[</span><span class="ot">1, 1, 1, -1 \right</span><span class="co">]</span>^{T}$, so that the dimension of</span>
+<span id="cb1-1438"><a href="#cb1-1438" aria-hidden="true" tabindex="-1"></a>the nullspace is $1$. Thus, ${\rm rank}(A) + {\rm nullity}(A) = 3 + 1 = 4$,</span>
+<span id="cb1-1439"><a href="#cb1-1439" aria-hidden="true" tabindex="-1"></a>verifying the Rank Theorem.</span>
+<span id="cb1-1440"><a href="#cb1-1440" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1441"><a href="#cb1-1441" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1442"><a href="#cb1-1442" aria-hidden="true" tabindex="-1"></a>:::::</span>
+<span id="cb1-1443"><a href="#cb1-1443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1444"><a href="#cb1-1444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1445"><a href="#cb1-1445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1446"><a href="#cb1-1446" aria-hidden="true" tabindex="-1"></a>:::: {#exm-    }</span>
+<span id="cb1-1447"><a href="#cb1-1447" aria-hidden="true" tabindex="-1"></a>Find the rank and nullity of</span>
+<span id="cb1-1448"><a href="#cb1-1448" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{ccccc}</span>
+<span id="cb1-1449"><a href="#cb1-1449" aria-hidden="true" tabindex="-1"></a>            1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 <span class="sc">\\</span></span>
+<span id="cb1-1450"><a href="#cb1-1450" aria-hidden="true" tabindex="-1"></a>            0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb1-1451"><a href="#cb1-1451" aria-hidden="true" tabindex="-1"></a>            1 &amp; 2 &amp; 1 &amp; 3 &amp; 1 <span class="sc">\\</span></span>
+<span id="cb1-1452"><a href="#cb1-1452" aria-hidden="true" tabindex="-1"></a>            2 &amp; 3 &amp; 1 &amp; 4 &amp; 2 </span>
+<span id="cb1-1453"><a href="#cb1-1453" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
+<span id="cb1-1454"><a href="#cb1-1454" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1455"><a href="#cb1-1455" aria-hidden="true" tabindex="-1"></a>Identify bases for both the range and nullspace of $A$.</span>
+<span id="cb1-1456"><a href="#cb1-1456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1457"><a href="#cb1-1457" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
+<span id="cb1-1458"><a href="#cb1-1458" aria-hidden="true" tabindex="-1"></a>&nbsp;A row echelon form is given by</span>
+<span id="cb1-1459"><a href="#cb1-1459" aria-hidden="true" tabindex="-1"></a>$$\left<span class="co">[</span><span class="ot">\begin{array}{ccccc} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; 3 &amp; 1 \\ 2 &amp; 3 &amp; 1 &amp; 4 &amp; 2 \end{array}\right</span><span class="co">]</span> \xrightarrow{\begin{subarray}{c} R_{3} - R_{1} <span class="sc">\\</span> R_{4} - 2R_{1} \end{subarray}} \left<span class="co">[</span><span class="ot">\begin{array}{ccccc} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \end{array}\right</span><span class="co">]</span> \xrightarrow{\begin{subarray}{c} R_{3} - R_{2} <span class="sc">\\</span> R_{4} - R_{2} \end{subarray}} \left<span class="co">[</span><span class="ot">\begin{array}{ccccc} 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-1460"><a href="#cb1-1460" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1461"><a href="#cb1-1461" aria-hidden="true" tabindex="-1"></a>Hence ${\rm rank}(A) = 2$ and ${\rm nullity}(A) = 5 - {\rm rank}(A) = 5 - 2 = 3$. Columns $1$ and $2$ have pivots, therefore a basis for ${\rm range}(A)$ is</span>
+<span id="cb1-1462"><a href="#cb1-1462" aria-hidden="true" tabindex="-1"></a>$\left<span class="sc">\{</span>\left<span class="co">[</span><span class="ot">1,0,1,2\right</span><span class="co">]</span>^T, \left<span class="co">[</span><span class="ot">1,1,2,3\right</span><span class="co">]</span>^T\right<span class="sc">\}</span>$.</span>
+<span id="cb1-1463"><a href="#cb1-1463" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1464"><a href="#cb1-1464" aria-hidden="true" tabindex="-1"></a>Let $x_3 = r, x_4 = s$ and $x_5 = t$, then $x_1 = r + s - t, x_2 = -r - 2s$, so that</span>
+<span id="cb1-1465"><a href="#cb1-1465" aria-hidden="true" tabindex="-1"></a>$$\mathbf{x} = r \left<span class="co">[</span><span class="ot">\begin{array}{c} 1 \\ -1 \\ 1 \\ 0 \\ 0 \end{array}\right</span><span class="co">]</span> + s \left<span class="co">[</span><span class="ot">\begin{array}{c} 1 \\ -2 \\ 0 \\ 1 \\ 0 \end{array}\right</span><span class="co">]</span> + t \left<span class="co">[</span><span class="ot">\begin{array}{c} -1 \\ 0 \\ 0 \\ 0 \\ 1 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-1466"><a href="#cb1-1466" aria-hidden="true" tabindex="-1"></a>So a basis for the nullspace is</span>
+<span id="cb1-1467"><a href="#cb1-1467" aria-hidden="true" tabindex="-1"></a>$$\left<span class="sc">\{</span>\left<span class="co">[</span><span class="ot">1,-1,1,0,0\right</span><span class="co">]</span>^T, \left<span class="co">[</span><span class="ot">1,-2,0,1,0\right</span><span class="co">]</span>^T, \left<span class="co">[</span><span class="ot">-1,0,0,0,1\right</span><span class="co">]</span>^T\right<span class="sc">\}</span>$$</span>
+<span id="cb1-1468"><a href="#cb1-1468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1469"><a href="#cb1-1469" aria-hidden="true" tabindex="-1"></a>**Summary of the procedure to find a basis for the nullspace of $A$.**</span>
+<span id="cb1-1470"><a href="#cb1-1470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1471"><a href="#cb1-1471" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Find a row echelon form $R$ of $A$.\</span>
+<span id="cb1-1472"><a href="#cb1-1472" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Solve for the leading variables ($x_1$ and $x_2$ above) of</span>
+<span id="cb1-1473"><a href="#cb1-1473" aria-hidden="true" tabindex="-1"></a>$R\mathbf{x} = \mathbf{0}$ in terms of the free variables ($x_3, x_4$</span>
+<span id="cb1-1474"><a href="#cb1-1474" aria-hidden="true" tabindex="-1"></a>and $x_5$ in the example).</span>
+<span id="cb1-1475"><a href="#cb1-1475" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Set the free variables equal to parameters, substitute back</span>
+<span id="cb1-1476"><a href="#cb1-1476" aria-hidden="true" tabindex="-1"></a>into $\mathbf{x}$, and write the results as a linear combination of $f$</span>
+<span id="cb1-1477"><a href="#cb1-1477" aria-hidden="true" tabindex="-1"></a>vectors (where $f$ is the number of free variables). These $f$ vectors</span>
+<span id="cb1-1478"><a href="#cb1-1478" aria-hidden="true" tabindex="-1"></a>form a basis for ${\rm Null}(A)$.</span>
+<span id="cb1-1479"><a href="#cb1-1479" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1480"><a href="#cb1-1480" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb1-1481"><a href="#cb1-1481" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1482"><a href="#cb1-1482" aria-hidden="true" tabindex="-1"></a>::: {.callout-note #nte-nonsquare} </span>
+<span id="cb1-1483"><a href="#cb1-1483" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remark: Nullspace of non-square matrices</span></span>
+<span id="cb1-1484"><a href="#cb1-1484" aria-hidden="true" tabindex="-1"></a>A non-square matrix, $m \times n$, with $n&gt;m$ must always have a non-trivial nullspace, i.e. a nullity &gt; 0. The reason is that the rank can be at most $m$ as the dimension of column space and row space are the same (Theorem \ref{rowcolumnspace}). Then the rank theorem implies that the nullity is at least 1. This is the reason why a non-square matrix can't have an inverse. </span>
+<span id="cb1-1485"><a href="#cb1-1485" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

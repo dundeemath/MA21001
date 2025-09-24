@@ -53,9 +53,9 @@
 
  [**Definition 3.13**](#upperlower-triangular-matrix): Upper/Lower Triangular Matrix\Pageref{upperlower-triangular-matrix}
 
- [**Corollary 3.14**](#range): Range\Pageref{range}
+ [**Corollary 3.14**](#range-and-rank): Range and Rank\Pageref{range-and-rank}
 
- [**Definition 3.15**](#nullspace): Nullspace\Pageref{nullspace}
+ [**Definition 3.15**](#nullspace-and-nullity): Nullspace and Nullity\Pageref{nullspace-and-nullity}
 
  [**Corollary 3.16**](#nullspace-is-a-subspace): Nullspace is a subspace\Pageref{nullspace-is-a-subspace}
 
@@ -63,9 +63,7 @@
 
  [**Theorem 3.18**](#rowcolumnspace): Dimension of row and column spaces\Pageref{rowcolumnspace}
 
- [**Definition 3.19**](#rank-and-nullity): Rank and nullity\Pageref{rank-and-nullity}
-
- [**Theorem 3.20**](#rank-theorem): Rank Theorem\Pageref{rank-theorem}
+ [**Theorem 3.19**](#rank-theorem): Rank Theorem\Pageref{rank-theorem}
 
  [**Definition 4.1**](#minor-and-cofactor): Minor and Cofactor\Pageref{minor-and-cofactor}
 
