@@ -543,7 +543,7 @@ $$\det \left( A^{-1}\right) =\frac{1}{5},$$
 $$\det \left( 3A^{2}\right) =3^{n}\times 25$$ .
 :::
 
-::: {.Corollary}
+::: {.Corollary #invdet}
 The matrix $A$ has an inverse if, and only if,
 $\left| A\right| \neq 0.$
 :::
@@ -784,3 +784,38 @@ d & -b \\
 \end{aligned}$$
 :::
 
+## Inverse Matrix theorem
+
+The following theorem combines a number of topics, inverse matrices, determinants, range, and nullspace.
+
+::: {.Theorem #invmatrixthm}
+## Inverse Matrix theorem
+The following statements are equivalent for a $n \times n$ matrix ${\rm A}$:
+
+1. the matrix ${\rm A}$ has an inverse
+2. the determinant of ${\rm A}$ is non-zero
+3. the columns of ${\rm A}$ are linearly independent
+4. the range of ${\rm A}$ is $\mathbb{R}^n$ 
+5. the rank of ${\rm A}$ is $n$
+6. the nullspace of ${\rm A}$ is $\{\vec{0} \}$
+7. the equation ${\rm A}\vec{x}= \vec{0}$ has only the trivial solution $\vec{x}=\vec{0}$
+8. the nullity of ${\rm A}$ is $0$
+9. the equation ${\rm A}\vec{x}= \vec{b}$ has a unique solution for any $\vec{b} \in \mathbb{R}^n$
+10. the mapping $\vec{x} \rightarrow \vec{y} = {\rm A}\vec{x}$ is one-to-one
+11. the transpose of ${\rm A}$ is invertible
+12. the rows of ${\rm A}$ are linearly independent
+:::
+
+::: {.Proof}
+- $1) \Leftrightarrow 2):$ Corollary \ref{invdet}.
+- $2) \Leftrightarrow 3):$ Definition of a determinant as the volume spanned by $n$ (column vectors).
+- $3) \Leftrightarrow 4):$ $n$ linearly independent vectors in $\mathbb{R}^n$ span $\mathbb{R}^n$ (Corollary \ref{nvectorsspanrn})
+- $4) \Leftrightarrow 5):$ Definition of rank as the dimension of the range ($\Rightarrow$). For the reverse ($\Leftarrow$) note that rank = n means ther exists a basis for the space with $n$ elements. 
+- $5) \Leftrightarrow 6):$ The rank theorem \ref{ranktheorem}. 
+- $6) \Leftrightarrow 7):$ Definition of the nullspace
+- $7) \Leftrightarrow 8):$ Definition of nullity as the dimension of the nullspace. Vice versa if the dimension of the nullspace is zero, then the nullspace must consist of $\{0 \}$, as the zero-vector is always in the nullspace.
+- $8) \Leftrightarrow 9):$ We know from 4) that the range is the whole of $\mathbb{R}^n$ and if the solutions were not unique then there would be non-trivial solutions in the nullspace. (assume two different $\vec{x}} map to the same $\vec{b}$: ${\rm A}\vec{x}_1= \vec{b}$ and ${\rm A}\vec{x}_2= \vec{b}$ then ${\rm A}(\vec{x}_1  -\vec{x}_2)= \vec{0}$ and $(\vec{x}_1  -\vec{x}_2)$ would be a non-trivial vector in the nullspace.
+- $9) \Leftrightarrow 10):$ same statement.
+- $10) \Leftrightarrow 11):$ The transpose has the same determinant as ${\rm A}$ and we can then use the equivalence of 1) and 2).
+- $11) \Leftrightarrow 12):$ Statement 3) for the transpose, together with 11).
+:::

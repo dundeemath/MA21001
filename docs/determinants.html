@@ -120,33 +120,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
-.Proof {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
 .Feature {
   --color1: #c0c0c0;
   --color2: #808080;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Theorem {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Conjecture {
-  --color1: #948bde;
-  --color2: #584eab;
-}
 .Definition {
   --color1: #d999d3;
   --color2: #a01793;
-}
-.Corollary {
-  --color1: #948bde;
-  --color2: #584eab;
 }
 .Lemma {
   --color1: #948bde;
@@ -156,9 +136,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #c0c0c0;
   --color2: #808080;
 }
+.Corollary {
+  --color1: #948bde;
+  --color2: #584eab;
+}
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
+}
+.Theorem {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Proof {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.Conjecture {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 </style>
 
@@ -479,6 +479,7 @@ window.Quarto = {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">4.1</span> Introduction</a></li>
   <li><a href="#simplification-of-determinants" id="toc-simplification-of-determinants" class="nav-link" data-scroll-target="#simplification-of-determinants"><span class="header-section-number">4.2</span> Simplification of Determinants</a></li>
   <li><a href="#the-adjoint-matrix" id="toc-the-adjoint-matrix" class="nav-link" data-scroll-target="#the-adjoint-matrix"><span class="header-section-number">4.3</span> The Adjoint Matrix</a></li>
+  <li><a href="#inverse-matrix-theorem" id="toc-inverse-matrix-theorem" class="nav-link" data-scroll-target="#inverse-matrix-theorem"><span class="header-section-number">4.4</span> Inverse Matrix theorem</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dundeemath/MA21001/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -950,7 +951,7 @@ x &amp; 0 &amp; 3 \\
 <p><span class="theorem-title"><strong>Example 4.8</strong></span> Let <span class="math inline">A</span> be an <span class="math inline">n\times n</span> matrix with <span class="math inline">\textrm{det}(A)=5</span>. Then <span class="math display">\det \left( A^{4}\right)
 =5^{4}</span> <span class="math display">\det \left( A^{-1}\right) =\frac{1}{5},</span> <span class="math display">\det \left( 3A^{2}\right) =3^{n}\times 25</span> .</p>
 </div>
-<div id="Corollary-4.8" class="Corollary">
+<div id="invdet" class="Corollary">
 <p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 4.8</strong></summary><div>The matrix <span class="math inline">A</span> has an inverse if, and only if, <span class="math inline">\left| A\right| \neq 0.</span><p></p>
 </div></details>
 </div>
@@ -1150,6 +1151,46 @@ d &amp; -b \\
 \end{array}
 \right].  
 \end{aligned}</span></p>
+</div>
+</section>
+<section id="inverse-matrix-theorem" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="inverse-matrix-theorem"><span class="header-section-number">4.4</span> Inverse Matrix theorem</h2>
+<p>The following theorem combines a number of topics, inverse matrices, determinants, range, and nullspace.</p>
+<div id="invmatrixthm" class="Theorem" title="Inverse Matrix theorem">
+<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 4.12: </strong>Inverse Matrix theorem</summary><div>
+<p>The following statements are equivalent for a <span class="math inline">n \times n</span> matrix <span class="math inline">{\rm A}</span>:</p>
+<ol type="1">
+<li>the matrix <span class="math inline">{\rm A}</span> has an inverse</li>
+<li>the determinant of <span class="math inline">{\rm A}</span> is non-zero</li>
+<li>the columns of <span class="math inline">{\rm A}</span> are linearly independent</li>
+<li>the range of <span class="math inline">{\rm A}</span> is <span class="math inline">\mathbb{R}^n</span></li>
+<li>the rank of <span class="math inline">{\rm A}</span> is <span class="math inline">n</span></li>
+<li>the nullspace of <span class="math inline">{\rm A}</span> is <span class="math inline">\{\vec{0} \}</span></li>
+<li>the equation <span class="math inline">{\rm A}\vec{x}= \vec{0}</span> has only the trivial solution <span class="math inline">\vec{x}=\vec{0}</span></li>
+<li>the nullity of <span class="math inline">{\rm A}</span> is <span class="math inline">0</span></li>
+<li>the equation <span class="math inline">{\rm A}\vec{x}= \vec{b}</span> has a unique solution for any <span class="math inline">\vec{b} \in \mathbb{R}^n</span></li>
+<li>the mapping <span class="math inline">\vec{x} \rightarrow \vec{y} = {\rm A}\vec{x}</span> is one-to-one</li>
+<li>the transpose of <span class="math inline">{\rm A}</span> is invertible</li>
+<li>the rows of <span class="math inline">{\rm A}</span> are linearly independent</li>
+</ol>
+</div></details>
+</div>
+<div id="Proof*-4.11" class="Proof">
+<details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>
+<ul>
+<li><span class="math inline">1) \Leftrightarrow 2):</span> Corollary <a href="determinants.html#invdet">4.8</a>.</li>
+<li><span class="math inline">2) \Leftrightarrow 3):</span> Definition of a determinant as the volume spanned by <span class="math inline">n</span> (column vectors).</li>
+<li><span class="math inline">3) \Leftrightarrow 4):</span> <span class="math inline">n</span> linearly independent vectors in <span class="math inline">\mathbb{R}^n</span> span <span class="math inline">\mathbb{R}^n</span> (Corollary <a href="algebra3b.html#nvectorsspanrn">2.11</a>)</li>
+<li><span class="math inline">4) \Leftrightarrow 5):</span> Definition of rank as the dimension of the range (<span class="math inline">\Rightarrow</span>). For the reverse (<span class="math inline">\Leftarrow</span>) note that rank = n means ther exists a basis for the space with <span class="math inline">n</span> elements.</li>
+<li><span class="math inline">5) \Leftrightarrow 6):</span> The rank theorem <a href="linearequations.html#ranktheorem">3.19</a>.</li>
+<li><span class="math inline">6) \Leftrightarrow 7):</span> Definition of the nullspace</li>
+<li><span class="math inline">7) \Leftrightarrow 8):</span> Definition of nullity as the dimension of the nullspace. Vice versa if the dimension of the nullspace is zero, then the nullspace must consist of <span class="math inline">\{0 \}</span>, as the zero-vector is always in the nullspace.</li>
+<li><span class="math inline">8) \Leftrightarrow 9):</span> We know from 4) that the range is the whole of <span class="math inline">\mathbb{R}^n</span> and if the solutions were not unique then there would be non-trivial solutions in the nullspace. (assume two different $} map to the same <span class="math inline">\vec{b}</span>: <span class="math inline">{\rm A}\vec{x}_1= \vec{b}</span> and <span class="math inline">{\rm A}\vec{x}_2= \vec{b}</span> then <span class="math inline">{\rm A}(\vec{x}_1  -\vec{x}_2)= \vec{0}</span> and <span class="math inline">(\vec{x}_1  -\vec{x}_2)</span> would be a non-trivial vector in the nullspace.</li>
+<li><span class="math inline">9) \Leftrightarrow 10):</span> same statement.</li>
+<li><span class="math inline">10) \Leftrightarrow 11):</span> The transpose has the same determinant as <span class="math inline">{\rm A}</span> and we can then use the equivalence of 1) and 2).</li>
+<li><span class="math inline">11) \Leftrightarrow 12):</span> Statement 3) for the transpose, together with 11).</li>
+</ul>
+</div></details>
 </div>
 
 
@@ -2178,7 +2219,7 @@ d &amp; -b \\
 <span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>$$\det \left( 3A^{2}\right) =3^{n}\times 25$$ .</span>
 <span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>::: {.Corollary #invdet}</span>
 <span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>The matrix $A$ has an inverse if, and only if,</span>
 <span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>$\left| A\right| \neq 0.$</span>
 <span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>:::</span>
@@ -2417,7 +2458,43 @@ d &amp; -b \\
 <span id="cb1-782"><a href="#cb1-782" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
 <span id="cb1-783"><a href="#cb1-783" aria-hidden="true" tabindex="-1"></a>\right].  </span>
 <span id="cb1-784"><a href="#cb1-784" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
-<span id="cb1-785"><a href="#cb1-785" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-785"><a href="#cb1-785" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-786"><a href="#cb1-786" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-787"><a href="#cb1-787" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inverse Matrix theorem</span></span>
+<span id="cb1-788"><a href="#cb1-788" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-789"><a href="#cb1-789" aria-hidden="true" tabindex="-1"></a>The following theorem combines a number of topics, inverse matrices, determinants, range, and nullspace.</span>
+<span id="cb1-790"><a href="#cb1-790" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-791"><a href="#cb1-791" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #invmatrixthm}</span>
+<span id="cb1-792"><a href="#cb1-792" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inverse Matrix theorem</span></span>
+<span id="cb1-793"><a href="#cb1-793" aria-hidden="true" tabindex="-1"></a>The following statements are equivalent for a $n \times n$ matrix ${\rm A}$:</span>
+<span id="cb1-794"><a href="#cb1-794" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-795"><a href="#cb1-795" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>the matrix ${\rm A}$ has an inverse</span>
+<span id="cb1-796"><a href="#cb1-796" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>the determinant of ${\rm A}$ is non-zero</span>
+<span id="cb1-797"><a href="#cb1-797" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>the columns of ${\rm A}$ are linearly independent</span>
+<span id="cb1-798"><a href="#cb1-798" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>the range of ${\rm A}$ is $\mathbb{R}^n$ </span>
+<span id="cb1-799"><a href="#cb1-799" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>the rank of ${\rm A}$ is $n$</span>
+<span id="cb1-800"><a href="#cb1-800" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>the nullspace of ${\rm A}$ is $<span class="sc">\{</span>\vec{0} <span class="sc">\}</span>$</span>
+<span id="cb1-801"><a href="#cb1-801" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>the equation ${\rm A}\vec{x}= \vec{0}$ has only the trivial solution $\vec{x}=\vec{0}$</span>
+<span id="cb1-802"><a href="#cb1-802" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>the nullity of ${\rm A}$ is $0$</span>
+<span id="cb1-803"><a href="#cb1-803" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span>the equation ${\rm A}\vec{x}= \vec{b}$ has a unique solution for any $\vec{b} \in \mathbb{R}^n$</span>
+<span id="cb1-804"><a href="#cb1-804" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>the mapping $\vec{x} \rightarrow \vec{y} = {\rm A}\vec{x}$ is one-to-one</span>
+<span id="cb1-805"><a href="#cb1-805" aria-hidden="true" tabindex="-1"></a><span class="ss">11. </span>the transpose of ${\rm A}$ is invertible</span>
+<span id="cb1-806"><a href="#cb1-806" aria-hidden="true" tabindex="-1"></a><span class="ss">12. </span>the rows of ${\rm A}$ are linearly independent</span>
+<span id="cb1-807"><a href="#cb1-807" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-808"><a href="#cb1-808" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-809"><a href="#cb1-809" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-810"><a href="#cb1-810" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$1) \Leftrightarrow 2):$ Corollary \ref{invdet}.</span>
+<span id="cb1-811"><a href="#cb1-811" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$2) \Leftrightarrow 3):$ Definition of a determinant as the volume spanned by $n$ (column vectors).</span>
+<span id="cb1-812"><a href="#cb1-812" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$3) \Leftrightarrow 4):$ $n$ linearly independent vectors in $\mathbb{R}^n$ span $\mathbb{R}^n$ (Corollary \ref{nvectorsspanrn})</span>
+<span id="cb1-813"><a href="#cb1-813" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$4) \Leftrightarrow 5):$ Definition of rank as the dimension of the range ($\Rightarrow$). For the reverse ($\Leftarrow$) note that rank = n means ther exists a basis for the space with $n$ elements. </span>
+<span id="cb1-814"><a href="#cb1-814" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$5) \Leftrightarrow 6):$ The rank theorem \ref{ranktheorem}. </span>
+<span id="cb1-815"><a href="#cb1-815" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$6) \Leftrightarrow 7):$ Definition of the nullspace</span>
+<span id="cb1-816"><a href="#cb1-816" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$7) \Leftrightarrow 8):$ Definition of nullity as the dimension of the nullspace. Vice versa if the dimension of the nullspace is zero, then the nullspace must consist of $<span class="sc">\{</span>0 <span class="sc">\}</span>$, as the zero-vector is always in the nullspace.</span>
+<span id="cb1-817"><a href="#cb1-817" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$8) \Leftrightarrow 9):$ We know from 4) that the range is the whole of $\mathbb{R}^n$ and if the solutions were not unique then there would be non-trivial solutions in the nullspace. (assume two different $\vec{x}} map to the same $\vec{b}$: ${\rm A}\vec{x}_1= \vec{b}$ and ${\rm A}\vec{x}_2= \vec{b}$ then ${\rm A}(\vec{x}_1  -\vec{x}_2)= \vec{0}$ and $(\vec{x}_1  -\vec{x}_2)$ would be a non-trivial vector in the nullspace.</span>
+<span id="cb1-818"><a href="#cb1-818" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$9) \Leftrightarrow 10):$ same statement.</span>
+<span id="cb1-819"><a href="#cb1-819" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$10) \Leftrightarrow 11):$ The transpose has the same determinant as ${\rm A}$ and we can then use the equivalence of 1) and 2).</span>
+<span id="cb1-820"><a href="#cb1-820" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$11) \Leftrightarrow 12):$ Statement 3) for the transpose, together with 11).</span>
+<span id="cb1-821"><a href="#cb1-821" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

@@ -1342,7 +1342,7 @@ of ${\rm R}$ are linear combinations of them. Thus, ${\rm dim(col(R))} = \gamma$
 :::
 
 
-::: {.Theorem} 
+::: {.Theorem #ranktheorem} 
 ## Rank Theorem
 If $A$ is an $m \times n$ matrix, then ${\rm rank}(A) + {\rm nullity}(A) = n$, where $n$ is the number of columns of $A$.
 :::

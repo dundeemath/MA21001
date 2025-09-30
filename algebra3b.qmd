@@ -667,18 +667,14 @@ combination of $\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{r} \}$ hence
 ${\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{r}) = {\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})$ ◻
 :::
 
-::: {.Corollary}
-Every set of m+1 vectors in $\mathbb{R}^{m}$ is
+::: {.Corollary #nvectorsspanrn}
+$n$ linearly independent vectors in $\mathbb{R}^n$ span $\mathbb{R}^n$.  Vice versa a set of $n+1$ vectors in $\mathbb{R}^{n}$ must be
 linearly dependent.
 :::
 
 ::: {.Proof}
-We know that the standard basis of $\mathbb{R}^{m}$ consists of
-m elements, hence the dimension is m. Suppose there were $m+1$ linearly
-independent vectors in $\mathbb{R}^{m}$, then they could be used to form
-a basis. But then the dimension of $\mathbb{R}^{m}$ would be $m+1$, in
-contradiction to the previous result that the dimension is a unique
-number. ◻
+We know that the standard basis of $\mathbb{R}^{n}$ consists of
+$n$ elements, hence the dimension is $n$. Suppose the $n$ vectors would not span $\mathbb{R}^{n}$. Then we could add vectors such that the new set spans the space and forms a basis. However, we would then have a basis with more than $n$ vectors. That can't be, as any basis  of $\mathbb{R}^{n}$ has to have $n$ vectors. So the assumption that the vectors don't span of $\mathbb{R}^{n}$ is false and they do span the space. Similar, if there were $n+1$ vectors in $\mathbb{R}^{n}$ must be linearly dependent. If they were linearly independent they could form a basis with more than $n$ elements. Again this can be true, hence they are linearly dependent. ◻
 :::
 
 ## Subspaces

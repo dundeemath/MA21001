@@ -347,6 +347,37 @@ $\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ are linearly dependent is 
 independent. ◻
 :::
 
+
+::: {#exm- }
+## Coupled oscillators, normal modes
+
+Consider a system of two coupled oscillators connected by springs as shown in the figure. 
+
+![Coupled Oscillators](coupledosc.png){width=70%}
+
+We can write down a system of equations for the dynamics of these two oscillators:
+$$ m \ddot{x_1} = - k x_1 + k (x_2-x_1) $$
+$$ m \ddot{x_x} = - k (x_2 -x_1) - k x_2 $$
+We can write this as a vector equation for the vector $$\vec{x} =\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} $$
+
+$$ m \ddot{\vec{x}} = \begin{pmatrix} -2 k & k \\ k & -2k  \end{pmatrix} \vec{x}$$
+
+If we are looking for the normal modes of the system, we are looking of harmonic oscillations with a single frequency. So we assume
+
+$$\vec{x} = \begin{pmatrix} x_{10} \\ x_{20} \end{pmatrix} e^{i \omega t} \quad \ddot{\vec{x}} = - \omega^2 \begin{pmatrix} x_{10} \\ x_{20} \end{pmatrix} e^{i \omega t}$$
+Substituting in the vector equation above leads to an eigenvalue problem 
+$$ \Rightarrow - m \omega^2 \vec{x_0} = \begin{pmatrix} -2 k & k \\ k & -2k  \end{pmatrix} \vec{x_0}$$
+$$ \Rightarrow  \begin{pmatrix} 2 k/m & - k/m \\ - k/m & 2k/m  \end{pmatrix} \vec{x_0} = \omega^2 \vec{x_0}  $$
+for the frequency $\omega$.
+The eigenvalues and eigenvectors of the matrix are  
+$$ \lambda_1 = 3 k/m \quad \vec{x_0} = \begin{pmatrix} -1\\ 1 \end{pmatrix}, $$
+and
+$$ \lambda_1 = k/m \quad \vec{x_0} = \begin{pmatrix} 1\\ 1 \end{pmatrix}, $$
+corresponding to an oscillation with frequency $\omega = \sqrt{3k/m}$ where the two oscillators are 180 degree out of phase, and an oscillation with frequency $\omega = \sqrt{k/m}$ where the oscillators are in phase. 
+
+Other solutions for the system can now be obtained as a linear combination of these two modes. The modes are a basis of the solution space. 
+:::
+
 ## Similarity and Diagonalisation
 
 ### Introduction
@@ -422,6 +453,10 @@ $$A = \left[\begin{array}{cc} 1 & 3 \\ 2 & 2 \end{array}\right], \quad B = \left
 similar, since $|A - \lambda I| = \lambda ^{2} - 3\lambda - 4$ while $|B - \lambda I| = \lambda ^{2} - 4$. Note that $A$ and $B$ have the same determinant and
 rank, however.
 :::
+
+
+
+
 
 ### Diagonalisation
 
@@ -611,3 +646,4 @@ Thus, the eigenvalue 2 has algebraic and geometric multiplicity 1,
 and the eigenvalue 1 has algebraic and geometric multiplicity 2.
 Thus, $A$ is diagonalisable, by the Diagonalisation Theorem.
 :::
+

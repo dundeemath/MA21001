@@ -120,45 +120,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
-.Solution {
+.Feature {
   --color1: #c0c0c0;
   --color2: #808080;
-}
-.Definition {
-  --color1: #d999d3;
-  --color2: #a01793;
-}
-.Corollary {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
-}
-.Proof {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Conjecture {
-  --color1: #948bde;
-  --color2: #584eab;
 }
 .Lemma {
   --color1: #948bde;
   --color2: #584eab;
 }
-.Theorem {
+.Conjecture {
   --color1: #948bde;
   --color2: #584eab;
+}
+.Proof {
+  --color1: #c0c0c0;
+  --color2: #808080;
 }
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Feature {
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
+.Solution {
   --color1: #c0c0c0;
   --color2: #808080;
+}
+.Corollary {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Definition {
+  --color1: #d999d3;
+  --color2: #a01793;
+}
+.Theorem {
+  --color1: #948bde;
+  --color2: #584eab;
 }
 </style>
 
@@ -1463,7 +1463,7 @@ x_2 =- 2 x_3
 Now <span class="math inline">{rm col(A)} \neq {\rm col(R)}</span>, but the columns of <span class="math inline">{\rm A}</span> and <span class="math inline">{\rm R}</span> have the same dependence relationships. Therefore, <span class="math inline">{\rm dim(col(A))} = {\rm dim(col(R))}</span>. Since there are <span class="math inline">\gamma</span> pivots, <span class="math inline">{\rm R}</span> has <span class="math inline">\gamma</span> columns that are linearly independent, and the remaining columns of <span class="math inline">{\rm R}</span> are linear combinations of them. Thus, <span class="math inline">{\rm dim(col(R))} = \gamma</span>. It follows that <span class="math inline">{\rm dim(row(A))} = \gamma = {\rm dim(col(A))}</span>, as we wished to prove.&nbsp;◻</p>
 </div></details>
 </div>
-<div id="rank-theorem" class="Theorem" title="Rank Theorem">
+<div id="ranktheorem" class="Theorem" title="Rank Theorem">
 <p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 3.19: </strong>Rank Theorem</summary><div>If <span class="math inline">A</span> is an <span class="math inline">m \times n</span> matrix, then <span class="math inline">{\rm rank}(A) + {\rm nullity}(A) = n</span>, where <span class="math inline">n</span> is the number of columns of <span class="math inline">A</span>.<p></p>
 </div></details>
 </div>
@@ -3387,7 +3387,7 @@ Note&nbsp;3.1: Remark: Nullspace of non-square matrices
 <span id="cb1-1342"><a href="#cb1-1342" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-1343"><a href="#cb1-1343" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1344"><a href="#cb1-1344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1345"><a href="#cb1-1345" aria-hidden="true" tabindex="-1"></a>::: {.Theorem} </span>
+<span id="cb1-1345"><a href="#cb1-1345" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #ranktheorem} </span>
 <span id="cb1-1346"><a href="#cb1-1346" aria-hidden="true" tabindex="-1"></a><span class="fu">## Rank Theorem</span></span>
 <span id="cb1-1347"><a href="#cb1-1347" aria-hidden="true" tabindex="-1"></a>If $A$ is an $m \times n$ matrix, then ${\rm rank}(A) + {\rm nullity}(A) = n$, where $n$ is the number of columns of $A$.</span>
 <span id="cb1-1348"><a href="#cb1-1348" aria-hidden="true" tabindex="-1"></a>:::</span>
