@@ -120,19 +120,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
 .Feature {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Definition {
-  --color1: #d999d3;
-  --color2: #a01793;
-}
-.Lemma {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Solution {
   --color1: #c0c0c0;
   --color2: #808080;
 }
@@ -140,15 +132,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #948bde;
   --color2: #584eab;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Theorem {
-  --color1: #948bde;
-  --color2: #584eab;
+.Definition {
+  --color1: #d999d3;
+  --color2: #a01793;
 }
 .Proof {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.Solution {
   --color1: #c0c0c0;
   --color2: #808080;
 }
@@ -156,9 +148,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #948bde;
   --color2: #584eab;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Lemma {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Theorem {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 </style>
 
@@ -1185,7 +1185,7 @@ d &amp; -b \\
 <li><span class="math inline">5) \Leftrightarrow 6):</span> The rank theorem <a href="linearequations.html#ranktheorem">3.19</a>.</li>
 <li><span class="math inline">6) \Leftrightarrow 7):</span> Definition of the nullspace</li>
 <li><span class="math inline">7) \Leftrightarrow 8):</span> Definition of nullity as the dimension of the nullspace. Vice versa if the dimension of the nullspace is zero, then the nullspace must consist of <span class="math inline">\{0 \}</span>, as the zero-vector is always in the nullspace.</li>
-<li><span class="math inline">8) \Leftrightarrow 9):</span> We know from 4) that the range is the whole of <span class="math inline">\mathbb{R}^n</span> and if the solutions were not unique then there would be non-trivial solutions in the nullspace. (assume two different $} map to the same <span class="math inline">\vec{b}</span>: <span class="math inline">{\rm A}\vec{x}_1= \vec{b}</span> and <span class="math inline">{\rm A}\vec{x}_2= \vec{b}</span> then <span class="math inline">{\rm A}(\vec{x}_1  -\vec{x}_2)= \vec{0}</span> and <span class="math inline">(\vec{x}_1  -\vec{x}_2)</span> would be a non-trivial vector in the nullspace.</li>
+<li><span class="math inline">8) \Leftrightarrow 9):</span> We know from 4) that the range is the whole of <span class="math inline">\mathbb{R}^n</span> and if the solutions were not unique then there would be non-trivial solutions in the nullspace. (assume two different <span class="math inline">\vec{x}</span> map to the same <span class="math inline">\vec{b}</span>: <span class="math inline">{\rm A}\vec{x}_1= \vec{b}</span> and <span class="math inline">{\rm A}\vec{x}_2= \vec{b}</span> then <span class="math inline">{\rm A}(\vec{x}_1  -\vec{x}_2)= \vec{0}</span> and <span class="math inline">(\vec{x}_1  -\vec{x}_2)</span> would be a non-trivial vector in the nullspace.</li>
 <li><span class="math inline">9) \Leftrightarrow 10):</span> same statement.</li>
 <li><span class="math inline">10) \Leftrightarrow 11):</span> The transpose has the same determinant as <span class="math inline">{\rm A}</span> and we can then use the equivalence of 1) and 2).</li>
 <li><span class="math inline">11) \Leftrightarrow 12):</span> Statement 3) for the transpose, together with 11).</li>
@@ -2490,11 +2490,12 @@ d &amp; -b \\
 <span id="cb1-814"><a href="#cb1-814" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$5) \Leftrightarrow 6):$ The rank theorem \ref{ranktheorem}. </span>
 <span id="cb1-815"><a href="#cb1-815" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$6) \Leftrightarrow 7):$ Definition of the nullspace</span>
 <span id="cb1-816"><a href="#cb1-816" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$7) \Leftrightarrow 8):$ Definition of nullity as the dimension of the nullspace. Vice versa if the dimension of the nullspace is zero, then the nullspace must consist of $<span class="sc">\{</span>0 <span class="sc">\}</span>$, as the zero-vector is always in the nullspace.</span>
-<span id="cb1-817"><a href="#cb1-817" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$8) \Leftrightarrow 9):$ We know from 4) that the range is the whole of $\mathbb{R}^n$ and if the solutions were not unique then there would be non-trivial solutions in the nullspace. (assume two different $\vec{x}} map to the same $\vec{b}$: ${\rm A}\vec{x}_1= \vec{b}$ and ${\rm A}\vec{x}_2= \vec{b}$ then ${\rm A}(\vec{x}_1  -\vec{x}_2)= \vec{0}$ and $(\vec{x}_1  -\vec{x}_2)$ would be a non-trivial vector in the nullspace.</span>
-<span id="cb1-818"><a href="#cb1-818" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$9) \Leftrightarrow 10):$ same statement.</span>
-<span id="cb1-819"><a href="#cb1-819" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$10) \Leftrightarrow 11):$ The transpose has the same determinant as ${\rm A}$ and we can then use the equivalence of 1) and 2).</span>
-<span id="cb1-820"><a href="#cb1-820" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$11) \Leftrightarrow 12):$ Statement 3) for the transpose, together with 11).</span>
-<span id="cb1-821"><a href="#cb1-821" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-817"><a href="#cb1-817" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$8) \Leftrightarrow 9):$ We know from 4) that the range is the whole of $\mathbb{R}^n$ and if the solutions were not unique then there would be non-trivial solutions in the nullspace. (assume two different </span>
+<span id="cb1-818"><a href="#cb1-818" aria-hidden="true" tabindex="-1"></a> $\vec{x}$ map to the same $\vec{b}$: ${\rm A}\vec{x}_1= \vec{b}$ and ${\rm A}\vec{x}_2= \vec{b}$ then ${\rm A}(\vec{x}_1  -\vec{x}_2)= \vec{0}$ and $(\vec{x}_1  -\vec{x}_2)$ would be a non-trivial vector in the nullspace.</span>
+<span id="cb1-819"><a href="#cb1-819" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$9) \Leftrightarrow 10):$ same statement.</span>
+<span id="cb1-820"><a href="#cb1-820" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$10) \Leftrightarrow 11):$ The transpose has the same determinant as ${\rm A}$ and we can then use the equivalence of 1) and 2).</span>
+<span id="cb1-821"><a href="#cb1-821" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$11) \Leftrightarrow 12):$ Statement 3) for the transpose, together with 11).</span>
+<span id="cb1-822"><a href="#cb1-822" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

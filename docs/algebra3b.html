@@ -120,23 +120,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
-.Lemma {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Feature {
-  --color1: #c0c0c0;
-  --color2: #808080;
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Conjecture {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Proof {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Theorem {
   --color1: #948bde;
   --color2: #584eab;
 }
@@ -148,17 +136,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #948bde;
   --color2: #584eab;
 }
+.Feature {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.Lemma {
+  --color1: #948bde;
+  --color2: #584eab;
+}
 .Solution {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.Theorem {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Proof {
   --color1: #c0c0c0;
   --color2: #808080;
 }
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
-}
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
 }
 </style>
 
@@ -824,12 +824,11 @@ c_{q1}a_{1}+\cdots +c_{qp}a_{p} &amp;=0
 </div></details>
 </div>
 <div id="nvectorsspanrn" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 2.11</strong></summary><div><span class="math inline">n</span> linearly independent vectors in <span class="math inline">\mathbb{R}^n</span> span <span class="math inline">\mathbb{R}^n</span>.<br>
-Correspondingly a set of n+1 vectors in <span class="math inline">\mathbb{R}^{n}</span> is linearly dependent.<p></p>
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 2.11</strong></summary><div><span class="math inline">n</span> linearly independent vectors in <span class="math inline">\mathbb{R}^n</span> span <span class="math inline">\mathbb{R}^n</span>. Vice versa a set of <span class="math inline">n+1</span> vectors in <span class="math inline">\mathbb{R}^{n}</span> must be linearly dependent.<p></p>
 </div></details>
 </div>
 <div id="Proof*-2.4" class="Proof">
-<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>We know that the standard basis of <span class="math inline">\mathbb{R}^{n}</span> consists of <span class="math inline">n</span> elements, hence the dimension is <span class="math inline">n</span>. Suppose the <span class="math inline">n</span> vectors would not span <span class="math inline">\mathbb{R}^{n}</span> then we could add vectors such that the new set spans the space and forms a basis. However, we would then have a basis with at least <span class="math inline">n+1</span> vectors. That can’t be as any basis of <span class="math inline">\mathbb{R}^{n}</span> has to have <span class="math inline">n</span> vectors. So the assumption that the vectors don’t span of <span class="math inline">\mathbb{R}^{n}</span> is false and they do span the space. Similar there were <span class="math inline">n+1</span> vectors in <span class="math inline">\mathbb{R}^{n}</span> must be linearly dependent. If they were linearly independent they could form a basis with more than <span class="math inline">n</span> elements.Again this can be true, hence they are linearly dependent.&nbsp;◻<p></p>
+<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>We know that the standard basis of <span class="math inline">\mathbb{R}^{n}</span> consists of <span class="math inline">n</span> elements, hence the dimension is <span class="math inline">n</span>. Suppose the <span class="math inline">n</span> vectors would not span <span class="math inline">\mathbb{R}^{n}</span>. Then we could add vectors such that the new set spans the space and forms a basis. However, we would then have a basis with more than <span class="math inline">n</span> vectors. That can’t be, as any basis of <span class="math inline">\mathbb{R}^{n}</span> has to have <span class="math inline">n</span> vectors. So the assumption that the vectors don’t span of <span class="math inline">\mathbb{R}^{n}</span> is false and they do span the space. Similar, if there were <span class="math inline">n+1</span> vectors in <span class="math inline">\mathbb{R}^{n}</span> must be linearly dependent. If they were linearly independent they could form a basis with more than <span class="math inline">n</span> elements. Again this can be true, hence they are linearly dependent.&nbsp;◻<p></p>
 </div></details>
 </div>
 </section>
@@ -2085,190 +2084,189 @@ _{3}=(0,0,1,1)^{T}</span>.</p>
 <span id="cb1-668"><a href="#cb1-668" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-669"><a href="#cb1-669" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-670"><a href="#cb1-670" aria-hidden="true" tabindex="-1"></a>::: {.Corollary #nvectorsspanrn}</span>
-<span id="cb1-671"><a href="#cb1-671" aria-hidden="true" tabindex="-1"></a>$n$ linearly independent vectors in $\mathbb{R}^n$ span $\mathbb{R}^n$.  </span>
-<span id="cb1-672"><a href="#cb1-672" aria-hidden="true" tabindex="-1"></a>Correspondingly a set of n+1 vectors in $\mathbb{R}^{n}$ is</span>
-<span id="cb1-673"><a href="#cb1-673" aria-hidden="true" tabindex="-1"></a>linearly dependent.</span>
-<span id="cb1-674"><a href="#cb1-674" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-675"><a href="#cb1-675" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-676"><a href="#cb1-676" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-677"><a href="#cb1-677" aria-hidden="true" tabindex="-1"></a>We know that the standard basis of $\mathbb{R}^{n}$ consists of</span>
-<span id="cb1-678"><a href="#cb1-678" aria-hidden="true" tabindex="-1"></a>$n$ elements, hence the dimension is $n$. Suppose the $n$ vectors would not span $\mathbb{R}^{n}$ then we could add vectors such that the new set spans the space and forms a basis. However, we would then have a basis with at least $n+1$ vectors. That can't be as any basis  of $\mathbb{R}^{n}$ has to have $n$ vectors. So the assumption that the vectors don't span of $\mathbb{R}^{n}$ is false and they do span the space. Similar there were $n+1$ vectors in $\mathbb{R}^{n}$ must be linearly dependent. If they were linearly independent they could form a basis with more than $n$ elements.Again this can be true, hence they are linearly dependent.&nbsp;◻</span>
-<span id="cb1-679"><a href="#cb1-679" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-680"><a href="#cb1-680" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-681"><a href="#cb1-681" aria-hidden="true" tabindex="-1"></a><span class="fu">## Subspaces</span></span>
-<span id="cb1-682"><a href="#cb1-682" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-683"><a href="#cb1-683" aria-hidden="true" tabindex="-1"></a>Suppose that $W$ is a nonempty subset of the vector space $V$, which</span>
-<span id="cb1-684"><a href="#cb1-684" aria-hidden="true" tabindex="-1"></a>also satisfies all the vector space axioms itself, then $W$ is called a</span>
-<span id="cb1-685"><a href="#cb1-685" aria-hidden="true" tabindex="-1"></a>subspace of $V$. It is important to realise that for $W$ to be subspace</span>
-<span id="cb1-686"><a href="#cb1-686" aria-hidden="true" tabindex="-1"></a>of $V$, then $W$ must satisfy the following conditions:</span>
-<span id="cb1-687"><a href="#cb1-687" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-688"><a href="#cb1-688" aria-hidden="true" tabindex="-1"></a>::: {.Definition #subspace}</span>
-<span id="cb1-689"><a href="#cb1-689" aria-hidden="true" tabindex="-1"></a><span class="fu">## Subspace </span></span>
-<span id="cb1-690"><a href="#cb1-690" aria-hidden="true" tabindex="-1"></a>A subset $W \subseteq V$ of vectors in a vector</span>
-<span id="cb1-691"><a href="#cb1-691" aria-hidden="true" tabindex="-1"></a>space $V$ is called a subspace of $V$ if the following conditions hold:</span>
-<span id="cb1-692"><a href="#cb1-692" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-693"><a href="#cb1-693" aria-hidden="true" tabindex="-1"></a><span class="sc">\(</span>i<span class="sc">\)</span> ${\vec 0}\in W,$</span>
-<span id="cb1-694"><a href="#cb1-694" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-695"><a href="#cb1-695" aria-hidden="true" tabindex="-1"></a><span class="sc">\(</span>ii<span class="sc">\)</span> if ${\vec u} \in W$ and ${\vec v} \in W$ then ${\vec u}+{\vec </span>
-<span id="cb1-696"><a href="#cb1-696" aria-hidden="true" tabindex="-1"></a>v\in }W$ ;</span>
-<span id="cb1-697"><a href="#cb1-697" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-698"><a href="#cb1-698" aria-hidden="true" tabindex="-1"></a><span class="sc">\(</span>iii<span class="sc">\)</span> if ${\vec u\in }W$ then $a{\vec u\in }W$ for all $a\in K$.</span>
-<span id="cb1-699"><a href="#cb1-699" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-700"><a href="#cb1-700" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-701"><a href="#cb1-701" aria-hidden="true" tabindex="-1"></a>All other axioms are automatically satisfied because each element in $W$</span>
-<span id="cb1-702"><a href="#cb1-702" aria-hidden="true" tabindex="-1"></a>is already in $V$.</span>
-<span id="cb1-703"><a href="#cb1-703" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-704"><a href="#cb1-704" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-705"><a href="#cb1-705" aria-hidden="true" tabindex="-1"></a>For any vector space $V$, $V$ is always a subspace of</span>
-<span id="cb1-706"><a href="#cb1-706" aria-hidden="true" tabindex="-1"></a>itself.</span>
-<span id="cb1-707"><a href="#cb1-707" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-708"><a href="#cb1-708" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-709"><a href="#cb1-709" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-710"><a href="#cb1-710" aria-hidden="true" tabindex="-1"></a>We also always have a subspace $<span class="sc">\{</span>\vec{0}<span class="sc">\}</span>$ consisting</span>
-<span id="cb1-711"><a href="#cb1-711" aria-hidden="true" tabindex="-1"></a>of the zero vector alone. This is called the trivial subspace, and its</span>
-<span id="cb1-712"><a href="#cb1-712" aria-hidden="true" tabindex="-1"></a>dimension is $0$, because it has no linearly independent sets of vectors</span>
-<span id="cb1-713"><a href="#cb1-713" aria-hidden="true" tabindex="-1"></a>at all.</span>
-<span id="cb1-714"><a href="#cb1-714" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-715"><a href="#cb1-715" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-716"><a href="#cb1-716" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-717"><a href="#cb1-717" aria-hidden="true" tabindex="-1"></a>The subspaces of $\mathbb{R}^{2}$ are $<span class="sc">\{</span>\vec{0}<span class="sc">\}</span>$,</span>
-<span id="cb1-718"><a href="#cb1-718" aria-hidden="true" tabindex="-1"></a>lines through the origin, and $\mathbb{R}^{2}$ itself.</span>
-<span id="cb1-719"><a href="#cb1-719" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-720"><a href="#cb1-720" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-721"><a href="#cb1-721" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-722"><a href="#cb1-722" aria-hidden="true" tabindex="-1"></a>The subspaces of $\mathbb{R}^{3}$ are $<span class="sc">\{</span>\vec{0}<span class="sc">\}</span>$,</span>
-<span id="cb1-723"><a href="#cb1-723" aria-hidden="true" tabindex="-1"></a>lines through the origin, planes through the origin, and</span>
-<span id="cb1-724"><a href="#cb1-724" aria-hidden="true" tabindex="-1"></a>$\mathbb{R}^{3}$ itself.</span>
-<span id="cb1-725"><a href="#cb1-725" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-726"><a href="#cb1-726" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-727"><a href="#cb1-727" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-728"><a href="#cb1-728" aria-hidden="true" tabindex="-1"></a>Let $W=<span class="sc">\{</span>(x,y,z)^{T}:y=2x, z=0,x,y,z\in\mathbb{R}<span class="sc">\}</span>$.</span>
-<span id="cb1-729"><a href="#cb1-729" aria-hidden="true" tabindex="-1"></a>This is the set of points lying on the line $y=2x$ in the plane $z=0$.</span>
-<span id="cb1-730"><a href="#cb1-730" aria-hidden="true" tabindex="-1"></a>$W$ is a subspace of $\mathbb{R}^{3}$.</span>
-<span id="cb1-731"><a href="#cb1-731" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-732"><a href="#cb1-732" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-733"><a href="#cb1-733" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-734"><a href="#cb1-734" aria-hidden="true" tabindex="-1"></a>The set $W=<span class="sc">\{</span>(x,y,z,w)^{T}:x+y+z=1<span class="sc">\}</span>$ is not a subspace</span>
-<span id="cb1-735"><a href="#cb1-735" aria-hidden="true" tabindex="-1"></a>of $\mathbb{R}^{4}$. The simplest way to see this is that</span>
-<span id="cb1-736"><a href="#cb1-736" aria-hidden="true" tabindex="-1"></a>${\vec 0\not\in }W$. Another way is to choose suitable vectors</span>
-<span id="cb1-737"><a href="#cb1-737" aria-hidden="true" tabindex="-1"></a>$\vec{u},\vec{v}\in W$ then show that $\vec{u}+\vec{v}\not\in W$. A</span>
-<span id="cb1-738"><a href="#cb1-738" aria-hidden="true" tabindex="-1"></a>third way is to choose a suitable ${\vec u} \in </span>
-<span id="cb1-739"><a href="#cb1-739" aria-hidden="true" tabindex="-1"></a>W$ then show that $a{\vec u\not\in }W$ for any $a\neq 1$. Any one of the</span>
-<span id="cb1-740"><a href="#cb1-740" aria-hidden="true" tabindex="-1"></a>reasons suffices.</span>
-<span id="cb1-741"><a href="#cb1-741" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-742"><a href="#cb1-742" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-743"><a href="#cb1-743" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-744"><a href="#cb1-744" aria-hidden="true" tabindex="-1"></a>Consider the subset $S$ of $P_{2}$ defined so as to</span>
-<span id="cb1-745"><a href="#cb1-745" aria-hidden="true" tabindex="-1"></a>contain all polynomial ${\rm p}\left( x\right) =a+bx+cx^{2}$ for which</span>
-<span id="cb1-746"><a href="#cb1-746" aria-hidden="true" tabindex="-1"></a>$a+b-2c=0$. Show that $S$ is a subspace of $P_{2}$ and obtain a basis</span>
-<span id="cb1-747"><a href="#cb1-747" aria-hidden="true" tabindex="-1"></a>for $S$.</span>
-<span id="cb1-748"><a href="#cb1-748" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-749"><a href="#cb1-749" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-750"><a href="#cb1-750" aria-hidden="true" tabindex="-1"></a>::: {.Theorem} </span>
-<span id="cb1-751"><a href="#cb1-751" aria-hidden="true" tabindex="-1"></a><span class="fu">## Intersection of subspaces</span></span>
-<span id="cb1-752"><a href="#cb1-752" aria-hidden="true" tabindex="-1"></a> If $W_{1}$ and $W_{2}$ are subspaces of $V$ then so is $W_{1}\cap W_{2}$.</span>
-<span id="cb1-753"><a href="#cb1-753" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-754"><a href="#cb1-754" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-755"><a href="#cb1-755" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-756"><a href="#cb1-756" aria-hidden="true" tabindex="-1"></a>Let $\vec{u},\vec{v}\in W_{1}\cap W_{2}$ and $a\in K$. Then</span>
-<span id="cb1-757"><a href="#cb1-757" aria-hidden="true" tabindex="-1"></a>$\vec{u}+\vec{v}\in W_{1}$ (because $W_{1}$ is a subspace) and</span>
-<span id="cb1-758"><a href="#cb1-758" aria-hidden="true" tabindex="-1"></a>$\vec{u}+\vec{v}\in W_{2}$ (because $W_{2}$ is a subspace). Hence</span>
-<span id="cb1-759"><a href="#cb1-759" aria-hidden="true" tabindex="-1"></a>$\vec{u}+\vec{v}\in W_{1}\cap W_{2}$. Similarly, we get</span>
-<span id="cb1-760"><a href="#cb1-760" aria-hidden="true" tabindex="-1"></a>$a\vec{v}\in W_{1}\cap W_{2}$ so $W_{1}\cap W_{2}$ is a subspace of</span>
-<span id="cb1-761"><a href="#cb1-761" aria-hidden="true" tabindex="-1"></a>$V$.&nbsp;◻</span>
-<span id="cb1-762"><a href="#cb1-762" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-763"><a href="#cb1-763" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-764"><a href="#cb1-764" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-765"><a href="#cb1-765" aria-hidden="true" tabindex="-1"></a>Let $V= \mathbb{R}^{2\times 2}$ and define $W_{1}$ to be</span>
-<span id="cb1-766"><a href="#cb1-766" aria-hidden="true" tabindex="-1"></a>the subspace of matrices of the form </span>
-<span id="cb1-767"><a href="#cb1-767" aria-hidden="true" tabindex="-1"></a>$$\left[ </span>
-<span id="cb1-768"><a href="#cb1-768" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-769"><a href="#cb1-769" aria-hidden="true" tabindex="-1"></a>a &amp; 0 <span class="sc">\\</span> </span>
-<span id="cb1-770"><a href="#cb1-770" aria-hidden="true" tabindex="-1"></a>b &amp; c</span>
-<span id="cb1-771"><a href="#cb1-771" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-772"><a href="#cb1-772" aria-hidden="true" tabindex="-1"></a>\right]$$</span>
-<span id="cb1-773"><a href="#cb1-773" aria-hidden="true" tabindex="-1"></a>($a,b,c$ real) while $W_{2}$ is the subspace of matrices of</span>
-<span id="cb1-774"><a href="#cb1-774" aria-hidden="true" tabindex="-1"></a>the form $\left[ </span>
-<span id="cb1-775"><a href="#cb1-775" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-776"><a href="#cb1-776" aria-hidden="true" tabindex="-1"></a>a &amp; a <span class="sc">\\</span> </span>
-<span id="cb1-777"><a href="#cb1-777" aria-hidden="true" tabindex="-1"></a>b &amp; b</span>
-<span id="cb1-778"><a href="#cb1-778" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-779"><a href="#cb1-779" aria-hidden="true" tabindex="-1"></a>\right]$. Then $W_{1}\cap W_{2}$ consists of all matrices of the form</span>
-<span id="cb1-780"><a href="#cb1-780" aria-hidden="true" tabindex="-1"></a>$\left[ </span>
-<span id="cb1-781"><a href="#cb1-781" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
-<span id="cb1-782"><a href="#cb1-782" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 <span class="sc">\\</span> </span>
-<span id="cb1-783"><a href="#cb1-783" aria-hidden="true" tabindex="-1"></a>b &amp; b</span>
-<span id="cb1-784"><a href="#cb1-784" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
-<span id="cb1-785"><a href="#cb1-785" aria-hidden="true" tabindex="-1"></a>\right]$ , which is a subspace of $V$.</span>
-<span id="cb1-786"><a href="#cb1-786" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-787"><a href="#cb1-787" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-788"><a href="#cb1-788" aria-hidden="true" tabindex="-1"></a>::: {.callout-note} </span>
-<span id="cb1-789"><a href="#cb1-789" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remark</span></span>
-<span id="cb1-790"><a href="#cb1-790" aria-hidden="true" tabindex="-1"></a>While $W_{1}\cap W_{2}$ is a subpace, $W_{1}\cup W_{2}$ is in general not a</span>
-<span id="cb1-791"><a href="#cb1-791" aria-hidden="true" tabindex="-1"></a>subspace. For exampe if $W_1$ and $W_2$ are the x- and y-axis of $\mathbb{R}^2$, the union is not a subspace.  </span>
-<span id="cb1-792"><a href="#cb1-792" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-793"><a href="#cb1-793" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-794"><a href="#cb1-794" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-795"><a href="#cb1-795" aria-hidden="true" tabindex="-1"></a>Let $V=\mathbb{R}^{2}$, let</span>
-<span id="cb1-796"><a href="#cb1-796" aria-hidden="true" tabindex="-1"></a>$W=<span class="sc">\{</span>(a,0)^{T}:a\in\mathbb{R}<span class="sc">\}</span>$ and</span>
-<span id="cb1-797"><a href="#cb1-797" aria-hidden="true" tabindex="-1"></a>$W_{2}=<span class="sc">\{</span>(0,b)^{T}:b\in\mathbb{R}<span class="sc">\}</span>$. Then $W_{1}$, $W_{2}$ are</span>
-<span id="cb1-798"><a href="#cb1-798" aria-hidden="true" tabindex="-1"></a>subspaces of $V$, but $W_{1}\cup W_{2}$ is not a subspace, because</span>
-<span id="cb1-799"><a href="#cb1-799" aria-hidden="true" tabindex="-1"></a>$(1,0)^{T}\in W_{1}\cup W_{2}$ and $(0,1)^{T}\in W_{1}\cup W_{2}$, but</span>
-<span id="cb1-800"><a href="#cb1-800" aria-hidden="true" tabindex="-1"></a>$(1,0)^{T}+(0,1)^{T}=(1,1)^{T}\notin W_{1}\cup W_{2}$.</span>
-<span id="cb1-801"><a href="#cb1-801" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-802"><a href="#cb1-802" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-803"><a href="#cb1-803" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-804"><a href="#cb1-804" aria-hidden="true" tabindex="-1"></a>The set $W=<span class="sc">\{</span>(x,y,z)^{T}:x^{2}+y^{2}=z<span class="sc">\}</span>$ is not a</span>
-<span id="cb1-805"><a href="#cb1-805" aria-hidden="true" tabindex="-1"></a>subspace of $\mathbb{R}^{3}$.</span>
-<span id="cb1-806"><a href="#cb1-806" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-807"><a href="#cb1-807" aria-hidden="true" tabindex="-1"></a>The vectors ${\vec u=}\left( 0,1,1\right) ^{T}$ and ${\vec v}=\left(</span>
-<span id="cb1-808"><a href="#cb1-808" aria-hidden="true" tabindex="-1"></a>1,2,5\right) ^{T}$ are both in $W$ but ${\vec u}+{\vec v}$ is not.</span>
-<span id="cb1-809"><a href="#cb1-809" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-810"><a href="#cb1-810" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-811"><a href="#cb1-811" aria-hidden="true" tabindex="-1"></a>The three conditions in the definition of a subspace state that every</span>
-<span id="cb1-812"><a href="#cb1-812" aria-hidden="true" tabindex="-1"></a>linear combination of vectors of the subspace has to be an element of</span>
-<span id="cb1-813"><a href="#cb1-813" aria-hidden="true" tabindex="-1"></a>the subspace. This proves the following theorem:</span>
-<span id="cb1-814"><a href="#cb1-814" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-815"><a href="#cb1-815" aria-hidden="true" tabindex="-1"></a>::: {.Lemma}</span>
-<span id="cb1-816"><a href="#cb1-816" aria-hidden="true" tabindex="-1"></a><span class="fu">## Span is a subspace</span></span>
-<span id="cb1-817"><a href="#cb1-817" aria-hidden="true" tabindex="-1"></a>${\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})$ is a subspace of</span>
-<span id="cb1-818"><a href="#cb1-818" aria-hidden="true" tabindex="-1"></a>$V$ for ${\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n} \in V$.</span>
-<span id="cb1-819"><a href="#cb1-819" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-820"><a href="#cb1-820" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-821"><a href="#cb1-821" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-822"><a href="#cb1-822" aria-hidden="true" tabindex="-1"></a>$W={\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})$ is</span>
-<span id="cb1-823"><a href="#cb1-823" aria-hidden="true" tabindex="-1"></a>by definition a subset of $V$. The $\vec{0}$ is in $W$, which is</span>
-<span id="cb1-824"><a href="#cb1-824" aria-hidden="true" tabindex="-1"></a>property (i) in the definition of a subspace, and (ii) and (iii) are</span>
-<span id="cb1-825"><a href="#cb1-825" aria-hidden="true" tabindex="-1"></a>also satisfied due to the span including all linear combinations.&nbsp;◻</span>
-<span id="cb1-826"><a href="#cb1-826" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-827"><a href="#cb1-827" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-828"><a href="#cb1-828" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-829"><a href="#cb1-829" aria-hidden="true" tabindex="-1"></a>The set $W=<span class="sc">\{</span>(x,y,z,w)^{T}:x+y+z=w<span class="sc">\}</span>$ is a subspace of</span>
-<span id="cb1-830"><a href="#cb1-830" aria-hidden="true" tabindex="-1"></a>$\mathbb{R}^{4}$. We can show this in two ways: (a) by using the</span>
-<span id="cb1-831"><a href="#cb1-831" aria-hidden="true" tabindex="-1"></a>definition of a subspace (\ref{subspace}) or (b) by finding a spanning set and using the</span>
-<span id="cb1-832"><a href="#cb1-832" aria-hidden="true" tabindex="-1"></a>above theorem. Method (a) requires checking the three conditions for a</span>
-<span id="cb1-833"><a href="#cb1-833" aria-hidden="true" tabindex="-1"></a>subspace:</span>
-<span id="cb1-834"><a href="#cb1-834" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-835"><a href="#cb1-835" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>${\bf 0} = (0,0,0,0)^{T} \in W$ for $x=y=z=0$.</span>
-<span id="cb1-836"><a href="#cb1-836" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-837"><a href="#cb1-837" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>With ${\bf u} =  (x,y,z,x+y+z)^{T} \in W$ and</span>
-<span id="cb1-838"><a href="#cb1-838" aria-hidden="true" tabindex="-1"></a>    ${\bf v} = (x',y',z',x'+y'+z')^{T} \in W$ also</span>
-<span id="cb1-839"><a href="#cb1-839" aria-hidden="true" tabindex="-1"></a>    ${\bf u} + {\bf v}=  (x+x',y+y',z+z',(x+x')+(y+y')+(z+z'))^{T} \in W$</span>
-<span id="cb1-840"><a href="#cb1-840" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-841"><a href="#cb1-841" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>With ${\bf u} =  (x,y,z,x+y+z)^{T} \in W$ and $\lambda {\bf u} =  (\lambda x,\lambda y,\lambda z, \lambda (x+y+z))^{T} \in W$</span>
-<span id="cb1-842"><a href="#cb1-842" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-843"><a href="#cb1-843" aria-hidden="true" tabindex="-1"></a>For method (b), we have to find vectors which span $W$. Note that the</span>
-<span id="cb1-844"><a href="#cb1-844" aria-hidden="true" tabindex="-1"></a>set $W$ has three free parameters, which can be used to represent an</span>
-<span id="cb1-845"><a href="#cb1-845" aria-hidden="true" tabindex="-1"></a>arbitrary element of $W$:</span>
-<span id="cb1-846"><a href="#cb1-846" aria-hidden="true" tabindex="-1"></a>$$\scriptscriptstyle \begin{pmatrix}   x<span class="sc">\\</span>y<span class="sc">\\</span>z<span class="sc">\\</span>x+y+z  \end{pmatrix} \textstyle = x \scriptscriptstyle \begin{pmatrix}   1<span class="sc">\\</span>0<span class="sc">\\</span>0<span class="sc">\\</span>1  \end{pmatrix} \textstyle +y \scriptscriptstyle \begin{pmatrix}   0<span class="sc">\\</span>1<span class="sc">\\</span>0<span class="sc">\\</span>1  \end{pmatrix} \textstyle + z \scriptscriptstyle \begin{pmatrix}   0<span class="sc">\\</span>0<span class="sc">\\</span>1<span class="sc">\\</span>1  \end{pmatrix} \textstyle$$</span>
-<span id="cb1-847"><a href="#cb1-847" aria-hidden="true" tabindex="-1"></a>Hence $W = {\rm span}((1,0,0,1)^{T}, (0,1,0,1)^{T}, (0,0,1,1)^{T})$.</span>
-<span id="cb1-848"><a href="#cb1-848" aria-hidden="true" tabindex="-1"></a>This second approach has the advantage that the spanning set can also be</span>
-<span id="cb1-849"><a href="#cb1-849" aria-hidden="true" tabindex="-1"></a>used to find a basis for the subspace. Indeed, the three vectors are</span>
-<span id="cb1-850"><a href="#cb1-850" aria-hidden="true" tabindex="-1"></a>also linearly independent (prove!), and we obtain the basis</span>
-<span id="cb1-851"><a href="#cb1-851" aria-hidden="true" tabindex="-1"></a>${\vec v}_{1}=(1,0,0,1)^{T},{\vec v}_{2}=(0,1,0,1)^{T},{\vec v}</span>
-<span id="cb1-852"><a href="#cb1-852" aria-hidden="true" tabindex="-1"></a>_{3}=(0,0,1,1)^{T}$.</span>
-<span id="cb1-853"><a href="#cb1-853" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-854"><a href="#cb1-854" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-671"><a href="#cb1-671" aria-hidden="true" tabindex="-1"></a>$n$ linearly independent vectors in $\mathbb{R}^n$ span $\mathbb{R}^n$.  Vice versa a set of $n+1$ vectors in $\mathbb{R}^{n}$ must be</span>
+<span id="cb1-672"><a href="#cb1-672" aria-hidden="true" tabindex="-1"></a>linearly dependent.</span>
+<span id="cb1-673"><a href="#cb1-673" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-674"><a href="#cb1-674" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-675"><a href="#cb1-675" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-676"><a href="#cb1-676" aria-hidden="true" tabindex="-1"></a>We know that the standard basis of $\mathbb{R}^{n}$ consists of</span>
+<span id="cb1-677"><a href="#cb1-677" aria-hidden="true" tabindex="-1"></a>$n$ elements, hence the dimension is $n$. Suppose the $n$ vectors would not span $\mathbb{R}^{n}$. Then we could add vectors such that the new set spans the space and forms a basis. However, we would then have a basis with more than $n$ vectors. That can't be, as any basis  of $\mathbb{R}^{n}$ has to have $n$ vectors. So the assumption that the vectors don't span of $\mathbb{R}^{n}$ is false and they do span the space. Similar, if there were $n+1$ vectors in $\mathbb{R}^{n}$ must be linearly dependent. If they were linearly independent they could form a basis with more than $n$ elements. Again this can be true, hence they are linearly dependent.&nbsp;◻</span>
+<span id="cb1-678"><a href="#cb1-678" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-679"><a href="#cb1-679" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-680"><a href="#cb1-680" aria-hidden="true" tabindex="-1"></a><span class="fu">## Subspaces</span></span>
+<span id="cb1-681"><a href="#cb1-681" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-682"><a href="#cb1-682" aria-hidden="true" tabindex="-1"></a>Suppose that $W$ is a nonempty subset of the vector space $V$, which</span>
+<span id="cb1-683"><a href="#cb1-683" aria-hidden="true" tabindex="-1"></a>also satisfies all the vector space axioms itself, then $W$ is called a</span>
+<span id="cb1-684"><a href="#cb1-684" aria-hidden="true" tabindex="-1"></a>subspace of $V$. It is important to realise that for $W$ to be subspace</span>
+<span id="cb1-685"><a href="#cb1-685" aria-hidden="true" tabindex="-1"></a>of $V$, then $W$ must satisfy the following conditions:</span>
+<span id="cb1-686"><a href="#cb1-686" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-687"><a href="#cb1-687" aria-hidden="true" tabindex="-1"></a>::: {.Definition #subspace}</span>
+<span id="cb1-688"><a href="#cb1-688" aria-hidden="true" tabindex="-1"></a><span class="fu">## Subspace </span></span>
+<span id="cb1-689"><a href="#cb1-689" aria-hidden="true" tabindex="-1"></a>A subset $W \subseteq V$ of vectors in a vector</span>
+<span id="cb1-690"><a href="#cb1-690" aria-hidden="true" tabindex="-1"></a>space $V$ is called a subspace of $V$ if the following conditions hold:</span>
+<span id="cb1-691"><a href="#cb1-691" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-692"><a href="#cb1-692" aria-hidden="true" tabindex="-1"></a><span class="sc">\(</span>i<span class="sc">\)</span> ${\vec 0}\in W,$</span>
+<span id="cb1-693"><a href="#cb1-693" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-694"><a href="#cb1-694" aria-hidden="true" tabindex="-1"></a><span class="sc">\(</span>ii<span class="sc">\)</span> if ${\vec u} \in W$ and ${\vec v} \in W$ then ${\vec u}+{\vec </span>
+<span id="cb1-695"><a href="#cb1-695" aria-hidden="true" tabindex="-1"></a>v\in }W$ ;</span>
+<span id="cb1-696"><a href="#cb1-696" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-697"><a href="#cb1-697" aria-hidden="true" tabindex="-1"></a><span class="sc">\(</span>iii<span class="sc">\)</span> if ${\vec u\in }W$ then $a{\vec u\in }W$ for all $a\in K$.</span>
+<span id="cb1-698"><a href="#cb1-698" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-699"><a href="#cb1-699" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-700"><a href="#cb1-700" aria-hidden="true" tabindex="-1"></a>All other axioms are automatically satisfied because each element in $W$</span>
+<span id="cb1-701"><a href="#cb1-701" aria-hidden="true" tabindex="-1"></a>is already in $V$.</span>
+<span id="cb1-702"><a href="#cb1-702" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-703"><a href="#cb1-703" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-704"><a href="#cb1-704" aria-hidden="true" tabindex="-1"></a>For any vector space $V$, $V$ is always a subspace of</span>
+<span id="cb1-705"><a href="#cb1-705" aria-hidden="true" tabindex="-1"></a>itself.</span>
+<span id="cb1-706"><a href="#cb1-706" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-707"><a href="#cb1-707" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-708"><a href="#cb1-708" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-709"><a href="#cb1-709" aria-hidden="true" tabindex="-1"></a>We also always have a subspace $<span class="sc">\{</span>\vec{0}<span class="sc">\}</span>$ consisting</span>
+<span id="cb1-710"><a href="#cb1-710" aria-hidden="true" tabindex="-1"></a>of the zero vector alone. This is called the trivial subspace, and its</span>
+<span id="cb1-711"><a href="#cb1-711" aria-hidden="true" tabindex="-1"></a>dimension is $0$, because it has no linearly independent sets of vectors</span>
+<span id="cb1-712"><a href="#cb1-712" aria-hidden="true" tabindex="-1"></a>at all.</span>
+<span id="cb1-713"><a href="#cb1-713" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-714"><a href="#cb1-714" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-715"><a href="#cb1-715" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-716"><a href="#cb1-716" aria-hidden="true" tabindex="-1"></a>The subspaces of $\mathbb{R}^{2}$ are $<span class="sc">\{</span>\vec{0}<span class="sc">\}</span>$,</span>
+<span id="cb1-717"><a href="#cb1-717" aria-hidden="true" tabindex="-1"></a>lines through the origin, and $\mathbb{R}^{2}$ itself.</span>
+<span id="cb1-718"><a href="#cb1-718" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-719"><a href="#cb1-719" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-720"><a href="#cb1-720" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-721"><a href="#cb1-721" aria-hidden="true" tabindex="-1"></a>The subspaces of $\mathbb{R}^{3}$ are $<span class="sc">\{</span>\vec{0}<span class="sc">\}</span>$,</span>
+<span id="cb1-722"><a href="#cb1-722" aria-hidden="true" tabindex="-1"></a>lines through the origin, planes through the origin, and</span>
+<span id="cb1-723"><a href="#cb1-723" aria-hidden="true" tabindex="-1"></a>$\mathbb{R}^{3}$ itself.</span>
+<span id="cb1-724"><a href="#cb1-724" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-725"><a href="#cb1-725" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-726"><a href="#cb1-726" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-727"><a href="#cb1-727" aria-hidden="true" tabindex="-1"></a>Let $W=<span class="sc">\{</span>(x,y,z)^{T}:y=2x, z=0,x,y,z\in\mathbb{R}<span class="sc">\}</span>$.</span>
+<span id="cb1-728"><a href="#cb1-728" aria-hidden="true" tabindex="-1"></a>This is the set of points lying on the line $y=2x$ in the plane $z=0$.</span>
+<span id="cb1-729"><a href="#cb1-729" aria-hidden="true" tabindex="-1"></a>$W$ is a subspace of $\mathbb{R}^{3}$.</span>
+<span id="cb1-730"><a href="#cb1-730" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-731"><a href="#cb1-731" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-732"><a href="#cb1-732" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-733"><a href="#cb1-733" aria-hidden="true" tabindex="-1"></a>The set $W=<span class="sc">\{</span>(x,y,z,w)^{T}:x+y+z=1<span class="sc">\}</span>$ is not a subspace</span>
+<span id="cb1-734"><a href="#cb1-734" aria-hidden="true" tabindex="-1"></a>of $\mathbb{R}^{4}$. The simplest way to see this is that</span>
+<span id="cb1-735"><a href="#cb1-735" aria-hidden="true" tabindex="-1"></a>${\vec 0\not\in }W$. Another way is to choose suitable vectors</span>
+<span id="cb1-736"><a href="#cb1-736" aria-hidden="true" tabindex="-1"></a>$\vec{u},\vec{v}\in W$ then show that $\vec{u}+\vec{v}\not\in W$. A</span>
+<span id="cb1-737"><a href="#cb1-737" aria-hidden="true" tabindex="-1"></a>third way is to choose a suitable ${\vec u} \in </span>
+<span id="cb1-738"><a href="#cb1-738" aria-hidden="true" tabindex="-1"></a>W$ then show that $a{\vec u\not\in }W$ for any $a\neq 1$. Any one of the</span>
+<span id="cb1-739"><a href="#cb1-739" aria-hidden="true" tabindex="-1"></a>reasons suffices.</span>
+<span id="cb1-740"><a href="#cb1-740" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-741"><a href="#cb1-741" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-742"><a href="#cb1-742" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-743"><a href="#cb1-743" aria-hidden="true" tabindex="-1"></a>Consider the subset $S$ of $P_{2}$ defined so as to</span>
+<span id="cb1-744"><a href="#cb1-744" aria-hidden="true" tabindex="-1"></a>contain all polynomial ${\rm p}\left( x\right) =a+bx+cx^{2}$ for which</span>
+<span id="cb1-745"><a href="#cb1-745" aria-hidden="true" tabindex="-1"></a>$a+b-2c=0$. Show that $S$ is a subspace of $P_{2}$ and obtain a basis</span>
+<span id="cb1-746"><a href="#cb1-746" aria-hidden="true" tabindex="-1"></a>for $S$.</span>
+<span id="cb1-747"><a href="#cb1-747" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-748"><a href="#cb1-748" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-749"><a href="#cb1-749" aria-hidden="true" tabindex="-1"></a>::: {.Theorem} </span>
+<span id="cb1-750"><a href="#cb1-750" aria-hidden="true" tabindex="-1"></a><span class="fu">## Intersection of subspaces</span></span>
+<span id="cb1-751"><a href="#cb1-751" aria-hidden="true" tabindex="-1"></a> If $W_{1}$ and $W_{2}$ are subspaces of $V$ then so is $W_{1}\cap W_{2}$.</span>
+<span id="cb1-752"><a href="#cb1-752" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-753"><a href="#cb1-753" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-754"><a href="#cb1-754" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-755"><a href="#cb1-755" aria-hidden="true" tabindex="-1"></a>Let $\vec{u},\vec{v}\in W_{1}\cap W_{2}$ and $a\in K$. Then</span>
+<span id="cb1-756"><a href="#cb1-756" aria-hidden="true" tabindex="-1"></a>$\vec{u}+\vec{v}\in W_{1}$ (because $W_{1}$ is a subspace) and</span>
+<span id="cb1-757"><a href="#cb1-757" aria-hidden="true" tabindex="-1"></a>$\vec{u}+\vec{v}\in W_{2}$ (because $W_{2}$ is a subspace). Hence</span>
+<span id="cb1-758"><a href="#cb1-758" aria-hidden="true" tabindex="-1"></a>$\vec{u}+\vec{v}\in W_{1}\cap W_{2}$. Similarly, we get</span>
+<span id="cb1-759"><a href="#cb1-759" aria-hidden="true" tabindex="-1"></a>$a\vec{v}\in W_{1}\cap W_{2}$ so $W_{1}\cap W_{2}$ is a subspace of</span>
+<span id="cb1-760"><a href="#cb1-760" aria-hidden="true" tabindex="-1"></a>$V$.&nbsp;◻</span>
+<span id="cb1-761"><a href="#cb1-761" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-762"><a href="#cb1-762" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-763"><a href="#cb1-763" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-764"><a href="#cb1-764" aria-hidden="true" tabindex="-1"></a>Let $V= \mathbb{R}^{2\times 2}$ and define $W_{1}$ to be</span>
+<span id="cb1-765"><a href="#cb1-765" aria-hidden="true" tabindex="-1"></a>the subspace of matrices of the form </span>
+<span id="cb1-766"><a href="#cb1-766" aria-hidden="true" tabindex="-1"></a>$$\left[ </span>
+<span id="cb1-767"><a href="#cb1-767" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
+<span id="cb1-768"><a href="#cb1-768" aria-hidden="true" tabindex="-1"></a>a &amp; 0 <span class="sc">\\</span> </span>
+<span id="cb1-769"><a href="#cb1-769" aria-hidden="true" tabindex="-1"></a>b &amp; c</span>
+<span id="cb1-770"><a href="#cb1-770" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb1-771"><a href="#cb1-771" aria-hidden="true" tabindex="-1"></a>\right]$$</span>
+<span id="cb1-772"><a href="#cb1-772" aria-hidden="true" tabindex="-1"></a>($a,b,c$ real) while $W_{2}$ is the subspace of matrices of</span>
+<span id="cb1-773"><a href="#cb1-773" aria-hidden="true" tabindex="-1"></a>the form $\left[ </span>
+<span id="cb1-774"><a href="#cb1-774" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
+<span id="cb1-775"><a href="#cb1-775" aria-hidden="true" tabindex="-1"></a>a &amp; a <span class="sc">\\</span> </span>
+<span id="cb1-776"><a href="#cb1-776" aria-hidden="true" tabindex="-1"></a>b &amp; b</span>
+<span id="cb1-777"><a href="#cb1-777" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb1-778"><a href="#cb1-778" aria-hidden="true" tabindex="-1"></a>\right]$. Then $W_{1}\cap W_{2}$ consists of all matrices of the form</span>
+<span id="cb1-779"><a href="#cb1-779" aria-hidden="true" tabindex="-1"></a>$\left[ </span>
+<span id="cb1-780"><a href="#cb1-780" aria-hidden="true" tabindex="-1"></a>\begin{array}{cc}</span>
+<span id="cb1-781"><a href="#cb1-781" aria-hidden="true" tabindex="-1"></a>0 &amp; 0 <span class="sc">\\</span> </span>
+<span id="cb1-782"><a href="#cb1-782" aria-hidden="true" tabindex="-1"></a>b &amp; b</span>
+<span id="cb1-783"><a href="#cb1-783" aria-hidden="true" tabindex="-1"></a>\end{array}</span>
+<span id="cb1-784"><a href="#cb1-784" aria-hidden="true" tabindex="-1"></a>\right]$ , which is a subspace of $V$.</span>
+<span id="cb1-785"><a href="#cb1-785" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-786"><a href="#cb1-786" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-787"><a href="#cb1-787" aria-hidden="true" tabindex="-1"></a>::: {.callout-note} </span>
+<span id="cb1-788"><a href="#cb1-788" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remark</span></span>
+<span id="cb1-789"><a href="#cb1-789" aria-hidden="true" tabindex="-1"></a>While $W_{1}\cap W_{2}$ is a subpace, $W_{1}\cup W_{2}$ is in general not a</span>
+<span id="cb1-790"><a href="#cb1-790" aria-hidden="true" tabindex="-1"></a>subspace. For exampe if $W_1$ and $W_2$ are the x- and y-axis of $\mathbb{R}^2$, the union is not a subspace.  </span>
+<span id="cb1-791"><a href="#cb1-791" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-792"><a href="#cb1-792" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-793"><a href="#cb1-793" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-794"><a href="#cb1-794" aria-hidden="true" tabindex="-1"></a>Let $V=\mathbb{R}^{2}$, let</span>
+<span id="cb1-795"><a href="#cb1-795" aria-hidden="true" tabindex="-1"></a>$W=<span class="sc">\{</span>(a,0)^{T}:a\in\mathbb{R}<span class="sc">\}</span>$ and</span>
+<span id="cb1-796"><a href="#cb1-796" aria-hidden="true" tabindex="-1"></a>$W_{2}=<span class="sc">\{</span>(0,b)^{T}:b\in\mathbb{R}<span class="sc">\}</span>$. Then $W_{1}$, $W_{2}$ are</span>
+<span id="cb1-797"><a href="#cb1-797" aria-hidden="true" tabindex="-1"></a>subspaces of $V$, but $W_{1}\cup W_{2}$ is not a subspace, because</span>
+<span id="cb1-798"><a href="#cb1-798" aria-hidden="true" tabindex="-1"></a>$(1,0)^{T}\in W_{1}\cup W_{2}$ and $(0,1)^{T}\in W_{1}\cup W_{2}$, but</span>
+<span id="cb1-799"><a href="#cb1-799" aria-hidden="true" tabindex="-1"></a>$(1,0)^{T}+(0,1)^{T}=(1,1)^{T}\notin W_{1}\cup W_{2}$.</span>
+<span id="cb1-800"><a href="#cb1-800" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-801"><a href="#cb1-801" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-802"><a href="#cb1-802" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-803"><a href="#cb1-803" aria-hidden="true" tabindex="-1"></a>The set $W=<span class="sc">\{</span>(x,y,z)^{T}:x^{2}+y^{2}=z<span class="sc">\}</span>$ is not a</span>
+<span id="cb1-804"><a href="#cb1-804" aria-hidden="true" tabindex="-1"></a>subspace of $\mathbb{R}^{3}$.</span>
+<span id="cb1-805"><a href="#cb1-805" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-806"><a href="#cb1-806" aria-hidden="true" tabindex="-1"></a>The vectors ${\vec u=}\left( 0,1,1\right) ^{T}$ and ${\vec v}=\left(</span>
+<span id="cb1-807"><a href="#cb1-807" aria-hidden="true" tabindex="-1"></a>1,2,5\right) ^{T}$ are both in $W$ but ${\vec u}+{\vec v}$ is not.</span>
+<span id="cb1-808"><a href="#cb1-808" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-809"><a href="#cb1-809" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-810"><a href="#cb1-810" aria-hidden="true" tabindex="-1"></a>The three conditions in the definition of a subspace state that every</span>
+<span id="cb1-811"><a href="#cb1-811" aria-hidden="true" tabindex="-1"></a>linear combination of vectors of the subspace has to be an element of</span>
+<span id="cb1-812"><a href="#cb1-812" aria-hidden="true" tabindex="-1"></a>the subspace. This proves the following theorem:</span>
+<span id="cb1-813"><a href="#cb1-813" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-814"><a href="#cb1-814" aria-hidden="true" tabindex="-1"></a>::: {.Lemma}</span>
+<span id="cb1-815"><a href="#cb1-815" aria-hidden="true" tabindex="-1"></a><span class="fu">## Span is a subspace</span></span>
+<span id="cb1-816"><a href="#cb1-816" aria-hidden="true" tabindex="-1"></a>${\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})$ is a subspace of</span>
+<span id="cb1-817"><a href="#cb1-817" aria-hidden="true" tabindex="-1"></a>$V$ for ${\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n} \in V$.</span>
+<span id="cb1-818"><a href="#cb1-818" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-819"><a href="#cb1-819" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-820"><a href="#cb1-820" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-821"><a href="#cb1-821" aria-hidden="true" tabindex="-1"></a>$W={\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})$ is</span>
+<span id="cb1-822"><a href="#cb1-822" aria-hidden="true" tabindex="-1"></a>by definition a subset of $V$. The $\vec{0}$ is in $W$, which is</span>
+<span id="cb1-823"><a href="#cb1-823" aria-hidden="true" tabindex="-1"></a>property (i) in the definition of a subspace, and (ii) and (iii) are</span>
+<span id="cb1-824"><a href="#cb1-824" aria-hidden="true" tabindex="-1"></a>also satisfied due to the span including all linear combinations.&nbsp;◻</span>
+<span id="cb1-825"><a href="#cb1-825" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-826"><a href="#cb1-826" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-827"><a href="#cb1-827" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-828"><a href="#cb1-828" aria-hidden="true" tabindex="-1"></a>The set $W=<span class="sc">\{</span>(x,y,z,w)^{T}:x+y+z=w<span class="sc">\}</span>$ is a subspace of</span>
+<span id="cb1-829"><a href="#cb1-829" aria-hidden="true" tabindex="-1"></a>$\mathbb{R}^{4}$. We can show this in two ways: (a) by using the</span>
+<span id="cb1-830"><a href="#cb1-830" aria-hidden="true" tabindex="-1"></a>definition of a subspace (\ref{subspace}) or (b) by finding a spanning set and using the</span>
+<span id="cb1-831"><a href="#cb1-831" aria-hidden="true" tabindex="-1"></a>above theorem. Method (a) requires checking the three conditions for a</span>
+<span id="cb1-832"><a href="#cb1-832" aria-hidden="true" tabindex="-1"></a>subspace:</span>
+<span id="cb1-833"><a href="#cb1-833" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-834"><a href="#cb1-834" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>${\bf 0} = (0,0,0,0)^{T} \in W$ for $x=y=z=0$.</span>
+<span id="cb1-835"><a href="#cb1-835" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-836"><a href="#cb1-836" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>With ${\bf u} =  (x,y,z,x+y+z)^{T} \in W$ and</span>
+<span id="cb1-837"><a href="#cb1-837" aria-hidden="true" tabindex="-1"></a>    ${\bf v} = (x',y',z',x'+y'+z')^{T} \in W$ also</span>
+<span id="cb1-838"><a href="#cb1-838" aria-hidden="true" tabindex="-1"></a>    ${\bf u} + {\bf v}=  (x+x',y+y',z+z',(x+x')+(y+y')+(z+z'))^{T} \in W$</span>
+<span id="cb1-839"><a href="#cb1-839" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-840"><a href="#cb1-840" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>With ${\bf u} =  (x,y,z,x+y+z)^{T} \in W$ and $\lambda {\bf u} =  (\lambda x,\lambda y,\lambda z, \lambda (x+y+z))^{T} \in W$</span>
+<span id="cb1-841"><a href="#cb1-841" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-842"><a href="#cb1-842" aria-hidden="true" tabindex="-1"></a>For method (b), we have to find vectors which span $W$. Note that the</span>
+<span id="cb1-843"><a href="#cb1-843" aria-hidden="true" tabindex="-1"></a>set $W$ has three free parameters, which can be used to represent an</span>
+<span id="cb1-844"><a href="#cb1-844" aria-hidden="true" tabindex="-1"></a>arbitrary element of $W$:</span>
+<span id="cb1-845"><a href="#cb1-845" aria-hidden="true" tabindex="-1"></a>$$\scriptscriptstyle \begin{pmatrix}   x<span class="sc">\\</span>y<span class="sc">\\</span>z<span class="sc">\\</span>x+y+z  \end{pmatrix} \textstyle = x \scriptscriptstyle \begin{pmatrix}   1<span class="sc">\\</span>0<span class="sc">\\</span>0<span class="sc">\\</span>1  \end{pmatrix} \textstyle +y \scriptscriptstyle \begin{pmatrix}   0<span class="sc">\\</span>1<span class="sc">\\</span>0<span class="sc">\\</span>1  \end{pmatrix} \textstyle + z \scriptscriptstyle \begin{pmatrix}   0<span class="sc">\\</span>0<span class="sc">\\</span>1<span class="sc">\\</span>1  \end{pmatrix} \textstyle$$</span>
+<span id="cb1-846"><a href="#cb1-846" aria-hidden="true" tabindex="-1"></a>Hence $W = {\rm span}((1,0,0,1)^{T}, (0,1,0,1)^{T}, (0,0,1,1)^{T})$.</span>
+<span id="cb1-847"><a href="#cb1-847" aria-hidden="true" tabindex="-1"></a>This second approach has the advantage that the spanning set can also be</span>
+<span id="cb1-848"><a href="#cb1-848" aria-hidden="true" tabindex="-1"></a>used to find a basis for the subspace. Indeed, the three vectors are</span>
+<span id="cb1-849"><a href="#cb1-849" aria-hidden="true" tabindex="-1"></a>also linearly independent (prove!), and we obtain the basis</span>
+<span id="cb1-850"><a href="#cb1-850" aria-hidden="true" tabindex="-1"></a>${\vec v}_{1}=(1,0,0,1)^{T},{\vec v}_{2}=(0,1,0,1)^{T},{\vec v}</span>
+<span id="cb1-851"><a href="#cb1-851" aria-hidden="true" tabindex="-1"></a>_{3}=(0,0,1,1)^{T}$.</span>
+<span id="cb1-852"><a href="#cb1-852" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-853"><a href="#cb1-853" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

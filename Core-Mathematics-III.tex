@@ -284,22 +284,22 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 %%==== colors from yaml ===%
 \definecolor{Proof-color1}{HTML}{c0c0c0}
 \definecolor{Proof-color2}{HTML}{808080}
-\definecolor{Definition-color1}{HTML}{d999d3}
-\definecolor{Definition-color2}{HTML}{a01793}
-\definecolor{DONE-color1}{HTML}{cce7b1}
-\definecolor{DONE-color2}{HTML}{86b754}
-\definecolor{Solution-color1}{HTML}{c0c0c0}
-\definecolor{Solution-color2}{HTML}{808080}
-\definecolor{Feature-color1}{HTML}{c0c0c0}
-\definecolor{Feature-color2}{HTML}{808080}
-\definecolor{Lemma-color1}{HTML}{948bde}
-\definecolor{Lemma-color2}{HTML}{584eab}
-\definecolor{Corollary-color1}{HTML}{948bde}
-\definecolor{Corollary-color2}{HTML}{584eab}
 \definecolor{Conjecture-color1}{HTML}{948bde}
 \definecolor{Conjecture-color2}{HTML}{584eab}
+\definecolor{Lemma-color1}{HTML}{948bde}
+\definecolor{Lemma-color2}{HTML}{584eab}
 \definecolor{Theorem-color1}{HTML}{948bde}
 \definecolor{Theorem-color2}{HTML}{584eab}
+\definecolor{DONE-color1}{HTML}{cce7b1}
+\definecolor{DONE-color2}{HTML}{86b754}
+\definecolor{Feature-color1}{HTML}{c0c0c0}
+\definecolor{Feature-color2}{HTML}{808080}
+\definecolor{Corollary-color1}{HTML}{948bde}
+\definecolor{Corollary-color2}{HTML}{584eab}
+\definecolor{Solution-color1}{HTML}{c0c0c0}
+\definecolor{Solution-color2}{HTML}{808080}
+\definecolor{Definition-color1}{HTML}{d999d3}
+\definecolor{Definition-color2}{HTML}{a01793}
 \definecolor{TODO-color1}{HTML}{e7b1b4}
 \definecolor{TODO-color2}{HTML}{8c3236}
 %=============%
@@ -321,7 +321,7 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
 \title{Core Mathematics III}
 \author{Prof Gunnar Hornig}
-\date{2025-09-24}
+\date{2025-09-30}
 \begin{document}
 \maketitle
 
@@ -676,7 +676,7 @@ the multiplication in \(\mathbb{R}\) is also the neutral element for the
 scalar multiplication, while the remaining conditions are distributive
 laws.
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on Notation}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on Notation}, bottomrule=.15mm, coltitle=black]
 
 Alternative notations for vectors encountered in the literature are bold
 face symbols \({\bf v}\) or \(\bar v\) (not to be confused with complex
@@ -1294,7 +1294,7 @@ The space of polynomials of degree \(\leq n\) has basis
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on dimension}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on dimension}, bottomrule=.15mm, coltitle=black]
 
 Note that the dimension of \(V\) depends on the field \(K\). Thus the
 complex numbers \(\mathbb{C}\) can be considered as a space of dimension
@@ -1325,22 +1325,29 @@ combination of \(\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{r} \}\) hence
 
 \end{fbx}
 
-\phantomsection\label{Corollary-2.11}
+\phantomsection\label{nvectorsspanrn}
 \begin{fbxSimple}{Corollary}{Corollary 2.11}{}
-\phantomsection\label{Corollary-2.11}
-Every set of m+1 vectors in \(\mathbb{R}^{m}\) is linearly dependent.
+\phantomsection\label{nvectorsspanrn}
+\(n\) linearly independent vectors in \(\mathbb{R}^n\) span
+\(\mathbb{R}^n\). Vice versa a set of \(n+1\) vectors in
+\(\mathbb{R}^{n}\) must be linearly dependent.
 
 \end{fbxSimple}
 
 \phantomsection\label{Proofux2a-2.4}
 \begin{fbx}{Proof}{Proof}{}
 \phantomsection\label{Proof*-2.4}
-We know that the standard basis of \(\mathbb{R}^{m}\) consists of m
-elements, hence the dimension is m. Suppose there were \(m+1\) linearly
-independent vectors in \(\mathbb{R}^{m}\), then they could be used to
-form a basis. But then the dimension of \(\mathbb{R}^{m}\) would be
-\(m+1\), in contradiction to the previous result that the dimension is a
-unique number.~◻
+We know that the standard basis of \(\mathbb{R}^{n}\) consists of \(n\)
+elements, hence the dimension is \(n\). Suppose the \(n\) vectors would
+not span \(\mathbb{R}^{n}\). Then we could add vectors such that the new
+set spans the space and forms a basis. However, we would then have a
+basis with more than \(n\) vectors. That can't be, as any basis of
+\(\mathbb{R}^{n}\) has to have \(n\) vectors. So the assumption that the
+vectors don't span of \(\mathbb{R}^{n}\) is false and they do span the
+space. Similar, if there were \(n+1\) vectors in \(\mathbb{R}^{n}\) must
+be linearly dependent. If they were linearly independent they could form
+a basis with more than \(n\) elements. Again this can be true, hence
+they are linearly dependent.~◻
 
 \end{fbx}
 
@@ -1470,7 +1477,7 @@ b & b
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomrule=.15mm, coltitle=black]
 
 While \(W_{1}\cap W_{2}\) is a subpace, \(W_{1}\cup W_{2}\) is in
 general not a subspace. For exampe if \(W_1\) and \(W_2\) are the x- and
@@ -1578,7 +1585,7 @@ A \(2\times3\) matrix: \[{\rm A} =\left(
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Notation}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Notation}, bottomrule=.15mm, coltitle=black]
 
 Matrices are usually named by upper case roman letters,
 e.g.~\({\rm A}\). Individual entries are referred to by \(A_{i,j}\),
@@ -1721,7 +1728,7 @@ and scalar multiplication, and associative but not commutative.
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-warning-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-warning-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, bottomrule=.15mm, coltitle=black]
 
 Matrix multiplication is not commutative in general:
 \({\rm A}  {\rm B} \neq  {\rm B}  {\rm A}\). This is clear already for
@@ -1927,7 +1934,7 @@ which does not have an inverse is said to be singular.
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomrule=.15mm, coltitle=black]
 
 \begin{itemize}
 \tightlist
@@ -1942,7 +1949,7 @@ which does not have an inverse is said to be singular.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-warning-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-warning-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-warning-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, bottomrule=.15mm, coltitle=black]
 
 A division of matrices is \textbf{not} defined.
 
@@ -3045,9 +3052,9 @@ prove.~◻
 
 \end{fbx}
 
-\phantomsection\label{rank-theorem}
+\phantomsection\label{ranktheorem}
 \begin{fbxSimple}{Theorem}{Theorem 3.19: }{Rank Theorem}
-\phantomsection\label{rank-theorem}
+\phantomsection\label{ranktheorem}
 If \(A\) is an \(m \times n\) matrix, then
 \({\rm rank}(A) + {\rm nullity}(A) = n\), where \(n\) is the number of
 columns of \(A\).
@@ -3232,7 +3239,7 @@ So a basis for the nullspace is
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note \ref*{nte-nonsquare}: Remark: Nullspace of non-square matrices}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note \ref*{nte-nonsquare}: Remark: Nullspace of non-square matrices}, bottomrule=.15mm, coltitle=black]
 
 \quartocalloutnte{nte-nonsquare} 
 
@@ -3609,7 +3616,7 @@ a_{j} & b_{j} & c_{j} &  \\
 
 \end{fbx}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remember}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remember}, bottomrule=.15mm, coltitle=black]
 
 The rules are similar to, \textbf{but not the same as,} Gaussian
 elimination; adding \(k\) times row 2 to row 1 is OK if the result goes
@@ -3829,9 +3836,9 @@ Let \(A\) be an \(n\times n\) matrix with \(\textrm{det}(A)=5\). Then
 
 \end{example}
 
-\phantomsection\label{Corollary-4.8}
+\phantomsection\label{invdet}
 \begin{fbxSimple}{Corollary}{Corollary 4.8}{}
-\phantomsection\label{Corollary-4.8}
+\phantomsection\label{invdet}
 The matrix \(A\) has an inverse if, and only if,
 \(\left| A\right| \neq 0.\)
 
@@ -3880,7 +3887,7 @@ is a singular matrix).
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note:}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note:}, bottomrule=.15mm, coltitle=black]
 
 Various authors define non-singular matrices to be either
 
@@ -4097,6 +4104,102 @@ d & -b \\
 \end{aligned}\]
 
 \end{example}
+
+\section{Inverse Matrix theorem}\label{inverse-matrix-theorem}
+
+The following theorem combines a number of topics, inverse matrices,
+determinants, range, and nullspace.
+
+\phantomsection\label{invmatrixthm}
+\begin{fbxSimple}{Theorem}{Theorem 4.12: }{Inverse Matrix theorem}
+\phantomsection\label{invmatrixthm}
+
+The following statements are equivalent for a \(n \times n\) matrix
+\({\rm A}\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  the matrix \({\rm A}\) has an inverse
+\item
+  the determinant of \({\rm A}\) is non-zero
+\item
+  the columns of \({\rm A}\) are linearly independent
+\item
+  the range of \({\rm A}\) is \(\mathbb{R}^n\)
+\item
+  the rank of \({\rm A}\) is \(n\)
+\item
+  the nullspace of \({\rm A}\) is \(\{\vec{0} \}\)
+\item
+  the equation \({\rm A}\vec{x}= \vec{0}\) has only the trivial solution
+  \(\vec{x}=\vec{0}\)
+\item
+  the nullity of \({\rm A}\) is \(0\)
+\item
+  the equation \({\rm A}\vec{x}= \vec{b}\) has a unique solution for any
+  \(\vec{b} \in \mathbb{R}^n\)
+\item
+  the mapping \(\vec{x} \rightarrow \vec{y} = {\rm A}\vec{x}\) is
+  one-to-one
+\item
+  the transpose of \({\rm A}\) is invertible
+\item
+  the rows of \({\rm A}\) are linearly independent
+\end{enumerate}
+
+\end{fbxSimple}
+
+\phantomsection\label{Proofux2a-4.11}
+\begin{fbx}{Proof}{Proof}{}
+\phantomsection\label{Proof*-4.11}
+
+\begin{itemize}
+\tightlist
+\item
+  \(1) \Leftrightarrow 2):\) Corollary \hyperref[invdet]{4.8}.
+\item
+  \(2) \Leftrightarrow 3):\) Definition of a determinant as the volume
+  spanned by \(n\) (column vectors).
+\item
+  \(3) \Leftrightarrow 4):\) \(n\) linearly independent vectors in
+  \(\mathbb{R}^n\) span \(\mathbb{R}^n\) (Corollary
+  \hyperref[nvectorsspanrn]{2.11})
+\item
+  \(4) \Leftrightarrow 5):\) Definition of rank as the dimension of the
+  range (\(\Rightarrow\)). For the reverse (\(\Leftarrow\)) note that
+  rank = n means ther exists a basis for the space with \(n\) elements.
+\item
+  \(5) \Leftrightarrow 6):\) The rank theorem
+  \hyperref[ranktheorem]{3.19}.
+\item
+  \(6) \Leftrightarrow 7):\) Definition of the nullspace
+\item
+  \(7) \Leftrightarrow 8):\) Definition of nullity as the dimension of
+  the nullspace. Vice versa if the dimension of the nullspace is zero,
+  then the nullspace must consist of \(\{0 \}\), as the zero-vector is
+  always in the nullspace.
+\item
+  \(8) \Leftrightarrow 9):\) We know from 4) that the range is the whole
+  of \(\mathbb{R}^n\) and if the solutions were not unique then there
+  would be non-trivial solutions in the nullspace. (assume two different
+  \(\vec{x}\) map to the same \(\vec{b}\): \({\rm A}\vec{x}_1= \vec{b}\)
+  and \({\rm A}\vec{x}_2= \vec{b}\) then
+  \({\rm A}(\vec{x}_1  -\vec{x}_2)= \vec{0}\) and
+  \((\vec{x}_1  -\vec{x}_2)\) would be a non-trivial vector in the
+  nullspace.
+\item
+  \(9) \Leftrightarrow 10):\) same statement.
+\item
+  \(10) \Leftrightarrow 11):\) The transpose has the same determinant as
+  \({\rm A}\) and we can then use the equivalence of 1) and 2).
+\item
+  \(11) \Leftrightarrow 12):\) Statement 3) for the transpose, together
+  with 11).
+\end{itemize}
+
+\end{fbx}
 
 \chapter{Eigenvalues and
 Eigenvectors}\label{eigenvalues-and-eigenvectors}
@@ -4533,6 +4636,53 @@ independent.~◻
 
 \end{fbx}
 
+\begin{example}[Coupled oscillators, normal
+modes]\protect\hypertarget{exm-}{}\label{exm-}
+
+Consider a system of two coupled oscillators connected by springs as
+shown in the figure.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=0.7\linewidth,height=\textheight,keepaspectratio]{coupledosc.png}
+
+}
+
+\caption{Coupled Oscillators}
+
+\end{figure}%
+
+We can write down a system of equations for the dynamics of these two
+oscillators: \[ m \ddot{x_1} = - k x_1 + k (x_2-x_1) \]
+\[ m \ddot{x_x} = - k (x_2 -x_1) - k x_2 \] We can write this as a
+vector equation for the vector
+\[\vec{x} =\begin{pmatrix} x_1 \\ x_2 \end{pmatrix} \]
+
+\[ m \ddot{\vec{x}} = \begin{pmatrix} -2 k & k \\ k & -2k  \end{pmatrix} \vec{x}\]
+
+If we are looking for the normal modes of the system, we are looking of
+harmonic oscillations with a single frequency. So we assume
+
+\[\vec{x} = \begin{pmatrix} x_{10} \\ x_{20} \end{pmatrix} e^{i \omega t} \quad \ddot{\vec{x}} = - \omega^2 \begin{pmatrix} x_{10} \\ x_{20} \end{pmatrix} e^{i \omega t}\]
+Substituting in the vector equation above leads to an eigenvalue problem
+\[ \Rightarrow - m \omega^2 \vec{x_0} = \begin{pmatrix} -2 k & k \\ k & -2k  \end{pmatrix} \vec{x_0}\]
+\[ \Rightarrow  \begin{pmatrix} 2 k/m & - k/m \\ - k/m & 2k/m  \end{pmatrix} \vec{x_0} = \omega^2 \vec{x_0}  \]
+for the frequency \(\omega\). The eigenvalues and eigenvectors of the
+matrix are\\
+\[ \lambda_1 = 3 k/m \quad \vec{x_0} = \begin{pmatrix} -1\\ 1 \end{pmatrix}, \]
+and
+\[ \lambda_1 = k/m \quad \vec{x_0} = \begin{pmatrix} 1\\ 1 \end{pmatrix}, \]
+corresponding to an oscillation with frequency \(\omega = \sqrt{3k/m}\)
+where the two oscillators are 180 degree out of phase, and an
+oscillation with frequency \(\omega = \sqrt{k/m}\) where the oscillators
+are in phase.
+
+Other solutions for the system can now be obtained as a linear
+combination of these two modes. The modes are a basis of the solution
+space.
+
+\end{example}
+
 \section{Similarity and
 Diagonalisation}\label{similarity-and-diagonalisation}
 
@@ -4560,7 +4710,7 @@ such that \(P^{-1}AP = B\). If \(A\) is similar to \(B\), we write
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomrule=.15mm, coltitle=black]
 
 If \(A \sim B\), we can write, equivalently, that \(A = PBP^{-1}\) or
 \(AP = PB\). The matrix \(P\) depends on \(A\) and \(B\). It is not
@@ -4755,7 +4905,7 @@ then \(P\) is invertible. Furthermore,
 
 \end{fbx}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, toprule=.15mm, colback=white, colframe=quarto-callout-note-color-frame, breakable, opacitybacktitle=0.6, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, toptitle=1mm, bottomrule=.15mm, bottomtitle=1mm, arc=.35mm, coltitle=black, leftrule=.75mm, opacityback=0, rightrule=.15mm, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, opacitybacktitle=0.6, arc=.35mm, toptitle=1mm, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, rightrule=.15mm, left=2mm, leftrule=.75mm, colframe=quarto-callout-note-color-frame, breakable, opacityback=0, colback=white, bottomtitle=1mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomrule=.15mm, coltitle=black]
 
 Eigenvectors can be placed into the columns of \(P\) in any order.
 However, the eigenvalues will come up on the diagonal of \(D\) in the

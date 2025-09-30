@@ -814,7 +814,8 @@ The following statements are equivalent for a $n \times n$ matrix ${\rm A}$:
 - $5) \Leftrightarrow 6):$ The rank theorem \ref{ranktheorem}. 
 - $6) \Leftrightarrow 7):$ Definition of the nullspace
 - $7) \Leftrightarrow 8):$ Definition of nullity as the dimension of the nullspace. Vice versa if the dimension of the nullspace is zero, then the nullspace must consist of $\{0 \}$, as the zero-vector is always in the nullspace.
-- $8) \Leftrightarrow 9):$ We know from 4) that the range is the whole of $\mathbb{R}^n$ and if the solutions were not unique then there would be non-trivial solutions in the nullspace. (assume two different $\vec{x}} map to the same $\vec{b}$: ${\rm A}\vec{x}_1= \vec{b}$ and ${\rm A}\vec{x}_2= \vec{b}$ then ${\rm A}(\vec{x}_1  -\vec{x}_2)= \vec{0}$ and $(\vec{x}_1  -\vec{x}_2)$ would be a non-trivial vector in the nullspace.
+- $8) \Leftrightarrow 9):$ We know from 4) that the range is the whole of $\mathbb{R}^n$ and if the solutions were not unique then there would be non-trivial solutions in the nullspace. (assume two different 
+ $\vec{x}$ map to the same $\vec{b}$: ${\rm A}\vec{x}_1= \vec{b}$ and ${\rm A}\vec{x}_2= \vec{b}$ then ${\rm A}(\vec{x}_1  -\vec{x}_2)= \vec{0}$ and $(\vec{x}_1  -\vec{x}_2)$ would be a non-trivial vector in the nullspace.
 - $9) \Leftrightarrow 10):$ same statement.
 - $10) \Leftrightarrow 11):$ The transpose has the same determinant as ${\rm A}$ and we can then use the equivalence of 1) and 2).
 - $11) \Leftrightarrow 12):$ Statement 3) for the transpose, together with 11).
