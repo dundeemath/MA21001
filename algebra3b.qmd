@@ -851,4 +851,171 @@ ${\vec v}_{1}=(1,0,0,1)^{T},{\vec v}_{2}=(0,1,0,1)^{T},{\vec v}
 _{3}=(0,0,1,1)^{T}$.
 :::
 
+## Scalar- and Inner  Product
 
+::: {.Definition #scalarproduct}
+## scalar product, Euclidean product, inner product, dot product
+
+For any two vectors $\vec{v}$, $\vec{w} \in \mathbb{R}^{n}$ with components
+$$  \vec{v}= \begin{pmatrix} v_{1}\\v_{2}\\ \vdots\\ v_{n} \end{pmatrix}  \quad \vec{w}=\begin{pmatrix}  w_{1}\\ w_{2}\\ \vdots\\ w_{n} \end{pmatrix} $$
+we define the inner or scalar product as 
+$$ \vec{v} \cdot \vec{w} = v_{1}w_{1}+ v_{2}w_{2}+..+v_{n}w_{n}  \in \mathbb{R}. $$
+:::
+
+Usually we use as a symbol for the scalar product the dot. Sometimes the notation $\langle \vec{v},\vec{w}\rangle$ is used as well.
+
+::: {.Corollary #scalarproduct}
+If $\vec{u}$, $\vec{v}$, $\vec{w}$ are vectors in $\mathbb{R}^{n}$, and $\alpha$ is scalar, then
+
+a)  $$\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}$$
+
+b)  $$\vec{u}\cdot(\vec{v}+\vec{w})=\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}$$
+
+c)  $$\alpha(\vec{u}\cdot\vec{v})=\alpha\vec{u}\cdot\vec{v}=\vec{u}\cdot(\alpha\vec{v})$$
+:::
+
+::: {.Proof}
+
+(a)
+
+$$\begin{aligned}
+\vec{u}\cdot\vec{v}& = u_{1}v_{1}+u_{2}v_{2}+\cdots+u_{n}v_{n}\\
+& = v_{1}u_{1}+v_{2}u_{2}+\cdots+v_{n}n_{n}\\
+& = \vec{v}\cdot\vec{u}
+\end{aligned}$$
+
+(b)
+
+$$\begin{aligned}
+\vec{u}\cdot(\vec{v}+\vec{w}) & = u_{1}(v_{1}+w_{1})+\cdots+u_{n}(v_{n}+w_{n})\\
+& =  (u_{1}v_{1}+\cdots+u_{n}v_{n})+(u_{1}w_{1}+\cdots+u_{n}w_{n})\\
+& = \vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}
+\end{aligned}$$
+
+(c)
+
+$$\begin{aligned}
+\alpha(\vec{u}\cdot\vec{v}) & = \alpha(u_{1}v_{1}+u_{2}v_{2}+\cdots+u_{n}v_{n})\\
+& = \alpha u_{1}v_{1}+\alpha u_{2}v_{2}+\cdots+\alpha u_{n}v_{n}\\
+& = (\alpha\vec{u})\cdot\vec{v}
+\end{aligned}$$
+We also have
+
+$$\begin{aligned}
+\alpha u_{1}v_{1}+\alpha u_{2}v_{2}+\cdots+\alpha u_{n}v_{n}& =  u_{1}\alpha v_{1}+u_{2}\alpha v_{2}+\cdots+u_{n}\alpha v_{n}\\
+& = \vec{u}\cdot(\alpha\vec{v})
+\end{aligned}$$
+:::
+
+We note that if we use for both entries of the scalar product the same vector then we get
+
+::: {.Definition}
+The norm (or length) of a vector $\vec{v} \in \mathbb{R}^{n}$ is defined as 
+$$\|\vec{v}\|=\sqrt{\vec{v}\cdot \vec{v}} = \sqrt{v_{1}^{2}+ v_{2}^{2} +...+v_{n}^{2}} \ge 0 $$
+::: 
+
+Note that this definition matches with the length of vectors in $\mathbb{R}^{2}$ and $\mathbb{R}^{3}$ as calculated by the Pythagorean theorem. 
+
+
+::: {.Corollary}
+The scalar product is related to the angle between the vectors by
+$$ \vec{v} \cdot \vec{w}  = \|\vec{v} \| \ \|\vec{w}\| \cos{\alpha} .$$
+:::
+
+::: {.Proof}
+Let $\vec{v}$, $\vec{w}$ be non-zero vectors. Then three vectors $\vec{v}$, $\vec{w}$ and $\vec{v}-\vec{w}$ give three sides of a triangle, see figure \ref{fig:pyth}. 
+Therefore by the Pythagorean theorem we have
+$$\begin{aligned}
+\|\vec{v}-\vec{w}\|^{2} & =  a^2+b^2 = ((\|\vec{v}\|-\|\vec{w}\|\cos\alpha)^{2}+ (\|\vec{w}\| \sin\alpha)^{2}) \\
+& =  \|\vec{v}\|^{2}\ -2\|\vec{v}\|\|\vec{w}\|\cos\alpha+\|\vec{w}\|^{2}\cos^{2}\alpha+\|\vec{w}\|^{2}\sin^{2}\alpha\\
+& = \|\vec{v}\|^{2} +\|\vec{w}\|^{2}-2\|\vec{v}\|\|\vec{w}\|\cos\alpha 
+\end{aligned} $$
+
+![Pythagoras](pythagoras.png){width=50%}
+
+On the other hand the definition of a length gives us 
+$$\begin{aligned}
+\|\vec{v}-\vec{w}\|^{2} & =  (\vec{v}-\vec{w})\cdot  (\vec{v}-\vec{w}) \\
+& = \vec{v}\cdot \vec{v} - 2 \vec{w}\cdot \vec{v} +  \vec{w}\cdot \vec{w} 
+\end{aligned} $$
+Comparing the two results we find  $\vec{v}\cdot\vec{w}=\|\vec{v}\|\|\vec{w}\|\cos\alpha$.
+:::
+
+An immediate consequence is that for two non-vanishing vectors ($\|\vec{v}\|, \|\vec{w}\| \neq 0$) we have
+$$ \vec{v} \cdot \vec{w}  = 0 \Leftrightarrow  \vec{v} \perp \vec{w},  $$ 
+i.e.~the scalar product vanishes if and only if they are perpendicular to each other.
+
+
+::: {.Corollary  #projec}
+If $\vec{n}$ is a unit vector, i.e.~$\| \vec{n} \| =1$, then $\vec{n}\cdot\vec{v}$ is the length of the projection of $\vec{v}$ onto the direction of $\vec{n}$. If the angle between $\vec{n}$ and $\vec{v}$ is greater than $\pi/2$ it is minus the length of the projection.
+:::
+
+::: {.Proof}
+$$ \vec{n}\cdot\vec{v}= \underbrace{ \|\vec{n} \|}_{=1} \ \|\vec{v}\| \cos{\alpha} = \ \|\vec{v}\| \cos{\alpha}  $$
+:::
+
+::: {#fig-projection layout-ncol=2}
+
+![$\alpha < \pi/2$](alg6.png)
+
+![$\alpha > \pi/2$](alg7.png)
+
+The projection $\vec{n}\cdot\vec{v}$ of a vector $\vec{v}$ onto a unit vector $\vec{n}$ for an angle $\alpha < \pi/2$ and $\alpha > \pi/2$ 
+:::
+
+
+The distance between two points $\vec{u}$ and $\vec{v}$ is in general  given by the norm of $\vec{u}-\vec{v}$:  
+$$\| \vec{u}-\vec{v}\| = \| \vec{v}-\vec{u} \|.$$ This is a meaningful definition since it is the shortest distance between the points with the position vectors $\vec{v}$ and $\vec{u}$ is the length of the vector between the two points. This is stated by the triangle inequality:
+
+::: {.Corollary}
+For any two vectors $\vec{x}$ and $\vec{y}$ (of a normed vector space)  we have the triangle inequality:
+$$\| \vec{x} +\vec{y}\| \le  \|\vec{x}\| + \| \vec{y} \| .$$
+:::
+
+::: {.Proof}
+$$\begin{aligned}
+\| \vec{x} +\vec{y}\|^{2} & =  (\vec{x}+\vec{y})\cdot(\vec{x}+\vec{y})\\
+& = \vec{x}\cdot \vec{x}+\vec{y} \cdot \vec{y} + 2 \vec{x}\cdot \vec{y} \\
+  & =    \| \vec{x} \|^{2} + \| \vec{y}\|^{2} + 2 \|\vec{x} \| \| \vec{y}\| \cos(\alpha)  \\
+  & \le   \| \vec{x} \|^2 + \| \vec{y}\|^2 + 2 \|\vec{x} \| \| \vec{y}\| \\
+  & =  ( \| \vec{x} \| + \| \vec{y}\|)^{2}  \\
+  \Rightarrow  \| \vec{x} +\vec{y}\| &\le  \| \vec{x} \| + \| \vec{y}\|
+\end{aligned}$$
+:::
+
+
+One can use the key properties of the Scalar Product (\ref{scalarproduct}) as a basis to define a generalisation of a scalar product, called innner product.  
+
+::: {.Definition}
+## Inner Product
+
+The Inner product between two vectors in the vector space $V$ over the field $\mathbb{C}$ (or $\mathbb{R}$) is a
+map 
+$$\begin{aligned}
+\langle·, ·\rangle   : \quad & V \times V \rightarrow \mathbb{C} \\
+&  (\vec{u}, \vec{v}) \rightarrow  \langle \vec{u}, \vec{v}\rangle   
+\end{aligned}$$
+that satisfies the following requirements  $\forall \vec{u}, \vec{v}, \vec{w} \in V$ and $a, b \in \mathbb{C}$:
+
+(1) $\langle \vec{u}, \vec{v} \rangle = \overline{\langle \vec{v}, \vec{u}\rangle}$ \quad (symmetric up to complex conjugation)
+
+(2) $\langle a \vec{u} + b \vec{v}, \vec{w} \rangle = a \langle \vec{u}, \vec{w}\rangle   + b \langle \vec{v}, \vec{w}\rangle$  \quad (linearity)
+
+(3) $\langle \vec{v}, \vec{v} \rangle \ge 0$. $\langle \vec{v}, \vec{v} \rangle = 0$ if and only if $\vec{v} = 0$. \quad (positive definiteness)
+:::
+
+::: {.callout-note}
+## Remark
+The third property implies that the inner prodoct of a vector with itself is real and non-negative. This allows us to define the norm of a vector in the same way as before 
+$$\|\vec{v}\| = \sqrt{\langle\vec{v},\vec{v} \rangle}$$ and the norm becomes a real non-negative number. 
+:::
+
+::: {#exm-    }
+ The space of polynomials of degree $n$, $P_n(t)$, defined on
+the interval $[-1, 1] \subset \mathbb{R}$ can be given an inner product 
+
+$$\begin{aligned} 
+ \langle ·, · \rangle: \quad & P_n (t) \times P_n (t) \rightarrow \mathbb{R} \\
+& (p (t) , q (t)) \longrightarrow  \langle p, q \rangle = \int_{-1}^1 p (t) q (t)\,dt. 
+\end{aligned}$$
+:::

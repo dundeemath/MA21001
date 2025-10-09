@@ -120,30 +120,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Conjecture {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Definition {
-  --color1: #d999d3;
-  --color2: #a01793;
-}
-.Corollary {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Feature {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Lemma {
-  --color1: #948bde;
-  --color2: #584eab;
-}
 .Solution {
   --color1: #c0c0c0;
   --color2: #808080;
@@ -152,13 +128,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #948bde;
   --color2: #584eab;
 }
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
+}
 .Proof {
   --color1: #c0c0c0;
   --color2: #808080;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Definition {
+  --color1: #d999d3;
+  --color2: #a01793;
+}
+.Lemma {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Conjecture {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Feature {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.Corollary {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 </style>
 
@@ -481,6 +481,7 @@ window.Quarto = {
   <li><a href="#linear-independence" id="toc-linear-independence" class="nav-link" data-scroll-target="#linear-independence"><span class="header-section-number">2.3</span> Linear independence</a></li>
   <li><a href="#span-and-basis" id="toc-span-and-basis" class="nav-link" data-scroll-target="#span-and-basis"><span class="header-section-number">2.4</span> Span and Basis</a></li>
   <li><a href="#subspaces" id="toc-subspaces" class="nav-link" data-scroll-target="#subspaces"><span class="header-section-number">2.5</span> Subspaces</a></li>
+  <li><a href="#scalar--and-inner-product" id="toc-scalar--and-inner-product" class="nav-link" data-scroll-target="#scalar--and-inner-product"><span class="header-section-number">2.6</span> Scalar- and Inner Product</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dundeemath/MA21001/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -931,6 +932,171 @@ b &amp; b
 </ol>
 <p>For method (b), we have to find vectors which span <span class="math inline">W</span>. Note that the set <span class="math inline">W</span> has three free parameters, which can be used to represent an arbitrary element of <span class="math inline">W</span>: <span class="math display">\scriptscriptstyle \begin{pmatrix}   x\\y\\z\\x+y+z  \end{pmatrix} \textstyle = x \scriptscriptstyle \begin{pmatrix}   1\\0\\0\\1  \end{pmatrix} \textstyle +y \scriptscriptstyle \begin{pmatrix}   0\\1\\0\\1  \end{pmatrix} \textstyle + z \scriptscriptstyle \begin{pmatrix}   0\\0\\1\\1  \end{pmatrix} \textstyle</span> Hence <span class="math inline">W = {\rm span}((1,0,0,1)^{T}, (0,1,0,1)^{T}, (0,0,1,1)^{T})</span>. This second approach has the advantage that the spanning set can also be used to find a basis for the subspace. Indeed, the three vectors are also linearly independent (prove!), and we obtain the basis <span class="math inline">{\vec v}_{1}=(1,0,0,1)^{T},{\vec v}_{2}=(0,1,0,1)^{T},{\vec v}
 _{3}=(0,0,1,1)^{T}</span>.</p>
+</div>
+</section>
+<section id="scalar--and-inner-product" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="scalar--and-inner-product"><span class="header-section-number">2.6</span> Scalar- and Inner Product</h2>
+<div id="scalarproduct" class="Definition" title="scalar product, Euclidean product, inner product, dot product">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2.15: </strong>scalar product, Euclidean product, inner product, dot product</summary><div>For any two vectors <span class="math inline">\vec{v}</span>, <span class="math inline">\vec{w} \in \mathbb{R}^{n}</span> with components <span class="math display">  \vec{v}= \begin{pmatrix} v_{1}\\v_{2}\\ \vdots\\ v_{n} \end{pmatrix}  \quad \vec{w}=\begin{pmatrix}  w_{1}\\ w_{2}\\ \vdots\\ w_{n} \end{pmatrix} </span> we define the inner or scalar product as <span class="math display"> \vec{v} \cdot \vec{w} = v_{1}w_{1}+ v_{2}w_{2}+..+v_{n}w_{n}  \in \mathbb{R}. </span><p></p>
+</div></details>
+</div>
+<p>Usually we use as a symbol for the scalar product the dot. Sometimes the notation <span class="math inline">\langle \vec{v},\vec{w}\rangle</span> is used as well.</p>
+<div id="scalarproduct" class="Corollary">
+<details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 2.16</strong></summary><div>
+<p>If <span class="math inline">\vec{u}</span>, <span class="math inline">\vec{v}</span>, <span class="math inline">\vec{w}</span> are vectors in <span class="math inline">\mathbb{R}^{n}</span>, and <span class="math inline">\alpha</span> is scalar, then</p>
+<ol type="a">
+<li><p><span class="math display">\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}</span></p></li>
+<li><p><span class="math display">\vec{u}\cdot(\vec{v}+\vec{w})=\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}</span></p></li>
+<li><p><span class="math display">\alpha(\vec{u}\cdot\vec{v})=\alpha\vec{u}\cdot\vec{v}=\vec{u}\cdot(\alpha\vec{v})</span></p></li>
+</ol>
+</div></details>
+</div>
+<div id="Proof*-2.7" class="Proof">
+<details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>
+<ol type="a">
+<li></li>
+</ol>
+<p><span class="math display">\begin{aligned}
+\vec{u}\cdot\vec{v}&amp; = u_{1}v_{1}+u_{2}v_{2}+\cdots+u_{n}v_{n}\\
+&amp; = v_{1}u_{1}+v_{2}u_{2}+\cdots+v_{n}n_{n}\\
+&amp; = \vec{v}\cdot\vec{u}
+\end{aligned}</span></p>
+<ol start="2" type="a">
+<li></li>
+</ol>
+<p><span class="math display">\begin{aligned}
+\vec{u}\cdot(\vec{v}+\vec{w}) &amp; = u_{1}(v_{1}+w_{1})+\cdots+u_{n}(v_{n}+w_{n})\\
+&amp; =  (u_{1}v_{1}+\cdots+u_{n}v_{n})+(u_{1}w_{1}+\cdots+u_{n}w_{n})\\
+&amp; = \vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}
+\end{aligned}</span></p>
+<ol start="3" type="a">
+<li></li>
+</ol>
+<p><span class="math display">\begin{aligned}
+\alpha(\vec{u}\cdot\vec{v}) &amp; = \alpha(u_{1}v_{1}+u_{2}v_{2}+\cdots+u_{n}v_{n})\\
+&amp; = \alpha u_{1}v_{1}+\alpha u_{2}v_{2}+\cdots+\alpha u_{n}v_{n}\\
+&amp; = (\alpha\vec{u})\cdot\vec{v}
+\end{aligned}</span> We also have</p>
+<p><span class="math display">\begin{aligned}
+\alpha u_{1}v_{1}+\alpha u_{2}v_{2}+\cdots+\alpha u_{n}v_{n}&amp; =  u_{1}\alpha v_{1}+u_{2}\alpha v_{2}+\cdots+u_{n}\alpha v_{n}\\
+&amp; = \vec{u}\cdot(\alpha\vec{v})
+\end{aligned}</span></p>
+</div></details>
+</div>
+<p>We note that if we use for both entries of the scalar product the same vector then we get</p>
+<div id="Definition-2.17" class="Definition">
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2.17</strong></summary><div>The norm (or length) of a vector <span class="math inline">\vec{v} \in \mathbb{R}^{n}</span> is defined as <span class="math display">\|\vec{v}\|=\sqrt{\vec{v}\cdot \vec{v}} = \sqrt{v_{1}^{2}+ v_{2}^{2} +...+v_{n}^{2}} \ge 0 </span><p></p>
+</div></details>
+</div>
+<p>Note that this definition matches with the length of vectors in <span class="math inline">\mathbb{R}^{2}</span> and <span class="math inline">\mathbb{R}^{3}</span> as calculated by the Pythagorean theorem.</p>
+<div id="Corollary-2.18" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 2.18</strong></summary><div>The scalar product is related to the angle between the vectors by <span class="math display"> \vec{v} \cdot \vec{w}  = \|\vec{v} \| \ \|\vec{w}\| \cos{\alpha} .</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-2.8" class="Proof">
+<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\vec{v}</span>, <span class="math inline">\vec{w}</span> be non-zero vectors. Then three vectors <span class="math inline">\vec{v}</span>, <span class="math inline">\vec{w}</span> and <span class="math inline">\vec{v}-\vec{w}</span> give three sides of a triangle, see figure . Therefore by the Pythagorean theorem we have <span class="math display">\begin{aligned}
+\|\vec{v}-\vec{w}\|^{2} &amp; =  a^2+b^2 = ((\|\vec{v}\|-\|\vec{w}\|\cos\alpha)^{2}+ (\|\vec{w}\| \sin\alpha)^{2}) \\
+&amp; =  \|\vec{v}\|^{2}\ -2\|\vec{v}\|\|\vec{w}\|\cos\alpha+\|\vec{w}\|^{2}\cos^{2}\alpha+\|\vec{w}\|^{2}\sin^{2}\alpha\\
+&amp; = \|\vec{v}\|^{2} +\|\vec{w}\|^{2}-2\|\vec{v}\|\|\vec{w}\|\cos\alpha
+\end{aligned} </span><p></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pythagoras.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Pythagoras</figcaption>
+</figure>
+</div>
+<p>On the other hand the definition of a length gives us <span class="math display">\begin{aligned}
+\|\vec{v}-\vec{w}\|^{2} &amp; =  (\vec{v}-\vec{w})\cdot  (\vec{v}-\vec{w}) \\
+&amp; = \vec{v}\cdot \vec{v} - 2 \vec{w}\cdot \vec{v} +  \vec{w}\cdot \vec{w}
+\end{aligned} </span> Comparing the two results we find <span class="math inline">\vec{v}\cdot\vec{w}=\|\vec{v}\|\|\vec{w}\|\cos\alpha</span>.</p>
+</div></details>
+</div>
+<p>An immediate consequence is that for two non-vanishing vectors (<span class="math inline">\|\vec{v}\|, \|\vec{w}\| \neq 0</span>) we have <span class="math display"> \vec{v} \cdot \vec{w}  = 0 \Leftrightarrow  \vec{v} \perp \vec{w},  </span> i.e.~the scalar product vanishes if and only if they are perpendicular to each other.</p>
+<div id="projec" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 2.19</strong></summary><div>If <span class="math inline">\vec{n}</span> is a unit vector, i.e.~<span class="math inline">\| \vec{n} \| =1</span>, then <span class="math inline">\vec{n}\cdot\vec{v}</span> is the length of the projection of <span class="math inline">\vec{v}</span> onto the direction of <span class="math inline">\vec{n}</span>. If the angle between <span class="math inline">\vec{n}</span> and <span class="math inline">\vec{v}</span> is greater than <span class="math inline">\pi/2</span> it is minus the length of the projection.<p></p>
+</div></details>
+</div>
+<div id="Proof*-2.9" class="Proof">
+<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div><span class="math display"> \vec{n}\cdot\vec{v}= \underbrace{ \|\vec{n} \|}_{=1} \ \|\vec{v}\| \cos{\alpha} = \ \|\vec{v}\| \cos{\alpha}  </span><p></p>
+</div></details>
+</div>
+<div id="fig-projection" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-projection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="alg6.png" class="img-fluid figure-img"></p>
+<figcaption><span class="math inline">\alpha &lt; \pi/2</span></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="alg7.png" class="img-fluid figure-img"></p>
+<figcaption><span class="math inline">\alpha &gt; \pi/2</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-projection-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: The projection <span class="math inline">\vec{n}\cdot\vec{v}</span> of a vector <span class="math inline">\vec{v}</span> onto a unit vector <span class="math inline">\vec{n}</span> for an angle <span class="math inline">\alpha &lt; \pi/2</span> and <span class="math inline">\alpha &gt; \pi/2</span>
+</figcaption>
+</figure>
+</div>
+<p>The distance between two points <span class="math inline">\vec{u}</span> and <span class="math inline">\vec{v}</span> is in general given by the norm of <span class="math inline">\vec{u}-\vec{v}</span>:<br>
+<span class="math display">\| \vec{u}-\vec{v}\| = \| \vec{v}-\vec{u} \|.</span> This is a meaningful definition since it is the shortest distance between the points with the position vectors <span class="math inline">\vec{v}</span> and <span class="math inline">\vec{u}</span> is the length of the vector between the two points. This is stated by the triangle inequality:</p>
+<div id="Corollary-2.20" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 2.20</strong></summary><div>For any two vectors <span class="math inline">\vec{x}</span> and <span class="math inline">\vec{y}</span> (of a normed vector space) we have the triangle inequality: <span class="math display">\| \vec{x} +\vec{y}\| \le  \|\vec{x}\| + \| \vec{y} \| .</span><p></p>
+</div></details>
+</div>
+<div id="Proof*-2.10" class="Proof">
+<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div><span class="math display">\begin{aligned}
+\| \vec{x} +\vec{y}\|^{2} &amp; =  (\vec{x}+\vec{y})\cdot(\vec{x}+\vec{y})\\
+&amp; = \vec{x}\cdot \vec{x}+\vec{y} \cdot \vec{y} + 2 \vec{x}\cdot \vec{y} \\
+  &amp; =    \| \vec{x} \|^{2} + \| \vec{y}\|^{2} + 2 \|\vec{x} \| \| \vec{y}\| \cos(\alpha)  \\
+  &amp; \le   \| \vec{x} \|^2 + \| \vec{y}\|^2 + 2 \|\vec{x} \| \| \vec{y}\| \\
+  &amp; =  ( \| \vec{x} \| + \| \vec{y}\|)^{2}  \\
+  \Rightarrow  \| \vec{x} +\vec{y}\| &amp;\le  \| \vec{x} \| + \| \vec{y}\|
+\end{aligned}</span><p></p>
+</div></details>
+</div>
+<p>One can use the key properties of the Scalar Product (<a href="algebra3b.html#scalarproduct">2.16</a>) as a basis to define a generalisation of a scalar product, called innner product.</p>
+<div id="inner-product" class="Definition" title="Inner Product">
+<details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 2.21: </strong>Inner Product</summary><div>
+<p>The Inner product between two vectors in the vector space <span class="math inline">V</span> over the field <span class="math inline">\mathbb{C}</span> (or <span class="math inline">\mathbb{R}</span>) is a map <span class="math display">\begin{aligned}
+\langle·, ·\rangle   : \quad &amp; V \times V \rightarrow \mathbb{C} \\
+&amp;  (\vec{u}, \vec{v}) \rightarrow  \langle \vec{u}, \vec{v}\rangle   
+\end{aligned}</span> that satisfies the following requirements <span class="math inline">\forall \vec{u}, \vec{v}, \vec{w} \in V</span> and <span class="math inline">a, b \in \mathbb{C}</span>:</p>
+<ol type="1">
+<li><p><span class="math inline">\langle \vec{u}, \vec{v} \rangle = \overline{\langle \vec{v}, \vec{u}\rangle}</span> (symmetric up to complex conjugation)</p></li>
+<li><p><span class="math inline">\langle a \vec{u} + b \vec{v}, \vec{w} \rangle = a \langle \vec{u}, \vec{w}\rangle   + b \langle \vec{v}, \vec{w}\rangle</span> (linearity)</p></li>
+<li><p><span class="math inline">\langle \vec{v}, \vec{v} \rangle \ge 0</span>. <span class="math inline">\langle \vec{v}, \vec{v} \rangle = 0</span> if and only if <span class="math inline">\vec{v} = 0</span>. (positive definiteness)</p></li>
+</ol>
+</div></details>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Remark
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The third property implies that the inner prodoct of a vector with itself is real and non-negative. This allows us to define the norm of a vector in the same way as before <span class="math display">\|\vec{v}\| = \sqrt{\langle\vec{v},\vec{v} \rangle}</span> and the norm becomes a real non-negative number.</p>
+</div>
+</div>
+<div id="exm-" class="theorem example">
+<p><span class="theorem-title"><strong>Example 2.38</strong></span> The space of polynomials of degree <span class="math inline">n</span>, <span class="math inline">P_n(t)</span>, defined on the interval <span class="math inline">[-1, 1] \subset \mathbb{R}</span> can be given an inner product</p>
+<p><span class="math display">\begin{aligned}
+\langle ·, · \rangle: \quad &amp; P_n (t) \times P_n (t) \rightarrow \mathbb{R} \\
+&amp; (p (t) , q (t)) \longrightarrow  \langle p, q \rangle = \int_{-1}^1 p (t) q (t)\,dt.
+\end{aligned}</span></p>
 </div>
 
 
@@ -2266,7 +2432,175 @@ _{3}=(0,0,1,1)^{T}</span>.</p>
 <span id="cb1-850"><a href="#cb1-850" aria-hidden="true" tabindex="-1"></a>${\vec v}_{1}=(1,0,0,1)^{T},{\vec v}_{2}=(0,1,0,1)^{T},{\vec v}</span>
 <span id="cb1-851"><a href="#cb1-851" aria-hidden="true" tabindex="-1"></a>_{3}=(0,0,1,1)^{T}$.</span>
 <span id="cb1-852"><a href="#cb1-852" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-853"><a href="#cb1-853" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-853"><a href="#cb1-853" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-854"><a href="#cb1-854" aria-hidden="true" tabindex="-1"></a><span class="fu">## Scalar- and Inner  Product</span></span>
+<span id="cb1-855"><a href="#cb1-855" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-856"><a href="#cb1-856" aria-hidden="true" tabindex="-1"></a>::: {.Definition #scalarproduct}</span>
+<span id="cb1-857"><a href="#cb1-857" aria-hidden="true" tabindex="-1"></a><span class="fu">## scalar product, Euclidean product, inner product, dot product</span></span>
+<span id="cb1-858"><a href="#cb1-858" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-859"><a href="#cb1-859" aria-hidden="true" tabindex="-1"></a>For any two vectors $\vec{v}$, $\vec{w} \in \mathbb{R}^{n}$ with components</span>
+<span id="cb1-860"><a href="#cb1-860" aria-hidden="true" tabindex="-1"></a>$$  \vec{v}= \begin{pmatrix} v_{1}<span class="sc">\\</span>v_{2}<span class="sc">\\</span> \vdots<span class="sc">\\</span> v_{n} \end{pmatrix}  \quad \vec{w}=\begin{pmatrix}  w_{1}<span class="sc">\\</span> w_{2}<span class="sc">\\</span> \vdots<span class="sc">\\</span> w_{n} \end{pmatrix} $$</span>
+<span id="cb1-861"><a href="#cb1-861" aria-hidden="true" tabindex="-1"></a>we define the inner or scalar product as </span>
+<span id="cb1-862"><a href="#cb1-862" aria-hidden="true" tabindex="-1"></a>$$ \vec{v} \cdot \vec{w} = v_{1}w_{1}+ v_{2}w_{2}+..+v_{n}w_{n}  \in \mathbb{R}. $$</span>
+<span id="cb1-863"><a href="#cb1-863" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-864"><a href="#cb1-864" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-865"><a href="#cb1-865" aria-hidden="true" tabindex="-1"></a>Usually we use as a symbol for the scalar product the dot. Sometimes the notation $\langle \vec{v},\vec{w}\rangle$ is used as well.</span>
+<span id="cb1-866"><a href="#cb1-866" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-867"><a href="#cb1-867" aria-hidden="true" tabindex="-1"></a>::: {.Corollary #scalarproduct}</span>
+<span id="cb1-868"><a href="#cb1-868" aria-hidden="true" tabindex="-1"></a>If $\vec{u}$, $\vec{v}$, $\vec{w}$ are vectors in $\mathbb{R}^{n}$, and $\alpha$ is scalar, then</span>
+<span id="cb1-869"><a href="#cb1-869" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-870"><a href="#cb1-870" aria-hidden="true" tabindex="-1"></a>a)  $$\vec{u}\cdot\vec{v}=\vec{v}\cdot\vec{u}$$</span>
+<span id="cb1-871"><a href="#cb1-871" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-872"><a href="#cb1-872" aria-hidden="true" tabindex="-1"></a>b)  $$\vec{u}\cdot(\vec{v}+\vec{w})=\vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}$$</span>
+<span id="cb1-873"><a href="#cb1-873" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-874"><a href="#cb1-874" aria-hidden="true" tabindex="-1"></a>c)  $$\alpha(\vec{u}\cdot\vec{v})=\alpha\vec{u}\cdot\vec{v}=\vec{u}\cdot(\alpha\vec{v})$$</span>
+<span id="cb1-875"><a href="#cb1-875" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-876"><a href="#cb1-876" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-877"><a href="#cb1-877" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-878"><a href="#cb1-878" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-879"><a href="#cb1-879" aria-hidden="true" tabindex="-1"></a>(a)</span>
+<span id="cb1-880"><a href="#cb1-880" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-881"><a href="#cb1-881" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
+<span id="cb1-882"><a href="#cb1-882" aria-hidden="true" tabindex="-1"></a>\vec{u}\cdot\vec{v}&amp; = u_{1}v_{1}+u_{2}v_{2}+\cdots+u_{n}v_{n}<span class="sc">\\</span></span>
+<span id="cb1-883"><a href="#cb1-883" aria-hidden="true" tabindex="-1"></a>&amp; = v_{1}u_{1}+v_{2}u_{2}+\cdots+v_{n}n_{n}<span class="sc">\\</span></span>
+<span id="cb1-884"><a href="#cb1-884" aria-hidden="true" tabindex="-1"></a>&amp; = \vec{v}\cdot\vec{u}</span>
+<span id="cb1-885"><a href="#cb1-885" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
+<span id="cb1-886"><a href="#cb1-886" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-887"><a href="#cb1-887" aria-hidden="true" tabindex="-1"></a>(b)</span>
+<span id="cb1-888"><a href="#cb1-888" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-889"><a href="#cb1-889" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
+<span id="cb1-890"><a href="#cb1-890" aria-hidden="true" tabindex="-1"></a>\vec{u}\cdot(\vec{v}+\vec{w}) &amp; = u_{1}(v_{1}+w_{1})+\cdots+u_{n}(v_{n}+w_{n})<span class="sc">\\</span></span>
+<span id="cb1-891"><a href="#cb1-891" aria-hidden="true" tabindex="-1"></a>&amp; =  (u_{1}v_{1}+\cdots+u_{n}v_{n})+(u_{1}w_{1}+\cdots+u_{n}w_{n})<span class="sc">\\</span></span>
+<span id="cb1-892"><a href="#cb1-892" aria-hidden="true" tabindex="-1"></a>&amp; = \vec{u}\cdot\vec{v}+\vec{u}\cdot\vec{w}</span>
+<span id="cb1-893"><a href="#cb1-893" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
+<span id="cb1-894"><a href="#cb1-894" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-895"><a href="#cb1-895" aria-hidden="true" tabindex="-1"></a>(c)</span>
+<span id="cb1-896"><a href="#cb1-896" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-897"><a href="#cb1-897" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
+<span id="cb1-898"><a href="#cb1-898" aria-hidden="true" tabindex="-1"></a>\alpha(\vec{u}\cdot\vec{v}) &amp; = \alpha(u_{1}v_{1}+u_{2}v_{2}+\cdots+u_{n}v_{n})<span class="sc">\\</span></span>
+<span id="cb1-899"><a href="#cb1-899" aria-hidden="true" tabindex="-1"></a>&amp; = \alpha u_{1}v_{1}+\alpha u_{2}v_{2}+\cdots+\alpha u_{n}v_{n}<span class="sc">\\</span></span>
+<span id="cb1-900"><a href="#cb1-900" aria-hidden="true" tabindex="-1"></a>&amp; = (\alpha\vec{u})\cdot\vec{v}</span>
+<span id="cb1-901"><a href="#cb1-901" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
+<span id="cb1-902"><a href="#cb1-902" aria-hidden="true" tabindex="-1"></a>We also have</span>
+<span id="cb1-903"><a href="#cb1-903" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-904"><a href="#cb1-904" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
+<span id="cb1-905"><a href="#cb1-905" aria-hidden="true" tabindex="-1"></a>\alpha u_{1}v_{1}+\alpha u_{2}v_{2}+\cdots+\alpha u_{n}v_{n}&amp; =  u_{1}\alpha v_{1}+u_{2}\alpha v_{2}+\cdots+u_{n}\alpha v_{n}<span class="sc">\\</span></span>
+<span id="cb1-906"><a href="#cb1-906" aria-hidden="true" tabindex="-1"></a>&amp; = \vec{u}\cdot(\alpha\vec{v})</span>
+<span id="cb1-907"><a href="#cb1-907" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
+<span id="cb1-908"><a href="#cb1-908" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-909"><a href="#cb1-909" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-910"><a href="#cb1-910" aria-hidden="true" tabindex="-1"></a>We note that if we use for both entries of the scalar product the same vector then we get</span>
+<span id="cb1-911"><a href="#cb1-911" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-912"><a href="#cb1-912" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
+<span id="cb1-913"><a href="#cb1-913" aria-hidden="true" tabindex="-1"></a>The norm (or length) of a vector $\vec{v} \in \mathbb{R}^{n}$ is defined as </span>
+<span id="cb1-914"><a href="#cb1-914" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\|</span>\vec{v}<span class="sc">\|</span>=\sqrt{\vec{v}\cdot \vec{v}} = \sqrt{v_{1}^{2}+ v_{2}^{2} +...+v_{n}^{2}} \ge 0 $$</span>
+<span id="cb1-915"><a href="#cb1-915" aria-hidden="true" tabindex="-1"></a>::: </span>
+<span id="cb1-916"><a href="#cb1-916" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-917"><a href="#cb1-917" aria-hidden="true" tabindex="-1"></a>Note that this definition matches with the length of vectors in $\mathbb{R}^{2}$ and $\mathbb{R}^{3}$ as calculated by the Pythagorean theorem. </span>
+<span id="cb1-918"><a href="#cb1-918" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-919"><a href="#cb1-919" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-920"><a href="#cb1-920" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
+<span id="cb1-921"><a href="#cb1-921" aria-hidden="true" tabindex="-1"></a>The scalar product is related to the angle between the vectors by</span>
+<span id="cb1-922"><a href="#cb1-922" aria-hidden="true" tabindex="-1"></a>$$ \vec{v} \cdot \vec{w}  = <span class="sc">\|</span>\vec{v} <span class="sc">\|</span> \ <span class="sc">\|</span>\vec{w}<span class="sc">\|</span> \cos{\alpha} .$$</span>
+<span id="cb1-923"><a href="#cb1-923" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-924"><a href="#cb1-924" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-925"><a href="#cb1-925" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-926"><a href="#cb1-926" aria-hidden="true" tabindex="-1"></a>Let $\vec{v}$, $\vec{w}$ be non-zero vectors. Then three vectors $\vec{v}$, $\vec{w}$ and $\vec{v}-\vec{w}$ give three sides of a triangle, see figure \ref{fig:pyth}. </span>
+<span id="cb1-927"><a href="#cb1-927" aria-hidden="true" tabindex="-1"></a>Therefore by the Pythagorean theorem we have</span>
+<span id="cb1-928"><a href="#cb1-928" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
+<span id="cb1-929"><a href="#cb1-929" aria-hidden="true" tabindex="-1"></a><span class="sc">\|</span>\vec{v}-\vec{w}<span class="sc">\|</span>^{2} &amp; =  a^2+b^2 = ((<span class="sc">\|</span>\vec{v}<span class="sc">\|</span>-<span class="sc">\|</span>\vec{w}<span class="sc">\|</span>\cos\alpha)^{2}+ (<span class="sc">\|</span>\vec{w}<span class="sc">\|</span> \sin\alpha)^{2}) <span class="sc">\\</span></span>
+<span id="cb1-930"><a href="#cb1-930" aria-hidden="true" tabindex="-1"></a>&amp; =  <span class="sc">\|</span>\vec{v}<span class="sc">\|</span>^{2}\ -2<span class="sc">\|</span>\vec{v}<span class="sc">\|\|</span>\vec{w}<span class="sc">\|</span>\cos\alpha+<span class="sc">\|</span>\vec{w}<span class="sc">\|</span>^{2}\cos^{2}\alpha+<span class="sc">\|</span>\vec{w}<span class="sc">\|</span>^{2}\sin^{2}\alpha<span class="sc">\\</span></span>
+<span id="cb1-931"><a href="#cb1-931" aria-hidden="true" tabindex="-1"></a>&amp; = <span class="sc">\|</span>\vec{v}<span class="sc">\|</span>^{2} +<span class="sc">\|</span>\vec{w}<span class="sc">\|</span>^{2}-2<span class="sc">\|</span>\vec{v}<span class="sc">\|\|</span>\vec{w}<span class="sc">\|</span>\cos\alpha </span>
+<span id="cb1-932"><a href="#cb1-932" aria-hidden="true" tabindex="-1"></a>\end{aligned} $$</span>
+<span id="cb1-933"><a href="#cb1-933" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-934"><a href="#cb1-934" aria-hidden="true" tabindex="-1"></a><span class="al">![Pythagoras](pythagoras.png)</span>{width=50%}</span>
+<span id="cb1-935"><a href="#cb1-935" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-936"><a href="#cb1-936" aria-hidden="true" tabindex="-1"></a>On the other hand the definition of a length gives us </span>
+<span id="cb1-937"><a href="#cb1-937" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
+<span id="cb1-938"><a href="#cb1-938" aria-hidden="true" tabindex="-1"></a><span class="sc">\|</span>\vec{v}-\vec{w}<span class="sc">\|</span>^{2} &amp; =  (\vec{v}-\vec{w})\cdot  (\vec{v}-\vec{w}) <span class="sc">\\</span></span>
+<span id="cb1-939"><a href="#cb1-939" aria-hidden="true" tabindex="-1"></a>&amp; = \vec{v}\cdot \vec{v} - 2 \vec{w}\cdot \vec{v} +  \vec{w}\cdot \vec{w} </span>
+<span id="cb1-940"><a href="#cb1-940" aria-hidden="true" tabindex="-1"></a>\end{aligned} $$</span>
+<span id="cb1-941"><a href="#cb1-941" aria-hidden="true" tabindex="-1"></a>Comparing the two results we find  $\vec{v}\cdot\vec{w}=<span class="sc">\|</span>\vec{v}<span class="sc">\|\|</span>\vec{w}<span class="sc">\|</span>\cos\alpha$.</span>
+<span id="cb1-942"><a href="#cb1-942" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-943"><a href="#cb1-943" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-944"><a href="#cb1-944" aria-hidden="true" tabindex="-1"></a>An immediate consequence is that for two non-vanishing vectors ($<span class="sc">\|</span>\vec{v}<span class="sc">\|</span>, <span class="sc">\|</span>\vec{w}<span class="sc">\|</span> \neq 0$) we have</span>
+<span id="cb1-945"><a href="#cb1-945" aria-hidden="true" tabindex="-1"></a>$$ \vec{v} \cdot \vec{w}  = 0 \Leftrightarrow  \vec{v} \perp \vec{w},  $$ </span>
+<span id="cb1-946"><a href="#cb1-946" aria-hidden="true" tabindex="-1"></a>i.e.~the scalar product vanishes if and only if they are perpendicular to each other.</span>
+<span id="cb1-947"><a href="#cb1-947" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-948"><a href="#cb1-948" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-949"><a href="#cb1-949" aria-hidden="true" tabindex="-1"></a>::: {.Corollary  #projec}</span>
+<span id="cb1-950"><a href="#cb1-950" aria-hidden="true" tabindex="-1"></a>If $\vec{n}$ is a unit vector, i.e.~$<span class="sc">\|</span> \vec{n} <span class="sc">\|</span> =1$, then $\vec{n}\cdot\vec{v}$ is the length of the projection of $\vec{v}$ onto the direction of $\vec{n}$. If the angle between $\vec{n}$ and $\vec{v}$ is greater than $\pi/2$ it is minus the length of the projection.</span>
+<span id="cb1-951"><a href="#cb1-951" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-952"><a href="#cb1-952" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-953"><a href="#cb1-953" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-954"><a href="#cb1-954" aria-hidden="true" tabindex="-1"></a>$$ \vec{n}\cdot\vec{v}= \underbrace{ <span class="sc">\|</span>\vec{n} <span class="sc">\|</span>}_{=1} \ <span class="sc">\|</span>\vec{v}<span class="sc">\|</span> \cos{\alpha} = \ <span class="sc">\|</span>\vec{v}<span class="sc">\|</span> \cos{\alpha}  $$</span>
+<span id="cb1-955"><a href="#cb1-955" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-956"><a href="#cb1-956" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-957"><a href="#cb1-957" aria-hidden="true" tabindex="-1"></a>::: {#fig-projection layout-ncol=2}</span>
+<span id="cb1-958"><a href="#cb1-958" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-959"><a href="#cb1-959" aria-hidden="true" tabindex="-1"></a><span class="al">![$\alpha &lt; \pi/2$](alg6.png)</span></span>
+<span id="cb1-960"><a href="#cb1-960" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-961"><a href="#cb1-961" aria-hidden="true" tabindex="-1"></a><span class="al">![$\alpha &gt; \pi/2$](alg7.png)</span></span>
+<span id="cb1-962"><a href="#cb1-962" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-963"><a href="#cb1-963" aria-hidden="true" tabindex="-1"></a>The projection $\vec{n}\cdot\vec{v}$ of a vector $\vec{v}$ onto a unit vector $\vec{n}$ for an angle $\alpha &lt; \pi/2$ and $\alpha &gt; \pi/2$ </span>
+<span id="cb1-964"><a href="#cb1-964" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-965"><a href="#cb1-965" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-966"><a href="#cb1-966" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-967"><a href="#cb1-967" aria-hidden="true" tabindex="-1"></a>The distance between two points $\vec{u}$ and $\vec{v}$ is in general  given by the norm of $\vec{u}-\vec{v}$:  </span>
+<span id="cb1-968"><a href="#cb1-968" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\|</span> \vec{u}-\vec{v}<span class="sc">\|</span> = <span class="sc">\|</span> \vec{v}-\vec{u} <span class="sc">\|</span>.$$ This is a meaningful definition since it is the shortest distance between the points with the position vectors $\vec{v}$ and $\vec{u}$ is the length of the vector between the two points. This is stated by the triangle inequality:</span>
+<span id="cb1-969"><a href="#cb1-969" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-970"><a href="#cb1-970" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
+<span id="cb1-971"><a href="#cb1-971" aria-hidden="true" tabindex="-1"></a>For any two vectors $\vec{x}$ and $\vec{y}$ (of a normed vector space)  we have the triangle inequality:</span>
+<span id="cb1-972"><a href="#cb1-972" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\|</span> \vec{x} +\vec{y}<span class="sc">\|</span> \le  <span class="sc">\|</span>\vec{x}<span class="sc">\|</span> + <span class="sc">\|</span> \vec{y} <span class="sc">\|</span> .$$</span>
+<span id="cb1-973"><a href="#cb1-973" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-974"><a href="#cb1-974" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-975"><a href="#cb1-975" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-976"><a href="#cb1-976" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
+<span id="cb1-977"><a href="#cb1-977" aria-hidden="true" tabindex="-1"></a><span class="sc">\|</span> \vec{x} +\vec{y}<span class="sc">\|</span>^{2} &amp; =  (\vec{x}+\vec{y})\cdot(\vec{x}+\vec{y})<span class="sc">\\</span></span>
+<span id="cb1-978"><a href="#cb1-978" aria-hidden="true" tabindex="-1"></a>&amp; = \vec{x}\cdot \vec{x}+\vec{y} \cdot \vec{y} + 2 \vec{x}\cdot \vec{y} <span class="sc">\\</span></span>
+<span id="cb1-979"><a href="#cb1-979" aria-hidden="true" tabindex="-1"></a>  &amp; =    <span class="sc">\|</span> \vec{x} <span class="sc">\|</span>^{2} + <span class="sc">\|</span> \vec{y}<span class="sc">\|</span>^{2} + 2 <span class="sc">\|</span>\vec{x} <span class="sc">\|</span> <span class="sc">\|</span> \vec{y}<span class="sc">\|</span> \cos(\alpha)  <span class="sc">\\</span></span>
+<span id="cb1-980"><a href="#cb1-980" aria-hidden="true" tabindex="-1"></a>  &amp; \le   <span class="sc">\|</span> \vec{x} <span class="sc">\|</span>^2 + <span class="sc">\|</span> \vec{y}<span class="sc">\|</span>^2 + 2 <span class="sc">\|</span>\vec{x} <span class="sc">\|</span> <span class="sc">\|</span> \vec{y}<span class="sc">\|</span> <span class="sc">\\</span></span>
+<span id="cb1-981"><a href="#cb1-981" aria-hidden="true" tabindex="-1"></a>  &amp; =  ( <span class="sc">\|</span> \vec{x} <span class="sc">\|</span> + <span class="sc">\|</span> \vec{y}<span class="sc">\|</span>)^{2}  <span class="sc">\\</span></span>
+<span id="cb1-982"><a href="#cb1-982" aria-hidden="true" tabindex="-1"></a>  \Rightarrow  <span class="sc">\|</span> \vec{x} +\vec{y}<span class="sc">\|</span> &amp;\le  <span class="sc">\|</span> \vec{x} <span class="sc">\|</span> + <span class="sc">\|</span> \vec{y}<span class="sc">\|</span></span>
+<span id="cb1-983"><a href="#cb1-983" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
+<span id="cb1-984"><a href="#cb1-984" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-985"><a href="#cb1-985" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-986"><a href="#cb1-986" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-987"><a href="#cb1-987" aria-hidden="true" tabindex="-1"></a>One can use the key properties of the Scalar Product (\ref{scalarproduct}) as a basis to define a generalisation of a scalar product, called innner product.  </span>
+<span id="cb1-988"><a href="#cb1-988" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-989"><a href="#cb1-989" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
+<span id="cb1-990"><a href="#cb1-990" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inner Product</span></span>
+<span id="cb1-991"><a href="#cb1-991" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-992"><a href="#cb1-992" aria-hidden="true" tabindex="-1"></a>The Inner product between two vectors in the vector space $V$ over the field $\mathbb{C}$ (or $\mathbb{R}$) is a</span>
+<span id="cb1-993"><a href="#cb1-993" aria-hidden="true" tabindex="-1"></a>map </span>
+<span id="cb1-994"><a href="#cb1-994" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned}</span>
+<span id="cb1-995"><a href="#cb1-995" aria-hidden="true" tabindex="-1"></a>\langle·, ·\rangle   : \quad &amp; V \times V \rightarrow \mathbb{C} <span class="sc">\\</span></span>
+<span id="cb1-996"><a href="#cb1-996" aria-hidden="true" tabindex="-1"></a>&amp;  (\vec{u}, \vec{v}) \rightarrow  \langle \vec{u}, \vec{v}\rangle   </span>
+<span id="cb1-997"><a href="#cb1-997" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
+<span id="cb1-998"><a href="#cb1-998" aria-hidden="true" tabindex="-1"></a>that satisfies the following requirements  $\forall \vec{u}, \vec{v}, \vec{w} \in V$ and $a, b \in \mathbb{C}$:</span>
+<span id="cb1-999"><a href="#cb1-999" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1000"><a href="#cb1-1000" aria-hidden="true" tabindex="-1"></a>(1) $\langle \vec{u}, \vec{v} \rangle = \overline{\langle \vec{v}, \vec{u}\rangle}$ \quad (symmetric up to complex conjugation)</span>
+<span id="cb1-1001"><a href="#cb1-1001" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1002"><a href="#cb1-1002" aria-hidden="true" tabindex="-1"></a>(2) $\langle a \vec{u} + b \vec{v}, \vec{w} \rangle = a \langle \vec{u}, \vec{w}\rangle   + b \langle \vec{v}, \vec{w}\rangle$  \quad (linearity)</span>
+<span id="cb1-1003"><a href="#cb1-1003" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1004"><a href="#cb1-1004" aria-hidden="true" tabindex="-1"></a>(3) $\langle \vec{v}, \vec{v} \rangle \ge 0$. $\langle \vec{v}, \vec{v} \rangle = 0$ if and only if $\vec{v} = 0$. \quad (positive definiteness)</span>
+<span id="cb1-1005"><a href="#cb1-1005" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1006"><a href="#cb1-1006" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1007"><a href="#cb1-1007" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-1008"><a href="#cb1-1008" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remark</span></span>
+<span id="cb1-1009"><a href="#cb1-1009" aria-hidden="true" tabindex="-1"></a>The third property implies that the inner prodoct of a vector with itself is real and non-negative. This allows us to define the norm of a vector in the same way as before </span>
+<span id="cb1-1010"><a href="#cb1-1010" aria-hidden="true" tabindex="-1"></a>$$<span class="sc">\|</span>\vec{v}<span class="sc">\|</span> = \sqrt{\langle\vec{v},\vec{v} \rangle}$$ and the norm becomes a real non-negative number. </span>
+<span id="cb1-1011"><a href="#cb1-1011" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-1012"><a href="#cb1-1012" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1013"><a href="#cb1-1013" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-1014"><a href="#cb1-1014" aria-hidden="true" tabindex="-1"></a> The space of polynomials of degree $n$, $P_n(t)$, defined on</span>
+<span id="cb1-1015"><a href="#cb1-1015" aria-hidden="true" tabindex="-1"></a>the interval $<span class="co">[</span><span class="ot">-1, 1</span><span class="co">]</span> \subset \mathbb{R}$ can be given an inner product </span>
+<span id="cb1-1016"><a href="#cb1-1016" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1017"><a href="#cb1-1017" aria-hidden="true" tabindex="-1"></a>$$\begin{aligned} </span>
+<span id="cb1-1018"><a href="#cb1-1018" aria-hidden="true" tabindex="-1"></a> \langle ·, · \rangle: \quad &amp; P_n (t) \times P_n (t) \rightarrow \mathbb{R} <span class="sc">\\</span></span>
+<span id="cb1-1019"><a href="#cb1-1019" aria-hidden="true" tabindex="-1"></a>&amp; (p (t) , q (t)) \longrightarrow  \langle p, q \rangle = \int_{-1}^1 p (t) q (t)\,dt. </span>
+<span id="cb1-1020"><a href="#cb1-1020" aria-hidden="true" tabindex="-1"></a>\end{aligned}$$</span>
+<span id="cb1-1021"><a href="#cb1-1021" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

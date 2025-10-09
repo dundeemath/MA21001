@@ -27,6 +27,20 @@
 
  [**Lemma 2.14**](#span-is-a-subspace): Span is a subspace\Pageref{span-is-a-subspace}
 
+ [**Definition 2.15**](#scalarproduct): scalar product, Euclidean product, inner product, dot product\Pageref{scalarproduct}
+
+ [**Corollary 2.16**](#scalarproduct)\Pageref{scalarproduct}
+
+ [**Definition 2.17**](#Definition-2.17)\Pageref{Definition-2.17}
+
+ [**Corollary 2.18**](#Corollary-2.18)\Pageref{Corollary-2.18}
+
+ [**Corollary 2.19**](#projec)\Pageref{projec}
+
+ [**Corollary 2.20**](#Corollary-2.20)\Pageref{Corollary-2.20}
+
+ [**Definition 2.21**](#inner-product): Inner Product\Pageref{inner-product}
+
  [**Definition 3.1**](#matrix): Matrix\Pageref{matrix}
 
  [**Definition 3.2**](#matrix-sum-and-scalar-multiplication): Matrix sum and scalar multiplication\Pageref{matrix-sum-and-scalar-multiplication}
@@ -118,3 +132,11 @@
  [**Corollary 5.14**](#Corollary-5.14)\Pageref{Corollary-5.14}
 
  [**Theorem 5.15**](#diagonalisation-theorem): Diagonalisation Theorem\Pageref{diagonalisation-theorem}
+
+ [**Theorem 5.16**](#joint-eigenbasis): Joint eigenbasis\Pageref{joint-eigenbasis}
+
+ [**Definition 5.17**](#hermitian-adjoint-operator): (Hermitian) Adjoint Operator\Pageref{hermitian-adjoint-operator}
+
+ [**Corollary 5.18**](#properties-of-the-hermitian-adjoint): Properties of the hermitian adjoint\Pageref{properties-of-the-hermitian-adjoint}
+
+ [**Corollary 5.19**](#orthogonal-eigenbasis): orthogonal eigenbasis\Pageref{orthogonal-eigenbasis}
