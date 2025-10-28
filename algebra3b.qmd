@@ -125,7 +125,7 @@ multiplication, since the dot as well as the cross will be later used to
 define two different types of multiplication between two vectors.
 
 If we want to avoid writing a vector as a column, as this always takes up a lot of space, we can use the transpose (denoted by a superscript T):
-$$ (1,2)^T = \begin{pmatrix}  1 \\ 2 \end{pmatrix} $$.
+$$ (1,2)^T = \begin{pmatrix}  1 \\ 2 \end{pmatrix}. $$
 :::
 
 ::: {#exm-vktspace1}
@@ -200,8 +200,8 @@ vectors with two real components can be easily extended to n components.
 The vector space
 $$I\!\!R^{n} = \left\{ \left. \scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle \right| v_{i} \in \mathbb{R}, i=1,2, .. ,n \right\}$$
 together with the operation of addition
-$$\scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle +  \scriptscriptstyle \begin{pmatrix}   w_{1}\\ w_{2} \\ \vdots \\ w_{n}  \end{pmatrix} \textstyle =  \scriptscriptstyle \begin{pmatrix}   v_{1}+w_{1}\\ v_{2} +w_{2}\\ \vdots \\ v_{n}+w_{n}  \end{pmatrix} \textstyle$$
-and the scalar multiplication $$ \alpha \scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle =  \scriptscriptstyle \begin{pmatrix}    \alpha v_{1}\\  \alpha v_{2} \\ \vdots \\  \alpha v_{n}  \end{pmatrix} \textstyle \quad \alpha \in \mathbb{R}$$ is called the vector space $\mathbb{R}^{n}$.
+$$\scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle +  \scriptscriptstyle \begin{pmatrix}   w_{1}\\ w_{2} \\ \vdots \\ w_{n}  \end{pmatrix} \textstyle =  \scriptscriptstyle \begin{pmatrix}   v_{1}+w_{1}\\ v_{2} +w_{2}\\ \vdots \\ v_{n}+w_{n}  \end{pmatrix} \textstyle , $$
+and the scalar multiplication $$ \alpha \scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle =  \scriptscriptstyle \begin{pmatrix}    \alpha v_{1}\\  \alpha v_{2} \\ \vdots \\  \alpha v_{n}  \end{pmatrix}, \textstyle \quad \alpha \in \mathbb{R},$$ is called the vector space $\mathbb{R}^{n}$.
 
 Although we haven't defined yet what a basis is, we mention here for
 future reference that the vectors,
@@ -209,7 +209,7 @@ $$\vec{e}_{1} =  \scriptscriptstyle \begin{pmatrix}   1\\ 0 \\ \vdots \\ 0   \en
 form a basis of $\mathbb{R}^{n}$, the so called the standard basis. That
 is, every vector in $\mathbb{R}^{n}$ can be expressed as a linear
 combination of the basis vectors,
-$$\vec{r} = r_{1} \vec{e}_{1} + r_{2} \vec{e}_{2} + ... + r_{n} \vec{e}_{n} ,$$
+$$\vec{x} = x_{1} \vec{e}_{1} + x_{2} \vec{e}_{2} + ... + x_{n} \vec{e}_{n} ,$$
 Or, in other words, the vector space is spanned by the basis vectors.
 :::
 
@@ -219,7 +219,7 @@ real numbers forms a vector space. We denote this space by
 $M^{(m \times n)}$. Addition and scalar multiplication are the usual
 addition and scalar multiplication of matrices. A basis of the space
 consists of the matrices ${\rm E}^{(i,j)}$ which have a 1 at entry (i,j)
-and zeros everywhere else. The space is of dimension $m n$.
+and zeros everywhere else. The space is of dimension $m \times n$.
 :::
 
 ::: {#exm-vktspace6}
@@ -240,13 +240,16 @@ dimensional.
 
 ::: {#exm-vktspace7}
 The solutions of a homogeneous linear differential
-equation of order $n$, e.g.
-$$\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}-3\frac{\mathrm{d}y}{\mathrm{d}x}
-+2y=0.\qquad$$ form a vector space. Addition and scalar multiplication
+equation of order two, e.g.
+$$\frac{\mathrm{d}^{2}y(t)}{\mathrm{d}t^{2}}+y(t)=0.\qquad$$ form a vector space. The general solution is 
+$$ y(t) = A \sin(t) + B \cos(t). $$ Addition and scalar multiplication
 in this vector space are the usual addition and scalar multiplication of
-functions. The space is spanned by $n$ linearly independent solutions.
-This is an example of a so-called *function space*.
+functions. The space is spanned by two linearly independent solutions, $\sin(t)$ and $\cos(t)$.
+This is an example of a so-called *function space*. The same holds for a homogenous linear ODE of n-th order. In this case there are $n$ linearly independent solutions.  
 :::
+
+:::: {.callout-note collapse="true"}
+## Advanced material
 
 ::: {#exm-vktspace8}
 The set $\mathcal{F}$ of all infinitely differentiable
@@ -285,6 +288,8 @@ also a vector space over $\mathbb{R}$, but in this case it is
 2n-dimensional with two basis vectors for the real and imaginary part of
 each complex dimension.
 :::
+
+::::
 
 ## Linear independence
 

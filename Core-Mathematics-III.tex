@@ -282,26 +282,26 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
 %%%% --- end foldboxy preamble ----- %%%%%
 %%==== colors from yaml ===%
-\definecolor{Conjecture-color1}{HTML}{948bde}
-\definecolor{Conjecture-color2}{HTML}{584eab}
-\definecolor{Corollary-color1}{HTML}{948bde}
-\definecolor{Corollary-color2}{HTML}{584eab}
-\definecolor{Solution-color1}{HTML}{c0c0c0}
-\definecolor{Solution-color2}{HTML}{808080}
 \definecolor{DONE-color1}{HTML}{cce7b1}
 \definecolor{DONE-color2}{HTML}{86b754}
-\definecolor{TODO-color1}{HTML}{e7b1b4}
-\definecolor{TODO-color2}{HTML}{8c3236}
-\definecolor{Feature-color1}{HTML}{c0c0c0}
-\definecolor{Feature-color2}{HTML}{808080}
-\definecolor{Lemma-color1}{HTML}{948bde}
-\definecolor{Lemma-color2}{HTML}{584eab}
-\definecolor{Proof-color1}{HTML}{c0c0c0}
-\definecolor{Proof-color2}{HTML}{808080}
-\definecolor{Definition-color1}{HTML}{d999d3}
-\definecolor{Definition-color2}{HTML}{a01793}
 \definecolor{Theorem-color1}{HTML}{948bde}
 \definecolor{Theorem-color2}{HTML}{584eab}
+\definecolor{Proof-color1}{HTML}{c0c0c0}
+\definecolor{Proof-color2}{HTML}{808080}
+\definecolor{Solution-color1}{HTML}{c0c0c0}
+\definecolor{Solution-color2}{HTML}{808080}
+\definecolor{Conjecture-color1}{HTML}{948bde}
+\definecolor{Conjecture-color2}{HTML}{584eab}
+\definecolor{Definition-color1}{HTML}{d999d3}
+\definecolor{Definition-color2}{HTML}{a01793}
+\definecolor{Corollary-color1}{HTML}{948bde}
+\definecolor{Corollary-color2}{HTML}{584eab}
+\definecolor{Feature-color1}{HTML}{c0c0c0}
+\definecolor{Feature-color2}{HTML}{808080}
+\definecolor{TODO-color1}{HTML}{e7b1b4}
+\definecolor{TODO-color2}{HTML}{8c3236}
+\definecolor{Lemma-color1}{HTML}{948bde}
+\definecolor{Lemma-color2}{HTML}{584eab}
 %=============%
 \newcounter{quartocalloutnteno}
 \newcommand{\quartocalloutnte}[1]{\refstepcounter{quartocalloutnteno}\label{#1}}
@@ -321,7 +321,7 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
 \title{Core Mathematics III}
 \author{Prof Gunnar Hornig}
-\date{2025-10-09}
+\date{2025-10-28}
 \begin{document}
 \maketitle
 
@@ -676,7 +676,7 @@ the multiplication in \(\mathbb{R}\) is also the neutral element for the
 scalar multiplication, while the remaining conditions are distributive
 laws.
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on Notation}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on Notation}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 Alternative notations for vectors encountered in the literature are bold
 face symbols \({\bf v}\) or \(\bar v\) (not to be confused with complex
@@ -692,7 +692,7 @@ vectors.
 
 If we want to avoid writing a vector as a column, as this always takes
 up a lot of space, we can use the transpose (denoted by a superscript
-T): \[ (1,2)^T = \begin{pmatrix}  1 \\ 2 \end{pmatrix} \].
+T): \[ (1,2)^T = \begin{pmatrix}  1 \\ 2 \end{pmatrix}. \]
 
 \end{tcolorbox}
 
@@ -785,9 +785,9 @@ What we have shown for a vector space consisting of two vectors with two
 real components can be easily extended to n components. The vector space
 \[I\!\!R^{n} = \left\{ \left. \scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle \right| v_{i} \in \mathbb{R}, i=1,2, .. ,n \right\}\]
 together with the operation of addition
-\[\scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle +  \scriptscriptstyle \begin{pmatrix}   w_{1}\\ w_{2} \\ \vdots \\ w_{n}  \end{pmatrix} \textstyle =  \scriptscriptstyle \begin{pmatrix}   v_{1}+w_{1}\\ v_{2} +w_{2}\\ \vdots \\ v_{n}+w_{n}  \end{pmatrix} \textstyle\]
+\[\scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle +  \scriptscriptstyle \begin{pmatrix}   w_{1}\\ w_{2} \\ \vdots \\ w_{n}  \end{pmatrix} \textstyle =  \scriptscriptstyle \begin{pmatrix}   v_{1}+w_{1}\\ v_{2} +w_{2}\\ \vdots \\ v_{n}+w_{n}  \end{pmatrix} \textstyle , \]
 and the scalar multiplication
-\[ \alpha \scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle =  \scriptscriptstyle \begin{pmatrix}    \alpha v_{1}\\  \alpha v_{2} \\ \vdots \\  \alpha v_{n}  \end{pmatrix} \textstyle \quad \alpha \in \mathbb{R}\]
+\[ \alpha \scriptscriptstyle \begin{pmatrix}   v_{1}\\ v_{2} \\ \vdots \\ v_{n}  \end{pmatrix} \textstyle =  \scriptscriptstyle \begin{pmatrix}    \alpha v_{1}\\  \alpha v_{2} \\ \vdots \\  \alpha v_{n}  \end{pmatrix}, \textstyle \quad \alpha \in \mathbb{R},\]
 is called the vector space \(\mathbb{R}^{n}\).
 
 Although we haven't defined yet what a basis is, we mention here for
@@ -796,7 +796,7 @@ future reference that the vectors,
 form a basis of \(\mathbb{R}^{n}\), the so called the standard basis.
 That is, every vector in \(\mathbb{R}^{n}\) can be expressed as a linear
 combination of the basis vectors,
-\[\vec{r} = r_{1} \vec{e}_{1} + r_{2} \vec{e}_{2} + ... + r_{n} \vec{e}_{n} ,\]
+\[\vec{x} = x_{1} \vec{e}_{1} + x_{2} \vec{e}_{2} + ... + x_{n} \vec{e}_{n} ,\]
 Or, in other words, the vector space is spanned by the basis vectors.
 
 \end{example}
@@ -808,7 +808,7 @@ forms a vector space. We denote this space by \(M^{(m \times n)}\).
 Addition and scalar multiplication are the usual addition and scalar
 multiplication of matrices. A basis of the space consists of the
 matrices \({\rm E}^{(i,j)}\) which have a 1 at entry (i,j) and zeros
-everywhere else. The space is of dimension \(m n\).
+everywhere else. The space is of dimension \(m \times n\).
 
 \end{example}
 
@@ -833,14 +833,18 @@ space consists of the \emph{monomials} \(x^{r}, r=0,1, ..,n\) and is
 \begin{example}[]\protect\hypertarget{exm-vktspace7}{}\label{exm-vktspace7}
 
 The solutions of a homogeneous linear differential equation of order
-\(n\), e.g.
-\[\frac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}-3\frac{\mathrm{d}y}{\mathrm{d}x}
-+2y=0.\qquad\] form a vector space. Addition and scalar multiplication
+two, e.g. \[\frac{\mathrm{d}^{2}y(t)}{\mathrm{d}t^{2}}+y(t)=0.\qquad\]
+form a vector space. The general solution is
+\[ y(t) = A \sin(t) + B \cos(t). \] Addition and scalar multiplication
 in this vector space are the usual addition and scalar multiplication of
-functions. The space is spanned by \(n\) linearly independent solutions.
-This is an example of a so-called \emph{function space}.
+functions. The space is spanned by two linearly independent solutions,
+\(\sin(t)\) and \(\cos(t)\). This is an example of a so-called
+\emph{function space}. The same holds for a homogenous linear ODE of
+n-th order. In this case there are \(n\) linearly independent solutions.
 
 \end{example}
+
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Advanced material}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 \begin{example}[]\protect\hypertarget{exm-vktspace8}{}\label{exm-vktspace8}
 
@@ -860,7 +864,7 @@ understand what a `field' is, we need to take a short detour into number
 systems.
 
 \phantomsection\label{vksoverk}
-\begin{fbxSimple}{Definition}{Definition 2.2: }{Vector Space over K}
+\begin{fbxSimple}{Definition}{Definition: }{Vector Space over K}
 \phantomsection\label{vksoverk}
 A vector space over a field \(K\) is a set \(V\), the elements of which
 are called vectors \(\vec{v} \in V\) along with two operations, an
@@ -886,6 +890,8 @@ over \(\mathbb{R}\), but in this case it is 2n-dimensional with two
 basis vectors for the real and imaginary part of each complex dimension.
 
 \end{example}
+
+\end{tcolorbox}
 
 \section{Linear independence}\label{linear-independence}
 
@@ -928,7 +934,7 @@ since we assumed that \((v_1,v_2,v_3) \neq (v_1',v_2',v_3')\). This is
 called a non-trivial linear combination.
 
 \phantomsection\label{linear-combination}
-\begin{fbxSimple}{Definition}{Definition 2.3: }{Linear Combination}
+\begin{fbxSimple}{Definition}{Definition 2.2: }{Linear Combination}
 \phantomsection\label{linear-combination}
 An expression of the form \(a_{1}{\vec v}
 _{1}+a_{2}{\vec v}_{2}+\cdots +a_{n}{\vec v}_{n}\) is known as a
@@ -940,7 +946,7 @@ combination.}
 \end{fbxSimple}
 
 \phantomsection\label{linear-independence-1}
-\begin{fbxSimple}{Definition}{Definition 2.4: }{Linear Independence}
+\begin{fbxSimple}{Definition}{Definition 2.3: }{Linear Independence}
 \phantomsection\label{linear-independence-1}
 A set of vectors \(\vec{v_{1}}, \vec{v_{2}},..., \vec{v_{n}}\) is called
 \emph{linearly independent} if none of its elements is a linear
@@ -1027,7 +1033,7 @@ linearly dependent in \(\mathbb{R}^{4}.\)
 \section{Span and Basis}\label{span-and-basis}
 
 \phantomsection\label{span}
-\begin{fbxSimple}{Definition}{Definition 2.5: }{Span}
+\begin{fbxSimple}{Definition}{Definition 2.4: }{Span}
 \phantomsection\label{span}
 The set of vectors \(\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n}\}\) in
 \(V\) \textbf{span} \(V\) if every vector \(\vec{v}\in V\) is a linear
@@ -1078,7 +1084,7 @@ linearly independent set which spans a given vector space is called a
 basis.
 
 \phantomsection\label{basis}
-\begin{fbxSimple}{Definition}{Definition 2.6: }{Basis}
+\begin{fbxSimple}{Definition}{Definition 2.5: }{Basis}
 \phantomsection\label{basis}
 A basis of a vector space is a linearly independent set of vectors which
 span the vector space.
@@ -1145,7 +1151,7 @@ they form a basis for \(\mathbb{R}^{(n\times n)}\).
 \end{example}
 
 \phantomsection\label{uniqueness-w.r.t.-a-basis}
-\begin{fbxSimple}{Theorem}{Theorem 2.7: }{Uniqueness w.r.t. a basis}
+\begin{fbxSimple}{Theorem}{Theorem 2.6: }{Uniqueness w.r.t. a basis}
 \phantomsection\label{uniqueness-w.r.t.-a-basis}
 Let \(\left\{ {\vec v}_{1},{\vec v}_{2},\dots ,{\vec v}
 _{n}\right\}\) be a basis for a vector space \(V.\) Each vector from
@@ -1215,7 +1221,7 @@ We note that there are different bases, but they all have the same
 number of elements.
 
 \phantomsection\label{number-of-elements-of-a-basis}
-\begin{fbxSimple}{Theorem}{Theorem 2.8: }{Number of elements of a basis}
+\begin{fbxSimple}{Theorem}{Theorem 2.7: }{Number of elements of a basis}
 \phantomsection\label{number-of-elements-of-a-basis}
 Every basis of a vector space contains the same number of vectors, this
 number being the largest set of linearly independent vectors in the set.
@@ -1274,7 +1280,7 @@ assume that \(q>p.\) Thus, a contradiction can be avoided only when
 \end{fbx}
 
 \phantomsection\label{dimension}
-\begin{fbxSimple}{Definition}{Definition 2.9: }{Dimension}
+\begin{fbxSimple}{Definition}{Definition 2.8: }{Dimension}
 \phantomsection\label{dimension}
 The number of elements of a basis is called the dimension of the space.
 
@@ -1294,7 +1300,7 @@ The space of polynomials of degree \(\leq n\) has basis
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on dimension}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on dimension}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 Note that the dimension of \(V\) depends on the field \(K\). Thus the
 complex numbers \(\mathbb{C}\) can be considered as a space of dimension
@@ -1305,7 +1311,7 @@ complex numbers \(\mathbb{C}\) can be considered as a space of dimension
 \end{tcolorbox}
 
 \phantomsection\label{smaller-spanning-set}
-\begin{fbxSimple}{Theorem}{Theorem 2.10: }{Smaller spanning set}
+\begin{fbxSimple}{Theorem}{Theorem 2.9: }{Smaller spanning set}
 \phantomsection\label{smaller-spanning-set}
 Any linearly dependent vectors of a spanning set can be omitted without
 making the span smaller.
@@ -1326,7 +1332,7 @@ combination of \(\{{\vec v}_{1},{\vec v}_{2},...,{\vec v}_{r} \}\) hence
 \end{fbx}
 
 \phantomsection\label{nvectorsspanrn}
-\begin{fbxSimple}{Corollary}{Corollary 2.11}{}
+\begin{fbxSimple}{Corollary}{Corollary 2.10}{}
 \phantomsection\label{nvectorsspanrn}
 \(n\) linearly independent vectors in \(\mathbb{R}^n\) span
 \(\mathbb{R}^n\). Vice versa a set of \(n+1\) vectors in
@@ -1359,7 +1365,7 @@ a subspace of \(V\). It is important to realise that for \(W\) to be
 subspace of \(V\), then \(W\) must satisfy the following conditions:
 
 \phantomsection\label{subspace}
-\begin{fbxSimple}{Definition}{Definition 2.12: }{Subspace}
+\begin{fbxSimple}{Definition}{Definition 2.11: }{Subspace}
 \phantomsection\label{subspace}
 A subset \(W \subseteq V\) of vectors in a vector space \(V\) is called
 a subspace of \(V\) if the following conditions hold:
@@ -1434,7 +1440,7 @@ basis for \(S\).
 \end{example}
 
 \phantomsection\label{intersection-of-subspaces}
-\begin{fbxSimple}{Theorem}{Theorem 2.13: }{Intersection of subspaces}
+\begin{fbxSimple}{Theorem}{Theorem 2.12: }{Intersection of subspaces}
 \phantomsection\label{intersection-of-subspaces}
 If \(W_{1}\) and \(W_{2}\) are subspaces of \(V\) then so is
 \(W_{1}\cap W_{2}\).
@@ -1477,7 +1483,7 @@ b & b
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 While \(W_{1}\cap W_{2}\) is a subpace, \(W_{1}\cup W_{2}\) is in
 general not a subspace. For exampe if \(W_1\) and \(W_2\) are the x- and
@@ -1510,7 +1516,7 @@ linear combination of vectors of the subspace has to be an element of
 the subspace. This proves the following theorem:
 
 \phantomsection\label{span-is-a-subspace}
-\begin{fbxSimple}{Lemma}{Lemma 2.14: }{Span is a subspace}
+\begin{fbxSimple}{Lemma}{Lemma 2.13: }{Span is a subspace}
 \phantomsection\label{span-is-a-subspace}
 \({\rm span}({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n})\) is a subspace
 of \(V\) for \({\vec v}_{1},{\vec v}_{2},...,{\vec v}_{n} \in V\).
@@ -1531,7 +1537,7 @@ also satisfied due to the span including all linear combinations.~◻
 
 The set \(W=\{(x,y,z,w)^{T}:x+y+z=w\}\) is a subspace of
 \(\mathbb{R}^{4}\). We can show this in two ways: (a) by using the
-definition of a subspace (\hyperref[subspace]{2.12}) or (b) by finding a
+definition of a subspace (\hyperref[subspace]{2.11}) or (b) by finding a
 spanning set and using the above theorem. Method (a) requires checking
 the three conditions for a subspace:
 
@@ -1564,7 +1570,7 @@ _{3}=(0,0,1,1)^{T}\).
 \section{Scalar- and Inner Product}\label{scalar--and-inner-product}
 
 \phantomsection\label{scalarproduct}
-\begin{fbxSimple}{Definition}{Definition 2.15: }{scalar product, Euclidean product, inner product, dot product}
+\begin{fbxSimple}{Definition}{Definition 2.14: }{scalar product, Euclidean product, inner product, dot product}
 \phantomsection\label{scalarproduct}
 For any two vectors \(\vec{v}\), \(\vec{w} \in \mathbb{R}^{n}\) with
 components
@@ -1578,7 +1584,7 @@ Usually we use as a symbol for the scalar product the dot. Sometimes the
 notation \(\langle \vec{v},\vec{w}\rangle\) is used as well.
 
 \phantomsection\label{scalarproduct}
-\begin{fbxSimple}{Corollary}{Corollary 2.16}{}
+\begin{fbxSimple}{Corollary}{Corollary 2.15}{}
 \phantomsection\label{scalarproduct}
 
 If \(\vec{u}\), \(\vec{v}\), \(\vec{w}\) are vectors in
@@ -1648,9 +1654,9 @@ If \(\vec{u}\), \(\vec{v}\), \(\vec{w}\) are vectors in
 We note that if we use for both entries of the scalar product the same
 vector then we get
 
-\phantomsection\label{Definition-2.17}
-\begin{fbxSimple}{Definition}{Definition 2.17}{}
-\phantomsection\label{Definition-2.17}
+\phantomsection\label{Definition-2.16}
+\begin{fbxSimple}{Definition}{Definition 2.16}{}
+\phantomsection\label{Definition-2.16}
 The norm (or length) of a vector \(\vec{v} \in \mathbb{R}^{n}\) is
 defined as
 \[\|\vec{v}\|=\sqrt{\vec{v}\cdot \vec{v}} = \sqrt{v_{1}^{2}+ v_{2}^{2} +...+v_{n}^{2}} \ge 0 \]
@@ -1661,9 +1667,9 @@ Note that this definition matches with the length of vectors in
 \(\mathbb{R}^{2}\) and \(\mathbb{R}^{3}\) as calculated by the
 Pythagorean theorem.
 
-\phantomsection\label{Corollary-2.18}
-\begin{fbxSimple}{Corollary}{Corollary 2.18}{}
-\phantomsection\label{Corollary-2.18}
+\phantomsection\label{Corollary-2.17}
+\begin{fbxSimple}{Corollary}{Corollary 2.17}{}
+\phantomsection\label{Corollary-2.17}
 The scalar product is related to the angle between the vectors by
 \[ \vec{v} \cdot \vec{w}  = \|\vec{v} \| \ \|\vec{w}\| \cos{\alpha} .\]
 
@@ -1706,7 +1712,7 @@ i.e.\textasciitilde the scalar product vanishes if and only if they are
 perpendicular to each other.
 
 \phantomsection\label{projec}
-\begin{fbxSimple}{Corollary}{Corollary 2.19}{}
+\begin{fbxSimple}{Corollary}{Corollary 2.18}{}
 \phantomsection\label{projec}
 If \(\vec{n}\) is a unit vector,
 i.e.\textasciitilde{}\(\| \vec{n} \| =1\), then \(\vec{n}\cdot\vec{v}\)
@@ -1752,9 +1758,9 @@ definition since it is the shortest distance between the points with the
 position vectors \(\vec{v}\) and \(\vec{u}\) is the length of the vector
 between the two points. This is stated by the triangle inequality:
 
-\phantomsection\label{Corollary-2.20}
-\begin{fbxSimple}{Corollary}{Corollary 2.20}{}
-\phantomsection\label{Corollary-2.20}
+\phantomsection\label{Corollary-2.19}
+\begin{fbxSimple}{Corollary}{Corollary 2.19}{}
+\phantomsection\label{Corollary-2.19}
 For any two vectors \(\vec{x}\) and \(\vec{y}\) (of a normed vector
 space) we have the triangle inequality:
 \[\| \vec{x} +\vec{y}\| \le  \|\vec{x}\| + \| \vec{y} \| .\]
@@ -1776,11 +1782,11 @@ space) we have the triangle inequality:
 \end{fbx}
 
 One can use the key properties of the Scalar Product
-(\hyperref[scalarproduct]{2.16}) as a basis to define a generalisation
+(\hyperref[scalarproduct]{2.15}) as a basis to define a generalisation
 of a scalar product, called innner product.
 
 \phantomsection\label{inner-product}
-\begin{fbxSimple}{Definition}{Definition 2.21: }{Inner Product}
+\begin{fbxSimple}{Definition}{Definition 2.20: }{Inner Product}
 \phantomsection\label{inner-product}
 
 The Inner product between two vectors in the vector space \(V\) over the
@@ -1806,7 +1812,7 @@ field \(\mathbb{C}\) (or \(\mathbb{R}\)) is a map \[\begin{aligned}
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 The third property implies that the inner prodoct of a vector with
 itself is real and non-negative. This allows us to define the norm of a
@@ -1852,7 +1858,7 @@ A \(2\times3\) matrix: \[{\rm A} =\left(
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Notation}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Notation}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 Matrices are usually named by upper case roman letters,
 e.g.~\({\rm A}\). Individual entries are referred to by \(A_{i,j}\),
@@ -1995,7 +2001,7 @@ and scalar multiplication, and associative but not commutative.
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-warning-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-warning-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 Matrix multiplication is not commutative in general:
 \({\rm A}  {\rm B} \neq  {\rm B}  {\rm A}\). This is clear already for
@@ -2201,7 +2207,7 @@ which does not have an inverse is said to be singular.
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 \begin{itemize}
 \tightlist
@@ -2216,7 +2222,7 @@ which does not have an inverse is said to be singular.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-warning-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-warning-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-warning-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 A division of matrices is \textbf{not} defined.
 
@@ -3216,7 +3222,7 @@ subspace of \(\mathbb{R}^{n}\).
 \phantomsection\label{Proof*-3.4}
 
 We have to check the three condition in the definition for a subspace
-(\hyperref[subspace]{2.12}):
+(\hyperref[subspace]{2.11}):
 
 \begin{enumerate}
 \def\labelenumi{(\roman{enumi})}
@@ -3506,7 +3512,7 @@ So a basis for the nullspace is
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note \ref*{nte-nonsquare}: Remark: Nullspace of non-square matrices}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note \ref*{nte-nonsquare}: Remark: Nullspace of non-square matrices}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 \quartocalloutnte{nte-nonsquare} 
 
@@ -3883,7 +3889,7 @@ a_{j} & b_{j} & c_{j} &  \\
 
 \end{fbx}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remember}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remember}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 The rules are similar to, \textbf{but not the same as,} Gaussian
 elimination; adding \(k\) times row 2 to row 1 is OK if the result goes
@@ -4154,7 +4160,7 @@ is a singular matrix).
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note:}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note:}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 Various authors define non-singular matrices to be either
 
@@ -4432,7 +4438,7 @@ The following statements are equivalent for a \(n \times n\) matrix
 \item
   \(3) \Leftrightarrow 4):\) \(n\) linearly independent vectors in
   \(\mathbb{R}^n\) span \(\mathbb{R}^n\) (Corollary
-  \hyperref[nvectorsspanrn]{2.11})
+  \hyperref[nvectorsspanrn]{2.10})
 \item
   \(4) \Leftrightarrow 5):\) Definition of rank as the dimension of the
   range (\(\Rightarrow\)). For the reverse (\(\Leftarrow\)) note that
@@ -4977,7 +4983,7 @@ such that \(P^{-1}AP = B\). If \(A\) is similar to \(B\), we write
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 If \(A \sim B\), we can write, equivalently, that \(A = PBP^{-1}\) or
 \(AP = PB\). The matrix \(P\) depends on \(A\) and \(B\). It is not
@@ -5189,7 +5195,7 @@ then \(P\) is invertible. Furthermore,
 
 \end{fbx}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 Eigenvectors can be placed into the columns of \(P\) in any order.
 However, the eigenvalues will come up on the diagonal of \(D\) in the
@@ -5343,7 +5349,7 @@ similar argumentation works for repeated eigenvalues.
 
 \end{fbx}
 
-\begin{tcolorbox}[enhanced jigsaw, left=2mm, bottomtitle=1mm, breakable, opacitybacktitle=0.6, colframe=quarto-callout-note-color-frame, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomrule=.15mm, toptitle=1mm, arc=.35mm, toprule=.15mm, colback=white, rightrule=.15mm, leftrule=.75mm, coltitle=black, opacityback=0, colbacktitle=quarto-callout-note-color!10!white]
+\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
 
 Joint eigenbases play an important role in quantum mechanics, where the
 eigenstates of commuting operators can be expressed

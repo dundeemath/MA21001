@@ -1,45 +1,43 @@
 \providecommand{\Pageref}[1]{\hfill p.\pageref{#1}}
  [**Definition 2.1**](#vksoverr): Vector Space over R\Pageref{vksoverr}
 
- [**Definition 2.2**](#vksoverk): Vector Space over K\Pageref{vksoverk}
+ [**Definition 2.2**](#linear-combination): Linear Combination\Pageref{linear-combination}
 
- [**Definition 2.3**](#linear-combination): Linear Combination\Pageref{linear-combination}
+ [**Definition 2.3**](#linear-independence-1): Linear Independence\Pageref{linear-independence-1}
 
- [**Definition 2.4**](#linear-independence-1): Linear Independence\Pageref{linear-independence-1}
+ [**Definition 2.4**](#span): Span\Pageref{span}
 
- [**Definition 2.5**](#span): Span\Pageref{span}
+ [**Definition 2.5**](#basis): Basis\Pageref{basis}
 
- [**Definition 2.6**](#basis): Basis\Pageref{basis}
+ [**Theorem 2.6**](#uniqueness-w.r.t.-a-basis): Uniqueness w.r.t. a basis\Pageref{uniqueness-w.r.t.-a-basis}
 
- [**Theorem 2.7**](#uniqueness-w.r.t.-a-basis): Uniqueness w.r.t. a basis\Pageref{uniqueness-w.r.t.-a-basis}
+ [**Theorem 2.7**](#number-of-elements-of-a-basis): Number of elements of a basis\Pageref{number-of-elements-of-a-basis}
 
- [**Theorem 2.8**](#number-of-elements-of-a-basis): Number of elements of a basis\Pageref{number-of-elements-of-a-basis}
+ [**Definition 2.8**](#dimension): Dimension\Pageref{dimension}
 
- [**Definition 2.9**](#dimension): Dimension\Pageref{dimension}
+ [**Theorem 2.9**](#smaller-spanning-set): Smaller spanning set\Pageref{smaller-spanning-set}
 
- [**Theorem 2.10**](#smaller-spanning-set): Smaller spanning set\Pageref{smaller-spanning-set}
+ [**Corollary 2.10**](#nvectorsspanrn)\Pageref{nvectorsspanrn}
 
- [**Corollary 2.11**](#nvectorsspanrn)\Pageref{nvectorsspanrn}
+ [**Definition 2.11**](#subspace): Subspace\Pageref{subspace}
 
- [**Definition 2.12**](#subspace): Subspace\Pageref{subspace}
+ [**Theorem 2.12**](#intersection-of-subspaces): Intersection of subspaces\Pageref{intersection-of-subspaces}
 
- [**Theorem 2.13**](#intersection-of-subspaces): Intersection of subspaces\Pageref{intersection-of-subspaces}
+ [**Lemma 2.13**](#span-is-a-subspace): Span is a subspace\Pageref{span-is-a-subspace}
 
- [**Lemma 2.14**](#span-is-a-subspace): Span is a subspace\Pageref{span-is-a-subspace}
+ [**Definition 2.14**](#scalarproduct): scalar product, Euclidean product, inner product, dot product\Pageref{scalarproduct}
 
- [**Definition 2.15**](#scalarproduct): scalar product, Euclidean product, inner product, dot product\Pageref{scalarproduct}
+ [**Corollary 2.15**](#scalarproduct)\Pageref{scalarproduct}
 
- [**Corollary 2.16**](#scalarproduct)\Pageref{scalarproduct}
+ [**Definition 2.16**](#Definition-2.16)\Pageref{Definition-2.16}
 
- [**Definition 2.17**](#Definition-2.17)\Pageref{Definition-2.17}
+ [**Corollary 2.17**](#Corollary-2.17)\Pageref{Corollary-2.17}
 
- [**Corollary 2.18**](#Corollary-2.18)\Pageref{Corollary-2.18}
+ [**Corollary 2.18**](#projec)\Pageref{projec}
 
- [**Corollary 2.19**](#projec)\Pageref{projec}
+ [**Corollary 2.19**](#Corollary-2.19)\Pageref{Corollary-2.19}
 
- [**Corollary 2.20**](#Corollary-2.20)\Pageref{Corollary-2.20}
-
- [**Definition 2.21**](#inner-product): Inner Product\Pageref{inner-product}
+ [**Definition 2.20**](#inner-product): Inner Product\Pageref{inner-product}
 
  [**Definition 3.1**](#matrix): Matrix\Pageref{matrix}
 
