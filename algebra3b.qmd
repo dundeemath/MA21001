@@ -222,21 +222,7 @@ consists of the matrices ${\rm E}^{(i,j)}$ which have a 1 at entry (i,j)
 and zeros everywhere else. The space is of dimension $m \times n$.
 :::
 
-::: {#exm-vktspace6}
-Let $\mathcal{P}_{n}$ denote the set of all polynomials
-with degree $\leq n$. $\mathcal{P}_{n}$ is a vector space if we declare
-an addition and scalar multiplication of polynomials
-$p(x)= a_{0} + a_{1}x + ...+a_{n} x^{n}$ and
-$q(x)= b_{0} + b_{1}x + ...+b_{n} x^{n}$$\in \mathcal{P}_{n}$ by
-$$\begin{aligned}
-p(x)+q(x) &= (a_{0}+ b_{0}) + (a_{1} + b_{1}) x + ...+(a_{n}+ b_{n}) x^{n}   \in \mathcal{P}_{n} ,  \\
-\lambda p(x) &=  \lambda a_{0} +  \lambda a_{1}x + ...+ \lambda a_{n} x^{n}  \in \mathcal{P}_{n} . 
-\end{aligned}$$ Note that we can identify a polynomial of degree
-$\leq n$ with the vector of coefficients
-$$p(x) \sim  (a_{0}, a_{1},.., a_{n})^{T} .$$ Hence, a basis for the
-space consists of the *monomials* $x^{r}, r=0,1, ..,n$ and is $n+1$
-dimensional.
-:::
+
 
 ::: {#exm-vktspace7}
 The solutions of a homogeneous linear differential

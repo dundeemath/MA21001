@@ -282,24 +282,24 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
 %%%% --- end foldboxy preamble ----- %%%%%
 %%==== colors from yaml ===%
-\definecolor{DONE-color1}{HTML}{cce7b1}
-\definecolor{DONE-color2}{HTML}{86b754}
-\definecolor{Theorem-color1}{HTML}{948bde}
-\definecolor{Theorem-color2}{HTML}{584eab}
-\definecolor{Proof-color1}{HTML}{c0c0c0}
-\definecolor{Proof-color2}{HTML}{808080}
-\definecolor{Solution-color1}{HTML}{c0c0c0}
-\definecolor{Solution-color2}{HTML}{808080}
 \definecolor{Conjecture-color1}{HTML}{948bde}
 \definecolor{Conjecture-color2}{HTML}{584eab}
+\definecolor{Proof-color1}{HTML}{c0c0c0}
+\definecolor{Proof-color2}{HTML}{808080}
+\definecolor{TODO-color1}{HTML}{e7b1b4}
+\definecolor{TODO-color2}{HTML}{8c3236}
+\definecolor{DONE-color1}{HTML}{cce7b1}
+\definecolor{DONE-color2}{HTML}{86b754}
 \definecolor{Definition-color1}{HTML}{d999d3}
 \definecolor{Definition-color2}{HTML}{a01793}
+\definecolor{Theorem-color1}{HTML}{948bde}
+\definecolor{Theorem-color2}{HTML}{584eab}
 \definecolor{Corollary-color1}{HTML}{948bde}
 \definecolor{Corollary-color2}{HTML}{584eab}
 \definecolor{Feature-color1}{HTML}{c0c0c0}
 \definecolor{Feature-color2}{HTML}{808080}
-\definecolor{TODO-color1}{HTML}{e7b1b4}
-\definecolor{TODO-color2}{HTML}{8c3236}
+\definecolor{Solution-color1}{HTML}{c0c0c0}
+\definecolor{Solution-color2}{HTML}{808080}
 \definecolor{Lemma-color1}{HTML}{948bde}
 \definecolor{Lemma-color2}{HTML}{584eab}
 %=============%
@@ -676,7 +676,7 @@ the multiplication in \(\mathbb{R}\) is also the neutral element for the
 scalar multiplication, while the remaining conditions are distributive
 laws.
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on Notation}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on Notation}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 Alternative notations for vectors encountered in the literature are bold
 face symbols \({\bf v}\) or \(\bar v\) (not to be confused with complex
@@ -812,24 +812,6 @@ everywhere else. The space is of dimension \(m \times n\).
 
 \end{example}
 
-\begin{example}[]\protect\hypertarget{exm-vktspace6}{}\label{exm-vktspace6}
-
-Let \(\mathcal{P}_{n}\) denote the set of all polynomials with degree
-\(\leq n\). \(\mathcal{P}_{n}\) is a vector space if we declare an
-addition and scalar multiplication of polynomials
-\(p(x)= a_{0} + a_{1}x + ...+a_{n} x^{n}\) and
-\(q(x)= b_{0} + b_{1}x + ...+b_{n} x^{n}\)\(\in \mathcal{P}_{n}\) by
-\[\begin{aligned}
-p(x)+q(x) &= (a_{0}+ b_{0}) + (a_{1} + b_{1}) x + ...+(a_{n}+ b_{n}) x^{n}   \in \mathcal{P}_{n} ,  \\
-\lambda p(x) &=  \lambda a_{0} +  \lambda a_{1}x + ...+ \lambda a_{n} x^{n}  \in \mathcal{P}_{n} . 
-\end{aligned}\] Note that we can identify a polynomial of degree
-\(\leq n\) with the vector of coefficients
-\[p(x) \sim  (a_{0}, a_{1},.., a_{n})^{T} .\] Hence, a basis for the
-space consists of the \emph{monomials} \(x^{r}, r=0,1, ..,n\) and is
-\(n+1\) dimensional.
-
-\end{example}
-
 \begin{example}[]\protect\hypertarget{exm-vktspace7}{}\label{exm-vktspace7}
 
 The solutions of a homogeneous linear differential equation of order
@@ -844,7 +826,7 @@ n-th order. In this case there are \(n\) linearly independent solutions.
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Advanced material}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Advanced material}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 \begin{example}[]\protect\hypertarget{exm-vktspace8}{}\label{exm-vktspace8}
 
@@ -1300,7 +1282,7 @@ The space of polynomials of degree \(\leq n\) has basis
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on dimension}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on dimension}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 Note that the dimension of \(V\) depends on the field \(K\). Thus the
 complex numbers \(\mathbb{C}\) can be considered as a space of dimension
@@ -1483,7 +1465,7 @@ b & b
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 While \(W_{1}\cap W_{2}\) is a subpace, \(W_{1}\cup W_{2}\) is in
 general not a subspace. For exampe if \(W_1\) and \(W_2\) are the x- and
@@ -1812,7 +1794,7 @@ field \(\mathbb{C}\) (or \(\mathbb{R}\)) is a map \[\begin{aligned}
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 The third property implies that the inner prodoct of a vector with
 itself is real and non-negative. This allows us to define the norm of a
@@ -1858,7 +1840,7 @@ A \(2\times3\) matrix: \[{\rm A} =\left(
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Notation}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Notation}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 Matrices are usually named by upper case roman letters,
 e.g.~\({\rm A}\). Individual entries are referred to by \(A_{i,j}\),
@@ -2001,7 +1983,7 @@ and scalar multiplication, and associative but not commutative.
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-warning-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 Matrix multiplication is not commutative in general:
 \({\rm A}  {\rm B} \neq  {\rm B}  {\rm A}\). This is clear already for
@@ -2207,7 +2189,7 @@ which does not have an inverse is said to be singular.
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 \begin{itemize}
 \tightlist
@@ -2222,7 +2204,7 @@ which does not have an inverse is said to be singular.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-warning-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-warning-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-warning-color-frame, breakable, colbacktitle=quarto-callout-warning-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 A division of matrices is \textbf{not} defined.
 
@@ -3512,7 +3494,7 @@ So a basis for the nullspace is
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note \ref*{nte-nonsquare}: Remark: Nullspace of non-square matrices}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note \ref*{nte-nonsquare}: Remark: Nullspace of non-square matrices}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 \quartocalloutnte{nte-nonsquare} 
 
@@ -3889,7 +3871,7 @@ a_{j} & b_{j} & c_{j} &  \\
 
 \end{fbx}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remember}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remember}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 The rules are similar to, \textbf{but not the same as,} Gaussian
 elimination; adding \(k\) times row 2 to row 1 is OK if the result goes
@@ -4160,7 +4142,7 @@ is a singular matrix).
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note:}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note:}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 Various authors define non-singular matrices to be either
 
@@ -4983,7 +4965,7 @@ such that \(P^{-1}AP = B\). If \(A\) is similar to \(B\), we write
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 If \(A \sim B\), we can write, equivalently, that \(A = PBP^{-1}\) or
 \(AP = PB\). The matrix \(P\) depends on \(A\) and \(B\). It is not
@@ -5195,7 +5177,7 @@ then \(P\) is invertible. Furthermore,
 
 \end{fbx}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 Eigenvectors can be placed into the columns of \(P\) in any order.
 However, the eigenvalues will come up on the diagonal of \(D\) in the
@@ -5349,7 +5331,7 @@ similar argumentation works for repeated eigenvalues.
 
 \end{fbx}
 
-\begin{tcolorbox}[enhanced jigsaw, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, opacitybacktitle=0.6, titlerule=0mm, coltitle=black, colframe=quarto-callout-note-color-frame, breakable, toprule=.15mm, colbacktitle=quarto-callout-note-color!10!white, toptitle=1mm, opacityback=0, rightrule=.15mm, bottomrule=.15mm, leftrule=.75mm, colback=white, bottomtitle=1mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, colbacktitle=quarto-callout-note-color!10!white, colback=white, left=2mm, opacityback=0, opacitybacktitle=0.6, coltitle=black, toptitle=1mm, bottomrule=.15mm, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, arc=.35mm, rightrule=.15mm, toprule=.15mm, titlerule=0mm, bottomtitle=1mm]
 
 Joint eigenbases play an important role in quantum mechanics, where the
 eigenstates of commuting operators can be expressed
