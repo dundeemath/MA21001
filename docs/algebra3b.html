@@ -120,27 +120,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
-.Conjecture {
+.Lemma {
   --color1: #948bde;
   --color2: #584eab;
 }
-.TODO {
-  --color1: #e7b1b4;
-  --color2: #8c3236;
+.Proof {
+  --color1: #c0c0c0;
+  --color2: #808080;
 }
 .Solution {
   --color1: #c0c0c0;
   --color2: #808080;
 }
+.Conjecture {
+  --color1: #948bde;
+  --color2: #584eab;
+}
 .Definition {
   --color1: #d999d3;
   --color2: #a01793;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Lemma {
+.Theorem {
   --color1: #948bde;
   --color2: #584eab;
 }
@@ -148,17 +148,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #c0c0c0;
   --color2: #808080;
 }
-.Proof {
-  --color1: #c0c0c0;
-  --color2: #808080;
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
 }
 .Corollary {
   --color1: #948bde;
   --color2: #584eab;
 }
-.Theorem {
-  --color1: #948bde;
-  --color2: #584eab;
+.TODO {
+  --color1: #e7b1b4;
+  --color2: #8c3236;
 }
 </style>
 
@@ -676,7 +676,7 @@ _{1},{\vec v}_{2},\cdots ,{\vec v}_{n}</span>. The numbers <span class="math inl
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 2.12</strong></span> Are the vectors <span class="math inline">(1,0,0)^{T}</span>, <span class="math inline">(1,1,0)^{T}</span> and <span class="math inline">(1,0,1)^{T}</span> linearly independent?</p>
 <p>We solve <span class="math display">a_{1} \scriptstyle \begin{pmatrix}   1 \\ 0 \\ 0  \end{pmatrix} \textstyle + a_{2} \scriptstyle \begin{pmatrix}   1 \\ 1 \\ 0  \end{pmatrix} \textstyle + a_{3} \scriptstyle \begin{pmatrix}   1 \\ 0 \\ 1  \end{pmatrix} \textstyle = \scriptstyle \begin{pmatrix}   0\\0\\0  \end{pmatrix} \textstyle,</span> for <span class="math inline">(a_{1},a_{2},a_{3})</span>. The third component of this equation implies <span class="math inline">a_{3}=0</span>. From the second and first component follow <span class="math inline">a_{2}=0</span> and <span class="math inline">a_{1} =0</span>. Hence, the vectors are linearly independent.</p>
-<p>On the other hand, the vectors <span class="math display">\scriptstyle \begin{pmatrix}   1 \\ 0 \\ 0  \end{pmatrix} \textstyle, \quad \scriptstyle \begin{pmatrix}   1 \\ 1 \\ 0  \end{pmatrix} \textstyle,  \quad \scriptstyle \begin{pmatrix}   0 \\ 1 \\ 0  \end{pmatrix} \textstyle,</span> are linearly dependent, since the third component reads <span class="math inline">a_{3} 0 = 0</span> which is satisfied for any <span class="math inline">a_{3}=\lambda</span>. The second component requires <span class="math inline">a_{2} = - a_{3}</span> and the first <span class="math inline">a_{1} = a_{3}</span>. So there are non-trivial solutions <span class="math inline">(\lambda , -\lambda , \lambda )</span>, e.g.&nbsp;<span class="math inline">(1,-1,1)</span>.</p>
+<p>On the other hand, the vectors <span class="math display">\scriptstyle \begin{pmatrix}   1 \\ 0 \\ 0  \end{pmatrix} \textstyle, \quad \scriptstyle \begin{pmatrix}   1 \\ 1 \\ 0  \end{pmatrix} \textstyle,  \quad \scriptstyle \begin{pmatrix}   0 \\ 1 \\ 0  \end{pmatrix} \textstyle,</span> are linearly dependent, since the third component reads <span class="math inline">a_{3} 0 = 0</span> which is satisfied for any <span class="math inline">a_{3}=\lambda</span>. The second component requires <span class="math inline">a_{2} = - a_{3}</span> and the first <span class="math inline">a_{1} = - a_{2}</span>. So there are non-trivial solutions <span class="math inline">(\lambda , -\lambda , \lambda )</span>, e.g.&nbsp;<span class="math inline">(1,-1,1)</span>.</p>
 </div>
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 2.13</strong></span> A set of two vectors is linearly independent if they are not parallel: <span class="math inline">a_{1} \vec{v}_{1} \neq a_{2} \vec{v_{2}}</span> for <span class="math inline">a_{1}, a_{2}</span> non-zero. A set of three vectors in <span class="math inline">\mathbb{R}^{2}</span> is always linearly dependent. A set of three vectors in <span class="math inline">\mathbb{R}^{3}</span> is linearly independent if they do not all lie in the same plane.</p>
@@ -712,8 +712,8 @@ _{1},{\vec v}_{2},\cdots ,{\vec v}_{n}</span>. The numbers <span class="math inl
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2.18</strong></span> The set of vectors <span class="math inline">\left\{(1,0,0)^{T}, (0,1,0)^{T}, (0,0,1)^{T}\right\}</span> forms a basis of <span class="math inline">\mathbb{R}^{3}</span> (more generally <span class="math inline">K^{3}</span> for a field <span class="math inline">K</span>), the set of vectors <span class="math inline">\left\{(1,0,0,0)^{T}, (0,1,0,0)^{T},\right\}</span><br>
-<span class="math inline">\left (0,0,1,0)^{T},(0,0,0,1)^{T}\right\}</span> forms a basis of <span class="math inline">\mathbb{R}^{4}</span> (more generally <span class="math inline">K^{4}</span>) and so on. This is called the <strong>standard basis</strong> of <span class="math inline">\mathbb{R}^{n}</span> (<span class="math inline">K^{n}</span> in more general sense) for <span class="math inline">n\in\mathbb{N}</span>.</p>
+<p><span class="theorem-title"><strong>Example 2.18</strong></span> The set of vectors <span class="math inline">\left\{(1,0,0)^{T}, (0,1,0)^{T}, (0,0,1)^{T}\right\}</span> forms a basis of <span class="math inline">\mathbb{R}^{3}</span>, the set of vectors <span class="math inline">\left\{(1,0,0,0)^{T}, (0,1,0,0)^{T},\right\}</span><br>
+<span class="math inline">\left (0,0,1,0)^{T},(0,0,0,1)^{T}\right\}</span> forms a basis of <span class="math inline">\mathbb{R}^{4}</span> and so on. This is called the <strong>standard basis</strong> of <span class="math inline">\mathbb{R}^{n}</span> for <span class="math inline">n\in\mathbb{N}</span>.</p>
 </div>
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 2.19</strong></span> The vectors <span class="math display">\vec{f}_{1} =  \scriptscriptstyle \begin{pmatrix}   0\\ 1 \\ 1   \end{pmatrix} \textstyle, \quad \vec{f}_{2} =  \scriptscriptstyle \begin{pmatrix}   0\\ 1 \\ 0   \end{pmatrix} \textstyle, \quad \vec{f}_{3} =  \scriptscriptstyle \begin{pmatrix}   0\\ 0 \\ 1  \end{pmatrix} \textstyle,</span> do not form a basis for <span class="math inline">\mathbb{R}^{3}</span> since they do not span the whole <span class="math inline">\mathbb{R}^{3}</span>. The vector <span class="math inline">\vec{e}_{1}</span>, for instance, has no representation in this set.</p>
@@ -722,7 +722,7 @@ _{1},{\vec v}_{2},\cdots ,{\vec v}_{n}</span>. The numbers <span class="math inl
 <p><span class="theorem-title"><strong>Example 2.20</strong></span> The vectors <span class="math display">\vec{f}_{1} =  \scriptscriptstyle \begin{pmatrix}   1\\ 0 \\ 0   \end{pmatrix} \textstyle, \quad \vec{f}_{2} =  \scriptscriptstyle \begin{pmatrix}   0\\ 1 \\ 0   \end{pmatrix} \textstyle, \quad \vec{f}_{3} =  \scriptscriptstyle \begin{pmatrix}   0\\ 0 \\ 1  \end{pmatrix} \textstyle, \quad  \vec{f}_{4} =  \scriptscriptstyle \begin{pmatrix}   1\\ 1 \\ 1   \end{pmatrix} \textstyle ,</span> are also not a basis. Although they span the whole <span class="math inline">\mathbb{R}^{3}</span>, they are not linearly independent.</p>
 </div>
 <div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2.21</strong></span> Consider the set of all <span class="math inline">n\times n</span> matrices with real entries <span class="math inline">\mathbb{R}^{(n\times n)}</span>. Let <span class="math inline">E_{ij}</span> be the <span class="math inline">n\times n</span> matrix with a ‘1’ in position <span class="math inline">(i,j)</span> and ‘0’ elsewhere. Then the collection of all such matrices (for all <span class="math inline">i,j=1,2,\ldots,n</span>) is a basis for <span class="math inline">\mathbb{R}^{(n\times n)}</span>.</p>
+<p><span class="theorem-title"><strong>Example 2.21</strong></span> Consider the set of all <span class="math inline">n\times n</span> matrices with real entries <span class="math inline">\rm{M}^{n\times n}</span>. Let <span class="math inline">E_{ij}</span> be the <span class="math inline">n\times n</span> matrix with a ‘1’ in position <span class="math inline">(i,j)</span> and ‘0’ elsewhere. Then the collection of all such matrices (for all <span class="math inline">i,j=1,2,\ldots,n</span>) is a basis for <span class="math inline">\mathbb{R}^{(n\times n)}</span>.</p>
 <p>Consider the case <span class="math inline">n=2</span>, then the basis matrices are <span class="math display">\left(\begin{array}{cc}
 a &amp; b\\
 c &amp; d
@@ -1974,7 +1974,7 @@ Figure&nbsp;2.1: The projection <span class="math inline">\vec{n}\cdot\vec{v}</s
 <span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>$$\scriptstyle \begin{pmatrix}   1 <span class="sc">\\</span> 0 <span class="sc">\\</span> 0  \end{pmatrix} \textstyle, \quad \scriptstyle \begin{pmatrix}   1 <span class="sc">\\</span> 1 <span class="sc">\\</span> 0  \end{pmatrix} \textstyle,  \quad \scriptstyle \begin{pmatrix}   0 <span class="sc">\\</span> 1 <span class="sc">\\</span> 0  \end{pmatrix} \textstyle,$$</span>
 <span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>are linearly dependent, since the third component reads $a_{3} 0 = 0$</span>
 <span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>which is satisfied for any $a_{3}=\lambda$. The second component requires $a_{2} = - a_{3}$ and the first</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>$a_{1} = a_{3}$. So there are non-trivial solutions $(\lambda , -\lambda , \lambda )$, e.g.&nbsp;$(1,-1,1)$.</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>$a_{1} = - a_{2}$. So there are non-trivial solutions $(\lambda , -\lambda , \lambda )$, e.g.&nbsp;$(1,-1,1)$.</span>
 <span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
@@ -2045,11 +2045,11 @@ Figure&nbsp;2.1: The projection <span class="math inline">\vec{n}\cdot\vec{v}</s
 <span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
 <span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>The set of vectors</span>
 <span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>$\left<span class="sc">\{</span>(1,0,0)^{T}, (0,1,0)^{T}, (0,0,1)^{T}\right<span class="sc">\}</span>$ forms a basis of</span>
-<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>$\mathbb{R}^{3}$ (more generally $K^{3}$ for a field $K$), the set of</span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>$\mathbb{R}^{3}$, the set of</span>
 <span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>vectors $\left<span class="sc">\{</span>(1,0,0,0)^{T}, (0,1,0,0)^{T},\right<span class="sc">\}</span>$\</span>
 <span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>$\left (0,0,1,0)^{T},(0,0,0,1)^{T}\right<span class="sc">\}</span>$ forms a basis of</span>
-<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>$\mathbb{R}^{4}$ (more generally $K^{4}$) and so on. This is called the</span>
-<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>**standard basis** of $\mathbb{R}^{n}$ ($K^{n}$ in more general sense)</span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>$\mathbb{R}^{4}$ and so on. This is called the</span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>**standard basis** of $\mathbb{R}^{n}$</span>
 <span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>for $n\in\mathbb{N}$.</span>
 <span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a></span>
@@ -2070,7 +2070,7 @@ Figure&nbsp;2.1: The projection <span class="math inline">\vec{n}\cdot\vec{v}</s
 <span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
 <span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>Consider the set of all $n\times n$ matrices with real</span>
-<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>entries $\mathbb{R}^{(n\times n)}$. Let $E_{ij}$ be the $n\times n$</span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>entries $\rm{M}^{n\times n}$. Let $E_{ij}$ be the $n\times n$</span>
 <span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>matrix with a '1' in position $(i,j)$ and '0' elsewhere. Then the</span>
 <span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>collection of all such matrices (for all $i,j=1,2,\ldots,n$) is a basis</span>
 <span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>for $\mathbb{R}^{(n\times n)}$.</span>

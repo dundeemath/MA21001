@@ -384,7 +384,7 @@ On the other hand, the vectors
 $$\scriptstyle \begin{pmatrix}   1 \\ 0 \\ 0  \end{pmatrix} \textstyle, \quad \scriptstyle \begin{pmatrix}   1 \\ 1 \\ 0  \end{pmatrix} \textstyle,  \quad \scriptstyle \begin{pmatrix}   0 \\ 1 \\ 0  \end{pmatrix} \textstyle,$$
 are linearly dependent, since the third component reads $a_{3} 0 = 0$
 which is satisfied for any $a_{3}=\lambda$. The second component requires $a_{2} = - a_{3}$ and the first
-$a_{1} = a_{3}$. So there are non-trivial solutions $(\lambda , -\lambda , \lambda )$, e.g. $(1,-1,1)$.
+$a_{1} = - a_{2}$. So there are non-trivial solutions $(\lambda , -\lambda , \lambda )$, e.g. $(1,-1,1)$.
 :::
 
 ::: {#exm-    }
@@ -455,11 +455,11 @@ independent set of vectors which span the vector space.
 ::: {#exm-    }
 The set of vectors
 $\left\{(1,0,0)^{T}, (0,1,0)^{T}, (0,0,1)^{T}\right\}$ forms a basis of
-$\mathbb{R}^{3}$ (more generally $K^{3}$ for a field $K$), the set of
+$\mathbb{R}^{3}$, the set of
 vectors $\left\{(1,0,0,0)^{T}, (0,1,0,0)^{T},\right\}$\
 $\left (0,0,1,0)^{T},(0,0,0,1)^{T}\right\}$ forms a basis of
-$\mathbb{R}^{4}$ (more generally $K^{4}$) and so on. This is called the
-**standard basis** of $\mathbb{R}^{n}$ ($K^{n}$ in more general sense)
+$\mathbb{R}^{4}$ and so on. This is called the
+**standard basis** of $\mathbb{R}^{n}$
 for $n\in\mathbb{N}$.
 :::
 
@@ -480,7 +480,7 @@ they are not linearly independent.
 
 ::: {#exm-    }
 Consider the set of all $n\times n$ matrices with real
-entries $\mathbb{R}^{(n\times n)}$. Let $E_{ij}$ be the $n\times n$
+entries $\rm{M}^{n\times n}$. Let $E_{ij}$ be the $n\times n$
 matrix with a '1' in position $(i,j)$ and '0' elsewhere. Then the
 collection of all such matrices (for all $i,j=1,2,\ldots,n$) is a basis
 for $\mathbb{R}^{(n\times n)}$.
