@@ -120,25 +120,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
-.Lemma {
+.Corollary {
   --color1: #948bde;
   --color2: #584eab;
-}
-.Proof {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Solution {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Conjecture {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Definition {
-  --color1: #d999d3;
-  --color2: #a01793;
 }
 .Theorem {
   --color1: #948bde;
@@ -148,17 +132,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #c0c0c0;
   --color2: #808080;
 }
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Corollary {
-  --color1: #948bde;
-  --color2: #584eab;
+.Solution {
+  --color1: #c0c0c0;
+  --color2: #808080;
 }
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
+}
+.Lemma {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Proof {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Definition {
+  --color1: #d999d3;
+  --color2: #a01793;
+}
+.Conjecture {
+  --color1: #948bde;
+  --color2: #584eab;
 }
 </style>
 
@@ -837,7 +837,7 @@ c_{q1}a_{1}+\cdots +c_{qp}a_{p} &amp;=0
 </div></details>
 </div>
 <div id="Proof*-2.4" class="Proof">
-<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>We know that the standard basis of <span class="math inline">\mathbb{R}^{n}</span> consists of <span class="math inline">n</span> elements, hence the dimension is <span class="math inline">n</span>. Suppose the <span class="math inline">n</span> vectors would not span <span class="math inline">\mathbb{R}^{n}</span>. Then we could add vectors such that the new set spans the space and forms a basis. However, we would then have a basis with more than <span class="math inline">n</span> vectors. That can’t be, as any basis of <span class="math inline">\mathbb{R}^{n}</span> has to have <span class="math inline">n</span> vectors. So the assumption that the vectors don’t span of <span class="math inline">\mathbb{R}^{n}</span> is false and they do span the space. Similar, if there were <span class="math inline">n+1</span> vectors in <span class="math inline">\mathbb{R}^{n}</span> must be linearly dependent. If they were linearly independent they could form a basis with more than <span class="math inline">n</span> elements. Again this can be true, hence they are linearly dependent.&nbsp;◻<p></p>
+<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>We know that the standard basis of <span class="math inline">\mathbb{R}^{n}</span> consists of <span class="math inline">n</span> elements, hence the dimension is <span class="math inline">n</span>. Suppose the <span class="math inline">n</span> vectors would not span <span class="math inline">\mathbb{R}^{n}</span>. Then we could add vectors such that the new set spans the space and forms a basis. However, we would then have a basis with more than <span class="math inline">n</span> vectors. That can’t be, as any basis of <span class="math inline">\mathbb{R}^{n}</span> has to have <span class="math inline">n</span> vectors. So the assumption that the vectors don’t span of <span class="math inline">\mathbb{R}^{n}</span> is false and they do span the space. Similar, <span class="math inline">n+1</span> vectors in <span class="math inline">\mathbb{R}^{n}</span> must be linearly dependent. If they were linearly independent they could form a basis with more than <span class="math inline">n</span> elements. Again this can’t be true, hence they are linearly dependent.&nbsp;◻<p></p>
 </div></details>
 </div>
 </section>
@@ -2255,7 +2255,7 @@ Figure&nbsp;2.1: The projection <span class="math inline">\vec{n}\cdot\vec{v}</s
 <span id="cb1-665"><a href="#cb1-665" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-666"><a href="#cb1-666" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
 <span id="cb1-667"><a href="#cb1-667" aria-hidden="true" tabindex="-1"></a>We know that the standard basis of $\mathbb{R}^{n}$ consists of</span>
-<span id="cb1-668"><a href="#cb1-668" aria-hidden="true" tabindex="-1"></a>$n$ elements, hence the dimension is $n$. Suppose the $n$ vectors would not span $\mathbb{R}^{n}$. Then we could add vectors such that the new set spans the space and forms a basis. However, we would then have a basis with more than $n$ vectors. That can't be, as any basis  of $\mathbb{R}^{n}$ has to have $n$ vectors. So the assumption that the vectors don't span of $\mathbb{R}^{n}$ is false and they do span the space. Similar, if there were $n+1$ vectors in $\mathbb{R}^{n}$ must be linearly dependent. If they were linearly independent they could form a basis with more than $n$ elements. Again this can be true, hence they are linearly dependent.&nbsp;◻</span>
+<span id="cb1-668"><a href="#cb1-668" aria-hidden="true" tabindex="-1"></a>$n$ elements, hence the dimension is $n$. Suppose the $n$ vectors would not span $\mathbb{R}^{n}$. Then we could add vectors such that the new set spans the space and forms a basis. However, we would then have a basis with more than $n$ vectors. That can't be, as any basis  of $\mathbb{R}^{n}$ has to have $n$ vectors. So the assumption that the vectors don't span of $\mathbb{R}^{n}$ is false and they do span the space. Similar,  $n+1$ vectors in $\mathbb{R}^{n}$ must be linearly dependent. If they were linearly independent they could form a basis with more than $n$ elements. Again this can't be true, hence they are linearly dependent.&nbsp;◻</span>
 <span id="cb1-669"><a href="#cb1-669" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-670"><a href="#cb1-670" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-671"><a href="#cb1-671" aria-hidden="true" tabindex="-1"></a><span class="fu">## Subspaces</span></span>

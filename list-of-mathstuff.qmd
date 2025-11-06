@@ -57,7 +57,7 @@
 
  [**Definition 3.9**](#inverse-of-a-matrix): Inverse of a matrix\Pageref{inverse-of-a-matrix}
 
- [**Corollary 3.10**](#inverse-of-tranpose-and-product): Inverse of Tranpose and Product\Pageref{inverse-of-tranpose-and-product}
+ [**Corollary 3.10**](#inverse-of-transpose-and-product): Inverse of Transpose and Product\Pageref{inverse-of-transpose-and-product}
 
  [**Definition 3.11**](#Definition-3.11)\Pageref{Definition-3.11}
 

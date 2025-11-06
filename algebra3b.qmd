@@ -665,7 +665,7 @@ linearly dependent.
 
 ::: {.Proof}
 We know that the standard basis of $\mathbb{R}^{n}$ consists of
-$n$ elements, hence the dimension is $n$. Suppose the $n$ vectors would not span $\mathbb{R}^{n}$. Then we could add vectors such that the new set spans the space and forms a basis. However, we would then have a basis with more than $n$ vectors. That can't be, as any basis  of $\mathbb{R}^{n}$ has to have $n$ vectors. So the assumption that the vectors don't span of $\mathbb{R}^{n}$ is false and they do span the space. Similar, if there were $n+1$ vectors in $\mathbb{R}^{n}$ must be linearly dependent. If they were linearly independent they could form a basis with more than $n$ elements. Again this can be true, hence they are linearly dependent. ◻
+$n$ elements, hence the dimension is $n$. Suppose the $n$ vectors would not span $\mathbb{R}^{n}$. Then we could add vectors such that the new set spans the space and forms a basis. However, we would then have a basis with more than $n$ vectors. That can't be, as any basis  of $\mathbb{R}^{n}$ has to have $n$ vectors. So the assumption that the vectors don't span of $\mathbb{R}^{n}$ is false and they do span the space. Similar,  $n+1$ vectors in $\mathbb{R}^{n}$ must be linearly dependent. If they were linearly independent they could form a basis with more than $n$ elements. Again this can't be true, hence they are linearly dependent. ◻
 :::
 
 ## Subspaces

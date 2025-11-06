@@ -16,7 +16,7 @@ $${\rm A} =\left(
  1 &  2 & 5  \\
   3 & 4  &   -7
   \end{array}
-\right) \in M_{2\times3} ,  \quad A_{1,2} =2 .$$
+\right) \in M_{2\times3} ,  \quad A_{12} =2 .$$
 :::
 
 ::: {.callout-note} 
@@ -26,7 +26,7 @@ Individual entries are referred to by $A_{i,j}$, i.e. the entry in row
 $i$ and column $j$ of the array. Entries are also sometimes denoted by
 the corresponding lower-case letter, e.g. $a_{i,j}$. A matrix can be
 symbolically represented by its general entry:
-${\rm A}=\left[ a_{i,j}\right]$. 
+${\rm A}=\left[ a_{ij}\right]$. 
 :::
 
 Analogous to the rules of addition and scalar multiplication of vectors,
@@ -35,9 +35,9 @@ we have the following rules for matrices:
 ::: {.Definition}
 ## Matrix sum and scalar multiplication
 Addition of two matrices of the same type (${\rm A} ,{\rm B} \in M_{m \times n}$) is defined by 
-$${\rm A} + {\rm B}=[a_{i,j}] + [b_{i,j}]= [ a_{i,j}+b_{i,j}], $$
+$${\rm A} + {\rm B}=[a_{ij}] + [b_{ij}]= [ a_{ij}+b_{ij}], $$
 and the scalar multiplication by
-$$c {\rm A} = c [a_{i,j}] = [ c a_{i,j}] .$$
+$$c {\rm A} = c [a_{ij}] = [ c a_{ij}] .$$
 :::
 
 Example: 
@@ -67,7 +67,7 @@ $$\left(
   \end{array}
 \right)$$ The neutral element of the addition is the *zero matrix*,
 ${\rm O}$, where all entries are zero. The inverse element of the
-addition is the negative matrix $-{\rm A} = [-a_{i,j}]$. The two
+addition is the negative matrix $-{\rm A} = [-a_{ij}]$. The two
 operations lead to the following properties: 
 
 ::: {.Corollary}
@@ -76,7 +76,7 @@ $$\begin{aligned}
  {\rm A} + {\rm B} & =  {\rm B} + {\rm A} \quad \text{(addition is ccommutative)} \\
   ({\rm A} + {\rm B}) + {\rm C} &= {\rm A} + ({\rm B}  + {\rm C}) \quad \text{(addition is associative)} \\
   {\rm A} + {\rm O} & =  {\rm A} \quad \text{(Existence of a neutral element for add.)} \\
-  {\rm A} + {\rm -A} & =  {\rm O} \quad \text{(Existence of an inverse element for add.)} \\
+  {\rm A} + ({\rm -A}) & =  {\rm O} \quad \text{(Existence of an inverse element for add.)} \\
   a ({\rm A} + {\rm B})  &= a {\rm A} + a {\rm B} \quad \text{(Distributive law 1)} \\
   (a+b)  {\rm A}  &= a {\rm A} + b {\rm A}   \quad \text{(Distributive law 2)} \\
   a(b {\rm A} )&= (ab) {\rm A}  \quad \text{(scalar mult. is associative)} 
@@ -90,7 +90,7 @@ In addition to the rules above, we have a matrix multiplication:
  The matrix product of the
 $m \! \times \! r$ matrix $G$ and the $r \! \times \! n$ matrix $H$ is
 the $m \! \times \! n$ matrix $P$, where 
-$$p_{i,j}  = g_{i,1}h_{1,j}+g_{i,2}h_{2,j}+\dots+g_{i,r}h_{r,j}$$ 
+$$p_{i,j}  = g_{i,1}h_{1,j}+g_{i,2}h_{2,j}+\dots+g_{i,r}h_{r,j} = \sum_{s=1}^r g_{is}h_{sj}$$ 
 that is, the
 $i,j$-th entry of the product is the dot product of the $i$-th row and
 the $j$-th column. 
@@ -227,9 +227,9 @@ and vice versa. This operation is defined for arbitrary matrices.
 
 ::: {.Definition}
 ## Transpose of a Matrix
-If $A=[a_{i\,j} ]$ is an
+If $A=[a_{ij} ]$ is an
 $m\times n$ matrix, then the transpose of $A$, denoted by $A^T$, is
-defined as $$A^T=[a_{j,i}]  \in M_{n\times m}  .$$
+defined as $$A^T=[a_{ji}]  \in M_{n\times m}  .$$
 :::
 
 This means that, for example, the first row of $A^T$ is the first column
@@ -239,7 +239,6 @@ In particular, the transpose of a column matrix (i.e. a $n\times 1$
 matrix ) is a row matrix, and vice versa.
 
 ::: {#exm-    } 
-*Example* Check that ${\rm A}{\rm A}^{-1}= {\rm I}$ and ${\rm A}^{-1}{\rm A} = {\rm I}$.
 $$\left( \begin{array}{rrr}
  2  & 0  & 1  \\
  1  & 0  & 3  
@@ -262,12 +261,12 @@ $$\begin{aligned}
 ::: {.Proof}
 (i) follows directly from the definition. 
 (ii)
-$$\left( ({\rm A} + {\rm B})^{T}\right)_{ij} =  ({\rm A} + {\rm B})_{ji} = {\rm A}_{ji} + {\rm B}_{ji}  = ({\rm A}^{T})_{ij} + ({\rm B}^{T})_{ij}$$
+$$\left( ({\rm A} + {\rm B})^{T}\right)_{ij} =  ({\rm A} + {\rm B})_{ji} = a_{ji} + b_{ji}  = ({\rm A}^{T})_{ij} + ({\rm B}^{T})_{ij}$$
 (iii) This requires, of course, that the product is defined, that is
 ${\rm A}\in M_{m \times r}$ and ${\rm B}\in M_{r \times n}$.
 $$\begin{aligned}
- ({\rm A} {\rm B})_{ij} & = \sum_{s=1}^{r} A_{is}B_{sj} \\
-\left( ({\rm A} {\rm B})^{T}\right)_{ij} & = \sum_{s=1}^{r} A_{js}B_{si} \\
+ ({\rm A} {\rm B})_{ij} & = \sum_{s=1}^{r} a_{is}b_{sj} \\
+\left( ({\rm A} {\rm B})^{T}\right)_{ij} & = \sum_{s=1}^{r} a_{js}b_{si} \\
 & = \sum_{s=1}^{r} ({\rm A}^{T})_{sj}({\rm B}^{T})_{is}  \\
 & =\sum_{s=1}^{r} ({\rm B}^{T})_{is} ({\rm A}^{T})_{sj} = {\rm B}^{T} {\rm A}^{T}
 \end{aligned}.$$ ◻
@@ -278,17 +277,33 @@ $$\begin{aligned}
 ::: {.Definition}
 ## Symmetric and skew-symmetric matrices
 Let ${\rm A}$ be a square matrix. If ${\rm A}={\rm A}^T$ then ${\rm A}$ is said to be
-symmetric. If ${\rm A}= - {\rm A}^T$ then ${\rm A}$ is said to be skew-symmetric. 
+symmetric. If ${\rm A}= - {\rm A}^T$ then ${\rm A}$ is said to be skew-symmetric or anti-symmetric. 
 :::
 
 Some matrices are neither symmetric nor skew-symmetric. However, every
 square matrix can be written uniquely as the sum of a symmetric and
 skew-symmetric matrix because of the identity
-$${\rm A} = \frac{{\rm A}^{T}+{\rm A}}{2} + \frac{{\rm A}- {\rm A}^{T}}{2} ,$$
+$${\rm A} = \frac{{\rm A}^{T}+{\rm A}}{2} + \frac{{\rm A}- {\rm A}^{T}}{2} ,$$ {#eq-symdecomp}
 noting that $(A^{T}+A)/2$ is symmetric, and $({\rm A}- {\rm A}^{T} )/2$
 is skew-symmetric.
 
 ::: {#exm-} 
+Example for a symmetric and a skew-symmetric matrix. 
+$$ {\rm A}= \left( \begin{array}{rrr}
+ 1  & 0  & {-4}  \\
+ 0  & 2  & 5  \\
+ -4  & 5  & 3  
+\end{array}  \right) = {\rm A^T}; \quad  {\rm A} = \left(\begin{array}{rrr}
+ 0  & 1  & {-4}  \\
+ -1  & 0  & 5  \\
+ 4  & -5  & 0  
+\end{array}  \right) = (- {\rm A}^T).$$
+Note that a skew symmetric matrix has to have zeros on the diagonal.  
+:::
+
+
+::: {#exm-} 
+Example for the decomposition @eq-symdecomp.
 $$\left( \begin{array}{rrr}
  2  & 0  & {-4}  \\
  {-2}  & 2  & 0  \\
@@ -306,7 +321,7 @@ $$\left( \begin{array}{rrr}
 
 ## Inverse Matrix
 
-There exists a neutral element ${\rm I} \in M_{n\times n}$ called the
+There exists a neutral element, ${\rm I} \in M_{n\times n}$, w.r.t.~the matrix multiplication, called the
 identity matrix for the multiplication, which consists of 1's down the
 main diagonal and 0's everywhere else: $${\rm I} =  \begin{pmatrix}
           1 &0  &\ldots   &0  \\
@@ -317,17 +332,46 @@ main diagonal and 0's everywhere else: $${\rm I} =  \begin{pmatrix}
 
 The existence of a neutral element with respect to matrix multiplication
 means: $$\begin{aligned}
-{\rm A} {\rm I} & = {\rm A}  \quad \text{and} \quad  {\rm I}  {\rm A} = {\rm A}  \quad \text{for all} \ {\rm A} \in M_ {m\times r}.
+{\rm A} {\rm I} & = {\rm A}  \quad \text{and} \quad  {\rm I}  {\rm A} = {\rm A}  \quad \text{for} \ {\rm A} \in M_ {m\times r}.
 \end{aligned}$$ Note that if ${\rm A} \in M_{m\times r}$ then in the
 first equation ${\rm I}\in M_{r\times r}$ while in the second equation
 ${\rm I}\in M_{m\times m}$.
 
+::: {#exm-} 
+
+$${\rm I}{\rm A} =\left(\begin{array}{rrr}
+ 1  & 0  & 0  \\
+ 0  & 1  & 0  \\
+ 0  & 0  & 1  
+\end{array}  \right) \left( \begin{array}{rr}
+ 1  & 2  \\
+ 3  & 4   \\
+ 5  & 6    
+\end{array}  \right) = \left( \begin{array}{rr}
+ 1  & 2  \\
+ 3  & 4   \\
+ 5  & 6    
+\end{array}  \right)= {\rm A}.$$
+
+$${\rm A}{\rm I} =\left(\begin{array}{rr}
+ 1  & 2  \\
+ 3  & 4   \\
+ 5  & 6    
+\end{array}  \right)\left(\begin{array}{rr}
+ 1  & 0  \\
+ 0  & 1    
+\end{array}  \right)=\left( \begin{array}{rr}
+ 1  & 2  \\
+ 3  & 4   \\
+ 5  & 6    
+\end{array}  \right)= {\rm A}.$$
+:::
+
 ::: {.Definition} 
 # Inverse of a matrix
-Given two square matrices ${\rm A}$ and ${\rm B}$ which
-satisfy
+If two square matrices ${\rm A}$ and ${\rm B}$ satisfy
 $${\rm A} {\rm B} = {\rm B}  {\rm A} = {\rm I}$$
-then ${\rm B} = {\rm A}^{-1}$ is called the inverse of ${\rm A}$. If
+then ${\rm B} = {\rm A}^{-1}$ is called the inverse of ${\rm A}$ (and vice versa ${\rm A}$ is the inverse of ${\rm B}$). If
 ${\rm A}$ has an inverse, it is said to be non-singular. Any matrix
 which does not have an inverse is said to be singular.
 :::
@@ -348,7 +392,8 @@ $$ \Rightarrow {\rm I}{\rm B} = {\rm B} = {\rm A}^{-1}{\rm C}$$
 However, we can't write ${\rm C}/{\rm A}$ as that would not indicate whether we have to multiply with the inverse from the left or right.
 
 
-::: {#exm-}
+::: {#exm-} 
+Check that ${\rm A}{\rm A}^{-1}= {\rm I}$ and ${\rm A}^{-1}{\rm A} = {\rm I}$.
 $$A=\left[ \begin{array}{ccc}
  2 & 0 & 1 \\
  1 & {-2} & 1 \\
@@ -362,7 +407,7 @@ A^{-1}=\left[ \begin{array}{ccc}
 :::
 
 ::: {.Corollary}
-## Inverse of Tranpose and Product
+## Inverse of Transpose and Product
 If ${\rm A}$ and ${\rm B}$ are non-singular
 $n\times n$ matrices then $$({\rm A}^{-1})^T  =  ({\rm A}^T)^{-1}$$ and
 $$({\rm A}{\rm B})^{-1}={\rm B}^{-1}{\rm A}^{-1}$$
@@ -382,9 +427,9 @@ $$(B^{-1}A^{-1}(AB))=B^{-1}A^{-1}AB=I_n .$$ ◻
 
 ## Gaussian Elimination
 
-In the previous sections, we considered individual equations of the type
+In the previous sections, we encountered systems of equations of the type
 $$a_{1} x_{1} + a_{2} x_{2}  + ... + a_{n} x_{n} = d.$$ In the
-following, we will consider systems of such equations and use a method
+following, we will use a method
 called Gaussian elimination to determine solutions.
 
 We start with a simple example. Consider the system 
@@ -404,7 +449,7 @@ The result $y=-3$ is then substituted back in either of
 the two equations, and we find $x=5$. When it comes to systems with
 large numbers of variables and equations, this approach becomes
 increasingly hard to follow, and we need a more systematic approach.
-Note that second line above can be understood as the result of subtracting twice
+Note that the second line above can be understood as the result of subtracting twice
 the second equation from the first equation in the original system. 
 That is, we converted the system 
 \begin{align*}
