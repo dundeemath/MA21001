@@ -111,30 +111,28 @@
 
  [**Definition 5.5**](#algebraic-and-geometric-multiplicity): Algebraic and Geometric Multiplicity\Pageref{algebraic-and-geometric-multiplicity}
 
- [**Corollary 5.6**](#eigenvaluestriangular)\Pageref{eigenvaluestriangular}
+ [**Corollary 5.6**](#Corollary-5.6)\Pageref{Corollary-5.6}
 
- [**Theorem 5.7**](#eigenlinind)\Pageref{eigenlinind}
+ [**Corollary 5.7**](#eigenvaluestriangular)\Pageref{eigenvaluestriangular}
 
- [**Definition 5.8**](#similar-matrices-1): Similar Matrices\Pageref{similar-matrices-1}
+ [**Theorem 5.8**](#eigenlinind)\Pageref{eigenlinind}
 
- [**Theorem 5.9**](#simmatrices): Properties of Similar Matrices\Pageref{simmatrices}
+ [**Definition 5.9**](#similar-matrices-1): Similar Matrices\Pageref{similar-matrices-1}
 
- [**Definition 5.10**](#diagonalisable-matrices): Diagonalisable Matrices\Pageref{diagonalisable-matrices}
+ [**Theorem 5.10**](#simmatrices): Properties of Similar Matrices\Pageref{simmatrices}
 
- [**Theorem 5.11**](#diagifind): Condition for Diagonalisability\Pageref{diagifind}
+ [**Definition 5.11**](#diagonalisable-matrices): Diagonalisable Matrices\Pageref{diagonalisable-matrices}
 
- [**Theorem 5.12**](#section)\Pageref{section}
+ [**Theorem 5.12**](#diagifind): Condition for Diagonalisability\Pageref{diagifind}
 
- [**Theorem 5.13**](#eigendiag)\Pageref{eigendiag}
+ [**Theorem 5.13**](#section)\Pageref{section}
 
- [**Corollary 5.14**](#Corollary-5.14)\Pageref{Corollary-5.14}
+ [**Theorem 5.14**](#eigendiag)\Pageref{eigendiag}
 
- [**Theorem 5.15**](#diagonalisation-theorem): Diagonalisation Theorem\Pageref{diagonalisation-theorem}
+ [**Theorem 5.15**](#joint-eigenbasis): Joint eigenbasis\Pageref{joint-eigenbasis}
 
- [**Theorem 5.16**](#joint-eigenbasis): Joint eigenbasis\Pageref{joint-eigenbasis}
+ [**Definition 5.16**](#hermitian-adjoint-operator): (Hermitian) Adjoint Operator\Pageref{hermitian-adjoint-operator}
 
- [**Definition 5.17**](#hermitian-adjoint-operator): (Hermitian) Adjoint Operator\Pageref{hermitian-adjoint-operator}
+ [**Corollary 5.17**](#properties-of-the-hermitian-adjoint): Properties of the hermitian adjoint\Pageref{properties-of-the-hermitian-adjoint}
 
- [**Corollary 5.18**](#properties-of-the-hermitian-adjoint): Properties of the hermitian adjoint\Pageref{properties-of-the-hermitian-adjoint}
-
- [**Corollary 5.19**](#orthogonal-eigenbasis): orthogonal eigenbasis\Pageref{orthogonal-eigenbasis}
+ [**Corollary 5.18**](#orthogonal-eigenbasis): Orthogonal eigenbasis\Pageref{orthogonal-eigenbasis}

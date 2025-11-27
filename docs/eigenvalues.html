@@ -120,9 +120,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
+.Corollary {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Lemma {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Solution {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
+}
+.Conjecture {
+  --color1: #948bde;
+  --color2: #584eab;
 }
 .TODO {
   --color1: #e7b1b4;
@@ -132,23 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #c0c0c0;
   --color2: #808080;
 }
-.Feature {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Solution {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Corollary {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Lemma {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Conjecture {
+.Theorem {
   --color1: #948bde;
   --color2: #584eab;
 }
@@ -156,9 +156,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #d999d3;
   --color2: #a01793;
 }
-.Theorem {
-  --color1: #948bde;
-  --color2: #584eab;
+.Feature {
+  --color1: #c0c0c0;
+  --color2: #808080;
 }
 </style>
 
@@ -673,8 +673,12 @@ The geometric multiplicity of an eigenvalue <span class="math inline">\lambda</s
 </div></details>
 </div>
 <p>In the above Example, <span class="math inline">\lambda = 1</span> has algebraic multiplicity <span class="math inline">2</span> and geometric multiplicity <span class="math inline">1</span>. <span class="math inline">\lambda = 2</span> has algebraic multiplicity <span class="math inline">1</span> and geometric multiplicity <span class="math inline">1</span>.</p>
+<div id="Corollary-5.6" class="Corollary">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 5.6</strong></summary><div>If <span class="math inline">A</span> is an <span class="math inline">n \times n</span> matrix, then the geometric multiplicity of each eigenvalue is at least 1 and less than or equal to its algebraic multiplicity. <span class="math display"> 1 \le {\rm dim( E_\lambda)\le \text{\small algebraic multiplicity}}</span><p></p>
+</div></details>
+</div>
 <div id="eigenvaluestriangular" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 5.6</strong></summary><div>The eigenvalues of a triangular matrix are the entries on its main diagonal.<p></p>
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 5.7</strong></summary><div>The eigenvalues of a triangular matrix are the entries on its main diagonal.<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
@@ -686,9 +690,9 @@ The geometric multiplicity of an eigenvalue <span class="math inline">\lambda</s
     \end{alignedat}</span></p>
 <p>Hence, the eigenvalues are <span class="math inline">\lambda _{1}=2, \lambda _{2}=1, \lambda _{3}=3, \lambda _{4}=-2</span>.</p>
 </div>
-<p>Note that diagonal matrices are a special case of Corollary <a href="eigenvalues.html#eigenvaluestriangular">5.6</a>.</p>
+<p>Note that diagonal matrices are a special case of Corollary <a href="eigenvalues.html#eigenvaluestriangular">5.7</a>.</p>
 <div id="eigenlinind" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.7</strong></summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix and let <span class="math inline">\lambda _{1}, \lambda _{2}, ..., \lambda _{m}</span> be distinct eigenvalues of <span class="math inline">A</span> with corresponding eigenvectors <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}</span>. Then <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}</span> are linearly independent.<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.8</strong></summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix and let <span class="math inline">\lambda _{1}, \lambda _{2}, ..., \lambda _{m}</span> be distinct eigenvalues of <span class="math inline">A</span> with corresponding eigenvectors <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}</span>. Then <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}</span> are linearly independent.<p></p>
 </div></details>
 </div>
 <div id="Proof*-5.5" class="Proof">
@@ -732,7 +736,7 @@ The geometric multiplicity of an eigenvalue <span class="math inline">\lambda</s
 <section id="similar-matrices" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="similar-matrices"><span class="header-section-number">5.2.2</span> Similar Matrices</h3>
 <div id="similar-matrices-1" class="Definition" title="Similar Matrices">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.8: </strong>Similar Matrices</summary><div>Let <span class="math inline">A</span> and <span class="math inline">B</span> be <span class="math inline">n \times n</span> matrices. We say that <span class="math inline">A</span> is similar to <span class="math inline">B</span> if there is an invertible <span class="math inline">n \times n</span> matrix <span class="math inline">P</span> such that <span class="math inline">P^{-1}AP = B</span>. If <span class="math inline">A</span> is similar to <span class="math inline">B</span>, we write <span class="math inline">A \sim B</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.9: </strong>Similar Matrices</summary><div>Let <span class="math inline">A</span> and <span class="math inline">B</span> be <span class="math inline">n \times n</span> matrices. We say that <span class="math inline">A</span> is similar to <span class="math inline">B</span> if there is an invertible <span class="math inline">n \times n</span> matrix <span class="math inline">P</span> such that <span class="math inline">P^{-1}AP = B</span>. If <span class="math inline">A</span> is similar to <span class="math inline">B</span>, we write <span class="math inline">A \sim B</span>.<p></p>
 </div></details>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -749,7 +753,7 @@ The geometric multiplicity of an eigenvalue <span class="math inline">\lambda</s
 </div>
 </div>
 <div id="simmatrices" class="Theorem" title="Properties of Similar Matrices">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.9: </strong>Properties of Similar Matrices</summary><div>Let <span class="math inline">A</span> and <span class="math inline">B</span> be <span class="math inline">n \times n</span> matrices with <span class="math inline">A \sim B</span>. Then<br>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.10: </strong>Properties of Similar Matrices</summary><div>Let <span class="math inline">A</span> and <span class="math inline">B</span> be <span class="math inline">n \times n</span> matrices with <span class="math inline">A \sim B</span>. Then<br>
 (a) <span class="math inline">{\rm det}(A) = {\rm det}(B)</span><br>
 (b) <span class="math inline">A</span> and <span class="math inline">B</span> have the same rank.<br>
 (c) <span class="math inline">A</span> and <span class="math inline">B</span> have the same characteristic polynomial.<br>
@@ -779,7 +783,7 @@ We first show that nullity(A)=nullity(B). One can then use the rank theorem <a h
         \end{alignedat}</span> &nbsp;◻</p>
 </div></details>
 </div>
-<p>Theorem <a href="eigenvalues.html#simmatrices">5.9</a> is helpful in showing that two matrices are not similar, since <span class="math inline">A</span> and <span class="math inline">B</span> cannot be similar if any of the properties fail.</p>
+<p>Theorem <a href="eigenvalues.html#simmatrices">5.10</a> is helpful in showing that two matrices are not similar, since <span class="math inline">A</span> and <span class="math inline">B</span> cannot be similar if any of the properties fail.</p>
 <div id="exm-" class="theorem example">
 <p><span class="theorem-title"><strong>Example 5.8</strong></span> &nbsp;</p>
 <ol type="a">
@@ -792,11 +796,11 @@ We first show that nullity(A)=nullity(B). One can then use the rank theorem <a h
 <section id="diagonalisation" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="diagonalisation"><span class="header-section-number">5.2.3</span> Diagonalisation</h3>
 <div id="diagonalisable-matrices" class="Definition" title="Diagonalisable Matrices">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.10: </strong>Diagonalisable Matrices</summary><div>An <span class="math inline">n \times n</span> matrix <span class="math inline">A</span> is diagonalisable if there is a diagonal matrix <span class="math inline">D</span> such that <span class="math inline">A</span> is similar to <span class="math inline">D</span> - that is, if there is an invertible <span class="math inline">n \times n</span> matrix <span class="math inline">P</span> such that <span class="math inline">P^{-1}AP = D</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.11: </strong>Diagonalisable Matrices</summary><div>An <span class="math inline">n \times n</span> matrix <span class="math inline">A</span> is diagonalisable if there is a diagonal matrix <span class="math inline">D</span> such that <span class="math inline">A</span> is similar to <span class="math inline">D</span> - that is, if there is an invertible <span class="math inline">n \times n</span> matrix <span class="math inline">P</span> such that <span class="math inline">P^{-1}AP = D</span>.<p></p>
 </div></details>
 </div>
 <div id="diagifind" class="Theorem" title="Condition for Diagonalisability">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.11: </strong>Condition for Diagonalisability</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix. Then <span class="math inline">A</span> is diagonalisable if and only if <span class="math inline">A</span> has <span class="math inline">n</span> linearly independent eigenvectors.<br>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.12: </strong>Condition for Diagonalisability</summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix. Then <span class="math inline">A</span> is diagonalisable if and only if <span class="math inline">A</span> has <span class="math inline">n</span> linearly independent eigenvectors.<br>
 More precisely, there exists an invertible matrix <span class="math inline">P</span> and a diagonal matrix <span class="math inline">D</span> such that <span class="math inline">P^{-1}AP = D</span> if and only if the columns of <span class="math inline">P</span> are <span class="math inline">n</span> linearly independent eigenvectors of <span class="math inline">A</span> and the diagonal entries of <span class="math inline">D</span> are the eigenvalues of <span class="math inline">A</span> corresponding to the eigenvectors in <span class="math inline">P</span> in the same order.*<p></p>
 </div></details>
 </div>
@@ -829,7 +833,7 @@ Since all other eigenvectors are just multiples of one of these two basis vector
         \end{array}\right]</span></p>
 </div>
 <div id="Solution*-5.9" class="Solution">
-<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>This is the matrix of Question 3, Worksheet 6. There we found that the eigenvalues of <span class="math inline">A</span> are <span class="math inline">\lambda _{1} = 2</span> and <span class="math inline">\lambda _{2} = \lambda _{3} = 1</span>, with the following bases for the eigenspaces:<br>
+<p></p><details class="Solution fbx-default closebutton"><summary><strong>Solution</strong></summary><div>There we find that the eigenvalues of <span class="math inline">A</span> are <span class="math inline">\lambda _{1} = 2</span> and <span class="math inline">\lambda _{2} = \lambda _{3} = 1</span>, with the following bases for the eigenspaces:<br>
 For <span class="math inline">\lambda _{1} = 2</span>, <span class="math inline">E_{2}</span> has basis <span class="math inline">\mathbf{p_{1}} = \left[\begin{array}{c} 1 \\ 0 \\ -4 \end{array}\right]</span>.<br>
 For <span class="math inline">\lambda _{2} = \lambda _{3} = 1</span>, <span class="math inline">E_{1}</span> has basis <span class="math inline">\mathbf{p_{2}} = \left[\begin{array}{c} -2 \\ 1 \\ 0 \end{array}\right]</span> and <span class="math inline">\mathbf{p_{3}} = \left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right]</span>.<br>
 Now we check whether <span class="math inline">\left\{\mathbf{p_{1}}, \mathbf{p_{2}}, \mathbf{p_{3}}\right\}</span> is linearly independent. <span class="math display">\left[\begin{array}{ccc} \textcircled{\raisebox{-0.9pt}{1}} &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ -4 &amp; 0 &amp; 1 \end{array}\right] \xrightarrow{R_{3} + 4R_{1}} \left[\begin{array}{ccc} 1 &amp; -2 &amp; 0 \\ 0 &amp; \textcircled{\raisebox{-0.9pt}{1}} &amp; 0 \\ 0 &amp; -8 &amp; 1 \end{array}\right] \xrightarrow{R_{3} + 8R_{2}} \left[\begin{array}{ccc} 1 &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right]</span><p></p>
@@ -852,15 +856,19 @@ Now we check whether <span class="math inline">\left\{\mathbf{p_{1}}, \mathbf{p_
 </div>
 </div>
 <div id="section" class="Theorem" title="">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.12</strong></summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix and let <span class="math inline">\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}</span> be distinct eigenvalues of <span class="math inline">A</span>. If <span class="math inline">B_{i}</span> is a basis for the eigenspace <span class="math inline">E_{i}</span>, then <span class="math inline">B = B_{1} \cup B_{2} \cup \cdots \cup B_{k}</span> (i.e.&nbsp;the total collection of basis vectors for all of the eigenspaces) is linearly independent.<p></p>
-</div></details>
-</div>
-<div id="eigendiag" class="Theorem">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.13</strong></summary><div>If <span class="math inline">A</span> is an <span class="math inline">n \times n</span> matrix with <span class="math inline">n</span> distinct eigenvalues, then <span class="math inline">A</span> is diagonalisable.<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.13</strong></summary><div>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix and let <span class="math inline">\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}</span> be distinct eigenvalues of <span class="math inline">A</span>. If <span class="math inline">B_{i}</span> is a basis for the eigenspace <span class="math inline">E_{i}</span>, then <span class="math inline">B = B_{1} \cup B_{2} \cup \cdots \cup B_{k}</span> (i.e.&nbsp;the total collection of basis vectors for all of the eigenspaces) is linearly independent.<p></p>
 </div></details>
 </div>
 <div id="Proof*-5.10" class="Proof">
-<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}</span> be eigenvectors corresponding to the <span class="math inline">n</span> distinct eigenvalues of <span class="math inline">A</span>. By theorem <a href="eigenvalues.html#eigenlinind">5.7</a>, <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}</span> are linearly independent, so, by Theorem <a href="eigenvalues.html#diagifind">5.11</a>, <span class="math inline">A</span> is diagonalisable.&nbsp;◻<p></p>
+<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>By theorem <a href="eigenvalues.html#eigenlinind">5.8</a>, the eigenvectors to different eigenvalues are linearly independent. Together with the information that each eigenspace has a basis of (linearly independent) eigenvectors we obtain that the set <span class="math inline">B</span> must be linearly independent. ◻<p></p>
+</div></details>
+</div>
+<div id="eigendiag" class="Theorem">
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.14</strong></summary><div>If <span class="math inline">A</span> is an <span class="math inline">n \times n</span> matrix with <span class="math inline">n</span> distinct eigenvalues, then <span class="math inline">A</span> is diagonalisable.<p></p>
+</div></details>
+</div>
+<div id="Proof*-5.11" class="Proof">
+<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}</span> be eigenvectors corresponding to the <span class="math inline">n</span> distinct eigenvalues of <span class="math inline">A</span>. By theorem <a href="eigenvalues.html#eigenlinind">5.8</a>, <span class="math inline">\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}</span> are linearly independent, so, by Theorem <a href="eigenvalues.html#diagifind">5.12</a>, <span class="math inline">A</span> is diagonalisable.&nbsp;◻<p></p>
 </div></details>
 </div>
 <div id="exm-" class="theorem example">
@@ -869,38 +877,27 @@ Now we check whether <span class="math inline">\left\{\mathbf{p_{1}}, \mathbf{p_
             -1 &amp; 1 &amp; 0 &amp; 0 \\
             3 &amp; 0 &amp; 3 &amp; 0 \\
             5 &amp; 7 &amp; 4 &amp; -2
-        \end{array}\right]</span> has eigenvalues <span class="math inline">\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3</span> and <span class="math inline">\lambda _{4} = -2</span>, by Corollary <a href="eigenvalues.html#eigenvaluestriangular">5.6</a>. Since these are four distinct eigenvalues for a <span class="math inline">4 \times 4</span> matrix, <span class="math inline">A</span> is diagonalisable, by Theorem <a href="eigenvalues.html#eigendiag">5.13</a>.</p>
+        \end{array}\right]</span> has eigenvalues <span class="math inline">\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3</span> and <span class="math inline">\lambda _{4} = -2</span>, by Corollary <a href="eigenvalues.html#eigenvaluestriangular">5.7</a>. Since these are four distinct eigenvalues for a <span class="math inline">4 \times 4</span> matrix, <span class="math inline">A</span> is diagonalisable, by Theorem <a href="eigenvalues.html#eigendiag">5.14</a>.</p>
 </div>
-<div id="Corollary-5.14" class="Corollary">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 5.14</strong></summary><div>If <span class="math inline">A</span> is an <span class="math inline">n \times n</span> matrix, then the geometric multiplicity of each eigenvalue is less than or equal to its algebraic multiplicity.<p></p>
-</div></details>
-</div>
-<div id="diagonalisation-theorem" class="Theorem" title="Diagonalisation Theorem">
-<details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.15: </strong>Diagonalisation Theorem</summary><div>
-<p>Let <span class="math inline">A</span> be an <span class="math inline">n \times n</span> matrix whose distinct eigenvalues are <span class="math inline">\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}</span>, where <span class="math inline">1\leq k\leq n</span>. The following statements are equivalent:</p>
-<ol type="a">
-<li><p><span class="math inline">A</span> is diagonalisable.</p></li>
-<li><p>The union <span class="math inline">B</span> of the bases of the eigenspaces of <span class="math inline">A</span> contains <span class="math inline">n</span> vectors.</p></li>
-<li><p>The algebraic multiplicity of each eigenvalue equals its geometric multiplicity.</p></li>
-</ol>
-</div></details>
-</div>
-<div id="exm-" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5.12</strong></span> &nbsp;</p>
-<ol type="a">
-<li>The matrix <span class="math display">A = \left[\begin{array}{ccc}
-    0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ 2 &amp; -5 &amp; 4 \end{array}\right]</span> has two distinct eigenvalues <span class="math inline">\lambda _{1} = \lambda _{2} = 1</span> and <span class="math inline">\lambda _{3} = 2</span>. Since the eigenvalue <span class="math inline">\lambda _{1} = \lambda _{2} = 1</span> with <span class="math inline">E_{1} = {\rm span}( (1,1,1)^T)</span> has algebraic multiplicity 2 but geometric multiplicity 1, <span class="math inline">A</span> is not diagonalisable, by the Diagonalisation Theorem.<br>
-</li>
-<li>The matrix <span class="math display">A = \left[\begin{array}{ccc}
-    2 &amp; 2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ -4 &amp; -8 &amp; 1 \end{array}\right]</span> has two distinct eigenvalues <span class="math inline">\lambda _{1} = 2</span> and <span class="math inline">\lambda _{2} = \lambda _{3} = 1</span>. We found: for <span class="math inline">\lambda _{1} = 2</span>, <span class="math inline">E_{1}</span> has basis <span class="math inline">\mathbf{p_{1}} = (1, 0, -4)^T</span>, and for <span class="math inline">\lambda _{2} = \lambda _{3} = 1</span>, <span class="math inline">E_{2}</span> has basis <span class="math inline">\mathbf{p_{2}} = (-2,1, 0)^T</span> and <span class="math inline">\mathbf{p_{3}} = (0,0,1)^T</span>. Thus, the eigenvalue 2 has algebraic and geometric multiplicity 1, and the eigenvalue 1 has algebraic and geometric multiplicity 2. Thus, <span class="math inline">A</span> is diagonalisable, by the Diagonalisation Theorem.</li>
-</ol>
-</div>
+<!-- ::: {.Theorem}
+## Diagonalisation Theorem
+Let $A$ be an $n \times n$ matrix whose distinct eigenvalues are $\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}$, where $1\leq k\leq n$. The following statements are
+equivalent:
+
+(a) $A$ is diagonalisable.
+
+(b) The union $B$ of the bases of the eigenspaces of $A$ contains $n$
+vectors.
+
+(c) The algebraic multiplicity of each eigenvalue equals its geometric
+multiplicity.
+::: -->
 <div id="joint-eigenbasis" class="Theorem" title="Joint eigenbasis">
-<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.16: </strong>Joint eigenbasis</summary><div>If two matrices commute and one of them is diagonalisable then they share a basis of eigenvectors.<p></p>
+<p></p><details class="Theorem fbx-simplebox fbx-default" open=""><summary><strong>Theorem 5.15: </strong>Joint eigenbasis</summary><div>If two matrices commute and one of them is diagonalisable then they share a basis of eigenvectors.<p></p>
 </div></details>
 </div>
-<div id="Proof*-5.11" class="Proof">
-<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">{\rm A}</span> be diagonalisable. Then <span class="math inline">{\rm A}</span> has an eigenbasis <span class="math inline">\vec{x}_i, i=1..n</span>. For simplicity we first assume that there are <span class="math inline">n</span> distinct eigenvalues, but one also prove the theorem for repeated eigenvalues.<p></p>
+<div id="Proof*-5.12" class="Proof">
+<p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div>Let <span class="math inline">{\rm A}</span> be diagonalisable. Then <span class="math inline">{\rm A}</span> has an eigenbasis <span class="math inline">\vec{x}_i, i=1..n</span>. For simplicity we first assume that there are <span class="math inline">n</span> distinct eigenvalues, but one can also prove the theorem for repeated eigenvalues.<p></p>
 <p>Let <span class="math inline">{\rm B}</span> be a matrix that commutes with <span class="math inline">{\rm A}</span>:<br>
 <span class="math display"> {\rm A B = B A} \quad \Rightarrow {\rm A B}\vec{x}_i ={\rm B A}\vec{x}_i \quad \Rightarrow {\rm A}({\rm  B}\vec{x}_i) = \lambda_i ({\rm B} \vec{x}_i)  </span> That means that <span class="math inline">{\rm B} \vec{x}_i</span> is also an eigenvector of <span class="math inline">{\rm A}</span> to the eigenvalue <span class="math inline">\lambda_i</span> and since the eigenspace to <span class="math inline">\lambda_i</span> is 1-dimensional and spanned by <span class="math inline">\vec{x}_i</span> we have <span class="math inline">{\rm B} \vec{x}_i = \mu_i \vec{x}_i</span>, for some real number <span class="math inline">\mu_i</span>. This means that <span class="math inline">\vec{x}_i</span> is also an eigenvector of <span class="math inline">{\rm B}</span>. A similar argumentation works for repeated eigenvalues.</p>
 </div></details>
@@ -924,12 +921,12 @@ Now we check whether <span class="math inline">\left\{\mathbf{p_{1}}, \mathbf{p_
 <h2 data-number="5.3" class="anchored" data-anchor-id="adjoint-operator"><span class="header-section-number">5.3</span> Adjoint Operator</h2>
 <p>If our vector space is equipped with an inner product <span class="math inline">\langle . , . \rangle</span>, and we are given a linear operator (matrix) <span class="math inline">{\rm A}</span> then there exists a further linear operator closely related to <span class="math inline">{\rm A}</span>, the Hermitian adjoint.</p>
 <div id="hermitian-adjoint-operator" class="Definition" title="(Hermitian) Adjoint Operator">
-<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.17: </strong>(Hermitian) Adjoint Operator</summary><div>Given a linear operator <span class="math inline">{\rm A}</span> the hermitian adjoint of <span class="math inline">{\rm A}</span> is defined by <span class="math display">\langle {\rm A}\vec{x},\vec{y} \rangle = \langle \vec{x},{\rm A}^\dag \vec{y} \rangle. </span> The operator <span class="math inline">{\rm A}</span> is called self-adjoint if <span class="math inline">{\rm A} = {\rm A}^\dag</span>.<p></p>
+<p></p><details class="Definition fbx-simplebox fbx-default" open=""><summary><strong>Definition 5.16: </strong>(Hermitian) Adjoint Operator</summary><div>Given a linear operator <span class="math inline">{\rm A}</span> the hermitian adjoint of <span class="math inline">{\rm A}</span> is defined by <span class="math display">\langle {\rm A}\vec{x},\vec{y} \rangle = \langle \vec{x},{\rm A}^\dag \vec{y} \rangle. </span> The operator <span class="math inline">{\rm A}</span> is called self-adjoint if <span class="math inline">{\rm A} = {\rm A}^\dag</span>.<p></p>
 </div></details>
 </div>
 <p>For the simplest case of a real, finite-dimensional vector space with an inner product given by the standard scalar product the hermitian adjoint of <span class="math inline">{\rm A}</span> is just the transpose of <span class="math inline">{\rm A}</span>. This is because the scalar product <span class="math inline">\vec{x}\cdot\vec{y}</span> can be written also as a matrix product <span class="math inline">\vec{x}^T \vec{y}</span> and hence <span class="math display">\langle {\rm A}\vec{x},\vec{y} \rangle = ({\rm A}\vec{x})^T\vec{y} = \vec{x}^T{\rm A}^T\vec{y} = \langle \vec{x},{\rm A}^T\vec{y} \rangle. </span></p>
 <div id="properties-of-the-hermitian-adjoint" class="Corollary" title="Properties of the hermitian adjoint">
-<details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 5.18: </strong>Properties of the hermitian adjoint</summary><div>
+<details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 5.17: </strong>Properties of the hermitian adjoint</summary><div>
 <ul>
 <li><span class="math inline">({\rm A}^\dag)^\dag = {\rm A}</span></li>
 <li><span class="math inline">{\rm A}^\dag + {\rm B}^\dag = ({\rm A} +{\rm B})^\dag</span></li>
@@ -937,11 +934,11 @@ Now we check whether <span class="math inline">\left\{\mathbf{p_{1}}, \mathbf{p_
 </ul>
 </div></details>
 </div>
-<div id="orthogonal-eigenbasis" class="Corollary" title="orthogonal eigenbasis">
-<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 5.19: </strong>orthogonal eigenbasis</summary><div>For a self-adjoint operator eigenvectors to different eigenvalues are orthogonal.<p></p>
+<div id="orthogonal-eigenbasis" class="Corollary" title="Orthogonal eigenbasis">
+<p></p><details class="Corollary fbx-simplebox fbx-default" open=""><summary><strong>Corollary 5.18: </strong>Orthogonal eigenbasis</summary><div>For a self-adjoint operator eigenvectors to different eigenvalues are orthogonal.<p></p>
 </div></details>
 </div>
-<div id="Proof*-5.12" class="Proof">
+<div id="Proof*-5.13" class="Proof">
 <p></p><details class="Proof fbx-default closebutton"><summary><strong>Proof</strong></summary><div><span class="math display"> \langle {\rm A}\vec{x},\vec{y} \rangle = \langle \vec{x},{\rm A}^\dag \vec{y} \rangle  = \langle \vec{x},{\rm A} \vec{y} \rangle</span> <span class="math display"> \Rightarrow \langle \lambda_x \vec{x},\vec{y} \rangle = \langle \vec{x},\lambda_y \vec{y} \rangle  \quad \Rightarrow \underbrace{(\lambda_x -\lambda_y)}_{\neq 0} \langle \vec{x},\vec{y} \rangle = 0  \quad \Rightarrow \langle \vec{x},\vec{y} \rangle = 0 </span><p></p>
 </div></details>
 </div>
@@ -1708,430 +1705,419 @@ Now we check whether <span class="math inline">\left\{\mathbf{p_{1}}, \mathbf{p_
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>$1$. $\lambda = 2$ has algebraic multiplicity $1$ and geometric multiplicity</span>
 <span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>$1$.</span>
 <span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>::: {.Corollary #eigenvaluestriangular}</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>The eigenvalues of a triangular matrix are the entries on its main diagonal.</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>Let</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>$$A = \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 2 &amp; 0 &amp; 0 &amp; 0 \\ -1 &amp; 1 &amp; 0 &amp; 0 \\ 3 &amp; 0 &amp; 3 &amp; 0 \\ 5 &amp; 7 &amp; 4 &amp; -2 \end{array}\right</span><span class="co">]</span>$$</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>The characteristic polynomial is:</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>$$\begin{alignedat}{2}</span>
-<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>        <span class="pp">|</span>A - \lambda I<span class="pp">|</span> &amp;= \left<span class="pp">|</span>\begin{array}{cccc} 2-\lambda &amp; 0 &amp; 0 &amp; 0 <span class="sc">\\</span> -1 &amp; 1-\lambda &amp; 0 &amp; 0 <span class="sc">\\</span> 3 &amp; 0 &amp; 3-\lambda &amp; 0 <span class="sc">\\</span> 5 &amp; 7 &amp; 4 &amp; -2-\lambda \end{array}\right<span class="pp">|</span> <span class="sc">\\</span></span>
-<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>        {} &amp;= (2-\lambda )\left|\begin{array}{ccc} 1-\lambda &amp; 0 &amp; 0 <span class="sc">\\</span> 0 &amp; 3-\lambda &amp; 0 <span class="sc">\\</span> 7 &amp; 4 &amp; -2-\lambda \end{array}\right| <span class="sc">\\</span></span>
-<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>        {} &amp;= (2-\lambda )(1-\lambda )\left|\begin{array}{cc} 3-\lambda &amp; 0 <span class="sc">\\</span> 4 &amp; -2-\lambda \end{array}\right| <span class="sc">\\</span></span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>        {} &amp;= (2-\lambda )(1-\lambda )(3-\lambda )(-2-\lambda ) </span>
-<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>    \end{alignedat}$$</span>
-<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>Hence, the eigenvalues are $\lambda _{1}=2, \lambda _{2}=1, \lambda _{3}=3, \lambda _{4}=-2$.</span>
-<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>Note that diagonal matrices are a special case of Corollary \ref{eigenvaluestriangular}.</span>
-<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #eigenlinind}</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $n \times n$ matrix and let $\lambda _{1}, \lambda _{2}, ..., \lambda _{m}$ be distinct eigenvalues of $A$ with corresponding</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>eigenvectors $\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$. Then</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ are linearly independent.</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>We prove this by contradiction.</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>Suppose $\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ are</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>linearly dependent. Let $\mathbf{v_{k+1}}$ be the first of the vectors</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>$\mathbf{v_{i}}$ that can be expressed as a linear combination of the</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>previous ones. In other words,</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{k}}$ are linearly</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>independent, but there are $c_{1}, c_{2}, ..., c_{k}$ such that</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>$$\mathbf{v_{k+1}} = c_{1}\mathbf{v_{1}} + c_{2}\mathbf{v_{2}} + ... + c_{k}\mathbf{v_{k}} \qquad (1)$$</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>Multiplying both sides of Equation (1) by $A$ from left and using the</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>fact that $A\mathbf{v_{i}} = \lambda _{i}\mathbf{v_{i}}$ for each $i$, we have</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>$$\begin{alignedat}{2}</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        \lambda _{k+1}\mathbf{v_{k+1}} = A\mathbf{v_{k+1}} &amp;= A(c_{1}\mathbf{v_{1}} + c_{2}\mathbf{v_{2}} + ... + c_{k}\mathbf{v_{k}}) <span class="sc">\\</span></span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>        {} &amp;= c_{1}A\mathbf{v_{1}} + c_{2}A\mathbf{v_{2}} + ... + c_{k}A\mathbf{v_{k}} <span class="sc">\\</span></span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>        {} &amp;= c_{1}\lambda _{1}\mathbf{v_{1}} + c_{2}\lambda _{2}\mathbf{v_{2}} + ... + c_{k}\lambda _{k}\mathbf{v_{k}} \qquad (2) </span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>    \end{alignedat}$$</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>Now we multiply both sides of Equation (1) by $\lambda _{k+1}$ to obtain</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>$$\lambda _{k+1}\mathbf{v_{k+1}} = c_{1}\lambda _{k+1}\mathbf{v_{1}} + c_{2}\lambda _{k+1}\mathbf{v_{2}} + ... + c_{k}\lambda _{k+1}\mathbf{v_{k}} \qquad (3)$$</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>When we subtract Equation (3) from Equation (2), we obtain</span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>$$\mathbf{0} = c_{1}(\lambda _{1}-\lambda _{k+1})\mathbf{v_{1}} + c_{2}(\lambda _{2}-\lambda _{k+1})\mathbf{v_{2}} + ... + c_{k}(\lambda _{k}-\lambda _{k+1})\mathbf{v_{k}}$$</span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>The linear independence of</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>$$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{k}}$$ implies that</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>$$c_{1}(\lambda _{1}-\lambda _{k+1}) = c_{2}(\lambda _{2}-\lambda _{k+1}) = ... = c_{k}(\lambda _{k}-\lambda _{k+1}) = 0$$</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>If $A$ is an $n \times n$ matrix, then the geometric</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>multiplicity of each eigenvalue is at least 1 and less than or equal to its algebraic</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>multiplicity.</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>$$ 1 \le {\rm dim( E_\lambda)\le \text{\small algebraic multiplicity}}$$</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>::: {.Corollary #eigenvaluestriangular}</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>The eigenvalues of a triangular matrix are the entries on its main diagonal.</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>Let</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>$$A = \left<span class="co">[</span><span class="ot">\begin{array}{cccc} 2 &amp; 0 &amp; 0 &amp; 0 \\ -1 &amp; 1 &amp; 0 &amp; 0 \\ 3 &amp; 0 &amp; 3 &amp; 0 \\ 5 &amp; 7 &amp; 4 &amp; -2 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>The characteristic polynomial is:</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>$$\begin{alignedat}{2}</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>        <span class="pp">|</span>A - \lambda I<span class="pp">|</span> &amp;= \left<span class="pp">|</span>\begin{array}{cccc} 2-\lambda &amp; 0 &amp; 0 &amp; 0 <span class="sc">\\</span> -1 &amp; 1-\lambda &amp; 0 &amp; 0 <span class="sc">\\</span> 3 &amp; 0 &amp; 3-\lambda &amp; 0 <span class="sc">\\</span> 5 &amp; 7 &amp; 4 &amp; -2-\lambda \end{array}\right<span class="pp">|</span> <span class="sc">\\</span></span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        {} &amp;= (2-\lambda )\left|\begin{array}{ccc} 1-\lambda &amp; 0 &amp; 0 <span class="sc">\\</span> 0 &amp; 3-\lambda &amp; 0 <span class="sc">\\</span> 7 &amp; 4 &amp; -2-\lambda \end{array}\right| <span class="sc">\\</span></span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        {} &amp;= (2-\lambda )(1-\lambda )\left|\begin{array}{cc} 3-\lambda &amp; 0 <span class="sc">\\</span> 4 &amp; -2-\lambda \end{array}\right| <span class="sc">\\</span></span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>        {} &amp;= (2-\lambda )(1-\lambda )(3-\lambda )(-2-\lambda ) </span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>    \end{alignedat}$$</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>Hence, the eigenvalues are $\lambda _{1}=2, \lambda _{2}=1, \lambda _{3}=3, \lambda _{4}=-2$.</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>Note that diagonal matrices are a special case of Corollary \ref{eigenvaluestriangular}.</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #eigenlinind}</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $n \times n$ matrix and let $\lambda _{1}, \lambda _{2}, ..., \lambda _{m}$ be distinct eigenvalues of $A$ with corresponding</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>eigenvectors $\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$. Then</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ are linearly independent.</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>We prove this by contradiction.</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>Suppose $\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ are</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>linearly dependent. Let $\mathbf{v_{k+1}}$ be the first of the vectors</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>$\mathbf{v_{i}}$ that can be expressed as a linear combination of the</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>previous ones. In other words,</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{k}}$ are linearly</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>independent, but there are $c_{1}, c_{2}, ..., c_{k}$ such that</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>$$\mathbf{v_{k+1}} = c_{1}\mathbf{v_{1}} + c_{2}\mathbf{v_{2}} + ... + c_{k}\mathbf{v_{k}} \qquad (1)$$</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>Multiplying both sides of Equation (1) by $A$ from left and using the</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>fact that $A\mathbf{v_{i}} = \lambda _{i}\mathbf{v_{i}}$ for each $i$, we have</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>$$\begin{alignedat}{2}</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>        \lambda _{k+1}\mathbf{v_{k+1}} = A\mathbf{v_{k+1}} &amp;= A(c_{1}\mathbf{v_{1}} + c_{2}\mathbf{v_{2}} + ... + c_{k}\mathbf{v_{k}}) <span class="sc">\\</span></span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>        {} &amp;= c_{1}A\mathbf{v_{1}} + c_{2}A\mathbf{v_{2}} + ... + c_{k}A\mathbf{v_{k}} <span class="sc">\\</span></span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>        {} &amp;= c_{1}\lambda _{1}\mathbf{v_{1}} + c_{2}\lambda _{2}\mathbf{v_{2}} + ... + c_{k}\lambda _{k}\mathbf{v_{k}} \qquad (2) </span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>    \end{alignedat}$$</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>Now we multiply both sides of Equation (1) by $\lambda _{k+1}$ to obtain</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>$$\lambda _{k+1}\mathbf{v_{k+1}} = c_{1}\lambda _{k+1}\mathbf{v_{1}} + c_{2}\lambda _{k+1}\mathbf{v_{2}} + ... + c_{k}\lambda _{k+1}\mathbf{v_{k}} \qquad (3)$$</span>
 <span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>Since the eigenvalues $\lambda _{i}$ are all distinct, $\lambda _{i} - \lambda _{k+1} \neq 0$ for all $i = 1, ..., k$. Hence</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>$c_{1} = c_{2} = ... = c_{k} = 0$. This implies that</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>$$\mathbf{v_{k+1}} = 0\mathbf{v_{1}} + 0\mathbf{v_{2}} + ... + 0\mathbf{v_{k}} = \mathbf{0}$$</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>which is impossible since the eigenvector $\mathbf{v_{k+1}}$ cannot be</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>zero.</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>When we subtract Equation (3) from Equation (2), we obtain</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>$$\mathbf{0} = c_{1}(\lambda _{1}-\lambda _{k+1})\mathbf{v_{1}} + c_{2}(\lambda _{2}-\lambda _{k+1})\mathbf{v_{2}} + ... + c_{k}(\lambda _{k}-\lambda _{k+1})\mathbf{v_{k}}$$</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>The linear independence of</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>$$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{k}}$$ implies that</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>$$c_{1}(\lambda _{1}-\lambda _{k+1}) = c_{2}(\lambda _{2}-\lambda _{k+1}) = ... = c_{k}(\lambda _{k}-\lambda _{k+1}) = 0$$</span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>Thus, our assumption that</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ are linearly dependent is false. It follows that $\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ must be linearly</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>independent.&nbsp;◻</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>::: {#exm- }</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a><span class="fu">## Coupled oscillators, normal modes</span></span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>Consider a system of two coupled oscillators connected by springs as shown in the figure. </span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a><span class="al">![Coupled Oscillators](coupledosc.png)</span>{width=70%}</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>Since the eigenvalues $\lambda _{i}$ are all distinct, $\lambda _{i} - \lambda _{k+1} \neq 0$ for all $i = 1, ..., k$. Hence</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>$c_{1} = c_{2} = ... = c_{k} = 0$. This implies that</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>$$\mathbf{v_{k+1}} = 0\mathbf{v_{1}} + 0\mathbf{v_{2}} + ... + 0\mathbf{v_{k}} = \mathbf{0}$$</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>which is impossible since the eigenvector $\mathbf{v_{k+1}}$ cannot be</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>zero.</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>Thus, our assumption that</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>$\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ are linearly dependent is false. It follows that $\mathbf{v_{1}}, \mathbf{v_{2}}, ..., \mathbf{v_{m}}$ must be linearly</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>independent.&nbsp;◻</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>We can write down a system of equations for the dynamics of these two oscillators:</span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>$$ m \ddot{x_1} = - k x_1 + k (x_2-x_1) $$</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>$$ m \ddot{x_x} = - k (x_2 -x_1) - k x_2 $$</span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>We can write this as a vector equation for the vector $$\vec{x} =\begin{pmatrix} x_1 <span class="sc">\\</span> x_2 \end{pmatrix} $$</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>::: {#exm- }</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a><span class="fu">## Coupled oscillators, normal modes</span></span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>Consider a system of two coupled oscillators connected by springs as shown in the figure. </span>
 <span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>$$ m \ddot{\vec{x}} = \begin{pmatrix} -2 k &amp; k <span class="sc">\\</span> k &amp; -2k  \end{pmatrix} \vec{x}$$</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a><span class="al">![Coupled Oscillators](coupledosc.png)</span>{width=70%}</span>
 <span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>If we are looking for the **normal modes** of the system, we are looking for harmonic oscillations with a single frequency. So we assume</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>$$\vec{x} = \begin{pmatrix} x_{10} <span class="sc">\\</span> x_{20} \end{pmatrix} e^{i \omega t} \quad \ddot{\vec{x}} = - \omega^2 \begin{pmatrix} x_{10} <span class="sc">\\</span> x_{20} \end{pmatrix} e^{i \omega t}$$</span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>Substituting in the vector equation above leads to an eigenvalue problem </span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>$$ \Rightarrow - m \omega^2 \vec{x_0} = \begin{pmatrix} -2 k &amp; k <span class="sc">\\</span> k &amp; -2k  \end{pmatrix} \vec{x_0}$$</span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>$$ \Rightarrow  \begin{pmatrix} 2 k/m &amp; - k/m <span class="sc">\\</span> - k/m &amp; 2k/m  \end{pmatrix} \vec{x_0} = \omega^2 \vec{x_0}  $$</span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>for the frequency $\omega$.</span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>The eigenvalues and eigenvectors of the matrix are  </span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>$$ \lambda_1 = 3 k/m \quad \vec{x_0} = \begin{pmatrix} -1<span class="sc">\\</span> 1 \end{pmatrix}, $$</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>and</span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>$$ \lambda_1 = k/m \quad \vec{x_0} = \begin{pmatrix} 1<span class="sc">\\</span> 1 \end{pmatrix}, $$</span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>corresponding to an oscillation with frequency $\omega = \sqrt{3k/m}$ where the two oscillators are 180 degree out of phase, and an oscillation with frequency $\omega = \sqrt{k/m}$ where the oscillators are in phase. </span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>Other solutions for the system can now be obtained as a linear combination of these two modes. The modes are a basis of the solution space. </span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a><span class="fu">## Similarity and Diagonalisation</span></span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a><span class="fu">### Introduction</span></span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>We can write down a system of equations for the dynamics of these two oscillators:</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>$$ m \ddot{x_1} = - k x_1 + k (x_2-x_1) $$</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>$$ m \ddot{x_x} = - k (x_2 -x_1) - k x_2 $$</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>We can write this as a vector equation for the vector $$\vec{x} =\begin{pmatrix} x_1 <span class="sc">\\</span> x_2 \end{pmatrix} $$</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>$$ m \ddot{\vec{x}} = \begin{pmatrix} -2 k &amp; k <span class="sc">\\</span> k &amp; -2k  \end{pmatrix} \vec{x}$$</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>If we are looking for the **normal modes** of the system, we are looking for harmonic oscillations with a single frequency. So we assume</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>$$\vec{x} = \begin{pmatrix} x_{10} <span class="sc">\\</span> x_{20} \end{pmatrix} e^{i \omega t} \quad \ddot{\vec{x}} = - \omega^2 \begin{pmatrix} x_{10} <span class="sc">\\</span> x_{20} \end{pmatrix} e^{i \omega t}$$</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>Substituting in the vector equation above leads to an eigenvalue problem </span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>$$ \Rightarrow - m \omega^2 \vec{x_0} = \begin{pmatrix} -2 k &amp; k <span class="sc">\\</span> k &amp; -2k  \end{pmatrix} \vec{x_0}$$</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>$$ \Rightarrow  \begin{pmatrix} 2 k/m &amp; - k/m <span class="sc">\\</span> - k/m &amp; 2k/m  \end{pmatrix} \vec{x_0} = \omega^2 \vec{x_0}  $$</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>for the frequency $\omega$.</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>The eigenvalues and eigenvectors of the matrix are  </span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>$$ \lambda_1 = 3 k/m \quad \vec{x_0} = \begin{pmatrix} -1<span class="sc">\\</span> 1 \end{pmatrix}, $$</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>and</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>$$ \lambda_1 = k/m \quad \vec{x_0} = \begin{pmatrix} 1<span class="sc">\\</span> 1 \end{pmatrix}, $$</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>corresponding to an oscillation with frequency $\omega = \sqrt{3k/m}$ where the two oscillators are 180 degree out of phase, and an oscillation with frequency $\omega = \sqrt{k/m}$ where the oscillators are in phase. </span>
 <span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>In many applications, matrices represent linear mappings of vectors in a</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>physical space, as in the example given at the start of the Eigenvector</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>section. The choice of a coordinate system (in particular, its</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>orientation) in this space is arbitrary, and this choice determines what</span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>the matrix looks like. In this section, we show that under certain</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>conditions, there exists a choice of a coordinate system in which the</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>matrix becomes a diagonal matrix. In this case, the coordinate axes have</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>the direction of the eigenvectors of the matrix, and the diagonal</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>elements of the matrix are the eigenvalues.</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a><span class="fu">### Similar Matrices</span></span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a><span class="fu">## Similar Matrices </span></span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>Let $A$ and $B$ be $n \times n$ matrices. We say</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>that $A$ is similar to $B$ if there is an invertible $n \times n$ matrix</span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>$P$ such that $P^{-1}AP = B$. If $A$ is similar to $B$, we write</span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>$A \sim B$.</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remark</span></span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>If $A \sim B$, we can write, equivalently, that $A = PBP^{-1}$ or $AP = PB$. The matrix $P$ depends on $A$ and $B$. It is not unique for a given pair of similar matrices $A$ and $B$.</span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #simmatrices} </span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a><span class="fu">## Properties of Similar Matrices</span></span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>Let $A$ and $B$ be $n \times n$ matrices with</span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>$A \sim B$. Then\</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>(a) ${\rm det}(A) = {\rm det}(B)$\</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>(b) $A$ and $B$ have the same rank.\</span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>(c) $A$ and $B$ have the same characteristic polynomial.\</span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>(d) $A$ and $B$ have the same eigenvalues.</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>If $A \sim B$, then ${\rm P^{-1}AP = B}$ for some invertible matrix $P$.</span>
-<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>(a)\</span>
-<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>$$\begin{alignedat}{2}</span>
-<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>            \qquad {\rm det}(B) &amp;= {\rm det}(P^{-1}AP) <span class="sc">\\</span></span>
-<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det(P^{-1}){\rm det}(A){\rm det}(P)} <span class="sc">\\</span></span>
-<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>            {} &amp;= \frac{1}{{\rm det}(P)}{\rm det(A){\rm det}(P)} <span class="sc">\\</span></span>
-<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(A). <span class="sc">\\</span></span>
-<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a>        \end{alignedat}$$</span>
-<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>(b)\</span>
-<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>We first show that nullity(A)=nullity(B). One can then use the rank theorem \ref{ranktheorem} to show that this also implies that rank(A)=rank(B). </span>
-<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>Let $<span class="sc">\{</span>\vec{x_1},..., \vec{x_k}<span class="sc">\}</span>$ be a basis of the nullspace of A. Hence $\vec{y}_i= P^{-1}\vec{x_i}$, $i=1..k$, is a linearly independent set (P is one-to-one) in the nullspace of B, as</span>
-<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>$$ B \vec{y}_i = P^{-1}A P P^{-1}\vec{x_i} = P^{-1}A \vec{x_i} = P^{-1}\vec{0} = \vec{0}. $$</span>
-<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>To show that the $\vec{y}_i$ indeed are a basis of the nullspace of B, we observe that for any $\vec{y}$ in the nullspace of B, $P\vec{y} = \vec{x}$ is in the nullspace of A. So $\vec{y}_1, ... \vec{y}_k$ are a basis of the nullspace of B and nullity(A)=nullity(B).</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>Other solutions for the system can now be obtained as a linear combination of these two modes. The modes are a basis of the solution space. </span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a><span class="fu">## Similarity and Diagonalisation</span></span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a><span class="fu">### Introduction</span></span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>In many applications, matrices represent linear mappings of vectors in a</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>physical space, as in the example given at the start of the Eigenvector</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>section. The choice of a coordinate system (in particular, its</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>orientation) in this space is arbitrary, and this choice determines what</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>the matrix looks like. In this section, we show that under certain</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>conditions, there exists a choice of a coordinate system in which the</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>matrix becomes a diagonal matrix. In this case, the coordinate axes have</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>the direction of the eigenvectors of the matrix, and the diagonal</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>elements of the matrix are the eigenvalues.</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a><span class="fu">### Similar Matrices</span></span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a><span class="fu">## Similar Matrices </span></span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>Let $A$ and $B$ be $n \times n$ matrices. We say</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>that $A$ is similar to $B$ if there is an invertible $n \times n$ matrix</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>$P$ such that $P^{-1}AP = B$. If $A$ is similar to $B$, we write</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>$A \sim B$.</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remark</span></span>
+<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>If $A \sim B$, we can write, equivalently, that $A = PBP^{-1}$ or $AP = PB$. The matrix $P$ depends on $A$ and $B$. It is not unique for a given pair of similar matrices $A$ and $B$.</span>
+<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #simmatrices} </span>
+<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a><span class="fu">## Properties of Similar Matrices</span></span>
+<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>Let $A$ and $B$ be $n \times n$ matrices with</span>
+<span id="cb1-419"><a href="#cb1-419" aria-hidden="true" tabindex="-1"></a>$A \sim B$. Then\</span>
+<span id="cb1-420"><a href="#cb1-420" aria-hidden="true" tabindex="-1"></a>(a) ${\rm det}(A) = {\rm det}(B)$\</span>
+<span id="cb1-421"><a href="#cb1-421" aria-hidden="true" tabindex="-1"></a>(b) $A$ and $B$ have the same rank.\</span>
+<span id="cb1-422"><a href="#cb1-422" aria-hidden="true" tabindex="-1"></a>(c) $A$ and $B$ have the same characteristic polynomial.\</span>
+<span id="cb1-423"><a href="#cb1-423" aria-hidden="true" tabindex="-1"></a>(d) $A$ and $B$ have the same eigenvalues.</span>
+<span id="cb1-424"><a href="#cb1-424" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-425"><a href="#cb1-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-426"><a href="#cb1-426" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-427"><a href="#cb1-427" aria-hidden="true" tabindex="-1"></a>If $A \sim B$, then ${\rm P^{-1}AP = B}$ for some invertible matrix $P$.</span>
+<span id="cb1-428"><a href="#cb1-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-429"><a href="#cb1-429" aria-hidden="true" tabindex="-1"></a>(a)\</span>
+<span id="cb1-430"><a href="#cb1-430" aria-hidden="true" tabindex="-1"></a>$$\begin{alignedat}{2}</span>
+<span id="cb1-431"><a href="#cb1-431" aria-hidden="true" tabindex="-1"></a>            \qquad {\rm det}(B) &amp;= {\rm det}(P^{-1}AP) <span class="sc">\\</span></span>
+<span id="cb1-432"><a href="#cb1-432" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det(P^{-1}){\rm det}(A){\rm det}(P)} <span class="sc">\\</span></span>
+<span id="cb1-433"><a href="#cb1-433" aria-hidden="true" tabindex="-1"></a>            {} &amp;= \frac{1}{{\rm det}(P)}{\rm det(A){\rm det}(P)} <span class="sc">\\</span></span>
+<span id="cb1-434"><a href="#cb1-434" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(A). <span class="sc">\\</span></span>
+<span id="cb1-435"><a href="#cb1-435" aria-hidden="true" tabindex="-1"></a>        \end{alignedat}$$</span>
 <span id="cb1-436"><a href="#cb1-436" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a><span class="sc">\(</span>c<span class="sc">\)</span> The characteristic polynomial of $B$ is</span>
-<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a>$$\begin{alignedat}{2}</span>
-<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>            {\rm det}(B - \lambda I) &amp;= {\rm det}(P^{-1}AP - \lambda I) <span class="sc">\\</span></span>
-<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(P^{-1}AP - \lambda P^{-1}IP) <span class="sc">\\</span></span>
-<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(P^{-1}AP - P^{-1}(\lambda I)P) <span class="sc">\\</span></span>
-<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(P^{-1}(A - \lambda I)P) <span class="sc">\\</span></span>
-<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(P^{-1}){\rm det}(A - \lambda I){\rm det}(P) <span class="sc">\\</span></span>
-<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a>            {} &amp;= \frac{1}{{\rm det}(P)}{\rm det}(A - \lambda I){\rm det}(P) <span class="sc">\\</span></span>
-<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(A - \lambda I)  </span>
-<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>        \end{alignedat}$$</span>
-<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>&nbsp;◻</span>
-<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>Theorem \ref{simmatrices} is helpful in showing that two matrices are not similar,</span>
-<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>since $A$ and $B$ cannot be similar if any of the properties fail.</span>
-<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>::: {#exm-    } </span>
-<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>(a) The two matrices</span>
-<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>$$A = \left<span class="co">[</span><span class="ot">\begin{array}{cc} 1 &amp; 2 \\ 2 &amp; 1 \end{array}\right</span><span class="co">]</span>, \quad B = \left<span class="co">[</span><span class="ot">\begin{array}{cc} 2 &amp; 1 \\ 1 &amp; 2 \end{array}\right</span><span class="co">]</span>, $$</span>
-<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a>are not similar since ${\rm det}(A) = -3$ but ${\rm det}(B) = 3$.\</span>
-<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>(b) The two matrices</span>
-<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>$$A = \left<span class="co">[</span><span class="ot">\begin{array}{cc} 1 &amp; 3 \\ 2 &amp; 2 \end{array}\right</span><span class="co">]</span>, \quad B = \left<span class="co">[</span><span class="ot">\begin{array}{cc} 1 &amp; 1 \\ 3 &amp; -1 \end{array}\right</span><span class="co">]</span>$$ are not</span>
-<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a>similar, since $|A - \lambda I| = \lambda ^{2} - 3\lambda - 4$ while $|B - \lambda I| = \lambda ^{2} - 4$. Note that $A$ and $B$ have the same determinant and</span>
-<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>rank, however.</span>
-<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diagonalisation</span></span>
-<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
-<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a><span class="fu">## Diagonalisable Matrices</span></span>
-<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a>An $n \times n$ matrix $A$ is diagonalisable if there is a diagonal matrix $D$ such that $A$ is similar to $D$ - that</span>
-<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a>is, if there is an invertible $n \times n$ matrix $P$ such that</span>
-<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a>$P^{-1}AP = D$.</span>
-<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-437"><a href="#cb1-437" aria-hidden="true" tabindex="-1"></a>(b)\</span>
+<span id="cb1-438"><a href="#cb1-438" aria-hidden="true" tabindex="-1"></a>We first show that nullity(A)=nullity(B). One can then use the rank theorem \ref{ranktheorem} to show that this also implies that rank(A)=rank(B). </span>
+<span id="cb1-439"><a href="#cb1-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-440"><a href="#cb1-440" aria-hidden="true" tabindex="-1"></a>Let $<span class="sc">\{</span>\vec{x_1},..., \vec{x_k}<span class="sc">\}</span>$ be a basis of the nullspace of A. Hence $\vec{y}_i= P^{-1}\vec{x_i}$, $i=1..k$, is a linearly independent set (P is one-to-one) in the nullspace of B, as</span>
+<span id="cb1-441"><a href="#cb1-441" aria-hidden="true" tabindex="-1"></a>$$ B \vec{y}_i = P^{-1}A P P^{-1}\vec{x_i} = P^{-1}A \vec{x_i} = P^{-1}\vec{0} = \vec{0}. $$</span>
+<span id="cb1-442"><a href="#cb1-442" aria-hidden="true" tabindex="-1"></a>To show that the $\vec{y}_i$ indeed are a basis of the nullspace of B, we observe that for any $\vec{y}$ in the nullspace of B, $P\vec{y} = \vec{x}$ is in the nullspace of A. So $\vec{y}_1, ... \vec{y}_k$ are a basis of the nullspace of B and nullity(A)=nullity(B).</span>
+<span id="cb1-443"><a href="#cb1-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-444"><a href="#cb1-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-445"><a href="#cb1-445" aria-hidden="true" tabindex="-1"></a><span class="sc">\(</span>c<span class="sc">\)</span> The characteristic polynomial of $B$ is</span>
+<span id="cb1-446"><a href="#cb1-446" aria-hidden="true" tabindex="-1"></a>$$\begin{alignedat}{2}</span>
+<span id="cb1-447"><a href="#cb1-447" aria-hidden="true" tabindex="-1"></a>            {\rm det}(B - \lambda I) &amp;= {\rm det}(P^{-1}AP - \lambda I) <span class="sc">\\</span></span>
+<span id="cb1-448"><a href="#cb1-448" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(P^{-1}AP - \lambda P^{-1}IP) <span class="sc">\\</span></span>
+<span id="cb1-449"><a href="#cb1-449" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(P^{-1}AP - P^{-1}(\lambda I)P) <span class="sc">\\</span></span>
+<span id="cb1-450"><a href="#cb1-450" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(P^{-1}(A - \lambda I)P) <span class="sc">\\</span></span>
+<span id="cb1-451"><a href="#cb1-451" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(P^{-1}){\rm det}(A - \lambda I){\rm det}(P) <span class="sc">\\</span></span>
+<span id="cb1-452"><a href="#cb1-452" aria-hidden="true" tabindex="-1"></a>            {} &amp;= \frac{1}{{\rm det}(P)}{\rm det}(A - \lambda I){\rm det}(P) <span class="sc">\\</span></span>
+<span id="cb1-453"><a href="#cb1-453" aria-hidden="true" tabindex="-1"></a>            {} &amp;= {\rm det}(A - \lambda I)  </span>
+<span id="cb1-454"><a href="#cb1-454" aria-hidden="true" tabindex="-1"></a>        \end{alignedat}$$</span>
+<span id="cb1-455"><a href="#cb1-455" aria-hidden="true" tabindex="-1"></a>&nbsp;◻</span>
+<span id="cb1-456"><a href="#cb1-456" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-457"><a href="#cb1-457" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-458"><a href="#cb1-458" aria-hidden="true" tabindex="-1"></a>Theorem \ref{simmatrices} is helpful in showing that two matrices are not similar,</span>
+<span id="cb1-459"><a href="#cb1-459" aria-hidden="true" tabindex="-1"></a>since $A$ and $B$ cannot be similar if any of the properties fail.</span>
+<span id="cb1-460"><a href="#cb1-460" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-461"><a href="#cb1-461" aria-hidden="true" tabindex="-1"></a>::: {#exm-    } </span>
+<span id="cb1-462"><a href="#cb1-462" aria-hidden="true" tabindex="-1"></a>(a) The two matrices</span>
+<span id="cb1-463"><a href="#cb1-463" aria-hidden="true" tabindex="-1"></a>$$A = \left<span class="co">[</span><span class="ot">\begin{array}{cc} 1 &amp; 2 \\ 2 &amp; 1 \end{array}\right</span><span class="co">]</span>, \quad B = \left<span class="co">[</span><span class="ot">\begin{array}{cc} 2 &amp; 1 \\ 1 &amp; 2 \end{array}\right</span><span class="co">]</span>, $$</span>
+<span id="cb1-464"><a href="#cb1-464" aria-hidden="true" tabindex="-1"></a>are not similar since ${\rm det}(A) = -3$ but ${\rm det}(B) = 3$.\</span>
+<span id="cb1-465"><a href="#cb1-465" aria-hidden="true" tabindex="-1"></a>(b) The two matrices</span>
+<span id="cb1-466"><a href="#cb1-466" aria-hidden="true" tabindex="-1"></a>$$A = \left<span class="co">[</span><span class="ot">\begin{array}{cc} 1 &amp; 3 \\ 2 &amp; 2 \end{array}\right</span><span class="co">]</span>, \quad B = \left<span class="co">[</span><span class="ot">\begin{array}{cc} 1 &amp; 1 \\ 3 &amp; -1 \end{array}\right</span><span class="co">]</span>$$ are not</span>
+<span id="cb1-467"><a href="#cb1-467" aria-hidden="true" tabindex="-1"></a>similar, since $|A - \lambda I| = \lambda ^{2} - 3\lambda - 4$ while $|B - \lambda I| = \lambda ^{2} - 4$. Note that $A$ and $B$ have the same determinant and</span>
+<span id="cb1-468"><a href="#cb1-468" aria-hidden="true" tabindex="-1"></a>rank, however.</span>
+<span id="cb1-469"><a href="#cb1-469" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-470"><a href="#cb1-470" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-471"><a href="#cb1-471" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-472"><a href="#cb1-472" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-473"><a href="#cb1-473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-474"><a href="#cb1-474" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-475"><a href="#cb1-475" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diagonalisation</span></span>
 <span id="cb1-476"><a href="#cb1-476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #diagifind}</span>
-<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a><span class="fu">## Condition for Diagonalisability</span></span>
-<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $n \times n$ matrix. Then $A$ is</span>
-<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a>diagonalisable if and only if $A$ has $n$ linearly independent</span>
-<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a>eigenvectors.\</span>
-<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>More precisely, there exists an invertible matrix $P$ and a diagonal</span>
-<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a>matrix $D$ such that $P^{-1}AP = D$ if and only if the columns of $P$</span>
-<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>are $n$ linearly independent eigenvectors of $A$ and the diagonal</span>
-<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a>entries of $D$ are the eigenvalues of $A$ corresponding to the</span>
-<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>eigenvectors in $P$ in the same order.*</span>
-<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>:::{.Proof}</span>
-<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>Suppose first that $A$ is similar to the diagonal matrix $D$ by</span>
-<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>$P^{-1}AP = D$ or, equivalently, $AP = PD$. Let the columns of $P$ be</span>
-<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{1}}, \mathbf{p_{2}}, ..., \mathbf{p_{n}}$ and let the</span>
-<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>diagonal entries of $D$ be $\lambda _{1}, \lambda _{2}, ..., \lambda _{n}$. Then</span>
-<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>$$A\left<span class="co">[</span><span class="ot">\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots, \mathbf{p_{n}}\right</span><span class="co">]</span> = \left<span class="co">[</span><span class="ot">\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots, \mathbf{p_{n}}\right</span><span class="co">]</span> \left<span class="co">[</span><span class="ot">\begin{array}{cccc} \lambda _{1} &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; \lambda _{2} &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \cdots &amp; \lambda _{n} \end{array}\right</span><span class="co">]</span> \qquad (1)$$</span>
-<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a>or</span>
-<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>$$\qquad \left<span class="co">[</span><span class="ot">A\mathbf{p_{1}}, A\mathbf{p_{2}}, \cdots, A\mathbf{p_{n}}\right</span><span class="co">]</span> = \left<span class="co">[</span><span class="ot">\lambda _{1}\mathbf{p_{1}}, \lambda _{2}\mathbf{p_{2}}, \cdots, \lambda _{n}\mathbf{p_{n}}\right</span><span class="co">]</span> \qquad (2)$$</span>
-<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a>Equating columns, we have</span>
-<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a>$$A\mathbf{p_{1}} = \lambda _{1}\mathbf{p_{1}}, A\mathbf{p_{2}} = \lambda _{2}\mathbf{p_{2}}, \cdots , A\mathbf{p_{n}} = \lambda _{n}\mathbf{p_{n}}$$</span>
-<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>which proves that the column vectors of $P$ are eigenvectors of $A$</span>
-<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a>whose corresponding eigenvalues are the diagonal entries of $D$ in the</span>
-<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a>same order. Since $P$ is invertible, its columns are linearly</span>
-<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a>independent.</span>
+<span id="cb1-477"><a href="#cb1-477" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
+<span id="cb1-478"><a href="#cb1-478" aria-hidden="true" tabindex="-1"></a><span class="fu">## Diagonalisable Matrices</span></span>
+<span id="cb1-479"><a href="#cb1-479" aria-hidden="true" tabindex="-1"></a>An $n \times n$ matrix $A$ is diagonalisable if there is a diagonal matrix $D$ such that $A$ is similar to $D$ - that</span>
+<span id="cb1-480"><a href="#cb1-480" aria-hidden="true" tabindex="-1"></a>is, if there is an invertible $n \times n$ matrix $P$ such that</span>
+<span id="cb1-481"><a href="#cb1-481" aria-hidden="true" tabindex="-1"></a>$P^{-1}AP = D$.</span>
+<span id="cb1-482"><a href="#cb1-482" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-483"><a href="#cb1-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-484"><a href="#cb1-484" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #diagifind}</span>
+<span id="cb1-485"><a href="#cb1-485" aria-hidden="true" tabindex="-1"></a><span class="fu">## Condition for Diagonalisability</span></span>
+<span id="cb1-486"><a href="#cb1-486" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $n \times n$ matrix. Then $A$ is</span>
+<span id="cb1-487"><a href="#cb1-487" aria-hidden="true" tabindex="-1"></a>diagonalisable if and only if $A$ has $n$ linearly independent</span>
+<span id="cb1-488"><a href="#cb1-488" aria-hidden="true" tabindex="-1"></a>eigenvectors.\</span>
+<span id="cb1-489"><a href="#cb1-489" aria-hidden="true" tabindex="-1"></a>More precisely, there exists an invertible matrix $P$ and a diagonal</span>
+<span id="cb1-490"><a href="#cb1-490" aria-hidden="true" tabindex="-1"></a>matrix $D$ such that $P^{-1}AP = D$ if and only if the columns of $P$</span>
+<span id="cb1-491"><a href="#cb1-491" aria-hidden="true" tabindex="-1"></a>are $n$ linearly independent eigenvectors of $A$ and the diagonal</span>
+<span id="cb1-492"><a href="#cb1-492" aria-hidden="true" tabindex="-1"></a>entries of $D$ are the eigenvalues of $A$ corresponding to the</span>
+<span id="cb1-493"><a href="#cb1-493" aria-hidden="true" tabindex="-1"></a>eigenvectors in $P$ in the same order.*</span>
+<span id="cb1-494"><a href="#cb1-494" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-495"><a href="#cb1-495" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-496"><a href="#cb1-496" aria-hidden="true" tabindex="-1"></a>:::{.Proof}</span>
+<span id="cb1-497"><a href="#cb1-497" aria-hidden="true" tabindex="-1"></a>Suppose first that $A$ is similar to the diagonal matrix $D$ by</span>
+<span id="cb1-498"><a href="#cb1-498" aria-hidden="true" tabindex="-1"></a>$P^{-1}AP = D$ or, equivalently, $AP = PD$. Let the columns of $P$ be</span>
+<span id="cb1-499"><a href="#cb1-499" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{1}}, \mathbf{p_{2}}, ..., \mathbf{p_{n}}$ and let the</span>
+<span id="cb1-500"><a href="#cb1-500" aria-hidden="true" tabindex="-1"></a>diagonal entries of $D$ be $\lambda _{1}, \lambda _{2}, ..., \lambda _{n}$. Then</span>
+<span id="cb1-501"><a href="#cb1-501" aria-hidden="true" tabindex="-1"></a>$$A\left<span class="co">[</span><span class="ot">\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots, \mathbf{p_{n}}\right</span><span class="co">]</span> = \left<span class="co">[</span><span class="ot">\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots, \mathbf{p_{n}}\right</span><span class="co">]</span> \left<span class="co">[</span><span class="ot">\begin{array}{cccc} \lambda _{1} &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; \lambda _{2} &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 0 &amp; 0 &amp; \cdots &amp; \lambda _{n} \end{array}\right</span><span class="co">]</span> \qquad (1)$$</span>
+<span id="cb1-502"><a href="#cb1-502" aria-hidden="true" tabindex="-1"></a>or</span>
+<span id="cb1-503"><a href="#cb1-503" aria-hidden="true" tabindex="-1"></a>$$\qquad \left<span class="co">[</span><span class="ot">A\mathbf{p_{1}}, A\mathbf{p_{2}}, \cdots, A\mathbf{p_{n}}\right</span><span class="co">]</span> = \left<span class="co">[</span><span class="ot">\lambda _{1}\mathbf{p_{1}}, \lambda _{2}\mathbf{p_{2}}, \cdots, \lambda _{n}\mathbf{p_{n}}\right</span><span class="co">]</span> \qquad (2)$$</span>
 <span id="cb1-504"><a href="#cb1-504" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a>Conversely, if $A$ has $n$ linearly independent eigenvectors</span>
-<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots , \mathbf{p_{n}}$ with</span>
-<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>corresponding eigenvalues $\lambda _{1}, \lambda _{2}, \cdots , \lambda _{n}$, respectively, then</span>
-<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a>$$A\mathbf{p_{1}} = \lambda _{1}\mathbf{p_{1}}, A\mathbf{p_{2}} = \lambda _{2}\mathbf{p_{2}}, \cdots , A\mathbf{p_{n}} = \lambda _{n}\mathbf{p_{n}}$$</span>
-<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>This implies Eq. (2), which is equivalent to Eq. (1), that is $AP = PD$.</span>
-<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a>Since the columns</span>
-<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots , \mathbf{p_{n}}$ of $P$ are</span>
-<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a>linearly independent, $P$ is invertible, so $P^{-1}AP = D$, that is, $A$</span>
-<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>is diagonalisable.&nbsp;◻</span>
-<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-505"><a href="#cb1-505" aria-hidden="true" tabindex="-1"></a>Equating columns, we have</span>
+<span id="cb1-506"><a href="#cb1-506" aria-hidden="true" tabindex="-1"></a>$$A\mathbf{p_{1}} = \lambda _{1}\mathbf{p_{1}}, A\mathbf{p_{2}} = \lambda _{2}\mathbf{p_{2}}, \cdots , A\mathbf{p_{n}} = \lambda _{n}\mathbf{p_{n}}$$</span>
+<span id="cb1-507"><a href="#cb1-507" aria-hidden="true" tabindex="-1"></a>which proves that the column vectors of $P$ are eigenvectors of $A$</span>
+<span id="cb1-508"><a href="#cb1-508" aria-hidden="true" tabindex="-1"></a>whose corresponding eigenvalues are the diagonal entries of $D$ in the</span>
+<span id="cb1-509"><a href="#cb1-509" aria-hidden="true" tabindex="-1"></a>same order. Since $P$ is invertible, its columns are linearly</span>
+<span id="cb1-510"><a href="#cb1-510" aria-hidden="true" tabindex="-1"></a>independent.</span>
+<span id="cb1-511"><a href="#cb1-511" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-512"><a href="#cb1-512" aria-hidden="true" tabindex="-1"></a>Conversely, if $A$ has $n$ linearly independent eigenvectors</span>
+<span id="cb1-513"><a href="#cb1-513" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots , \mathbf{p_{n}}$ with</span>
+<span id="cb1-514"><a href="#cb1-514" aria-hidden="true" tabindex="-1"></a>corresponding eigenvalues $\lambda _{1}, \lambda _{2}, \cdots , \lambda _{n}$, respectively, then</span>
+<span id="cb1-515"><a href="#cb1-515" aria-hidden="true" tabindex="-1"></a>$$A\mathbf{p_{1}} = \lambda _{1}\mathbf{p_{1}}, A\mathbf{p_{2}} = \lambda _{2}\mathbf{p_{2}}, \cdots , A\mathbf{p_{n}} = \lambda _{n}\mathbf{p_{n}}$$</span>
 <span id="cb1-516"><a href="#cb1-516" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>If possible, find a matrix $P$ that diagonalises</span>
-<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{ccc}</span>
-<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>            0 &amp; 1 &amp; 0 <span class="sc">\\</span></span>
-<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>            0 &amp; 0 &amp; 1 <span class="sc">\\</span></span>
-<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>            2 &amp; -5 &amp; 4 </span>
-<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
-<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>:::        </span>
-<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>We studied this matrix previously and found that it has eigenvalues $\lambda _{1} = \lambda _{2} = 1$ and $\lambda _{3} = 2$. The eigenspaces have the following bases:\</span>
-<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>For $\lambda _{1} = \lambda _{2} = 1$, $E_{1}$ has basis</span>
-<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>$\left<span class="co">[</span><span class="ot">\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right</span><span class="co">]</span>$.\</span>
-<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>For $\lambda _{3} = 2$, $E_{2}$ has basis</span>
-<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>$\left<span class="co">[</span><span class="ot">\begin{array}{c} 1 \\ 2 \\ 4 \end{array}\right</span><span class="co">]</span>$.\</span>
-<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>Since all other eigenvectors are just multiples of one of these two</span>
-<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>basis vectors, there cannot be three linearly independent eigenvectors.</span>
-<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>By Theorem 4.6, $A$ is not diagonalisable.</span>
-<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>If possible, find a matrix $P$ that diagonalises</span>
-<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{ccc}</span>
-<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>            2 &amp; 2 &amp; 0 <span class="sc">\\</span></span>
-<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a>            0 &amp; 1 &amp; 0 <span class="sc">\\</span></span>
-<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>            -4 &amp; -8 &amp; 1 </span>
-<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
-<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>:::        </span>
-<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
-<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>This is the matrix of Question 3, Worksheet 6. There we found that the</span>
-<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>eigenvalues of $A$ are $\lambda _{1} = 2$ and $\lambda _{2} = \lambda _{3} = 1$, with the following bases for the eigenspaces:\</span>
-<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>For $\lambda _{1} = 2$, $E_{2}$ has basis</span>
-<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{1}} = \left<span class="co">[</span><span class="ot">\begin{array}{c} 1 \\ 0 \\ -4 \end{array}\right</span><span class="co">]</span>$.\</span>
-<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a>For $\lambda _{2} = \lambda _{3} = 1$, $E_{1}$ has basis</span>
-<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{2}} = \left<span class="co">[</span><span class="ot">\begin{array}{c} -2 \\ 1 \\ 0 \end{array}\right</span><span class="co">]</span>$</span>
-<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>and</span>
-<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{3}} = \left<span class="co">[</span><span class="ot">\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right</span><span class="co">]</span>$.\</span>
-<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>Now we check whether</span>
-<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>$\left<span class="sc">\{</span>\mathbf{p_{1}}, \mathbf{p_{2}}, \mathbf{p_{3}}\right<span class="sc">\}</span>$ is</span>
-<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>linearly independent.</span>
-<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>$$\left<span class="co">[</span><span class="ot">\begin{array}{ccc} \textcircled{\raisebox{-0.9pt}{1}} &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ -4 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span> \xrightarrow{R_{3} + 4R_{1}} \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; -2 &amp; 0 \\ 0 &amp; \textcircled{\raisebox{-0.9pt}{1}} &amp; 0 \\ 0 &amp; -8 &amp; 1 \end{array}\right</span><span class="co">]</span> \xrightarrow{R_{3} + 8R_{2}} \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span>$$</span>
-<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>Since $rank = 3$,</span>
-<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>$\left<span class="sc">\{</span>\mathbf{p_{1}}, \mathbf{p_{2}}, \mathbf{p_{3}}\right<span class="sc">\}</span>$ is</span>
-<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>linearly independent. Thus, if we take</span>
-<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>$$P = \left<span class="co">[</span><span class="ot">\mathbf{p_{1}}, \mathbf{p_{2}}, \mathbf{p_{3}}\right</span><span class="co">]</span> = \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ -4 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span>$$</span>
-<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>then $P$ is invertible. Furthermore,</span>
-<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>$$P^{-1}AP = \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 2 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span> = D$$</span>
+<span id="cb1-517"><a href="#cb1-517" aria-hidden="true" tabindex="-1"></a>This implies Eq. (2), which is equivalent to Eq. (1), that is $AP = PD$.</span>
+<span id="cb1-518"><a href="#cb1-518" aria-hidden="true" tabindex="-1"></a>Since the columns</span>
+<span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{1}}, \mathbf{p_{2}}, \cdots , \mathbf{p_{n}}$ of $P$ are</span>
+<span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>linearly independent, $P$ is invertible, so $P^{-1}AP = D$, that is, $A$</span>
+<span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>is diagonalisable.&nbsp;◻</span>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>If possible, find a matrix $P$ that diagonalises</span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{ccc}</span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>            0 &amp; 1 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>            0 &amp; 0 &amp; 1 <span class="sc">\\</span></span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>            2 &amp; -5 &amp; 4 </span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>:::        </span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>We studied this matrix previously and found that it has eigenvalues $\lambda _{1} = \lambda _{2} = 1$ and $\lambda _{3} = 2$. The eigenspaces have the following bases:\</span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>For $\lambda _{1} = \lambda _{2} = 1$, $E_{1}$ has basis</span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>$\left<span class="co">[</span><span class="ot">\begin{array}{c} 1 \\ 1 \\ 1 \end{array}\right</span><span class="co">]</span>$.\</span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>For $\lambda _{3} = 2$, $E_{2}$ has basis</span>
+<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>$\left<span class="co">[</span><span class="ot">\begin{array}{c} 1 \\ 2 \\ 4 \end{array}\right</span><span class="co">]</span>$.\</span>
+<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>Since all other eigenvectors are just multiples of one of these two</span>
+<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>basis vectors, there cannot be three linearly independent eigenvectors.</span>
+<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a>By Theorem 4.6, $A$ is not diagonalisable.</span>
+<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a>If possible, find a matrix $P$ that diagonalises</span>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{ccc}</span>
+<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>            2 &amp; 2 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>            0 &amp; 1 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>            -4 &amp; -8 &amp; 1 </span>
+<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
+<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a>:::        </span>
+<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>::: {.Solution}</span>
+<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>There we find that the</span>
+<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>eigenvalues of $A$ are $\lambda _{1} = 2$ and $\lambda _{2} = \lambda _{3} = 1$, with the following bases for the eigenspaces:\</span>
+<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>For $\lambda _{1} = 2$, $E_{2}$ has basis</span>
+<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{1}} = \left<span class="co">[</span><span class="ot">\begin{array}{c} 1 \\ 0 \\ -4 \end{array}\right</span><span class="co">]</span>$.\</span>
+<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>For $\lambda _{2} = \lambda _{3} = 1$, $E_{1}$ has basis</span>
+<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{2}} = \left<span class="co">[</span><span class="ot">\begin{array}{c} -2 \\ 1 \\ 0 \end{array}\right</span><span class="co">]</span>$</span>
+<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>and</span>
+<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{3}} = \left<span class="co">[</span><span class="ot">\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right</span><span class="co">]</span>$.\</span>
+<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>Now we check whether</span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>$\left<span class="sc">\{</span>\mathbf{p_{1}}, \mathbf{p_{2}}, \mathbf{p_{3}}\right<span class="sc">\}</span>$ is</span>
+<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>linearly independent.</span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>$$\left<span class="co">[</span><span class="ot">\begin{array}{ccc} \textcircled{\raisebox{-0.9pt}{1}} &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ -4 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span> \xrightarrow{R_{3} + 4R_{1}} \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; -2 &amp; 0 \\ 0 &amp; \textcircled{\raisebox{-0.9pt}{1}} &amp; 0 \\ 0 &amp; -8 &amp; 1 \end{array}\right</span><span class="co">]</span> \xrightarrow{R_{3} + 8R_{2}} \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span>$$</span>
 <span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>(Note: It is much easier to check the equivalent equation $AP = PD$).</span>
-<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remark</span></span>
-<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>Eigenvectors can be placed into the columns of $P$ in any</span>
-<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>order. However, the eigenvalues will come up on the diagonal of $D$ in</span>
-<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>the same order as their corresponding eigenvectors in $P$. For example,</span>
-<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>if we had chosen</span>
-<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>$$P = \left<span class="co">[</span><span class="ot">\mathbf{p_{2}}, \mathbf{p_{3}}, \mathbf{p_{1}}\right</span><span class="co">]</span> = \left<span class="co">[</span><span class="ot">\begin{array}{ccc} -2 &amp; 0 &amp; 1 \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; -4 \end{array}\right</span><span class="co">]</span>$$</span>
-<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>Then we would have found</span>
-<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>$$P^{-1}AP = \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 2 \end{array}\right</span><span class="co">]</span>$$</span>
-<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>We checked that the eigenvectors $\mathbf{p_{1}}, \mathbf{p_{2}}$ and</span>
-<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{3}}$ were linearly independent. However, the following</span>
-<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>Theorem guarantees that linear independence is preserved when the bases</span>
-<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>of different subspaces are combined.</span>
-<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>::: {.Theorem}</span>
-<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>##</span>
-<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $n \times n$ matrix and let $\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}$ be distinct eigenvalues of $A$. If $B_{i}$ is a basis for</span>
-<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>the eigenspace $E_{i}$, then</span>
-<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>$B = B_{1} \cup B_{2} \cup \cdots \cup B_{k}$ (i.e. the total collection</span>
-<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>of basis vectors for all of the eigenspaces) is linearly independent.</span>
-<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #eigendiag}</span>
-<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>If $A$ is an $n \times n$ matrix with $n$ distinct</span>
-<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>eigenvalues, then $A$ is diagonalisable.</span>
-<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>Let $\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}$ be</span>
-<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>eigenvectors corresponding to the $n$ distinct eigenvalues of $A$. By</span>
-<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a>theorem \ref{eigenlinind}, $\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}$</span>
-<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>are linearly independent, so, by Theorem \ref{diagifind}, $A$ is diagonalisable.&nbsp;◻</span>
-<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>The matrix</span>
-<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{cccc}</span>
-<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>            2 &amp; 0 &amp; 0 &amp; 0 <span class="sc">\\</span></span>
-<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>            -1 &amp; 1 &amp; 0 &amp; 0 <span class="sc">\\</span></span>
-<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>            3 &amp; 0 &amp; 3 &amp; 0 <span class="sc">\\</span></span>
-<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>            5 &amp; 7 &amp; 4 &amp; -2</span>
-<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
-<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>has eigenvalues $\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3$ and $\lambda _{4} = -2$, by Corollary \ref{eigenvaluestriangular}. Since these are four distinct</span>
-<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a>eigenvalues for a $4 \times 4$ matrix, $A$ is diagonalisable, by Theorem \ref{eigendiag}.</span>
-<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
-<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>If $A$ is an $n \times n$ matrix, then the geometric</span>
-<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>multiplicity of each eigenvalue is less than or equal to its algebraic</span>
-<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>multiplicity.</span>
-<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>::: {.Theorem}</span>
-<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a><span class="fu">## Diagonalisation Theorem</span></span>
-<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $n \times n$ matrix whose distinct eigenvalues are $\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}$, where $1\leq k\leq n$. The following statements are</span>
-<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a>equivalent:</span>
+<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>Since $rank = 3$,</span>
+<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>$\left<span class="sc">\{</span>\mathbf{p_{1}}, \mathbf{p_{2}}, \mathbf{p_{3}}\right<span class="sc">\}</span>$ is</span>
+<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>linearly independent. Thus, if we take</span>
+<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>$$P = \left<span class="co">[</span><span class="ot">\mathbf{p_{1}}, \mathbf{p_{2}}, \mathbf{p_{3}}\right</span><span class="co">]</span> = \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; -2 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ -4 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>then $P$ is invertible. Furthermore,</span>
+<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>$$P^{-1}AP = \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 2 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right</span><span class="co">]</span> = D$$</span>
+<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>(Note: It is much easier to check the equivalent equation $AP = PD$).</span>
+<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remark</span></span>
+<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>Eigenvectors can be placed into the columns of $P$ in any</span>
+<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>order. However, the eigenvalues will come up on the diagonal of $D$ in</span>
+<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>the same order as their corresponding eigenvectors in $P$. For example,</span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>if we had chosen</span>
+<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>$$P = \left<span class="co">[</span><span class="ot">\mathbf{p_{2}}, \mathbf{p_{3}}, \mathbf{p_{1}}\right</span><span class="co">]</span> = \left<span class="co">[</span><span class="ot">\begin{array}{ccc} -2 &amp; 0 &amp; 1 \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; -4 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>Then we would have found</span>
+<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>$$P^{-1}AP = \left<span class="co">[</span><span class="ot">\begin{array}{ccc} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 2 \end{array}\right</span><span class="co">]</span>$$</span>
+<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>We checked that the eigenvectors $\mathbf{p_{1}}, \mathbf{p_{2}}$ and</span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{3}}$ were linearly independent. However, the following</span>
+<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>Theorem guarantees that linear independence is preserved when the bases</span>
+<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>of different subspaces are combined.</span>
+<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>::: {.Theorem}</span>
+<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>##</span>
+<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>Let $A$ be an $n \times n$ matrix and let $\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}$ be distinct eigenvalues of $A$. If $B_{i}$ is a basis for</span>
+<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>the eigenspace $E_{i}$, then</span>
+<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>$B = B_{1} \cup B_{2} \cup \cdots \cup B_{k}$ (i.e. the total collection</span>
+<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a>of basis vectors for all of the eigenspaces) is linearly independent.</span>
+<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a> By theorem \ref{eigenlinind}, the eigenvectors to different eigenvalues are linearly independent. Together with the information that each eigenspace has a basis of (linearly independent) eigenvectors we obtain that the set $B$ must be linearly independent. ◻</span>
+<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>::: {.Theorem #eigendiag}</span>
+<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>If $A$ is an $n \times n$ matrix with $n$ distinct</span>
+<span id="cb1-606"><a href="#cb1-606" aria-hidden="true" tabindex="-1"></a>eigenvalues, then $A$ is diagonalisable.</span>
+<span id="cb1-607"><a href="#cb1-607" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-608"><a href="#cb1-608" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-609"><a href="#cb1-609" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-610"><a href="#cb1-610" aria-hidden="true" tabindex="-1"></a>Let $\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}$ be</span>
+<span id="cb1-611"><a href="#cb1-611" aria-hidden="true" tabindex="-1"></a>eigenvectors corresponding to the $n$ distinct eigenvalues of $A$. By</span>
+<span id="cb1-612"><a href="#cb1-612" aria-hidden="true" tabindex="-1"></a>theorem \ref{eigenlinind}, $\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}$</span>
+<span id="cb1-613"><a href="#cb1-613" aria-hidden="true" tabindex="-1"></a>are linearly independent, so, by Theorem \ref{diagifind}, $A$ is diagonalisable.&nbsp;◻</span>
+<span id="cb1-614"><a href="#cb1-614" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-615"><a href="#cb1-615" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-616"><a href="#cb1-616" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
+<span id="cb1-617"><a href="#cb1-617" aria-hidden="true" tabindex="-1"></a>The matrix</span>
+<span id="cb1-618"><a href="#cb1-618" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{cccc}</span>
+<span id="cb1-619"><a href="#cb1-619" aria-hidden="true" tabindex="-1"></a>            2 &amp; 0 &amp; 0 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb1-620"><a href="#cb1-620" aria-hidden="true" tabindex="-1"></a>            -1 &amp; 1 &amp; 0 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb1-621"><a href="#cb1-621" aria-hidden="true" tabindex="-1"></a>            3 &amp; 0 &amp; 3 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb1-622"><a href="#cb1-622" aria-hidden="true" tabindex="-1"></a>            5 &amp; 7 &amp; 4 &amp; -2</span>
+<span id="cb1-623"><a href="#cb1-623" aria-hidden="true" tabindex="-1"></a>        \end{array}\right]$$</span>
+<span id="cb1-624"><a href="#cb1-624" aria-hidden="true" tabindex="-1"></a>has eigenvalues $\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3$ and $\lambda _{4} = -2$, by Corollary \ref{eigenvaluestriangular}. Since these are four distinct</span>
+<span id="cb1-625"><a href="#cb1-625" aria-hidden="true" tabindex="-1"></a>eigenvalues for a $4 \times 4$ matrix, $A$ is diagonalisable, by Theorem \ref{eigendiag}.</span>
+<span id="cb1-626"><a href="#cb1-626" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-627"><a href="#cb1-627" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-628"><a href="#cb1-628" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a>(a) $A$ is diagonalisable.</span>
-<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a>(b) The union $B$ of the bases of the eigenspaces of $A$ contains $n$</span>
-<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a>vectors.</span>
-<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a>(c) The algebraic multiplicity of each eigenvalue equals its geometric</span>
-<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a>multiplicity.</span>
-<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a>::: {#exm-    }</span>
-<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a>(a) The matrix </span>
-<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{ccc}</span>
-<span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a>        0 &amp; 1 &amp; 0 <span class="sc">\\</span> 0 &amp; 0 &amp; 1 <span class="sc">\\</span> 2 &amp; -5 &amp; 4 \end{array}\right]$$</span>
-<span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a>has two distinct eigenvalues $\lambda _{1} = \lambda _{2} = 1$ and $\lambda _{3} = 2$. Since the eigenvalue $\lambda _{1} = \lambda _{2} = 1$ with</span>
-<span id="cb1-643"><a href="#cb1-643" aria-hidden="true" tabindex="-1"></a>$E_{1} = {\rm span}( (1,1,1)^T)$ has algebraic multiplicity 2 but geometric multiplicity 1, $A$ is</span>
-<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a>not diagonalisable, by the Diagonalisation Theorem.\</span>
-<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a>(b) The matrix </span>
-<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a>$$A = \left[\begin{array}{ccc}</span>
-<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a>        2 &amp; 2 &amp; 0 <span class="sc">\\</span> 0 &amp; 1 &amp; 0 <span class="sc">\\</span> -4 &amp; -8 &amp; 1 \end{array}\right]$$</span>
-<span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a>has two distinct eigenvalues $\lambda _{1} = 2$ and $\lambda _{2} = \lambda _{3} = 1$. We found:</span>
-<span id="cb1-649"><a href="#cb1-649" aria-hidden="true" tabindex="-1"></a>for $\lambda _{1} = 2$, $E_{1}$ has basis</span>
-<span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{1}} = (1, 0, -4)^T$, and for $\lambda _{2} = \lambda _{3} = 1$, $E_{2}$ has basis</span>
-<span id="cb1-651"><a href="#cb1-651" aria-hidden="true" tabindex="-1"></a>$\mathbf{p_{2}} = (-2,1, 0)^T$ and $\mathbf{p_{3}} = (0,0,1)^T$.</span>
-<span id="cb1-652"><a href="#cb1-652" aria-hidden="true" tabindex="-1"></a>Thus, the eigenvalue 2 has algebraic and geometric multiplicity 1,</span>
-<span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a>and the eigenvalue 1 has algebraic and geometric multiplicity 2.</span>
-<span id="cb1-654"><a href="#cb1-654" aria-hidden="true" tabindex="-1"></a>Thus, $A$ is diagonalisable, by the Diagonalisation Theorem.</span>
-<span id="cb1-655"><a href="#cb1-655" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-656"><a href="#cb1-656" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-657"><a href="#cb1-657" aria-hidden="true" tabindex="-1"></a>::: {.Theorem}</span>
-<span id="cb1-658"><a href="#cb1-658" aria-hidden="true" tabindex="-1"></a><span class="fu">## Joint eigenbasis</span></span>
-<span id="cb1-659"><a href="#cb1-659" aria-hidden="true" tabindex="-1"></a>If two matrices commute and one of them is diagonalisable then they share a basis of eigenvectors. </span>
-<span id="cb1-660"><a href="#cb1-660" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-661"><a href="#cb1-661" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-662"><a href="#cb1-662" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-663"><a href="#cb1-663" aria-hidden="true" tabindex="-1"></a>Let ${\rm A}$ be diagonalisable. Then ${\rm A}$ has an eigenbasis $\vec{x}_i, i=1..n$. For simplicity we first assume that there are $n$ distinct eigenvalues, but one also prove the theorem for repeated eigenvalues.  </span>
-<span id="cb1-664"><a href="#cb1-664" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-665"><a href="#cb1-665" aria-hidden="true" tabindex="-1"></a>Let ${\rm B}$ be a matrix that commutes with ${\rm A}$:   </span>
-<span id="cb1-666"><a href="#cb1-666" aria-hidden="true" tabindex="-1"></a>$$ {\rm A B = B A} \quad \Rightarrow {\rm A B}\vec{x}_i ={\rm B A}\vec{x}_i \quad \Rightarrow {\rm A}({\rm  B}\vec{x}_i) = \lambda_i ({\rm B} \vec{x}_i)  $$ </span>
-<span id="cb1-667"><a href="#cb1-667" aria-hidden="true" tabindex="-1"></a>That means that ${\rm B} \vec{x}_i$ is also an eigenvector of ${\rm A}$ to the eigenvalue $\lambda_i$ and since the eigenspace to $\lambda_i$ is 1-dimensional and spanned by $\vec{x}_i$ we have ${\rm B} \vec{x}_i = \mu_i \vec{x}_i$, for some real number $\mu_i$. This means that $\vec{x}_i$ is also an eigenvector of ${\rm B}$.  A similar argumentation works for repeated eigenvalues. </span>
-<span id="cb1-668"><a href="#cb1-668" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-669"><a href="#cb1-669" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-670"><a href="#cb1-670" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-671"><a href="#cb1-671" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remark</span></span>
-<span id="cb1-672"><a href="#cb1-672" aria-hidden="true" tabindex="-1"></a>Joint eigenbases play an important role in quantum mechanics, where the eigenstates of commuting operators can be expressed w.r.t.~a common basis. It also means that measurements of these operator can be carried out simultaneously with (theoretically) infinite precision, while non-commuting operators have to satisfy a Heisenberg Uncertainty Principle. </span>
+<span id="cb1-629"><a href="#cb1-629" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-630"><a href="#cb1-630" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- ::: {.Theorem}</span></span>
+<span id="cb1-631"><a href="#cb1-631" aria-hidden="true" tabindex="-1"></a><span class="co">## Diagonalisation Theorem</span></span>
+<span id="cb1-632"><a href="#cb1-632" aria-hidden="true" tabindex="-1"></a><span class="co">Let $A$ be an $n \times n$ matrix whose distinct eigenvalues are $\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}$, where $1\leq k\leq n$. The following statements are</span></span>
+<span id="cb1-633"><a href="#cb1-633" aria-hidden="true" tabindex="-1"></a><span class="co">equivalent:</span></span>
+<span id="cb1-634"><a href="#cb1-634" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-635"><a href="#cb1-635" aria-hidden="true" tabindex="-1"></a><span class="co">(a) $A$ is diagonalisable.</span></span>
+<span id="cb1-636"><a href="#cb1-636" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-637"><a href="#cb1-637" aria-hidden="true" tabindex="-1"></a><span class="co">(b) The union $B$ of the bases of the eigenspaces of $A$ contains $n$</span></span>
+<span id="cb1-638"><a href="#cb1-638" aria-hidden="true" tabindex="-1"></a><span class="co">vectors.</span></span>
+<span id="cb1-639"><a href="#cb1-639" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-640"><a href="#cb1-640" aria-hidden="true" tabindex="-1"></a><span class="co">(c) The algebraic multiplicity of each eigenvalue equals its geometric</span></span>
+<span id="cb1-641"><a href="#cb1-641" aria-hidden="true" tabindex="-1"></a><span class="co">multiplicity.</span></span>
+<span id="cb1-642"><a href="#cb1-642" aria-hidden="true" tabindex="-1"></a><span class="co">::: --&gt;</span></span>
+<span id="cb1-643"><a href="#cb1-643" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-644"><a href="#cb1-644" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-645"><a href="#cb1-645" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-646"><a href="#cb1-646" aria-hidden="true" tabindex="-1"></a>::: {.Theorem}</span>
+<span id="cb1-647"><a href="#cb1-647" aria-hidden="true" tabindex="-1"></a><span class="fu">## Joint eigenbasis</span></span>
+<span id="cb1-648"><a href="#cb1-648" aria-hidden="true" tabindex="-1"></a>If two matrices commute and one of them is diagonalisable then they share a basis of eigenvectors. </span>
+<span id="cb1-649"><a href="#cb1-649" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-650"><a href="#cb1-650" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-651"><a href="#cb1-651" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-652"><a href="#cb1-652" aria-hidden="true" tabindex="-1"></a>Let ${\rm A}$ be diagonalisable. Then ${\rm A}$ has an eigenbasis $\vec{x}_i, i=1..n$. For simplicity we first assume that there are $n$ distinct eigenvalues, but one can also prove the theorem for repeated eigenvalues.  </span>
+<span id="cb1-653"><a href="#cb1-653" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-654"><a href="#cb1-654" aria-hidden="true" tabindex="-1"></a>Let ${\rm B}$ be a matrix that commutes with ${\rm A}$:   </span>
+<span id="cb1-655"><a href="#cb1-655" aria-hidden="true" tabindex="-1"></a>$$ {\rm A B = B A} \quad \Rightarrow {\rm A B}\vec{x}_i ={\rm B A}\vec{x}_i \quad \Rightarrow {\rm A}({\rm  B}\vec{x}_i) = \lambda_i ({\rm B} \vec{x}_i)  $$ </span>
+<span id="cb1-656"><a href="#cb1-656" aria-hidden="true" tabindex="-1"></a>That means that ${\rm B} \vec{x}_i$ is also an eigenvector of ${\rm A}$ to the eigenvalue $\lambda_i$ and since the eigenspace to $\lambda_i$ is 1-dimensional and spanned by $\vec{x}_i$ we have ${\rm B} \vec{x}_i = \mu_i \vec{x}_i$, for some real number $\mu_i$. This means that $\vec{x}_i$ is also an eigenvector of ${\rm B}$.  A similar argumentation works for repeated eigenvalues. </span>
+<span id="cb1-657"><a href="#cb1-657" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-658"><a href="#cb1-658" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-659"><a href="#cb1-659" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-660"><a href="#cb1-660" aria-hidden="true" tabindex="-1"></a><span class="fu">## Remark</span></span>
+<span id="cb1-661"><a href="#cb1-661" aria-hidden="true" tabindex="-1"></a>Joint eigenbases play an important role in quantum mechanics, where the eigenstates of commuting operators can be expressed w.r.t.~a common basis. It also means that measurements of these operator can be carried out simultaneously with (theoretically) infinite precision, while non-commuting operators have to satisfy a Heisenberg Uncertainty Principle. </span>
+<span id="cb1-662"><a href="#cb1-662" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-663"><a href="#cb1-663" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-664"><a href="#cb1-664" aria-hidden="true" tabindex="-1"></a><span class="fu">## Adjoint Operator</span></span>
+<span id="cb1-665"><a href="#cb1-665" aria-hidden="true" tabindex="-1"></a>If our vector space is equipped with an inner product $\langle . , . \rangle$, and we are given a linear operator (matrix) ${\rm A}$ then there exists a further linear operator closely related to ${\rm A}$, the Hermitian adjoint. </span>
+<span id="cb1-666"><a href="#cb1-666" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-667"><a href="#cb1-667" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-668"><a href="#cb1-668" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
+<span id="cb1-669"><a href="#cb1-669" aria-hidden="true" tabindex="-1"></a><span class="fu">## (Hermitian) Adjoint Operator</span></span>
+<span id="cb1-670"><a href="#cb1-670" aria-hidden="true" tabindex="-1"></a>Given a linear operator ${\rm A}$ the hermitian adjoint of ${\rm A}$ is defined by </span>
+<span id="cb1-671"><a href="#cb1-671" aria-hidden="true" tabindex="-1"></a>$$\langle {\rm A}\vec{x},\vec{y} \rangle = \langle \vec{x},{\rm A}^\dag \vec{y} \rangle. $$</span>
+<span id="cb1-672"><a href="#cb1-672" aria-hidden="true" tabindex="-1"></a>The operator ${\rm A}$ is called self-adjoint if ${\rm A} = {\rm A}^\dag$.</span>
 <span id="cb1-673"><a href="#cb1-673" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-674"><a href="#cb1-674" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-675"><a href="#cb1-675" aria-hidden="true" tabindex="-1"></a><span class="fu">## Adjoint Operator</span></span>
-<span id="cb1-676"><a href="#cb1-676" aria-hidden="true" tabindex="-1"></a>If our vector space is equipped with an inner product $\langle . , . \rangle$, and we are given a linear operator (matrix) ${\rm A}$ then there exists a further linear operator closely related to ${\rm A}$, the Hermitian adjoint. </span>
+<span id="cb1-675"><a href="#cb1-675" aria-hidden="true" tabindex="-1"></a>For the simplest case of a real, finite-dimensional vector space with an inner product given by the standard scalar product the hermitian adjoint of ${\rm A}$ is just the transpose of ${\rm A}$. This is because the scalar product $\vec{x}\cdot\vec{y}$ can be written also as a matrix product $\vec{x}^T \vec{y}$ and hence </span>
+<span id="cb1-676"><a href="#cb1-676" aria-hidden="true" tabindex="-1"></a>$$\langle {\rm A}\vec{x},\vec{y} \rangle = ({\rm A}\vec{x})^T\vec{y} = \vec{x}^T{\rm A}^T\vec{y} = \langle \vec{x},{\rm A}^T\vec{y} \rangle. $$</span>
 <span id="cb1-677"><a href="#cb1-677" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-678"><a href="#cb1-678" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-679"><a href="#cb1-679" aria-hidden="true" tabindex="-1"></a>::: {.Definition}</span>
-<span id="cb1-680"><a href="#cb1-680" aria-hidden="true" tabindex="-1"></a><span class="fu">## (Hermitian) Adjoint Operator</span></span>
-<span id="cb1-681"><a href="#cb1-681" aria-hidden="true" tabindex="-1"></a>Given a linear operator ${\rm A}$ the hermitian adjoint of ${\rm A}$ is defined by </span>
-<span id="cb1-682"><a href="#cb1-682" aria-hidden="true" tabindex="-1"></a>$$\langle {\rm A}\vec{x},\vec{y} \rangle = \langle \vec{x},{\rm A}^\dag \vec{y} \rangle. $$</span>
-<span id="cb1-683"><a href="#cb1-683" aria-hidden="true" tabindex="-1"></a>The operator ${\rm A}$ is called self-adjoint if ${\rm A} = {\rm A}^\dag$.</span>
+<span id="cb1-678"><a href="#cb1-678" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
+<span id="cb1-679"><a href="#cb1-679" aria-hidden="true" tabindex="-1"></a><span class="fu">## Properties of the hermitian adjoint</span></span>
+<span id="cb1-680"><a href="#cb1-680" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-681"><a href="#cb1-681" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$({\rm A}^\dag)^\dag = {\rm A}$</span>
+<span id="cb1-682"><a href="#cb1-682" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>${\rm A}^\dag + {\rm B}^\dag = ({\rm A} +{\rm B})^\dag$</span>
+<span id="cb1-683"><a href="#cb1-683" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$({\rm A}{\rm B})^\dag = {\rm B}^\dag {\rm A}^\dag$</span>
 <span id="cb1-684"><a href="#cb1-684" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-685"><a href="#cb1-685" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-686"><a href="#cb1-686" aria-hidden="true" tabindex="-1"></a>For the simplest case of a real, finite-dimensional vector space with an inner product given by the standard scalar product the hermitian adjoint of ${\rm A}$ is just the transpose of ${\rm A}$. This is because the scalar product $\vec{x}\cdot\vec{y}$ can be written also as a matrix product $\vec{x}^T \vec{y}$ and hence </span>
-<span id="cb1-687"><a href="#cb1-687" aria-hidden="true" tabindex="-1"></a>$$\langle {\rm A}\vec{x},\vec{y} \rangle = ({\rm A}\vec{x})^T\vec{y} = \vec{x}^T{\rm A}^T\vec{y} = \langle \vec{x},{\rm A}^T\vec{y} \rangle. $$</span>
-<span id="cb1-688"><a href="#cb1-688" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-689"><a href="#cb1-689" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
-<span id="cb1-690"><a href="#cb1-690" aria-hidden="true" tabindex="-1"></a><span class="fu">## Properties of the hermitian adjoint</span></span>
-<span id="cb1-691"><a href="#cb1-691" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-692"><a href="#cb1-692" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$({\rm A}^\dag)^\dag = {\rm A}$</span>
-<span id="cb1-693"><a href="#cb1-693" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>${\rm A}^\dag + {\rm B}^\dag = ({\rm A} +{\rm B})^\dag$</span>
-<span id="cb1-694"><a href="#cb1-694" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$({\rm A}{\rm B})^\dag = {\rm B}^\dag {\rm A}^\dag$</span>
-<span id="cb1-695"><a href="#cb1-695" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-696"><a href="#cb1-696" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-697"><a href="#cb1-697" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
-<span id="cb1-698"><a href="#cb1-698" aria-hidden="true" tabindex="-1"></a><span class="fu">## orthogonal eigenbasis</span></span>
-<span id="cb1-699"><a href="#cb1-699" aria-hidden="true" tabindex="-1"></a>For a self-adjoint operator eigenvectors to different eigenvalues are orthogonal. </span>
-<span id="cb1-700"><a href="#cb1-700" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-701"><a href="#cb1-701" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-702"><a href="#cb1-702" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
-<span id="cb1-703"><a href="#cb1-703" aria-hidden="true" tabindex="-1"></a>$$ \langle {\rm A}\vec{x},\vec{y} \rangle = \langle \vec{x},{\rm A}^\dag \vec{y} \rangle  = \langle \vec{x},{\rm A} \vec{y} \rangle$$</span>
-<span id="cb1-704"><a href="#cb1-704" aria-hidden="true" tabindex="-1"></a>$$ \Rightarrow \langle \lambda_x \vec{x},\vec{y} \rangle = \langle \vec{x},\lambda_y \vec{y} \rangle  \quad \Rightarrow \underbrace{(\lambda_x -\lambda_y)}_{\neq 0} \langle \vec{x},\vec{y} \rangle = 0  \quad \Rightarrow \langle \vec{x},\vec{y} \rangle = 0 $$</span>
-<span id="cb1-705"><a href="#cb1-705" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-686"><a href="#cb1-686" aria-hidden="true" tabindex="-1"></a>::: {.Corollary}</span>
+<span id="cb1-687"><a href="#cb1-687" aria-hidden="true" tabindex="-1"></a><span class="fu">## Orthogonal eigenbasis</span></span>
+<span id="cb1-688"><a href="#cb1-688" aria-hidden="true" tabindex="-1"></a>For a self-adjoint operator eigenvectors to different eigenvalues are orthogonal. </span>
+<span id="cb1-689"><a href="#cb1-689" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-690"><a href="#cb1-690" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-691"><a href="#cb1-691" aria-hidden="true" tabindex="-1"></a>::: {.Proof}</span>
+<span id="cb1-692"><a href="#cb1-692" aria-hidden="true" tabindex="-1"></a>$$ \langle {\rm A}\vec{x},\vec{y} \rangle = \langle \vec{x},{\rm A}^\dag \vec{y} \rangle  = \langle \vec{x},{\rm A} \vec{y} \rangle$$</span>
+<span id="cb1-693"><a href="#cb1-693" aria-hidden="true" tabindex="-1"></a>$$ \Rightarrow \langle \lambda_x \vec{x},\vec{y} \rangle = \langle \vec{x},\lambda_y \vec{y} \rangle  \quad \Rightarrow \underbrace{(\lambda_x -\lambda_y)}_{\neq 0} \langle \vec{x},\vec{y} \rangle = 0  \quad \Rightarrow \langle \vec{x},\vec{y} \rangle = 0 $$</span>
+<span id="cb1-694"><a href="#cb1-694" aria-hidden="true" tabindex="-1"></a>::: </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

@@ -282,26 +282,26 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
 %%%% --- end foldboxy preamble ----- %%%%%
 %%==== colors from yaml ===%
-\definecolor{DONE-color1}{HTML}{cce7b1}
-\definecolor{DONE-color2}{HTML}{86b754}
+\definecolor{TODO-color1}{HTML}{e7b1b4}
+\definecolor{TODO-color2}{HTML}{8c3236}
+\definecolor{Feature-color1}{HTML}{c0c0c0}
+\definecolor{Feature-color2}{HTML}{808080}
 \definecolor{Proof-color1}{HTML}{c0c0c0}
 \definecolor{Proof-color2}{HTML}{808080}
-\definecolor{Conjecture-color1}{HTML}{948bde}
-\definecolor{Conjecture-color2}{HTML}{584eab}
-\definecolor{Lemma-color1}{HTML}{948bde}
-\definecolor{Lemma-color2}{HTML}{584eab}
 \definecolor{Solution-color1}{HTML}{c0c0c0}
 \definecolor{Solution-color2}{HTML}{808080}
 \definecolor{Definition-color1}{HTML}{d999d3}
 \definecolor{Definition-color2}{HTML}{a01793}
 \definecolor{Theorem-color1}{HTML}{948bde}
 \definecolor{Theorem-color2}{HTML}{584eab}
+\definecolor{DONE-color1}{HTML}{cce7b1}
+\definecolor{DONE-color2}{HTML}{86b754}
 \definecolor{Corollary-color1}{HTML}{948bde}
 \definecolor{Corollary-color2}{HTML}{584eab}
-\definecolor{Feature-color1}{HTML}{c0c0c0}
-\definecolor{Feature-color2}{HTML}{808080}
-\definecolor{TODO-color1}{HTML}{e7b1b4}
-\definecolor{TODO-color2}{HTML}{8c3236}
+\definecolor{Lemma-color1}{HTML}{948bde}
+\definecolor{Lemma-color2}{HTML}{584eab}
+\definecolor{Conjecture-color1}{HTML}{948bde}
+\definecolor{Conjecture-color2}{HTML}{584eab}
 %=============%
 \newcounter{quartocalloutnteno}
 \newcommand{\quartocalloutnte}[1]{\refstepcounter{quartocalloutnteno}\label{#1}}
@@ -321,7 +321,7 @@ boxed title style={boxrule=0.0mm, fuzzy shadow={1pt}{-1pt}{0mm}{0.1mm}{gray}, ar
 
 \title{Core Mathematics III}
 \author{Prof Gunnar Hornig}
-\date{2025-11-14}
+\date{2025-11-26}
 \begin{document}
 \maketitle
 
@@ -676,7 +676,7 @@ the multiplication in \(\mathbb{R}\) is also the neutral element for the
 scalar multiplication, while the remaining conditions are distributive
 laws.
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on Notation}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on Notation}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 Alternative notations for vectors encountered in the literature are bold
 face symbols \({\bf v}\) or \(\bar v\) (not to be confused with complex
@@ -826,7 +826,7 @@ n-th order. In this case there are \(n\) linearly independent solutions.
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Advanced material}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Advanced material}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 \begin{example}[]\protect\hypertarget{exm-vktspace8}{}\label{exm-vktspace8}
 
@@ -1281,7 +1281,7 @@ The space of polynomials of degree \(\leq n\) has basis
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on dimension}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark on dimension}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 Note that the dimension of \(V\) depends on the field \(K\). Thus the
 complex numbers \(\mathbb{C}\) can be considered as a space of dimension
@@ -1464,7 +1464,7 @@ b & b
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 While \(W_{1}\cap W_{2}\) is a subpace, \(W_{1}\cup W_{2}\) is in
 general not a subspace. For exampe if \(W_1\) and \(W_2\) are the x- and
@@ -1793,7 +1793,7 @@ field \(\mathbb{C}\) (or \(\mathbb{R}\)) is a map \[\begin{aligned}
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 The third property implies that the inner prodoct of a vector with
 itself is real and non-negative. This allows us to define the norm of a
@@ -1839,7 +1839,7 @@ A \(2\times3\) matrix: \[{\rm A} =\left(
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Notation}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Notation}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 Matrices are usually named by upper case roman letters,
 e.g.~\({\rm A}\). Individual entries are referred to by \(A_{i,j}\),
@@ -1981,7 +1981,7 @@ and scalar multiplication, and associative but not commutative.
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, colframe=quarto-callout-warning-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-warning-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 Matrix multiplication is not commutative in general:
 \({\rm A}  {\rm B} \neq  {\rm B}  {\rm A}\). This is clear already for
@@ -2236,7 +2236,7 @@ have an inverse is said to be singular.
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 \begin{itemize}
 \tightlist
@@ -2251,7 +2251,7 @@ have an inverse is said to be singular.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-warning-color-frame, colbacktitle=quarto-callout-warning-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, colframe=quarto-callout-warning-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-warning-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 A division of matrices is \textbf{not} defined.
 
@@ -2440,7 +2440,7 @@ variables or the equations are not linearly independent. In this case,
 we are left with one (or more) free variables, and the best we can do is
 express all the other variables in terms of this free variable.
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note \ref*{nte-effectivegauss}}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note \ref*{nte-effectivegauss}}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 \quartocalloutnte{nte-effectivegauss} 
 
@@ -2556,7 +2556,7 @@ than variables.
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Additional material: Geometric interpretation}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Additional material: Geometric interpretation}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 All three cases ---the case of a unique solution, the overdetermined
 case, and the underdetermined case --- can be understood in geometric
@@ -2766,7 +2766,7 @@ identity matrix. The method is usually applied to the augmented matrix
 simultaneously on both sides, to reduce it to
 \({\rm I} \vert  {\rm A}^{-1}\).
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 To avoid making unnecessary steps when applying row operations it is
 good to follow the scheme explained in Note~\ref{nte-effectivegauss} and
@@ -3673,7 +3673,7 @@ So a basis for the nullspace is
 
 \end{example}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note \ref*{nte-nonsquare}: Remark: Nullspace of non-square matrices}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note \ref*{nte-nonsquare}: Remark: Nullspace of non-square matrices}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 \quartocalloutnte{nte-nonsquare} 
 
@@ -4050,7 +4050,7 @@ a_{j} & b_{j} & c_{j} &  \\
 
 \end{fbx}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remember}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remember}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 The rules are similar to, \textbf{but not the same as,} Gaussian
 elimination; adding \(k\) times row 2 to row 1 is OK if the result goes
@@ -4321,7 +4321,7 @@ is a singular matrix).
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note:}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note:}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 Various authors define non-singular matrices to be either
 
@@ -4983,8 +4983,18 @@ In the above Example, \(\lambda = 1\) has algebraic multiplicity \(2\)
 and geometric multiplicity \(1\). \(\lambda = 2\) has algebraic
 multiplicity \(1\) and geometric multiplicity \(1\).
 
-\phantomsection\label{eigenvaluestriangular}
+\phantomsection\label{Corollary-5.6}
 \begin{fbxSimple}{Corollary}{Corollary 5.6}{}
+\phantomsection\label{Corollary-5.6}
+If \(A\) is an \(n \times n\) matrix, then the geometric multiplicity of
+each eigenvalue is at least 1 and less than or equal to its algebraic
+multiplicity.
+\[ 1 \le {\rm dim( E_\lambda)\le \text{\small algebraic multiplicity}}\]
+
+\end{fbxSimple}
+
+\phantomsection\label{eigenvaluestriangular}
+\begin{fbxSimple}{Corollary}{Corollary 5.7}{}
 \phantomsection\label{eigenvaluestriangular}
 The eigenvalues of a triangular matrix are the entries on its main
 diagonal.
@@ -5008,10 +5018,10 @@ Hence, the eigenvalues are
 \end{example}
 
 Note that diagonal matrices are a special case of Corollary
-\hyperref[eigenvaluestriangular]{5.6}.
+\hyperref[eigenvaluestriangular]{5.7}.
 
 \phantomsection\label{eigenlinind}
-\begin{fbxSimple}{Theorem}{Theorem 5.7}{}
+\begin{fbxSimple}{Theorem}{Theorem 5.8}{}
 \phantomsection\label{eigenlinind}
 Let \(A\) be an \(n \times n\) matrix and let
 \(\lambda _{1}, \lambda _{2}, ..., \lambda _{m}\) be distinct
@@ -5135,7 +5145,7 @@ elements of the matrix are the eigenvalues.
 \subsection{Similar Matrices}\label{similar-matrices}
 
 \phantomsection\label{similar-matrices-1}
-\begin{fbxSimple}{Definition}{Definition 5.8: }{Similar Matrices}
+\begin{fbxSimple}{Definition}{Definition 5.9: }{Similar Matrices}
 \phantomsection\label{similar-matrices-1}
 Let \(A\) and \(B\) be \(n \times n\) matrices. We say that \(A\) is
 similar to \(B\) if there is an invertible \(n \times n\) matrix \(P\)
@@ -5144,7 +5154,7 @@ such that \(P^{-1}AP = B\). If \(A\) is similar to \(B\), we write
 
 \end{fbxSimple}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 If \(A \sim B\), we can write, equivalently, that \(A = PBP^{-1}\) or
 \(AP = PB\). The matrix \(P\) depends on \(A\) and \(B\). It is not
@@ -5153,7 +5163,7 @@ unique for a given pair of similar matrices \(A\) and \(B\).
 \end{tcolorbox}
 
 \phantomsection\label{simmatrices}
-\begin{fbxSimple}{Theorem}{Theorem 5.9: }{Properties of Similar Matrices}
+\begin{fbxSimple}{Theorem}{Theorem 5.10: }{Properties of Similar Matrices}
 \phantomsection\label{simmatrices}
 Let \(A\) and \(B\) be \(n \times n\) matrices with \(A \sim B\). Then\\
 (a) \({\rm det}(A) = {\rm det}(B)\)\\
@@ -5204,7 +5214,7 @@ nullity(A)=nullity(B).
 
 \end{fbx}
 
-Theorem \hyperref[simmatrices]{5.9} is helpful in showing that two
+Theorem \hyperref[simmatrices]{5.10} is helpful in showing that two
 matrices are not similar, since \(A\) and \(B\) cannot be similar if any
 of the properties fail.
 
@@ -5234,7 +5244,7 @@ of the properties fail.
 \subsection{Diagonalisation}\label{diagonalisation}
 
 \phantomsection\label{diagonalisable-matrices}
-\begin{fbxSimple}{Definition}{Definition 5.10: }{Diagonalisable Matrices}
+\begin{fbxSimple}{Definition}{Definition 5.11: }{Diagonalisable Matrices}
 \phantomsection\label{diagonalisable-matrices}
 An \(n \times n\) matrix \(A\) is diagonalisable if there is a diagonal
 matrix \(D\) such that \(A\) is similar to \(D\) - that is, if there is
@@ -5243,7 +5253,7 @@ an invertible \(n \times n\) matrix \(P\) such that \(P^{-1}AP = D\).
 \end{fbxSimple}
 
 \phantomsection\label{diagifind}
-\begin{fbxSimple}{Theorem}{Theorem 5.11: }{Condition for Diagonalisability}
+\begin{fbxSimple}{Theorem}{Theorem 5.12: }{Condition for Diagonalisability}
 \phantomsection\label{diagifind}
 Let \(A\) be an \(n \times n\) matrix. Then \(A\) is diagonalisable if
 and only if \(A\) has \(n\) linearly independent eigenvectors.\\
@@ -5330,8 +5340,7 @@ If possible, find a matrix \(P\) that diagonalises
 \phantomsection\label{Solutionux2a-5.9}
 \begin{fbx}{Solution}{Solution}{}
 \phantomsection\label{Solution*-5.9}
-This is the matrix of Question 3, Worksheet 6. There we found that the
-eigenvalues of \(A\) are \(\lambda _{1} = 2\) and
+There we find that the eigenvalues of \(A\) are \(\lambda _{1} = 2\) and
 \(\lambda _{2} = \lambda _{3} = 1\), with the following bases for the
 eigenspaces:\\
 For \(\lambda _{1} = 2\), \(E_{2}\) has basis
@@ -5356,7 +5365,7 @@ then \(P\) is invertible. Furthermore,
 
 \end{fbx}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 Eigenvectors can be placed into the columns of \(P\) in any order.
 However, the eigenvalues will come up on the diagonal of \(D\) in the
@@ -5374,7 +5383,7 @@ of different subspaces are combined.
 \end{tcolorbox}
 
 \phantomsection\label{section}
-\begin{fbxSimple}{Theorem}{Theorem 5.12}{}
+\begin{fbxSimple}{Theorem}{Theorem 5.13}{}
 \phantomsection\label{section}
 Let \(A\) be an \(n \times n\) matrix and let
 \(\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}\) be distinct
@@ -5385,22 +5394,32 @@ is linearly independent.
 
 \end{fbxSimple}
 
+\phantomsection\label{Proofux2a-5.10}
+\begin{fbx}{Proof}{Proof}{}
+\phantomsection\label{Proof*-5.10}
+By theorem \hyperref[eigenlinind]{5.8}, the eigenvectors to different
+eigenvalues are linearly independent. Together with the information that
+each eigenspace has a basis of (linearly independent) eigenvectors we
+obtain that the set \(B\) must be linearly independent. ◻
+
+\end{fbx}
+
 \phantomsection\label{eigendiag}
-\begin{fbxSimple}{Theorem}{Theorem 5.13}{}
+\begin{fbxSimple}{Theorem}{Theorem 5.14}{}
 \phantomsection\label{eigendiag}
 If \(A\) is an \(n \times n\) matrix with \(n\) distinct eigenvalues,
 then \(A\) is diagonalisable.
 
 \end{fbxSimple}
 
-\phantomsection\label{Proofux2a-5.10}
+\phantomsection\label{Proofux2a-5.11}
 \begin{fbx}{Proof}{Proof}{}
-\phantomsection\label{Proof*-5.10}
+\phantomsection\label{Proof*-5.11}
 Let \(\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}\) be
 eigenvectors corresponding to the \(n\) distinct eigenvalues of \(A\).
-By theorem \hyperref[eigenlinind]{5.7},
+By theorem \hyperref[eigenlinind]{5.8},
 \(\mathbf{v_{1}}, \mathbf{v_{2}}, \cdots, \mathbf{v_{n}}\) are linearly
-independent, so, by Theorem \hyperref[diagifind]{5.11}, \(A\) is
+independent, so, by Theorem \hyperref[diagifind]{5.12}, \(A\) is
 diagonalisable.~◻
 
 \end{fbx}
@@ -5415,89 +5434,27 @@ The matrix \[A = \left[\begin{array}{cccc}
         \end{array}\right]\] has eigenvalues
 \(\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3\) and
 \(\lambda _{4} = -2\), by Corollary
-\hyperref[eigenvaluestriangular]{5.6}. Since these are four distinct
+\hyperref[eigenvaluestriangular]{5.7}. Since these are four distinct
 eigenvalues for a \(4 \times 4\) matrix, \(A\) is diagonalisable, by
-Theorem \hyperref[eigendiag]{5.13}.
-
-\end{example}
-
-\phantomsection\label{Corollary-5.14}
-\begin{fbxSimple}{Corollary}{Corollary 5.14}{}
-\phantomsection\label{Corollary-5.14}
-If \(A\) is an \(n \times n\) matrix, then the geometric multiplicity of
-each eigenvalue is less than or equal to its algebraic multiplicity.
-
-\end{fbxSimple}
-
-\phantomsection\label{diagonalisation-theorem}
-\begin{fbxSimple}{Theorem}{Theorem 5.15: }{Diagonalisation Theorem}
-\phantomsection\label{diagonalisation-theorem}
-
-Let \(A\) be an \(n \times n\) matrix whose distinct eigenvalues are
-\(\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}\), where
-\(1\leq k\leq n\). The following statements are equivalent:
-
-\begin{enumerate}
-\def\labelenumi{(\alph{enumi})}
-\item
-  \(A\) is diagonalisable.
-\item
-  The union \(B\) of the bases of the eigenspaces of \(A\) contains
-  \(n\) vectors.
-\item
-  The algebraic multiplicity of each eigenvalue equals its geometric
-  multiplicity.
-\end{enumerate}
-
-\end{fbxSimple}
-
-\begin{example}[]\protect\hypertarget{exm-}{}\label{exm-}
-
-~
-
-\begin{enumerate}
-\def\labelenumi{(\alph{enumi})}
-\tightlist
-\item
-  The matrix \[A = \left[\begin{array}{ccc}
-      0 & 1 & 0 \\ 0 & 0 & 1 \\ 2 & -5 & 4 \end{array}\right]\] has two
-  distinct eigenvalues \(\lambda _{1} = \lambda _{2} = 1\) and
-  \(\lambda _{3} = 2\). Since the eigenvalue
-  \(\lambda _{1} = \lambda _{2} = 1\) with
-  \(E_{1} = {\rm span}( (1,1,1)^T)\) has algebraic multiplicity 2 but
-  geometric multiplicity 1, \(A\) is not diagonalisable, by the
-  Diagonalisation Theorem.\\
-\item
-  The matrix \[A = \left[\begin{array}{ccc}
-      2 & 2 & 0 \\ 0 & 1 & 0 \\ -4 & -8 & 1 \end{array}\right]\] has two
-  distinct eigenvalues \(\lambda _{1} = 2\) and
-  \(\lambda _{2} = \lambda _{3} = 1\). We found: for
-  \(\lambda _{1} = 2\), \(E_{1}\) has basis
-  \(\mathbf{p_{1}} = (1, 0, -4)^T\), and for
-  \(\lambda _{2} = \lambda _{3} = 1\), \(E_{2}\) has basis
-  \(\mathbf{p_{2}} = (-2,1, 0)^T\) and \(\mathbf{p_{3}} = (0,0,1)^T\).
-  Thus, the eigenvalue 2 has algebraic and geometric multiplicity 1, and
-  the eigenvalue 1 has algebraic and geometric multiplicity 2. Thus,
-  \(A\) is diagonalisable, by the Diagonalisation Theorem.
-\end{enumerate}
+Theorem \hyperref[eigendiag]{5.14}.
 
 \end{example}
 
 \phantomsection\label{joint-eigenbasis}
-\begin{fbxSimple}{Theorem}{Theorem 5.16: }{Joint eigenbasis}
+\begin{fbxSimple}{Theorem}{Theorem 5.15: }{Joint eigenbasis}
 \phantomsection\label{joint-eigenbasis}
 If two matrices commute and one of them is diagonalisable then they
 share a basis of eigenvectors.
 
 \end{fbxSimple}
 
-\phantomsection\label{Proofux2a-5.11}
+\phantomsection\label{Proofux2a-5.12}
 \begin{fbx}{Proof}{Proof}{}
-\phantomsection\label{Proof*-5.11}
+\phantomsection\label{Proof*-5.12}
 Let \({\rm A}\) be diagonalisable. Then \({\rm A}\) has an eigenbasis
 \(\vec{x}_i, i=1..n\). For simplicity we first assume that there are
-\(n\) distinct eigenvalues, but one also prove the theorem for repeated
-eigenvalues.
+\(n\) distinct eigenvalues, but one can also prove the theorem for
+repeated eigenvalues.
 
 Let \({\rm B}\) be a matrix that commutes with \({\rm A}\):\\
 \[ {\rm A B = B A} \quad \Rightarrow {\rm A B}\vec{x}_i ={\rm B A}\vec{x}_i \quad \Rightarrow {\rm A}({\rm  B}\vec{x}_i) = \lambda_i ({\rm B} \vec{x}_i)  \]
@@ -5510,7 +5467,7 @@ similar argumentation works for repeated eigenvalues.
 
 \end{fbx}
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, left=2mm, colframe=quarto-callout-note-color-frame, colbacktitle=quarto-callout-note-color!10!white, colback=white, leftrule=.75mm, breakable, toprule=.15mm, toptitle=1mm, arc=.35mm, titlerule=0mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, bottomtitle=1mm, rightrule=.15mm, opacitybacktitle=0.6, bottomrule=.15mm, coltitle=black]
+\begin{tcolorbox}[enhanced jigsaw, left=2mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Remark}, colframe=quarto-callout-note-color-frame, colback=white, breakable, arc=.35mm, colbacktitle=quarto-callout-note-color!10!white, leftrule=.75mm, toptitle=1mm, opacitybacktitle=0.6, bottomrule=.15mm, rightrule=.15mm, coltitle=black, toprule=.15mm, bottomtitle=1mm, titlerule=0mm, opacityback=0]
 
 Joint eigenbases play an important role in quantum mechanics, where the
 eigenstates of commuting operators can be expressed
@@ -5529,7 +5486,7 @@ If our vector space is equipped with an inner product
 to \({\rm A}\), the Hermitian adjoint.
 
 \phantomsection\label{hermitian-adjoint-operator}
-\begin{fbxSimple}{Definition}{Definition 5.17: }{(Hermitian) Adjoint Operator}
+\begin{fbxSimple}{Definition}{Definition 5.16: }{(Hermitian) Adjoint Operator}
 \phantomsection\label{hermitian-adjoint-operator}
 Given a linear operator \({\rm A}\) the hermitian adjoint of \({\rm A}\)
 is defined by
@@ -5547,7 +5504,7 @@ product \(\vec{x}^T \vec{y}\) and hence
 \[\langle {\rm A}\vec{x},\vec{y} \rangle = ({\rm A}\vec{x})^T\vec{y} = \vec{x}^T{\rm A}^T\vec{y} = \langle \vec{x},{\rm A}^T\vec{y} \rangle. \]
 
 \phantomsection\label{properties-of-the-hermitian-adjoint}
-\begin{fbxSimple}{Corollary}{Corollary 5.18: }{Properties of the hermitian adjoint}
+\begin{fbxSimple}{Corollary}{Corollary 5.17: }{Properties of the hermitian adjoint}
 \phantomsection\label{properties-of-the-hermitian-adjoint}
 
 \begin{itemize}
@@ -5563,16 +5520,16 @@ product \(\vec{x}^T \vec{y}\) and hence
 \end{fbxSimple}
 
 \phantomsection\label{orthogonal-eigenbasis}
-\begin{fbxSimple}{Corollary}{Corollary 5.19: }{orthogonal eigenbasis}
+\begin{fbxSimple}{Corollary}{Corollary 5.18: }{Orthogonal eigenbasis}
 \phantomsection\label{orthogonal-eigenbasis}
 For a self-adjoint operator eigenvectors to different eigenvalues are
 orthogonal.
 
 \end{fbxSimple}
 
-\phantomsection\label{Proofux2a-5.12}
+\phantomsection\label{Proofux2a-5.13}
 \begin{fbx}{Proof}{Proof}{}
-\phantomsection\label{Proof*-5.12}
+\phantomsection\label{Proof*-5.13}
 \[ \langle {\rm A}\vec{x},\vec{y} \rangle = \langle \vec{x},{\rm A}^\dag \vec{y} \rangle  = \langle \vec{x},{\rm A} \vec{y} \rangle\]
 \[ \Rightarrow \langle \lambda_x \vec{x},\vec{y} \rangle = \langle \vec{x},\lambda_y \vec{y} \rangle  \quad \Rightarrow \underbrace{(\lambda_x -\lambda_y)}_{\neq 0} \langle \vec{x},\vec{y} \rangle = 0  \quad \Rightarrow \langle \vec{x},\vec{y} \rangle = 0 \]
 

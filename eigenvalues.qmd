@@ -280,6 +280,13 @@ In the above Example, $\lambda = 1$ has algebraic multiplicity $2$ and geometric
 $1$. $\lambda = 2$ has algebraic multiplicity $1$ and geometric multiplicity
 $1$.
 
+::: {.Corollary}
+If $A$ is an $n \times n$ matrix, then the geometric
+multiplicity of each eigenvalue is at least 1 and less than or equal to its algebraic
+multiplicity.
+$$ 1 \le {\rm dim( E_\lambda)\le \text{\small algebraic multiplicity}}$$
+:::
+
 ::: {.Corollary #eigenvaluestriangular}
 The eigenvalues of a triangular matrix are the entries on its main diagonal.
 :::
@@ -545,7 +552,7 @@ $$A = \left[\begin{array}{ccc}
 :::        
 
 ::: {.Solution}
-This is the matrix of Question 3, Worksheet 6. There we found that the
+There we find that the
 eigenvalues of $A$ are $\lambda _{1} = 2$ and $\lambda _{2} = \lambda _{3} = 1$, with the following bases for the eigenspaces:\
 For $\lambda _{1} = 2$, $E_{2}$ has basis
 $\mathbf{p_{1}} = \left[\begin{array}{c} 1 \\ 0 \\ -4 \end{array}\right]$.\
@@ -592,6 +599,9 @@ $B = B_{1} \cup B_{2} \cup \cdots \cup B_{k}$ (i.e. the total collection
 of basis vectors for all of the eigenspaces) is linearly independent.
 :::
 
+::: {.Proof}
+ By theorem \ref{eigenlinind}, the eigenvectors to different eigenvalues are linearly independent. Together with the information that each eigenspace has a basis of (linearly independent) eigenvectors we obtain that the set $B$ must be linearly independent. ◻
+:::
 ::: {.Theorem #eigendiag}
 If $A$ is an $n \times n$ matrix with $n$ distinct
 eigenvalues, then $A$ is diagonalisable.
@@ -616,13 +626,9 @@ has eigenvalues $\lambda _{1} = 2, \lambda _{2} = 1, \lambda _{3} = 3$ and $\lam
 eigenvalues for a $4 \times 4$ matrix, $A$ is diagonalisable, by Theorem \ref{eigendiag}.
 :::
 
-::: {.Corollary}
-If $A$ is an $n \times n$ matrix, then the geometric
-multiplicity of each eigenvalue is less than or equal to its algebraic
-multiplicity.
-:::
 
-::: {.Theorem}
+
+<!-- ::: {.Theorem}
 ## Diagonalisation Theorem
 Let $A$ be an $n \times n$ matrix whose distinct eigenvalues are $\lambda _{1}, \lambda _{2}, \cdots, \lambda _{k}$, where $1\leq k\leq n$. The following statements are
 equivalent:
@@ -634,26 +640,9 @@ vectors.
 
 (c) The algebraic multiplicity of each eigenvalue equals its geometric
 multiplicity.
-:::
+::: -->
 
-::: {#exm-    }
-(a) The matrix 
-$$A = \left[\begin{array}{ccc}
-        0 & 1 & 0 \\ 0 & 0 & 1 \\ 2 & -5 & 4 \end{array}\right]$$
-has two distinct eigenvalues $\lambda _{1} = \lambda _{2} = 1$ and $\lambda _{3} = 2$. Since the eigenvalue $\lambda _{1} = \lambda _{2} = 1$ with
-$E_{1} = {\rm span}( (1,1,1)^T)$ has algebraic multiplicity 2 but geometric multiplicity 1, $A$ is
-not diagonalisable, by the Diagonalisation Theorem.\
-(b) The matrix 
-$$A = \left[\begin{array}{ccc}
-        2 & 2 & 0 \\ 0 & 1 & 0 \\ -4 & -8 & 1 \end{array}\right]$$
-has two distinct eigenvalues $\lambda _{1} = 2$ and $\lambda _{2} = \lambda _{3} = 1$. We found:
-for $\lambda _{1} = 2$, $E_{1}$ has basis
-$\mathbf{p_{1}} = (1, 0, -4)^T$, and for $\lambda _{2} = \lambda _{3} = 1$, $E_{2}$ has basis
-$\mathbf{p_{2}} = (-2,1, 0)^T$ and $\mathbf{p_{3}} = (0,0,1)^T$.
-Thus, the eigenvalue 2 has algebraic and geometric multiplicity 1,
-and the eigenvalue 1 has algebraic and geometric multiplicity 2.
-Thus, $A$ is diagonalisable, by the Diagonalisation Theorem.
-:::
+
 
 ::: {.Theorem}
 ## Joint eigenbasis
@@ -661,7 +650,7 @@ If two matrices commute and one of them is diagonalisable then they share a basi
 :::
 
 ::: {.Proof}
-Let ${\rm A}$ be diagonalisable. Then ${\rm A}$ has an eigenbasis $\vec{x}_i, i=1..n$. For simplicity we first assume that there are $n$ distinct eigenvalues, but one also prove the theorem for repeated eigenvalues.  
+Let ${\rm A}$ be diagonalisable. Then ${\rm A}$ has an eigenbasis $\vec{x}_i, i=1..n$. For simplicity we first assume that there are $n$ distinct eigenvalues, but one can also prove the theorem for repeated eigenvalues.  
 
 Let ${\rm B}$ be a matrix that commutes with ${\rm A}$:   
 $$ {\rm A B = B A} \quad \Rightarrow {\rm A B}\vec{x}_i ={\rm B A}\vec{x}_i \quad \Rightarrow {\rm A}({\rm  B}\vec{x}_i) = \lambda_i ({\rm B} \vec{x}_i)  $$ 
@@ -696,11 +685,11 @@ $$\langle {\rm A}\vec{x},\vec{y} \rangle = ({\rm A}\vec{x})^T\vec{y} = \vec{x}^T
 :::
 
 ::: {.Corollary}
-## orthogonal eigenbasis
+## Orthogonal eigenbasis
 For a self-adjoint operator eigenvectors to different eigenvalues are orthogonal. 
 :::
 
 ::: {.Proof}
 $$ \langle {\rm A}\vec{x},\vec{y} \rangle = \langle \vec{x},{\rm A}^\dag \vec{y} \rangle  = \langle \vec{x},{\rm A} \vec{y} \rangle$$
 $$ \Rightarrow \langle \lambda_x \vec{x},\vec{y} \rangle = \langle \vec{x},\lambda_y \vec{y} \rangle  \quad \Rightarrow \underbrace{(\lambda_x -\lambda_y)}_{\neq 0} \langle \vec{x},\vec{y} \rangle = 0  \quad \Rightarrow \langle \vec{x},\vec{y} \rangle = 0 $$
-:::
+::: 
