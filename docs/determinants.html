@@ -120,35 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
-.DONE {
-  --color1: #cce7b1;
-  --color2: #86b754;
-}
-.Feature {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Definition {
-  --color1: #d999d3;
-  --color2: #a01793;
-}
 .Corollary {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Proof {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Conjecture {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Solution {
-  --color1: #c0c0c0;
-  --color2: #808080;
-}
-.Theorem {
   --color1: #948bde;
   --color2: #584eab;
 }
@@ -156,9 +128,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   --color1: #e7b1b4;
   --color2: #8c3236;
 }
+.Conjecture {
+  --color1: #948bde;
+  --color2: #584eab;
+}
 .Lemma {
   --color1: #948bde;
   --color2: #584eab;
+}
+.DONE {
+  --color1: #cce7b1;
+  --color2: #86b754;
+}
+.Theorem {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Solution {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.Feature {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.Proof {
+  --color1: #c0c0c0;
+  --color2: #808080;
+}
+.Definition {
+  --color1: #d999d3;
+  --color2: #a01793;
 }
 </style>
 
@@ -1182,7 +1182,7 @@ d &amp; -b \\
 <li><span class="math inline">2) \Leftrightarrow 3):</span> Definition of a determinant as the volume spanned by <span class="math inline">n</span> (column vectors).</li>
 <li><span class="math inline">3) \Leftrightarrow 4):</span> <span class="math inline">n</span> linearly independent vectors in <span class="math inline">\mathbb{R}^n</span> span <span class="math inline">\mathbb{R}^n</span> (Corollary <a href="algebra3b.html#nvectorsspanrn">2.10</a>)</li>
 <li><span class="math inline">4) \Leftrightarrow 5):</span> Definition of rank as the dimension of the range (<span class="math inline">\Rightarrow</span>). For the reverse (<span class="math inline">\Leftarrow</span>) note that rank = n means ther exists a basis for the space with <span class="math inline">n</span> elements.</li>
-<li><span class="math inline">5) \Leftrightarrow 6):</span> The rank theorem <a href="linearequations.html#ranktheorem">3.19</a>.</li>
+<li><span class="math inline">5) \Leftrightarrow 6):</span> The rank theorem <a href="linearequations.html#ranktheorem">3.20</a>.</li>
 <li><span class="math inline">6) \Leftrightarrow 7):</span> Definition of the nullspace</li>
 <li><span class="math inline">7) \Leftrightarrow 8):</span> Definition of nullity as the dimension of the nullspace. Vice versa if the dimension of the nullspace is zero, then the nullspace must consist of <span class="math inline">\{0 \}</span>, as the zero-vector is always in the nullspace.</li>
 <li><span class="math inline">8) \Leftrightarrow 9):</span> We know from 4) that the range is the whole of <span class="math inline">\mathbb{R}^n</span> and if the solutions were not unique then there would be non-trivial solutions in the nullspace. (assume two different <span class="math inline">\vec{x}</span> map to the same <span class="math inline">\vec{b}</span>: <span class="math inline">{\rm A}\vec{x}_1= \vec{b}</span> and <span class="math inline">{\rm A}\vec{x}_2= \vec{b}</span> then <span class="math inline">{\rm A}(\vec{x}_1  -\vec{x}_2)= \vec{0}</span> and <span class="math inline">(\vec{x}_1  -\vec{x}_2)</span> would be a non-trivial vector in the nullspace.</li>

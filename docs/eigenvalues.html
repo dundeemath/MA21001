@@ -120,29 +120,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 <style>
-.Corollary {
+.Conjecture {
   --color1: #948bde;
   --color2: #584eab;
-}
-.Lemma {
-  --color1: #948bde;
-  --color2: #584eab;
-}
-.Solution {
-  --color1: #c0c0c0;
-  --color2: #808080;
 }
 .DONE {
   --color1: #cce7b1;
   --color2: #86b754;
 }
-.Conjecture {
+.Lemma {
   --color1: #948bde;
   --color2: #584eab;
 }
 .TODO {
   --color1: #e7b1b4;
   --color2: #8c3236;
+}
+.Definition {
+  --color1: #d999d3;
+  --color2: #a01793;
+}
+.Corollary {
+  --color1: #948bde;
+  --color2: #584eab;
+}
+.Solution {
+  --color1: #c0c0c0;
+  --color2: #808080;
 }
 .Proof {
   --color1: #c0c0c0;
@@ -151,10 +155,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 .Theorem {
   --color1: #948bde;
   --color2: #584eab;
-}
-.Definition {
-  --color1: #d999d3;
-  --color2: #a01793;
 }
 .Feature {
   --color1: #c0c0c0;
@@ -770,7 +770,7 @@ The geometric multiplicity of an eigenvalue <span class="math inline">\lambda</s
             {} &amp;= {\rm det}(A). \\
         \end{alignedat}</span></p>
 <p>(b)<br>
-We first show that nullity(A)=nullity(B). One can then use the rank theorem <a href="linearequations.html#ranktheorem">3.19</a> to show that this also implies that rank(A)=rank(B).</p>
+We first show that nullity(A)=nullity(B). One can then use the rank theorem <a href="linearequations.html#ranktheorem">3.20</a> to show that this also implies that rank(A)=rank(B).</p>
 <p>Let <span class="math inline">\{\vec{x_1},..., \vec{x_k}\}</span> be a basis of the nullspace of A. Hence <span class="math inline">\vec{y}_i= P^{-1}\vec{x_i}</span>, <span class="math inline">i=1..k</span>, is a linearly independent set (P is one-to-one) in the nullspace of B, as <span class="math display"> B \vec{y}_i = P^{-1}A P P^{-1}\vec{x_i} = P^{-1}A \vec{x_i} = P^{-1}\vec{0} = \vec{0}. </span> To show that the <span class="math inline">\vec{y}_i</span> indeed are a basis of the nullspace of B, we observe that for any <span class="math inline">\vec{y}</span> in the nullspace of B, <span class="math inline">P\vec{y} = \vec{x}</span> is in the nullspace of A. So <span class="math inline">\vec{y}_1, ... \vec{y}_k</span> are a basis of the nullspace of B and nullity(A)=nullity(B).</p>
 <p>(c) The characteristic polynomial of <span class="math inline">B</span> is <span class="math display">\begin{alignedat}{2}
             {\rm det}(B - \lambda I) &amp;= {\rm det}(P^{-1}AP - \lambda I) \\

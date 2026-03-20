@@ -369,42 +369,67 @@ $${\rm A}{\rm I} =\left(\begin{array}{rr}
 
 ::: {.Definition} 
 # Inverse of a matrix
-If two square matrices ${\rm A}$ and ${\rm B}$ satisfy
+If two matrices ${\rm A}$ and ${\rm B}$ satisfy
 $${\rm A} {\rm B} = {\rm B}  {\rm A} = {\rm I}$$
 then ${\rm B} = {\rm A}^{-1}$ is called the inverse of ${\rm A}$ (and vice versa ${\rm A}$ is the inverse of ${\rm B}$). If
 ${\rm A}$ has an inverse, it is said to be non-singular. Any matrix
 which does not have an inverse is said to be singular.
 :::
 
+::: {.Corollary}
+## Only square matrices have an inverse
+The definition above requires ${\rm A}{\rm B} = {\rm B}  {\rm A}$, which implies that ${\rm A}$ and ${\rm B}$ are square matrices of the same size. 
+Hence only square matrices can have an inverse (see also remark -@nte-nonsquare).
+:::
+
+::: {.Proof}
+Assume ${\rm A} \in M_{m\times r}$ and ${\rm B} \in M_{s\times n}$, then for ${\rm A}{\rm B}$ to be defined we have to have $r=s$ and for ${\rm B A}$ to be defined $m=n$. Furthermore ${\rm A B}= {\rm B A}$ requires $m=n$. 
+:::
+
 ::: {.callout-note}
 ## Remark
-+ Note that we have have to require both ${\rm A} {\rm B} ={\rm I}$ and ${\rm B} {\rm A} ={\rm I}$ since the matrix product is not commutative. 
-+ Non-square matrices can never have an inverse (see remark -@nte-nonsquare).
+Note that we have to require both ${\rm A} {\rm B} ={\rm I}$ and ${\rm B} {\rm A}={\rm A} {\rm B}$ since the matrix product is not commutative. Below is an example that ${\rm A} {\rm B} ={\rm I}$ alone is not sufficient to guarantee that ${\rm B}$ is the inverse of ${\rm A}$. Alternatively we can demand that both matrices are square matrices, ${\rm A},{\rm B}\in M_{n\times n}$, then ${\rm A} {\rm B} ={\rm I}$ is enough to show that ${\rm B}$ is the inverse of ${\rm A}$. The proof uses the fact that square matrices have determinants and  ${\rm A} {\rm B} ={\rm I}$ implies that the determinants of both matrices are non-zero. Hence both matrices have inverses and multiplying ${\rm A} {\rm B} ={\rm I}$ from the left with ${\rm A}^{-1}$ yields ${\rm B} = {\rm A}^{-1}$.
+:::
+
+::: {#exm-} 
+Check that ${\rm A}{\rm B}= {\rm I}$ and ${\rm B}{\rm A} = {\rm I}$ and thus ${\rm B} = {\rm A}^{-1}$. 
+$${\rm A}=\left[ \begin{array}{ccc}
+ 2 & 0 & 1 \\
+ 1 & {-2} & 1 \\
+ 3 & 1 & 1 
+\end{array}  \right], \quad 
+{\rm B}=\left[ \begin{array}{ccc}
+ {-3} & 1 & 2 \\
+ 2 & {-1} & {-1} \\
+ 7 & {-2} & {-4}
+\end{array}  \right]$$
+:::
+
+::: {#exm-} 
+Check that ${\rm A}{\rm B}= {\rm I}$, but ${\rm B}{\rm A} \neq {\rm A}{\rm B}$ and thus ${\rm B}$ is not the inverse of ${\rm A}$. 
+$${\rm A}=\left[ \begin{array}{ccc}
+ 1 & 0 & 0 \\
+ 0 & 1 & 0 
+\end{array}  \right], \quad 
+{\rm B}=\left[ \begin{array}{ccc}
+ 1 & 0  \\
+ 0 & 1  \\
+ 0 & 0
+\end{array}  \right]$$
 :::
 
 ::: {.callout-warning}
 A division of matrices is **not** defined. 
 :::
-That we don't have a division of matrices is due to the fact that many matrices don't have an inverse contrary to the multiplication of real numbers where only 0 doesn't have an inverse. And even if they do have an inverse it matters whether we multiply from the left or the right, as the multiplication is not commutative. For instance the matrix equation (${\rm A,B,C}$  are $n \times n$ matrices)
+That we don't have a division of matrices is due to the fact that many matrices don't have an inverse (contrary to the multiplication of real numbers where only 0 doesn't have an inverse). And even if they do have an inverse it matters whether we multiply from the left or the right, as the multiplication is not commutative. For instance the matrix equation (${\rm A,B,C}$  are $n \times n$ matrices)
 $$ {\rm A}{\rm B} = {\rm C}$$ can be solved for ${\rm B}$ using the inverse of ${\rm A}$, provided it exists. We multiply from the left by ${\rm A}^{-1}$:
 $$ {\rm A}^{-1}{\rm A}{\rm B} = {\rm A}^{-1}{\rm C}$$ 
 $$ \Rightarrow {\rm I}{\rm B} = {\rm B} = {\rm A}^{-1}{\rm C}$$ 
 However, we can't write ${\rm C}/{\rm A}$ as that would not indicate whether we have to multiply with the inverse from the left or right.
 
 
-::: {#exm-} 
-Check that ${\rm A}{\rm A}^{-1}= {\rm I}$ and ${\rm A}^{-1}{\rm A} = {\rm I}$.
-$$A=\left[ \begin{array}{ccc}
- 2 & 0 & 1 \\
- 1 & {-2} & 1 \\
- 3 & 1 & 1 
-\end{array}  \right], \quad 
-A^{-1}=\left[ \begin{array}{ccc}
- {-3} & 1 & 2 \\
- 2 & {-1} & {-1} \\
- 7 & {-2} & {-4} \\
-\end{array}  \right]$$
-:::
+
+
 
 ::: {.Corollary}
 ## Inverse of Transpose and Product

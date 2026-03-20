@@ -57,25 +57,27 @@
 
  [**Definition 3.9**](#inverse-of-a-matrix): Inverse of a matrix\Pageref{inverse-of-a-matrix}
 
- [**Corollary 3.10**](#inverse-of-transpose-and-product): Inverse of Transpose and Product\Pageref{inverse-of-transpose-and-product}
+ [**Corollary 3.10**](#only-square-matrices-have-an-inverse): Only square matrices have an inverse\Pageref{only-square-matrices-have-an-inverse}
 
- [**Definition 3.11**](#Definition-3.11)\Pageref{Definition-3.11}
+ [**Corollary 3.11**](#inverse-of-transpose-and-product): Inverse of Transpose and Product\Pageref{inverse-of-transpose-and-product}
 
- [**Corollary 3.12**](#inverse-of-elementary-matrices): Inverse of elementary matrices\Pageref{inverse-of-elementary-matrices}
+ [**Definition 3.12**](#Definition-3.12)\Pageref{Definition-3.12}
 
- [**Definition 3.13**](#upperlower-triangular-matrix): Upper/Lower Triangular Matrix\Pageref{upperlower-triangular-matrix}
+ [**Corollary 3.13**](#inverse-of-elementary-matrices): Inverse of elementary matrices\Pageref{inverse-of-elementary-matrices}
 
- [**Definition 3.14**](#range-and-rank): Range and Rank\Pageref{range-and-rank}
+ [**Definition 3.14**](#upperlower-triangular-matrix): Upper/Lower Triangular Matrix\Pageref{upperlower-triangular-matrix}
 
- [**Definition 3.15**](#nullspace-and-nullity): Nullspace and Nullity\Pageref{nullspace-and-nullity}
+ [**Definition 3.15**](#range-and-rank): Range and Rank\Pageref{range-and-rank}
 
- [**Corollary 3.16**](#nullspace-is-a-subspace): Nullspace is a subspace\Pageref{nullspace-is-a-subspace}
+ [**Definition 3.16**](#nullspace-and-nullity): Nullspace and Nullity\Pageref{nullspace-and-nullity}
 
- [**Definition 3.17**](#row-and-column-space): Row and column space\Pageref{row-and-column-space}
+ [**Corollary 3.17**](#nullspace-is-a-subspace): Nullspace is a subspace\Pageref{nullspace-is-a-subspace}
 
- [**Theorem 3.18**](#rowcolumnspace): Dimension of row and column spaces\Pageref{rowcolumnspace}
+ [**Definition 3.18**](#row-and-column-space): Row and column space\Pageref{row-and-column-space}
 
- [**Theorem 3.19**](#ranktheorem): Rank Theorem\Pageref{ranktheorem}
+ [**Theorem 3.19**](#rowcolumnspace): Dimension of row and column spaces\Pageref{rowcolumnspace}
+
+ [**Theorem 3.20**](#ranktheorem): Rank Theorem\Pageref{ranktheorem}
 
  [**Definition 4.1**](#minor-and-cofactor): Minor and Cofactor\Pageref{minor-and-cofactor}
 
